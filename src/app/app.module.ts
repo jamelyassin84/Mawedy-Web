@@ -1,3 +1,5 @@
+import { PatientsModule } from './patients/patients.module'
+import { AppointmentsModule } from './appointments/appointments.module'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
@@ -19,11 +21,15 @@ import { PromotionsToolbarComponent } from './toolbars/promotions-toolbar/promot
 import { CenterMediumModalComponent } from './modals/center-medium-modal/center-medium-modal.component'
 import { CenterLargeModalComponent } from './modals/center-large-modal/center-large-modal.component'
 import { RightLargeModalComponent } from './modals/right-large-modal/right-large-modal.component'
-import { RightBlurrBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
 import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component'
 import { FileUploadModalComponent } from './modals/file-upload-modal/file-upload-modal.component'
-import { LoaderModalComponent } from './modals/loader-modal/loader-modal.component';
+import { LoaderModalComponent } from './modals/loader-modal/loader-modal.component'
 import { PatientProfileComponent } from './patients/modals/patient-profile/patient-profile.component'
+import { ClinicProfileModule } from './clinic-profile/clinic-profile.module'
+import { DashboardModule } from './dashboard/dashboard.module'
+import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
+import { PromotionsModule } from './promotions/promotions.module'
+import { RightBlurBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
 
 @NgModule({
 	declarations: [
@@ -44,13 +50,23 @@ import { PatientProfileComponent } from './patients/modals/patient-profile/patie
 		CenterMediumModalComponent,
 		CenterLargeModalComponent,
 		RightLargeModalComponent,
-		RightBlurrBackgroundModalComponent,
+		RightBlurBackgroundModalComponent,
 		ConfirmModalComponent,
 		FileUploadModalComponent,
 		LoaderModalComponent,
-  PatientProfileComponent,
+		PatientProfileComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, RouterModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		RouterModule,
+		AppointmentsModule,
+		ClinicProfileModule,
+		DashboardModule,
+		DoctorsProfileModule,
+		PatientsModule,
+		PromotionsModule,
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })

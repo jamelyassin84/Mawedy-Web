@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { RightBlurrBackgroundModalComponent } from './right-blurr-background-modal.component';
+import { RightBlurBackgroundModalComponent } from './right-blurr-background-modal.component'
 
-describe('RightBlurrBackgroundModalComponent', () => {
-  let component: RightBlurrBackgroundModalComponent;
-  let fixture: ComponentFixture<RightBlurrBackgroundModalComponent>;
+describe('RightBlurBackgroundModalComponent', () => {
+	let component: RightBlurBackgroundModalComponent
+	let fixture: ComponentFixture<RightBlurBackgroundModalComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ RightBlurrBackgroundModalComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [RightBlurBackgroundModalComponent],
+		}).compileComponents()
+	})
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(RightBlurrBackgroundModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(RightBlurBackgroundModalComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core'
 	templateUrl: './right-blurr-background-modal.component.html',
 	styleUrls: ['./right-blurr-background-modal.component.scss'],
 })
-export class RightBlurrBackgroundModalComponent implements OnInit {
+export class RightBlurBackgroundModalComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
