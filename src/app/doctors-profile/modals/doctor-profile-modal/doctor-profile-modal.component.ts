@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-doctor-profile-modal',
-  templateUrl: './doctor-profile-modal.component.html',
-  styleUrls: ['./doctor-profile-modal.component.scss']
+	selector: 'doctor-profile-modal',
+	templateUrl: './doctor-profile-modal.component.html',
+	styleUrls: ['./doctor-profile-modal.component.scss'],
 })
 export class DoctorProfileModalComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }
