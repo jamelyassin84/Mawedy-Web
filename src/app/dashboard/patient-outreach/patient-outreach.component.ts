@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-patient-outreach',
-  templateUrl: './patient-outreach.component.html',
-  styleUrls: ['./patient-outreach.component.scss']
+	selector: 'dashboard-patient-outreach',
+	templateUrl: './patient-outreach.component.html',
+	styleUrls: ['./patient-outreach.component.scss'],
 })
 export class PatientOutreachComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }
