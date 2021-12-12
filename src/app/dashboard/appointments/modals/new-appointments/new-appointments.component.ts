@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-	selector: 'app-modals-new-appointments',
+	selector: 'dashboard-modal-new-appointments',
 	templateUrl: './new-appointments.component.html',
 	styleUrls: ['./new-appointments.component.scss'],
 })

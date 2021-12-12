@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-select-time-slot',
-  templateUrl: './select-time-slot.component.html',
-  styleUrls: ['./select-time-slot.component.scss']
+	selector: 'dashboard-modal-select-time-slot',
+	templateUrl: './select-time-slot.component.html',
+	styleUrls: ['./select-time-slot.component.scss'],
 })
 export class SelectTimeSlotComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }
