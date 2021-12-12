@@ -23,7 +23,7 @@ import { RightBlurrBackgroundModalComponent } from './modals/right-blurr-backgro
 import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component'
 import { FileUploadModalComponent } from './modals/file-upload-modal/file-upload-modal.component'
 import { LoaderModalComponent } from './modals/loader-modal/loader-modal.component';
-import { PatientProfileComponent } from './patient/modals/patient-profile/patient-profile.component'
+import { PatientProfileComponent } from './patients/modals/patient-profile/patient-profile.component'
 
 @NgModule({
 	declarations: [
