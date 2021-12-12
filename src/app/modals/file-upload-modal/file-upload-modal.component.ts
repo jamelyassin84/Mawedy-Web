@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-file-upload-modal',
-  templateUrl: './file-upload-modal.component.html',
-  styleUrls: ['./file-upload-modal.component.scss']
+	selector: 'file-upload-modal',
+	templateUrl: './file-upload-modal.component.html',
+	styleUrls: ['./file-upload-modal.component.scss'],
 })
 export class FileUploadModalComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }

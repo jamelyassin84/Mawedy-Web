@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-loader-modal',
-  templateUrl: './loader-modal.component.html',
-  styleUrls: ['./loader-modal.component.scss']
+	selector: 'loader-modal',
+	templateUrl: './loader-modal.component.html',
+	styleUrls: ['./loader-modal.component.scss'],
 })
 export class LoaderModalComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }
