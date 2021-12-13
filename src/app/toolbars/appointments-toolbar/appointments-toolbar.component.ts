@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { AppointmentTabs, AppointmentTabType } from './AppointmentsTabs'
 
 @Component({
@@ -7,9 +8,10 @@ import { AppointmentTabs, AppointmentTabType } from './AppointmentsTabs'
 	styleUrls: ['./appointments-toolbar.component.scss'],
 })
 export class AppointmentsToolbarComponent implements OnInit {
+	constructor(private router: Router) {}
 	tabs: AppointmentTabType[] = AppointmentTabs
 
-	constructor() {}
+	today = Date.now()
 
 	activeTab!: string
 
@@ -19,5 +21,6 @@ export class AppointmentsToolbarComponent implements OnInit {
 
 	setActiveTab(tab: AppointmentTabType) {
 		this.activeTab = tab.name
+		this.router.navigate([tab.route])
 	}
 }

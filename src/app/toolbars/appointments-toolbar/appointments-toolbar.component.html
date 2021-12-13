@@ -1,15 +1,45 @@
-<div class="d-flex">
+<div class="d-flex" style="width: calc(100vw - 35%)">
 	<div
 		(click)="setActiveTab(tab)"
 		*ngFor="let tab of tabs"
 		class="tab mr-4"
 		[class.active]="activeTab === tab.name"
-		[routerLink]="tab.route"
 	>
-		<span class="tab-text mr-2">{{ tab.name }}</span>
+		<span class="tab-text mr-2" [class.bold]="activeTab === tab.name">{{
+			tab.name
+		}}</span>
 		<span class="badge">20</span>
 		<div class="border-div"></div>
 	</div>
-</div>
 
-<div class="aside d-flex"></div>
+	<div class="aside">
+		<img
+			class="calendar-icon ml-auto"
+			src="../../../assets/app/toolbars/dashboard/calendar.png"
+			alt=""
+		/>
+
+		<div class="d-flex aic" style="font-size: 18px; margin-top: -10px">
+			<span class="ml-2 bold"> {{ today | date: 'dd MMMM' }} </span>
+			<span style="color: #6f7d8f" class="ml-2">Today</span>
+		</div>
+
+		<div class="input-container">
+			<input type="search" placeholder="Search" />
+			<img
+				class="search ml-auto"
+				src="../../../assets/app/toolbars/dashboard/search.png"
+				alt=""
+			/>
+		</div>
+
+		<div role="button" class="filter-container">
+			<span>Filter</span>
+			<img
+				class="filter-icon"
+				src="../../../assets/app/toolbars/dashboard/filter.png"
+				alt=""
+			/>
+		</div>
+	</div>
+</div>
