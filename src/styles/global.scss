@@ -36,7 +36,7 @@ thead tr:first-child th {
 	position: sticky;
 	top: -20px;
 	background: white;
-	transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in;
 }
 table thead th {
 	border: none !important;
@@ -52,4 +52,10 @@ tbody {
 	tr:nth-child(2n) {
 		background-color: #f7f8fa !important;
 	}
+}
+
+.underlined {
+	color: #0a2440;
+	text-decoration: underline;
+	cursor: pointer;
 }
