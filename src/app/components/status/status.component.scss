@@ -15,15 +15,12 @@
 }
 
 .active {
-	.outer {
-		width: 22px;
-		height: 22px;
-		background: #ddf5e7 0% 0% no-repeat padding-box;
-		opacity: 1;
-		align-items: center;
-		justify-content: center;
-	}
-
+	width: 22px;
+	height: 22px;
+	background: #ddf5e7 0% 0% no-repeat padding-box;
+	opacity: 1;
+	align-items: center;
+	justify-content: center;
 	.inner {
 		width: 8px;
 		height: 8px;
