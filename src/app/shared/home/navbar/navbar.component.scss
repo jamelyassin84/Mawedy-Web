@@ -24,7 +24,13 @@ nav {
 		border-radius: 100px;
 		display: flex;
 		flex-direction: row;
-		padding-left: 58px;
+		padding-left: 18px;
+		.search {
+			width: 20px;
+			height: 20px;
+			margin-right: 18px;
+		}
+
 		input {
 			width: calc(100% - 28px);
 			border: none !important;
