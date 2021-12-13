@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core'
 	templateUrl: './clinci-profile-toolbar.component.html',
 	styleUrls: ['./clinci-profile-toolbar.component.scss'],
 })
-export class ClinciProfileToolbarComponent implements OnInit {
+export class ClinicProfileToolbarComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}

@@ -11,9 +11,6 @@ import { HomeComponent } from './pages/home/home.component'
 import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
-import { PatientsComponent } from './toolbars/patients/patients.component'
-import { ClinciProfileToolbarComponent } from './toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
-import { PromotionsToolbarComponent } from './toolbars/promotions-toolbar/promotions-toolbar.component'
 import { CenterMediumModalComponent } from './modals/center-medium-modal/center-medium-modal.component'
 import { CenterLargeModalComponent } from './modals/center-large-modal/center-large-modal.component'
 import { RightLargeModalComponent } from './modals/right-large-modal/right-large-modal.component'
@@ -26,6 +23,7 @@ import { DashboardModule } from './dashboard/dashboard.module'
 import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
 import { PromotionsModule } from './promotions/promotions.module'
 import { RightBlurBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
+import { PatientsComponent } from './patients/patients/patients.component'
 
 @NgModule({
 	declarations: [
@@ -37,8 +35,6 @@ import { RightBlurBackgroundModalComponent } from './modals/right-blurr-backgrou
 		NavbarComponent,
 		SidebarComponent,
 		PatientsComponent,
-		ClinciProfileToolbarComponent,
-		PromotionsToolbarComponent,
 		CenterMediumModalComponent,
 		CenterLargeModalComponent,
 		RightLargeModalComponent,
