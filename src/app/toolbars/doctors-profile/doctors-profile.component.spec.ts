@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { DoctorsProfileComponent } from './doctors-profile.component';
+import { DoctorsProfileToolbarComponent } from './doctors-profile.component'
 
-describe('DoctorsProfileComponent', () => {
-  let component: DoctorsProfileComponent;
-  let fixture: ComponentFixture<DoctorsProfileComponent>;
+describe('DoctorsProfileToolbarComponent', () => {
+	let component: DoctorsProfileToolbarComponent
+	let fixture: ComponentFixture<DoctorsProfileToolbarComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DoctorsProfileComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [DoctorsProfileToolbarComponent],
+		}).compileComponents()
+	})
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DoctorsProfileComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(DoctorsProfileToolbarComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

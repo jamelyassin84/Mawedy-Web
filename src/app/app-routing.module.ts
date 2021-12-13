@@ -1,4 +1,3 @@
-import { DoctorsProfileComponent } from './toolbars/doctors-profile/doctors-profile.component'
 import { AppointmentsDayComponent } from './appointments/appointments-day/appointments-day.component'
 import { AppointmentsWeekComponent } from './appointments/appointments-week/appointments-week.component'
 import { AppointmentsMonthComponent } from './appointments/appointments-month/appointments-month.component'
@@ -11,6 +10,7 @@ import { PatientOutreachComponent } from './dashboard/patient-outreach/patient-o
 import { PatientsComponent } from './patients/patients/patients.component'
 import { ClinicProfileComponent } from './clinic-profile/clinic-profile/clinic-profile.component'
 import { PromotionsComponent } from './promotions/promotions/promotions.component'
+import { DoctorsProfileComponent } from './doctors-profile/doctors-profile/doctors-profile.component'
 
 const routes: Routes = [
 	{

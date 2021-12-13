@@ -11,7 +11,6 @@ import { HomeComponent } from './pages/home/home.component'
 import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
-import { DoctorsProfileComponent } from './toolbars/doctors-profile/doctors-profile.component'
 import { PatientsComponent } from './toolbars/patients/patients.component'
 import { ClinciProfileToolbarComponent } from './toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
 import { PromotionsToolbarComponent } from './toolbars/promotions-toolbar/promotions-toolbar.component'
@@ -37,7 +36,6 @@ import { RightBlurBackgroundModalComponent } from './modals/right-blurr-backgrou
 		LoginNavComponent,
 		NavbarComponent,
 		SidebarComponent,
-		DoctorsProfileComponent,
 		PatientsComponent,
 		ClinciProfileToolbarComponent,
 		PromotionsToolbarComponent,
