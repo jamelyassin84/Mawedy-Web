@@ -10,6 +10,7 @@ import { AssignAppointmentToComponent } from './appointments/modals/assign-appoi
 import { ToolbarComponent } from '../shared/home/toolbar/toolbar.component'
 import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/appointments-toolbar.component'
 import { RouterModule } from '@angular/router'
+import { StatusComponent } from '../components/status/status.component'
 
 @NgModule({
 	declarations: [
@@ -22,8 +23,9 @@ import { RouterModule } from '@angular/router'
 		AssignAppointmentToComponent,
 		ToolbarComponent,
 		AppointmentsToolbarComponent,
+		StatusComponent,
 	],
 	imports: [CommonModule, RouterModule],
-	exports: [ToolbarComponent, AppointmentsToolbarComponent],
+	exports: [ToolbarComponent, AppointmentsToolbarComponent, StatusComponent],
 })
 export class DashboardModule {}

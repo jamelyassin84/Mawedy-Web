@@ -28,6 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module'
 import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
 import { PromotionsModule } from './promotions/promotions.module'
 import { RightBlurBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
+import { StatusComponent } from './components/status/status.component'
 
 @NgModule({
 	declarations: [

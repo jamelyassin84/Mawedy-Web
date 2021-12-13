@@ -23,7 +23,8 @@
 					*ngFor="
 						let item of [
 							1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1
-						]
+						];
+						let i = index
 					"
 				>
 					<td>10 December</td>
@@ -31,7 +32,12 @@
 					<td>Riyad Abdallah</td>
 					<td>Dr. Hanadi Yassin</td>
 					<td>Returning Patient</td>
-					<td>Cancelled</td>
+					<td class="d-flex aic">
+						<app-status
+							[active]="i == 0 ? true : false"
+						></app-status>
+						Cancelled
+					</td>
 					<td>AA586468870</td>
 				</tr>
 			</tbody>
