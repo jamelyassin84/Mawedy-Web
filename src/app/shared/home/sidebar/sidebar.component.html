@@ -1,1 +1,24 @@
-<div class="sidebar"></div>
+<div class="sidebar">
+	<div
+		(click)="setActiveIcon(nav.name)"
+		*ngFor="let nav of nav"
+		class="item"
+		[class.active]="activeIcon === nav.name"
+		[routerLink]="nav.route"
+	>
+		<img
+			class="icon"
+			[src]="activeIcon === nav.name ? nav.active : nav.icon"
+			alt=""
+		/>
+		<span>{{ nav.name }}</span>
+	</div>
+
+	<img
+		class="powered-image"
+		src="../../../../assets/app/sidebar/aster clinic@2x.png"
+		alt=""
+	/>
+
+	<div class="powered">Powered by mawedy</div>
+</div>
