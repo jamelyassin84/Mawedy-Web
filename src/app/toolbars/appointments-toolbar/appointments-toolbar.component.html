@@ -1,9 +1,9 @@
 <div class="d-flex" style="width: calc(100vw - 35%)">
 	<div
+		[class.active]="activeTab === tab.name"
 		(click)="setActiveTab(tab)"
 		*ngFor="let tab of tabs"
 		class="tab mr-4"
-		[class.active]="activeTab === tab.name"
 	>
 		<span class="tab-text mr-2" [class.bold]="activeTab === tab.name">{{
 			tab.name

@@ -20,7 +20,7 @@ export class AppointmentsToolbarComponent implements OnInit {
 	}
 
 	setActiveTab(tab: AppointmentTabType) {
-		this.activeTab = tab.name
 		this.router.navigate([tab.route])
+		this.activeTab = tab.name
 	}
 }

@@ -16,6 +16,8 @@ body {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	border-radius: 16px;
 	padding: 20px 30px;
+	height: 75vh;
+	overflow-y: scroll;
 }
 
 .aic {
@@ -28,4 +30,26 @@ body {
 
 .bold {
 	font-family: bold;
+}
+
+thead tr:first-child th {
+	position: sticky;
+	top: -10px;
+	background: white;
+	transition: 0.3s ease-in;
+}
+table thead th {
+	border: none !important;
+	border-bottom: 1px solid #f7f8fa !important;
+	font-family: bold !important;
+	font-size: 1rem !important;
+	color: #6f7d8f !important;
+}
+
+tbody {
+	color: #0a2440;
+	font-size: 14px;
+	tr:nth-child(2n) {
+		background-color: #f7f8fa !important;
+	}
 }
