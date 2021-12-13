@@ -11,6 +11,7 @@ import { ToolbarComponent } from '../shared/home/toolbar/toolbar.component'
 import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/appointments-toolbar.component'
 import { RouterModule } from '@angular/router'
 import { StatusComponent } from '../components/status/status.component'
+import { DashboardToolbarComponent } from '../toolbars/dashboard-toolbar/dashboard-toolbar.component'
 
 @NgModule({
 	declarations: [
@@ -24,8 +25,14 @@ import { StatusComponent } from '../components/status/status.component'
 		ToolbarComponent,
 		AppointmentsToolbarComponent,
 		StatusComponent,
+		DashboardToolbarComponent,
 	],
 	imports: [CommonModule, RouterModule],
-	exports: [ToolbarComponent, AppointmentsToolbarComponent, StatusComponent],
+	exports: [
+		ToolbarComponent,
+		AppointmentsToolbarComponent,
+		StatusComponent,
+		DashboardToolbarComponent,
+	],
 })
 export class DashboardModule {}

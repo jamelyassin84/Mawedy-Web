@@ -1,9 +1,16 @@
+import { DoctorsProfileComponent } from './toolbars/doctors-profile/doctors-profile.component'
+import { AppointmentsDayComponent } from './appointments/appointments-day/appointments-day.component'
+import { AppointmentsWeekComponent } from './appointments/appointments-week/appointments-week.component'
+import { AppointmentsMonthComponent } from './appointments/appointments-month/appointments-month.component'
 import { LoginComponent } from './pages/login/login.component'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './pages/home/home.component'
 import { AppointmentsComponent } from './dashboard/appointments/appointments.component'
 import { PatientOutreachComponent } from './dashboard/patient-outreach/patient-outreach.component'
+import { PatientsComponent } from './patients/patients/patients.component'
+import { ClinicProfileComponent } from './clinic-profile/clinic-profile/clinic-profile.component'
+import { PromotionsComponent } from './promotions/promotions/promotions.component'
 
 const routes: Routes = [
 	{
@@ -38,6 +45,35 @@ const routes: Routes = [
 						component: PatientOutreachComponent,
 					},
 				],
+			},
+			{
+				path: 'appointments',
+				children: [
+					{
+						path: '',
+						pathMatch: 'full',
+						redirectTo: 'month',
+					},
+					{ path: 'month', component: AppointmentsMonthComponent },
+					{ path: 'week', component: AppointmentsWeekComponent },
+					{ path: 'day', component: AppointmentsDayComponent },
+				],
+			},
+			{
+				path: 'doctor-profile',
+				component: DoctorsProfileComponent,
+			},
+			{
+				path: 'patients',
+				component: PatientsComponent,
+			},
+			{
+				path: 'clinic-profile',
+				component: ClinicProfileComponent,
+			},
+			{
+				path: 'promotions',
+				component: PromotionsComponent,
 			},
 		],
 	},

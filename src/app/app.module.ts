@@ -11,7 +11,6 @@ import { HomeComponent } from './pages/home/home.component'
 import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
-import { DashboardToolbarComponent } from './toolbars/dashboard-toolbar/dashboard-toolbar.component'
 import { DoctorsProfileComponent } from './toolbars/doctors-profile/doctors-profile.component'
 import { PatientsComponent } from './toolbars/patients/patients.component'
 import { ClinciProfileToolbarComponent } from './toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
@@ -28,7 +27,6 @@ import { DashboardModule } from './dashboard/dashboard.module'
 import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
 import { PromotionsModule } from './promotions/promotions.module'
 import { RightBlurBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
-import { StatusComponent } from './components/status/status.component'
 
 @NgModule({
 	declarations: [
@@ -39,7 +37,6 @@ import { StatusComponent } from './components/status/status.component'
 		LoginNavComponent,
 		NavbarComponent,
 		SidebarComponent,
-		DashboardToolbarComponent,
 		DoctorsProfileComponent,
 		PatientsComponent,
 		ClinciProfileToolbarComponent,

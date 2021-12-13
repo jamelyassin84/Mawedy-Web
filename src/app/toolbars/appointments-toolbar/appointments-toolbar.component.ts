@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { AppointmentTabs, AppointmentTabType } from './AppointmentsTabs'
+import {
+	AppointmentTabs,
+	AppointmentTabType,
+} from '../dashboard-toolbar/AppointmentsTabs'
 
 @Component({
 	selector: 'toolbar-appointments',
@@ -9,18 +12,6 @@ import { AppointmentTabs, AppointmentTabType } from './AppointmentsTabs'
 })
 export class AppointmentsToolbarComponent implements OnInit {
 	constructor(private router: Router) {}
-	tabs: AppointmentTabType[] = AppointmentTabs
 
-	today = Date.now()
-
-	activeTab!: string
-
-	ngOnInit(): void {
-		this.activeTab = this.tabs[0].name
-	}
-
-	setActiveTab(tab: AppointmentTabType) {
-		this.router.navigate([tab.route])
-		this.activeTab = tab.name
-	}
+	ngOnInit(): void {}
 }
