@@ -1,1 +1,14 @@
-<p>appointments-toolbar works!</p>
+<div class="d-flex">
+	<div
+		(click)="setActiveTab(tab)"
+		*ngFor="let tab of tabs"
+		class="tab mr-4"
+		[class.active]="activeTab === tab"
+	>
+		<span class="tab-text mr-2">Appointments</span>
+		<span class="badge">20</span>
+		<div class="border-div"></div>
+	</div>
+</div>
+
+<div class="aside d-flex"></div>

@@ -7,6 +7,8 @@ import { SelectTimeSlotComponent } from './appointments/modals/select-time-slot/
 import { SelectDoctorComponent } from './appointments/modals/select-doctor/select-doctor.component'
 import { ConfirmationComponent } from './appointments/modals/confirmation/confirmation.component'
 import { AssignAppointmentToComponent } from './appointments/modals/assign-appointment-to/assign-appointment-to.component'
+import { ToolbarComponent } from '../shared/home/toolbar/toolbar.component'
+import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/appointments-toolbar.component'
 
 @NgModule({
 	declarations: [
@@ -17,7 +19,10 @@ import { AssignAppointmentToComponent } from './appointments/modals/assign-appoi
 		SelectDoctorComponent,
 		ConfirmationComponent,
 		AssignAppointmentToComponent,
+		ToolbarComponent,
+		AppointmentsToolbarComponent,
 	],
 	imports: [CommonModule],
+	exports: [ToolbarComponent, AppointmentsToolbarComponent],
 })
 export class DashboardModule {}

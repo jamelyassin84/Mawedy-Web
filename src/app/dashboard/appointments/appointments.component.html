@@ -1,1 +1,11 @@
-<p>appointments works!</p>
+<ng-template #component>
+	<toolbar-appointments></toolbar-appointments>
+</ng-template>
+
+<home-toolbar [component]="component"></home-toolbar>
+
+<div class="page">
+	<div class="page-content">
+		<p>appointments works!</p>
+	</div>
+</div>

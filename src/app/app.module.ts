@@ -11,9 +11,7 @@ import { HomeComponent } from './pages/home/home.component'
 import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
-import { ToolbarComponent } from './shared/home/toolbar/toolbar.component'
 import { DashboardToolbarComponent } from './toolbars/dashboard-toolbar/dashboard-toolbar.component'
-import { AppointmentsToolbarComponent } from './toolbars/appointments-toolbar/appointments-toolbar.component'
 import { DoctorsProfileComponent } from './toolbars/doctors-profile/doctors-profile.component'
 import { PatientsComponent } from './toolbars/patients/patients.component'
 import { ClinciProfileToolbarComponent } from './toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
@@ -40,9 +38,7 @@ import { RightBlurBackgroundModalComponent } from './modals/right-blurr-backgrou
 		LoginNavComponent,
 		NavbarComponent,
 		SidebarComponent,
-		ToolbarComponent,
 		DashboardToolbarComponent,
-		AppointmentsToolbarComponent,
 		DoctorsProfileComponent,
 		PatientsComponent,
 		ClinciProfileToolbarComponent,
@@ -69,5 +65,6 @@ import { RightBlurBackgroundModalComponent } from './modals/right-blurr-backgrou
 	],
 	providers: [],
 	bootstrap: [AppComponent],
+	exports: [],
 })
 export class AppModule {}
