@@ -1,0 +1,28 @@
+.login-nav {
+	height: 96px;
+	display: flex;
+	align-items: center;
+}
+.logo {
+	height: 96px;
+	object-fit: contain;
+	padding: 18px 10vw;
+	cursor: pointer;
+}
+.aside {
+	display: flex;
+	margin-left: auto;
+	margin-right: 10vw;
+	align-items: center;
+	ul {
+		display: flex;
+		align-items: center;
+		li {
+			margin-left: 56px;
+			list-style: none;
+			color: #00b074;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	}
+}
