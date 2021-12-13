@@ -3,9 +3,10 @@
 		(click)="setActiveTab(tab)"
 		*ngFor="let tab of tabs"
 		class="tab mr-4"
-		[class.active]="activeTab === tab"
+		[class.active]="activeTab === tab.name"
+		[routerLink]="tab.route"
 	>
-		<span class="tab-text mr-2">Appointments</span>
+		<span class="tab-text mr-2">{{ tab.name }}</span>
 		<span class="badge">20</span>
 		<div class="border-div"></div>
 	</div>

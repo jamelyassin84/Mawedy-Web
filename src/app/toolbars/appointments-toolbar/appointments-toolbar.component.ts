@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { AppointmentTabs } from './AppointmentsTabs'
+import { AppointmentTabs, AppointmentTabType } from './AppointmentsTabs'
 
 @Component({
 	selector: 'toolbar-appointments',
@@ -7,17 +7,17 @@ import { AppointmentTabs } from './AppointmentsTabs'
 	styleUrls: ['./appointments-toolbar.component.scss'],
 })
 export class AppointmentsToolbarComponent implements OnInit {
-	tabs: string[] = AppointmentTabs
+	tabs: AppointmentTabType[] = AppointmentTabs
 
 	constructor() {}
 
 	activeTab!: string
 
 	ngOnInit(): void {
-		this.activeTab = this.tabs[0]
+		this.activeTab = this.tabs[0].name
 	}
 
-	setActiveTab(tab: string) {
-		this.activeTab = tab
+	setActiveTab(tab: AppointmentTabType) {
+		this.activeTab = tab.name
 	}
 }

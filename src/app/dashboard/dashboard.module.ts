@@ -9,6 +9,7 @@ import { ConfirmationComponent } from './appointments/modals/confirmation/confir
 import { AssignAppointmentToComponent } from './appointments/modals/assign-appointment-to/assign-appointment-to.component'
 import { ToolbarComponent } from '../shared/home/toolbar/toolbar.component'
 import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/appointments-toolbar.component'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,7 @@ import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/a
 		ToolbarComponent,
 		AppointmentsToolbarComponent,
 	],
-	imports: [CommonModule],
+	imports: [CommonModule, RouterModule],
 	exports: [ToolbarComponent, AppointmentsToolbarComponent],
 })
 export class DashboardModule {}
