@@ -1,2 +1,34 @@
 <login-nav></login-nav>
-<p>login works!</p>
+<div class="overlay"></div>
+<div class="row">
+	<div class="col-md-6">
+		<h1>Helping people for better health.</h1>
+	</div>
+	<div class="col-md-6 right">
+		<div class="login-container">
+			<img class="logo" src="../../../assets/app/logo.png" alt="" />
+			<div class="form-group">
+				<input
+					type="text"
+					placeholder="Username"
+					class="form-control login-input"
+				/>
+			</div>
+			<div class="form-group">
+				<input
+					type="password"
+					placeholder="Password"
+					class="form-control login-input"
+				/>
+			</div>
+			<a class="forgot-password">Forgot Password?</a>
+
+			<button
+				(click)="login()"
+				class="btn btn-lg btn-success btn-sign-in"
+			>
+				Sign in
+			</button>
+		</div>
+	</div>
+</div>
