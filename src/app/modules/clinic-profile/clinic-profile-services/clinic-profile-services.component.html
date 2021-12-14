@@ -7,4 +7,32 @@
 </div>
 
 <app-tabs [tabs]="tabs"></app-tabs>
-<div class="tab-container"></div>
+<div class="tab-container">
+	<div class="row">
+		<div
+			class="col-md-4"
+			*ngFor="
+				let item of [
+					'Dental Implant',
+					'Dental Bridge',
+					'Dental Veneers',
+					'Dentures',
+					'Root Canal'
+				]
+			"
+		>
+			<app-service-card
+				[title]="item"
+				description="Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam.."
+				image="../../../../assets/app/clinic-profile/veneers.png"
+			></app-service-card>
+		</div>
+	</div>
+
+	<div class="d-flex w-100 aic">
+		<button class="btn ml-auto aic d-flex add-service-button">
+			<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
+			<span>Add Services</span>
+		</button>
+	</div>
+</div>
