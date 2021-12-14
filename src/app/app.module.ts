@@ -25,7 +25,8 @@ import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm
 import { RightBlurBackgroundModalComponent } from './components/modals/right-blurr-background-modal/right-blurr-background-modal.component'
 import { RightLargeModalComponent } from './components/modals/right-large-modal/right-large-modal.component'
 import { CenterLargeModalComponent } from './components/modals/center-large-modal/center-large-modal.component'
-import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component'
+import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component';
+import { MainModalComponent } from './components/modals/main-modal/main-modal.component'
 
 @NgModule({
 	declarations: [
@@ -45,6 +46,7 @@ import { CenterMediumModalComponent } from './components/modals/center-medium-mo
 		FileUploadModalComponent,
 		LoaderModalComponent,
 		PatientProfileComponent,
+  MainModalComponent,
 	],
 	imports: [
 		BrowserModule,
