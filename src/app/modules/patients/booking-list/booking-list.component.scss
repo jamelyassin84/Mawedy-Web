@@ -1,0 +1,20 @@
+.booking-list-container {
+	margin-top: 43px;
+	.header {
+		margin-bottom: 34px;
+		span {
+			text-align: left;
+			letter-spacing: 0.05px;
+			color: #0a2440;
+			text-transform: capitalize;
+			font-size: 25px;
+		}
+	}
+}
+table {
+	border-top: 1px solid #f5f6fa;
+
+	* {
+		font-size: 16px !important;
+	}
+}

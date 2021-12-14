@@ -1,1 +1,28 @@
-<span>Booking List</span>
+<div class="booking-list-container">
+	<div class="header">
+		<span>Booking List</span>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Booking No.</th>
+				<th>Doctor</th>
+				<th>Department</th>
+				<th>Date</th>
+				<th>Upload Result</th>
+				<th>Follow Up Check Up</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of [1, 2, 3, 4, 5]">
+				<td>AAP954685432UI</td>
+				<td>Dr. Hanadi Yassin</td>
+				<td>Cardiologist</td>
+				<td>Sun, 19 Apr 2021 10:30 Am - 11:00 Am</td>
+				<td>Clarrise_Dermaresult.Pdf</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
