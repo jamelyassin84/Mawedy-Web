@@ -1,0 +1,10 @@
+<div class="tab-container d-flex aic">
+	<div
+		class="tabs"
+		*ngFor="let tab of tabs"
+		[class.active]="tab.active"
+		[class.bold]="tab.active"
+	>
+		{{ tab.title }}
+	</div>
+</div>

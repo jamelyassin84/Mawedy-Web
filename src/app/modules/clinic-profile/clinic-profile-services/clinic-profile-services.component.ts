@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
 
 @Component({
 	selector: 'clinic-profile-services',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core'
 })
 export class ClinicProfileServicesComponent implements OnInit {
 	constructor() {}
+
+	tabs: TabType[] = [
+		{ title: 'Dentistry', active: true },
+		{ title: 'Radiology', active: false },
+		{ title: 'Pediatric', active: false },
+		{ title: 'Physiotherapy', active: false },
+	]
 
 	ngOnInit(): void {}
 }

@@ -52,8 +52,8 @@ body {
 .page-content {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	border-radius: 16px;
+	min-height: 76vh;
 	padding: 20px 30px;
-	overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {

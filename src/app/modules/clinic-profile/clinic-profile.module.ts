@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router'
 import { ClinicProfileToolbarComponent } from 'src/app/components/toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { DashboardModule } from '../dashboard/dashboard.module'
+import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 
 @NgModule({
 	declarations: [
@@ -16,8 +17,9 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 		ClinicServiceCardComponent,
 		AddMedicalServicesComponent,
 		ClinicProfileToolbarComponent,
+		TabsComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
-	exports: [ClinicProfileToolbarComponent],
+	exports: [ClinicProfileToolbarComponent, TabsComponent],
 })
 export class ClinicProfileModule {}

@@ -1,0 +1,23 @@
+.tab-container {
+	.tabs {
+		padding: 14px 31px;
+		text-align: left;
+		letter-spacing: 0.04px;
+		color: #252525;
+		margin-bottom: -2px;
+		font-size: 20px;
+		cursor: pointer;
+		font: var(--unnamed-font-style-normal) normal
+			var(--unnamed-font-weight-medium) 20px /
+			var(--unnamed-line-spacing-24) var(--unnamed-font-family-avenir);
+	}
+
+	.active {
+		background: #ebf9f4 0% 0% no-repeat padding-box;
+		border-radius: 0;
+		font-family: bold;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+	}
+	margin-top: 23px;
+}
