@@ -11,6 +11,7 @@ import { PatientsComponent } from './patients/patients/patients.component'
 import { ClinicProfileComponent } from './clinic-profile/clinic-profile/clinic-profile.component'
 import { PromotionsComponent } from './promotions/promotions/promotions.component'
 import { DoctorsProfileComponent } from './doctors-profile/doctors-profile/doctors-profile.component'
+import { PatientInfoComponent } from './patients/patient-info/patient-info.component'
 
 const routes: Routes = [
 	{
@@ -65,7 +66,18 @@ const routes: Routes = [
 			},
 			{
 				path: 'patients',
-				component: PatientsComponent,
+				children: [
+					{
+						path: '',
+						pathMatch: 'full',
+						redirectTo: 'list',
+					},
+					{ path: 'list', component: PatientsComponent },
+					{
+						path: 'information/:id',
+						component: PatientInfoComponent,
+					},
+				],
 			},
 			{
 				path: 'clinic-profile',

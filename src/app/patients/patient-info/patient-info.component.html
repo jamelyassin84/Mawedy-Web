@@ -1,1 +1,8 @@
-<p>patient-info works!</p>
+<ng-template #component>
+	<toolbar-patients-info></toolbar-patients-info>
+</ng-template>
+
+<home-toolbar [component]="component"></home-toolbar>
+<div class="page">
+	<div class="page-content"></div>
+</div>

@@ -8,6 +8,7 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { PatientsToolbarComponent } from '../toolbars/patients/patients.component'
 import { AppRoutingModule } from '../app-routing.module'
 import { RouterModule } from '@angular/router'
+import { PatientsInfoToolbarComponent } from '../toolbars/patients-info-toolbar/patients-info-toolbar.component'
 
 @NgModule({
 	declarations: [
@@ -15,8 +16,9 @@ import { RouterModule } from '@angular/router'
 		BookingListComponent,
 		UploadModalComponent,
 		PatientsToolbarComponent,
+		PatientsInfoToolbarComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
-	exports: [PatientsToolbarComponent],
+	exports: [PatientsToolbarComponent, PatientsInfoToolbarComponent],
 })
 export class PatientsModule {}
