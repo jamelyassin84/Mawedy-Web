@@ -10,9 +10,9 @@ import { AssignAppointmentToComponent } from './appointments/modals/assign-appoi
 import { RouterModule } from '@angular/router'
 import { ToolbarComponent } from 'src/app/shared/home/toolbar/toolbar.component'
 import { AppointmentsToolbarComponent } from 'src/app/components/toolbars/appointments-toolbar/appointments-toolbar.component'
-import { StatusComponent } from 'src/app/components/status/status.component'
 import { DashboardToolbarComponent } from 'src/app/components/toolbars/dashboard-toolbar/dashboard-toolbar.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { StatusComponent } from 'src/app/components/utilities/status/status.component'
 
 @NgModule({
 	declarations: [

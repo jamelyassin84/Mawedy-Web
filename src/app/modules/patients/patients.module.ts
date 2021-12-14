@@ -9,6 +9,7 @@ import { PatientsToolbarComponent } from 'src/app/components/toolbars/patients/p
 import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patients-info-toolbar/patients-info-toolbar.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { CheckboxComponent } from 'src/app/components/utilities/checkbox/checkbox.component'
 
 @NgModule({
 	declarations: [
@@ -17,8 +18,13 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		UploadModalComponent,
 		PatientsToolbarComponent,
 		PatientsInfoToolbarComponent,
+		CheckboxComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
-	exports: [PatientsToolbarComponent, PatientsInfoToolbarComponent],
+	exports: [
+		PatientsToolbarComponent,
+		PatientsInfoToolbarComponent,
+		CheckboxComponent,
+	],
 })
 export class PatientsModule {}
