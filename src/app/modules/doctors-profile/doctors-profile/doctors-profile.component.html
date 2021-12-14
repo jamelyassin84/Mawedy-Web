@@ -4,5 +4,35 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content"></div>
+	<div class="page-content">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Department</th>
+					<th>Experience</th>
+					<th>Phone</th>
+					<th>Availability</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					*ngFor="
+						let item of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+						let i = index
+					"
+				>
+					<td>Dr. Hanadi Yassin</td>
+					<td>Cardiology</td>
+					<td>25 Years</td>
+					<td>+98-7862-43453</td>
+					<td class="underlined">View</td>
+					<td class="text-right">
+						<button class="btn btn-manage">Manage</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
