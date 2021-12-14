@@ -4,5 +4,93 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
+	<div class="page-content">
+		<div class="header d-flex aic">
+			<div class="clinic-promotion">Clinic Information</div>
+			<div role="button" class="view-statistic d-flex aic">
+				Upload Banner
+				<span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="#0472FF"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather feather-upload"
+					>
+						<path
+							d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+						></path>
+						<polyline points="17 8 12 3 7 8"></polyline>
+						<line x1="12" y1="3" x2="12" y2="15"></line>
+					</svg>
+				</span>
+			</div>
+		</div>
+		<img
+			class="clinic-image"
+			src="../../../../assets/app/clinic-profile/bg.png"
+			alt=""
+		/>
+
+		<div class="row mt-5">
+			<div class="col-md-6">
+				<div class="form-group col-md-12">
+					<label for="">Clinic Name</label>
+					<input type="text" class="form-control" />
+				</div>
+
+				<div class="form-group col-md-12">
+					<label for="">Clinic Description</label>
+					<input type="text" class="form-control" />
+				</div>
+
+				<div class="form-group col-md-12 row">
+					<div class="col-md-3">
+						<label for=""> <label for="">Timings</label> </label>
+						<div class="timings" *ngFor="let time of timings">
+							{{ time }}
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="open-close">Open - Close</div>
+					</div>
+					<div class="col-md-6">
+						<label for="">
+							<label for="">Contact No.</label>
+						</label>
+
+						<div class="contact-form d-flex aic">
+							<button class="btn">+971</button>
+							<input type="number" />
+						</div>
+						<div class="contact-form d-flex aic">
+							<button class="btn">+971</button>
+							<input type="number" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group col-md-12">
+					<label for="">Address</label>
+					<input type="text" class="form-control" />
+				</div>
+
+				<div class="form-group col-md-12">
+					<label for="">Pin Location</label>
+					<div class="map"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page">
 	<div class="page-content"></div>
 </div>

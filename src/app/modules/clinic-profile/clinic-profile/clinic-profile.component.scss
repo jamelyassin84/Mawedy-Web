@@ -1,0 +1,103 @@
+.header {
+	background: #ffffff 0% 0% no-repeat padding-box;
+	width: 100%;
+	.clinic-promotion {
+		letter-spacing: 0.05px;
+		color: #0a2440;
+		text-transform: capitalize;
+		opacity: 1;
+		font-size: 25px;
+	}
+	.view-statistic {
+		margin-left: auto;
+		text-align: left;
+		letter-spacing: 0.03px;
+		color: #0472ff;
+		text-transform: capitalize;
+		opacity: 1;
+		font-size: 16px;
+		span {
+			margin-left: 8px;
+		}
+	}
+}
+
+.clinic-image {
+	width: 1487px;
+	height: 602px;
+	object-fit: fill;
+	margin-top: 9;
+}
+
+label {
+	text-align: left;
+	letter-spacing: 0.04px;
+	color: #252525;
+	text-transform: capitalize;
+	font-size: 22px;
+	margin-top: 17px;
+	font-family: bold;
+}
+
+.form-control {
+	outline: none;
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border-radius: 5px;
+	height: 45px;
+	border: 0.5px solid rgba($color: #707070, $alpha: 0.4);
+}
+
+.timings {
+	letter-spacing: var(--unnamed-character-spacing-0-03);
+	text-align: left;
+	font: normal normal medium 16px/31px Avenir;
+	letter-spacing: 0.03px;
+	color: #0a2440;
+	font-size: 16px;
+}
+
+.open-close {
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: #0a2440;
+	font-size: 15px;
+	margin-top: 37px;
+	letter-spacing: 0.04px;
+}
+
+.map {
+	width: 100%;
+	height: 312px;
+	background: #f5f6fa;
+}
+
+.contact-form {
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border: 0.5px solid rgba($color: #707070, $alpha: 0.4);
+	border-radius: 5px;
+	height: 45px;
+	margin-bottom: 21px;
+	padding: 10px;
+	button {
+		padding: 5px !important;
+		&:focus {
+			outline: 0 !important;
+			border: none;
+			box-shadow: none;
+		}
+	}
+	input {
+		margin-left: 10px;
+		background: transparent;
+		width: 100%;
+		outline: 0 !important;
+		border: none;
+		box-shadow: none;
+		padding-left: 1rem;
+		border-left: 0.5px solid rgba($color: #707070, $alpha: 0.4);
+		&:focus {
+			outline: 0 !important;
+			box-shadow: none;
+		}
+	}
+}
