@@ -4,5 +4,92 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content"></div>
+	<div class="page-content">
+		<div class="header d-flex aic">
+			<img
+				role="button"
+				routerLink="/home/patients/"
+				src="../../../assets/app/toolbars/patients/back.png"
+				alt=""
+			/>
+			<span>Patient Information</span>
+		</div>
+
+		<div class="patients-info">
+			<div class="row">
+				<div class="col-md-8 info">
+					<div class="row section">
+						<div class="col-md-8">
+							<div class="label">Name</div>
+							<span class="description"
+								>Clarrise Ahmed Umair
+							</span>
+						</div>
+						<div class="col-md-3">
+							<div class="label">Type</div>
+							<span class="description">Patient</span>
+						</div>
+					</div>
+
+					<div class="row section">
+						<div class="col-md-3">
+							<div class="label">Birthday</div>
+							<span class="description"> 02/14/1993 </span>
+						</div>
+						<div class="col-md-5">
+							<div class="label">Address</div>
+							<span class="description">
+								Flat 1167 Majid Building Business Bay
+							</span>
+						</div>
+						<div class="col-md-2">
+							<div class="label">City</div>
+							<span class="description"> Dubai </span>
+						</div>
+						<div class="col-md-2">
+							<div class="label">Country</div>
+							<span class="description"> UAE </span>
+						</div>
+					</div>
+
+					<div class="row section">
+						<div class="col-md-3">
+							<div class="label">Age</div>
+							<span class="description"> 28 Yrs</span>
+						</div>
+						<div class="col-md-4">
+							<div class="label">Age</div>
+							<span class="description"> info@gmail.com </span>
+						</div>
+						<div class="col-md-5">
+							<div class="label">Age</div>
+							<span class="description"> +971 00 000 0000 </span>
+						</div>
+					</div>
+
+					<div class="row section">
+						<div class="col-md-3">
+							<div class="label">Gender</div>
+							<span class="description">Female</span>
+						</div>
+						<div class="col-md-4">
+							<div class="label">Religion</div>
+							<span class="description">Roman Catholic</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 upload-photo d-flex jcc aic">
+					<img
+						role="button"
+						src="../../../assets/app/patients/male.jpg"
+						alt=""
+					/>
+					<span role="button">Upload Photo</span>
+				</div>
+			</div>
+
+			<!-- <patients-booking-list></patients-booking-list> -->
+		</div>
+	</div>
 </div>
