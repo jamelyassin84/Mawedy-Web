@@ -12,6 +12,7 @@ import { AppointmentsToolbarComponent } from '../toolbars/appointments-toolbar/a
 import { RouterModule } from '@angular/router'
 import { StatusComponent } from '../components/status/status.component'
 import { DashboardToolbarComponent } from '../toolbars/dashboard-toolbar/dashboard-toolbar.component'
+import { AppRoutingModule } from '../app-routing.module'
 
 @NgModule({
 	declarations: [
@@ -27,7 +28,7 @@ import { DashboardToolbarComponent } from '../toolbars/dashboard-toolbar/dashboa
 		StatusComponent,
 		DashboardToolbarComponent,
 	],
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, AppRoutingModule, RouterModule],
 	exports: [
 		ToolbarComponent,
 		AppointmentsToolbarComponent,

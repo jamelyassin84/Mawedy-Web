@@ -4,6 +4,8 @@ import { AppointmentsMonthComponent } from './appointments-month/appointments-mo
 import { AppointmentsWeekComponent } from './appointments-week/appointments-week.component'
 import { AppointmentsDayComponent } from './appointments-day/appointments-day.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
+import { RouterModule } from '@angular/router'
+import { AppRoutingModule } from '../app-routing.module'
 
 @NgModule({
 	declarations: [
@@ -11,6 +13,6 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 		AppointmentsWeekComponent,
 		AppointmentsDayComponent,
 	],
-	imports: [CommonModule, DashboardModule],
+	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 })
 export class AppointmentsModule {}

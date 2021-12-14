@@ -1,9 +1,15 @@
-import { PatientsModule } from './patients/patients.module'
 import { AppointmentsModule } from './appointments/appointments.module'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
+
+import { ClinicProfileModule } from './clinic-profile/clinic-profile.module'
+import { DashboardModule } from './dashboard/dashboard.module'
+import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
+import { PromotionsModule } from './promotions/promotions.module'
+import { PatientsModule } from './patients/patients.module'
+
 import { AppComponent } from './app.component'
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
@@ -18,10 +24,6 @@ import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.comp
 import { FileUploadModalComponent } from './modals/file-upload-modal/file-upload-modal.component'
 import { LoaderModalComponent } from './modals/loader-modal/loader-modal.component'
 import { PatientProfileComponent } from './patients/modals/patient-profile/patient-profile.component'
-import { ClinicProfileModule } from './clinic-profile/clinic-profile.module'
-import { DashboardModule } from './dashboard/dashboard.module'
-import { DoctorsProfileModule } from './doctors-profile/doctors-profile.module'
-import { PromotionsModule } from './promotions/promotions.module'
 import { RightBlurBackgroundModalComponent } from './modals/right-blurr-background-modal/right-blurr-background-modal.component'
 import { PatientsComponent } from './patients/patients/patients.component'
 

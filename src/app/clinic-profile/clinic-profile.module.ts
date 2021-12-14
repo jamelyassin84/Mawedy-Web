@@ -6,7 +6,8 @@ import { ClinicServiceCardComponent } from './components/clinic-service-card/cli
 import { AddMedicalServicesComponent } from './modals/add-medical-services/add-medical-services.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { ClinicProfileToolbarComponent } from '../toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
-import { RouterTestingModule } from '@angular/router/testing'
+import { AppRoutingModule } from '../app-routing.module'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,7 @@ import { RouterTestingModule } from '@angular/router/testing'
 		AddMedicalServicesComponent,
 		ClinicProfileToolbarComponent,
 	],
-	imports: [CommonModule, DashboardModule, RouterTestingModule],
+	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [ClinicProfileToolbarComponent],
 })
 export class ClinicProfileModule {}

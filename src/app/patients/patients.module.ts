@@ -6,6 +6,8 @@ import { BookingListComponent } from './booking-list/booking-list.component'
 import { UploadModalComponent } from './modals/upload-modal/upload-modal.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { PatientsToolbarComponent } from '../toolbars/patients/patients.component'
+import { AppRoutingModule } from '../app-routing.module'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
 	declarations: [
@@ -14,7 +16,7 @@ import { PatientsToolbarComponent } from '../toolbars/patients/patients.componen
 		UploadModalComponent,
 		PatientsToolbarComponent,
 	],
-	imports: [CommonModule, DashboardModule],
+	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [PatientsToolbarComponent],
 })
 export class PatientsModule {}

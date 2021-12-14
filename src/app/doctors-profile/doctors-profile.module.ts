@@ -5,6 +5,8 @@ import { AvailabilityComponent } from './modals/availability/availability.compon
 import { DoctorProfileModalComponent } from './modals/doctor-profile-modal/doctor-profile-modal.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { DoctorsProfileToolbarComponent } from '../toolbars/doctors-profile/doctors-profile.component'
+import { AppRoutingModule } from '../app-routing.module'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
 	declarations: [
@@ -14,7 +16,7 @@ import { DoctorsProfileToolbarComponent } from '../toolbars/doctors-profile/doct
 		DoctorsProfileComponent,
 		DoctorsProfileToolbarComponent,
 	],
-	imports: [CommonModule, DashboardModule],
+	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [DoctorsProfileToolbarComponent],
 })
 export class DoctorsProfileModule {}
