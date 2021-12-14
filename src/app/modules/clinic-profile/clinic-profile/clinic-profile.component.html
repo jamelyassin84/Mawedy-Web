@@ -56,8 +56,25 @@
 							{{ time }}
 						</div>
 					</div>
+
 					<div class="col-md-3">
 						<div class="open-close">Open - Close</div>
+						<div
+							class="timings d-flex aic"
+							*ngFor="let time of timings; let i = index"
+						>
+							<input
+								*ngIf="i !== 7"
+								value="12AM - 12PM"
+								class="timings-input"
+								type="text"
+								[class.disabled]="i < 4"
+							/>
+							<app-checkbox
+								[alt]="true"
+								*ngIf="i === 7"
+							></app-checkbox>
+						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="">

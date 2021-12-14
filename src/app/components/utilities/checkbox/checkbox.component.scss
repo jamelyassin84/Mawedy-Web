@@ -8,4 +8,15 @@
 	span svg {
 		width: 15px;
 	}
+	transition: 0.2s ease-out;
+}
+
+.alt {
+	border: 1px solid #00b074;
+	height: 25px;
+	width: 25px;
+	margin-top: -20px;
+}
+.checked {
+	background: #00b074 0% 0% no-repeat padding-box;
 }

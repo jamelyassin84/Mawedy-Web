@@ -1,3 +1,4 @@
+import { PatientsModule } from './../patients/patients.module'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ClinicProfileComponent } from './clinic-profile/clinic-profile.component'
@@ -19,7 +20,13 @@ import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 		TabsComponent,
 		ClinicServiceCardComponent,
 	],
-	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
+	imports: [
+		CommonModule,
+		DashboardModule,
+		PatientsModule,
+		AppRoutingModule,
+		RouterModule,
+	],
 	exports: [
 		ClinicProfileToolbarComponent,
 		TabsComponent,
