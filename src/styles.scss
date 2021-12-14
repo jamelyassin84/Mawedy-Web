@@ -53,7 +53,6 @@ body {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	border-radius: 16px;
 	padding: 20px 30px;
-	min-height: 75vh;
 	overflow-y: scroll;
 }
 
@@ -66,7 +65,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
 	background: #bfc8d5;
-	border-radius: 10px;
+	border-radius: 30px;
 }
 
 .aic {

@@ -8,7 +8,8 @@ nav {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	position: relative;
+	position: sticky;
+	top: 0;
 	z-index: 9;
 	.logo-div {
 		width: 280px;
