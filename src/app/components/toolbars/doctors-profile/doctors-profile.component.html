@@ -18,10 +18,25 @@
 		/>
 	</div>
 
-	<button class="add-doctor d-flex aic jcc btn">
+	<button
+		(click)="showModal(header, body, footer)"
+		class="add-doctor d-flex aic jcc btn"
+	>
 		<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
 		<span>Add Doctor</span>
 	</button>
 
 	<button class="export d-flex aic jcc btn"><span>Export List</span></button>
 </div>
+
+<ng-template #header>
+	<div class="doctors-profile">Doctors Profile</div>
+</ng-template>
+
+<ng-template #body>
+	<app-doctors-profile-body></app-doctors-profile-body>
+</ng-template>
+
+<ng-template #footer>
+	<app-doctors-profile-footer></app-doctors-profile-footer>
+</ng-template>

@@ -1,3 +1,5 @@
+import { DoctorsProfileBodyComponent } from './../../components/modal-components/doctors-profile/doctors-profile-body/doctors-profile-body.component'
+import { DoctorsProfileFooterComponent } from './../../components/modal-components/doctors-profile/doctors-profile-footer/doctors-profile-footer.component'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { DoctorsProfileComponent } from './doctors-profile/doctors-profile.component'
@@ -15,8 +17,14 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		DoctorProfileModalComponent,
 		DoctorsProfileComponent,
 		DoctorsProfileToolbarComponent,
+		DoctorsProfileBodyComponent,
+		DoctorsProfileFooterComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
-	exports: [DoctorsProfileToolbarComponent],
+	exports: [
+		DoctorsProfileToolbarComponent,
+		DoctorsProfileBodyComponent,
+		DoctorsProfileFooterComponent,
+	],
 })
 export class DoctorsProfileModule {}
