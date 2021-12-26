@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { openFromRight } from 'src/app/animations/FromRight'
 import { ModalService } from 'src/app/services/modal.service'
 
 @Component({
 	selector: 'app-main-modal',
 	templateUrl: './main-modal.component.html',
 	styleUrls: ['./main-modal.component.scss'],
+	animations: openFromRight(),
 })
 export class MainModalComponent implements OnInit {
 	constructor(private modalService: ModalService) {}

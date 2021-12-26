@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { ClinicProfileModule } from './modules/clinic-profile/clinic-profile.module'
 import { DoctorsProfileModule } from './modules/doctors-profile/doctors-profile.module'
@@ -65,6 +66,7 @@ import { NewAppointmentModalHeaderComponent } from './components/modal-component
 		DoctorsProfileModule,
 		PatientsModule,
 		PromotionsModule,
+		BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
