@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
 	selector: 'right-large-modal',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core'
 })
 export class RightLargeModalComponent implements OnInit {
 	constructor() {}
+
+	@Input() header: any
+	@Input() body: any
+	@Input() footer: any
 
 	ngOnInit(): void {}
 }
