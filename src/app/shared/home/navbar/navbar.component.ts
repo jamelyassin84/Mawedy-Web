@@ -11,12 +11,12 @@ export class NavbarComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	showModal() {
+	showModal(header: any, body: any, footer: any) {
 		this.modalService.showModal({
 			value: true,
-			header: 'footer',
-			body: 'footer',
-			footer: 'footer',
+			header: header,
+			body: body,
+			footer: footer,
 			type: 'Right',
 		})
 	}

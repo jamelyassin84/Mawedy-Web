@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { ModalService } from 'src/app/services/modal.service'
 
 @Component({
@@ -11,7 +11,11 @@ export class MainModalComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	hide() {
+	@Input() header: any
+	@Input() body: any
+	@Input() footer: any
+
+	hide(): void {
 		this.modalService.showModal({
 			value: false,
 			header: '',

@@ -15,7 +15,11 @@
 	</div>
 
 	<div class="aside">
-		<div role="button" (click)="showModal()" class="button mr-5">
+		<div
+			role="button"
+			(click)="showModal(header, body, footer)"
+			class="button mr-5"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -138,3 +142,15 @@
 		</div>
 	</div>
 </nav>
+
+<ng-template #header>
+	<app-new-appointment-modal-header></app-new-appointment-modal-header>
+</ng-template>
+
+<ng-template #body>
+	<app-new-appointment-modal-body></app-new-appointment-modal-body>
+</ng-template>
+
+<ng-template #footer>
+	<app-new-appointment-modal-footer></app-new-appointment-modal-footer>
+</ng-template>

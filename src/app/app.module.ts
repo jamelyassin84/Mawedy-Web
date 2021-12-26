@@ -28,6 +28,10 @@ import { CenterLargeModalComponent } from './components/modals/center-large-moda
 import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component'
 import { MainModalComponent } from './components/modals/main-modal/main-modal.component'
 
+import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
+import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
+import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -47,6 +51,9 @@ import { MainModalComponent } from './components/modals/main-modal/main-modal.co
 		LoaderModalComponent,
 		PatientProfileComponent,
 		MainModalComponent,
+		NewAppointmentModalBodyComponent,
+		NewAppointmentModalFooterComponent,
+		NewAppointmentModalHeaderComponent,
 	],
 	imports: [
 		BrowserModule,
