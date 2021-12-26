@@ -107,3 +107,19 @@ tbody {
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+label {
+	margin: 9px 0;
+	color: #0a2440;
+	font-family: bold;
+	letter-spacing: 0.03px;
+	font-size: 16px;
+}
+
+.form-control {
+	margin-bottom: 20px;
+	color: #0a2440;
+	font-size: 16px;
+	padding: 14px;
+	height: auto !important;
+}

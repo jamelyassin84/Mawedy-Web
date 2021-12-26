@@ -19,5 +19,7 @@ export class NavbarComponent implements OnInit {
 			footer: footer,
 			type: 'Right',
 		})
+
+		localStorage.setItem('type', 'Right')
 	}
 }

@@ -14,6 +14,7 @@ export class MainModalComponent implements OnInit {
 	@Input() header: any
 	@Input() body: any
 	@Input() footer: any
+	type: any = localStorage.getItem('type')
 
 	hide(): void {
 		this.modalService.showModal({
