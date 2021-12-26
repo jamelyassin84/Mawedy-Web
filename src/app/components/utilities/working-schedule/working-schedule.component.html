@@ -1,0 +1,10 @@
+<div class="working-schedule d-flex">
+	<div
+		class="container d-flex aic jcc"
+		*ngFor="let schedule of workingSchedules"
+	>
+		<span class="day">{{ schedule.day | uppercase }}</span>
+		<div *ngIf="schedule.value" class="active"></div>
+		<div *ngIf="!schedule.value" class="circle"></div>
+	</div>
+</div>

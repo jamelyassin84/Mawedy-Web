@@ -1,3 +1,4 @@
+import { WorkingScheduleComponent } from './../../components/utilities/working-schedule/working-schedule.component'
 import { DoctorsProfileBodyComponent } from './../../components/modal-components/doctors-profile/doctors-profile-body/doctors-profile-body.component'
 import { DoctorsProfileFooterComponent } from './../../components/modal-components/doctors-profile/doctors-profile-footer/doctors-profile-footer.component'
 import { NgModule } from '@angular/core'
@@ -19,12 +20,14 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		DoctorsProfileToolbarComponent,
 		DoctorsProfileBodyComponent,
 		DoctorsProfileFooterComponent,
+		WorkingScheduleComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [
 		DoctorsProfileToolbarComponent,
 		DoctorsProfileBodyComponent,
 		DoctorsProfileFooterComponent,
+		WorkingScheduleComponent,
 	],
 })
 export class DoctorsProfileModule {}

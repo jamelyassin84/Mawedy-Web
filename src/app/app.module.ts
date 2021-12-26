@@ -8,6 +8,7 @@ import { ClinicProfileModule } from './modules/clinic-profile/clinic-profile.mod
 import { DoctorsProfileModule } from './modules/doctors-profile/doctors-profile.module'
 import { PatientsModule } from './modules/patients/patients.module'
 import { PromotionsModule } from './modules/promotions/promotions.module'
+import { DashboardModule } from './modules/dashboard/dashboard.module'
 import { AppointmentsModule } from './modules/appointments/appointments.module'
 
 import { AppComponent } from './app.component'
@@ -17,7 +18,6 @@ import { HomeComponent } from './pages/home/home.component'
 import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
-import { DashboardModule } from './modules/dashboard/dashboard.module'
 import { PatientsComponent } from './modules/patients/patients/patients.component'
 import { PatientProfileComponent } from './modules/patients/modals/patient-profile/patient-profile.component'
 import { LoaderModalComponent } from './components/modals/loader-modal/loader-modal.component'
@@ -32,8 +32,6 @@ import { MainModalComponent } from './components/modals/main-modal/main-modal.co
 import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
 import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
-import { DoctorsProfileBodyComponent } from './components/modal-components/doctors-profile/doctors-profile-body/doctors-profile-body.component'
-import { DoctorsProfileFooterComponent } from './components/modal-components/doctors-profile/doctors-profile-footer/doctors-profile-footer.component'
 
 @NgModule({
 	declarations: [
