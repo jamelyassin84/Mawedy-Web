@@ -2,8 +2,8 @@
 	<div class="modal-header d-flex">
 		<span class="ml-auto aic jcc">
 			<div [ngTemplateOutlet]="header"></div>
-			<span class="close-btn">Close </span>
-			<span class="close-button">
+			<span (click)="hide()" class="close-btn">Close </span>
+			<span (click)="hide()" class="close-button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="40"
@@ -55,3 +55,4 @@
 		<div [ngTemplateOutlet]="footer"></div>
 	</div>
 </div>
+(click)="hide()"

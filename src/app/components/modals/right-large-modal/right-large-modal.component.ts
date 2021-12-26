@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { ModalService } from 'src/app/services/modal.service'
 
 @Component({
 	selector: 'right-large-modal',
@@ -6,11 +7,21 @@ import { Component, Input, OnInit } from '@angular/core'
 	styleUrls: ['./right-large-modal.component.scss'],
 })
 export class RightLargeModalComponent implements OnInit {
-	constructor() {}
+	constructor(private modalService: ModalService) {}
+
+	ngOnInit(): void {}
 
 	@Input() header: any
 	@Input() body: any
 	@Input() footer: any
 
-	ngOnInit(): void {}
+	hide() {
+		this.modalService.showModal({
+			value: false,
+			header: '',
+			body: '',
+			footer: '',
+			type: 'Right',
+		})
+	}
 }
