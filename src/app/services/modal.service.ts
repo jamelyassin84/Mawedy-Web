@@ -9,6 +9,7 @@ export class ModalService {
 	constructor() {}
 
 	private modal = new Subject<Modal | undefined>()
+	private confirmModal = new Subject<boolean>()
 
 	showModal(modalData: Modal | undefined): void {
 		this.modal.next(modalData)
@@ -16,5 +17,13 @@ export class ModalService {
 
 	getModalValue() {
 		return this.modal.asObservable()
+	}
+
+	showConfirm(value: boolean) {
+		this.confirmModal.next(value)
+	}
+
+	getConfirmModalValue() {
+		return this.confirmModal.asObservable()
 	}
 }

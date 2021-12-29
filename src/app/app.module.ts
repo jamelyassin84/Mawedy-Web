@@ -20,22 +20,17 @@ import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
 import { PatientsComponent } from './modules/patients/patients/patients.component'
 import { PatientProfileComponent } from './modules/patients/modals/patient-profile/patient-profile.component'
+
 import { LoaderModalComponent } from './components/modals/loader-modal/loader-modal.component'
 import { FileUploadModalComponent } from './components/modals/file-upload-modal/file-upload-modal.component'
 import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm-modal.component'
-import { RightBlurBackgroundModalComponent } from './components/modals/right-blurr-background-modal/right-blurr-background-modal.component'
 import { RightLargeModalComponent } from './components/modals/right-large-modal/right-large-modal.component'
 import { CenterLargeModalComponent } from './components/modals/center-large-modal/center-large-modal.component'
 import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component'
 import { MainModalComponent } from './components/modals/main-modal/main-modal.component'
-
 import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
 import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
-import { PatientsProfileModalBodyComponent } from './components/modal-components/patients-profile/patients-profile-modal-body/patients-profile-modal-body.component'
-import { ViewDoctorBodyComponent } from './components/modal-components/view-doctor/view-doctor-body/view-doctor-body.component'
-import { ViewDoctorFooterComponent } from './components/modal-components/view-doctor/view-doctor-footer/view-doctor-footer.component'
-import { PassiveWorkingScheduleComponent } from './components/utilities/passive-working-schedule/passive-working-schedule.component'
 
 @NgModule({
 	declarations: [
@@ -50,7 +45,6 @@ import { PassiveWorkingScheduleComponent } from './components/utilities/passive-
 		CenterMediumModalComponent,
 		CenterLargeModalComponent,
 		RightLargeModalComponent,
-		RightBlurBackgroundModalComponent,
 		ConfirmModalComponent,
 		FileUploadModalComponent,
 		LoaderModalComponent,

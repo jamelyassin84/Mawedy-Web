@@ -61,7 +61,7 @@
 		</svg>
 	</span>
 
-	<span class="delete">
+	<span (click)="deleteDoctor()" class="delete">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="116"
@@ -108,3 +108,7 @@
 		</svg>
 	</span>
 </div>
+
+<right-blur-background-modal
+	*ngIf="wantsToDelete"
+></right-blur-background-modal>

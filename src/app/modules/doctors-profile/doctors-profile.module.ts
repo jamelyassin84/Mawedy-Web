@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router'
 import { DoctorsProfileToolbarComponent } from 'src/app/components/toolbars/doctors-profile/doctors-profile.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/right-blurr-background-modal/right-blur-background-modal.component'
 
 @NgModule({
 	declarations: [
@@ -27,6 +28,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		ViewDoctorBodyComponent,
 		ViewDoctorFooterComponent,
 		PassiveWorkingScheduleComponent,
+		RightBlurBackgroundModalComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -37,6 +39,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		ViewDoctorBodyComponent,
 		ViewDoctorFooterComponent,
 		PassiveWorkingScheduleComponent,
+		RightBlurBackgroundModalComponent,
 	],
 })
 export class DoctorsProfileModule {}
