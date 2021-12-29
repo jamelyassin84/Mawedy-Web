@@ -1,3 +1,4 @@
+import { PassiveWorkingScheduleComponent } from './../../components/utilities/passive-working-schedule/passive-working-schedule.component'
 import { ViewDoctorFooterComponent } from './../../components/modal-components/view-doctor/view-doctor-footer/view-doctor-footer.component'
 import { ViewDoctorBodyComponent } from './../../components/modal-components/view-doctor/view-doctor-body/view-doctor-body.component'
 import { WorkingScheduleComponent } from './../../components/utilities/working-schedule/working-schedule.component'
@@ -25,6 +26,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		WorkingScheduleComponent,
 		ViewDoctorBodyComponent,
 		ViewDoctorFooterComponent,
+		PassiveWorkingScheduleComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -34,6 +36,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		WorkingScheduleComponent,
 		ViewDoctorBodyComponent,
 		ViewDoctorFooterComponent,
+		PassiveWorkingScheduleComponent,
 	],
 })
 export class DoctorsProfileModule {}

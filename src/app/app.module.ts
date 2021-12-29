@@ -35,6 +35,7 @@ import { NewAppointmentModalHeaderComponent } from './components/modal-component
 import { PatientsProfileModalBodyComponent } from './components/modal-components/patients-profile/patients-profile-modal-body/patients-profile-modal-body.component'
 import { ViewDoctorBodyComponent } from './components/modal-components/view-doctor/view-doctor-body/view-doctor-body.component'
 import { ViewDoctorFooterComponent } from './components/modal-components/view-doctor/view-doctor-footer/view-doctor-footer.component'
+import { PassiveWorkingScheduleComponent } from './components/utilities/passive-working-schedule/passive-working-schedule.component'
 
 @NgModule({
 	declarations: [

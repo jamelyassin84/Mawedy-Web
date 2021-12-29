@@ -33,5 +33,26 @@
 		</div>
 
 		<div class="label working-schedule">Working Schedule</div>
+		<passive-working-schedule
+			[Mon]="false"
+			[Tue]="true"
+			[Wed]="false"
+			[Thu]="true"
+			[Fri]="false"
+			[Sat]="true"
+			[Sun]="true"
+		></passive-working-schedule>
+
+		<div class="d-flex aic mt-4 mb-5">
+			<span>
+				<span class="circle active"></span>
+				<span class="text-available mr-2">Available</span>
+			</span>
+
+			<span>
+				<span class="circle"></span>
+				<span class="text-available">Not Available</span>
+			</span>
+		</div>
 	</div>
 </div>

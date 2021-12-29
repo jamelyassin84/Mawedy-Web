@@ -1,5 +1,5 @@
 .body {
-	padding: 40px 70px;
+	padding: 40px;
 	.doctor-container {
 		display: flex;
 		flex-direction: column;
@@ -62,8 +62,38 @@
 	text-align: left;
 	letter-spacing: 0.19px;
 	color: #0a2440;
+	font-family: bold;
 }
 
 .working-schedule {
 	margin-top: 57px;
+}
+
+.text-available {
+	font-size: 0.8rem;
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: #6f7d8f;
+	text-transform: capitalize;
+	opacity: 1;
+	margin-top: 18px;
+}
+
+.active {
+	width: 10px !important;
+	height: 10px !important;
+	background: #00b074 0% 0% no-repeat padding-box !important;
+	border-radius: 50% !important;
+	cursor: pointer !important;
+	margin-right: 6px !important;
+}
+
+.circle {
+	width: 10px;
+	height: 10px;
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border: 1px solid #707070;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 6px;
 }
