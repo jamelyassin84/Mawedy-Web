@@ -14,6 +14,7 @@ import { DoctorsProfileToolbarComponent } from 'src/app/components/toolbars/doct
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/right-blurr-background-modal/right-blur-background-modal.component'
+import { DoctorAvailabilityModalBodyComponent } from 'src/app/components/modal-components/doctor-avaiability/doctor-availability-modal-body/doctor-availability-modal-body.component'
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/rig
 		ViewDoctorBodyComponent,
 		ViewDoctorFooterComponent,
 		PassiveWorkingScheduleComponent,
+		DoctorAvailabilityModalBodyComponent,
 		RightBlurBackgroundModalComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
@@ -40,6 +42,7 @@ import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/rig
 		ViewDoctorFooterComponent,
 		PassiveWorkingScheduleComponent,
 		RightBlurBackgroundModalComponent,
+		DoctorAvailabilityModalBodyComponent,
 	],
 })
 export class DoctorsProfileModule {}
