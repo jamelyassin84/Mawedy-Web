@@ -1,0 +1,57 @@
+.upload-photo {
+	flex-direction: column;
+	img {
+		width: 206px;
+		height: 206px;
+		border-radius: 50%;
+		border: 1px solid #f5f6fa;
+	}
+	span {
+		text-align: center;
+		letter-spacing: 0.03px;
+		color: #6f7d8f;
+		opacity: 1;
+		font-size: 16px;
+		margin-top: 10px;
+	}
+	.upload-photo-btn {
+		word-break: keep-all;
+		text-align: center;
+		letter-spacing: 0.03px;
+		color: #6f7d8f;
+	}
+}
+
+.patients-container {
+	padding: 20px 70px;
+}
+
+.btn-active {
+	width: 50px;
+	height: 40px;
+	background: #00b074 0% 0% no-repeat padding-box;
+	border-radius: 5px;
+	text-align: center;
+	color: white;
+	font-family: heavy;
+	border-radius: 5px;
+}
+
+.btn-ghost {
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	letter-spacing: 0.19px;
+	color: #6f7d8f;
+	text-transform: capitalize;
+	font-family: bold;
+	border: 0.5px solid #707070;
+	border-radius: 5px;
+	margin-left: 15px;
+	cursor: pointer;
+}
+label {
+	color: #6f7d8f;
+	font-size: 14px;
+	font-family: normal;
+}
