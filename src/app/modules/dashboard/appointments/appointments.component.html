@@ -40,9 +40,23 @@
 						Cancelled
 					</td>
 					<td>AA586468870</td>
-					<td><span class="underlined">Details</span></td>
+					<td>
+						<span
+							(click)="showModal(header, body, footer)"
+							class="underlined"
+							>Details</span
+						>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
+
+<ng-template #header>
+	<div class="doctors-profile">Appointment Details</div>
+</ng-template>
+
+<ng-template #body> </ng-template>
+
+<ng-template #footer> </ng-template>
