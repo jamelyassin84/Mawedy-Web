@@ -1,3 +1,4 @@
+import { AddMedicalServicesModalBodyComponent } from './../../components/modal-components/add-medical-services/add-medical-services-modal-body/add-medical-services-modal-body.component'
 import { PatientsModule } from './../patients/patients.module'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
@@ -19,6 +20,7 @@ import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 		ClinicProfileToolbarComponent,
 		TabsComponent,
 		ClinicServiceCardComponent,
+		AddMedicalServicesModalBodyComponent,
 	],
 	imports: [
 		CommonModule,
@@ -31,6 +33,7 @@ import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 		ClinicProfileToolbarComponent,
 		TabsComponent,
 		ClinicServiceCardComponent,
+		AddMedicalServicesModalBodyComponent,
 	],
 })
 export class ClinicProfileModule {}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="45" viewBox="0 0 114 45">
+  <g id="button" transform="translate(0.067 -0.03)">
+    <rect id="Rectangle_2714" data-name="Rectangle 2714" width="114" height="45" rx="12" transform="translate(-0.067 0.03)" fill="#dbf4eb"/>
+    <g id="Group_73719" data-name="Group 73719" transform="translate(32.436 10.812)">
+      <text id="Delete" transform="translate(24.498 16.218)" fill="#00b074" font-size="15" font-family="Avenir-Heavy, Avenir" font-weight="800" letter-spacing="0.002em"><tspan x="-23" y="0">Delete</tspan></text>
+    </g>
+  </g>
+</svg>

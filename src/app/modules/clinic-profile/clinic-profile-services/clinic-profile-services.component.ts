@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
+import { ModalService } from 'src/app/services/modal.service'
 
 @Component({
 	selector: 'clinic-profile-services',
@@ -7,8 +8,6 @@ import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
 	styleUrls: ['./clinic-profile-services.component.scss'],
 })
 export class ClinicProfileServicesComponent implements OnInit {
-	constructor() {}
-
 	tabs: TabType[] = [
 		{ title: 'Dentistry', active: true },
 		{ title: 'Radiology', active: false },
@@ -16,5 +15,19 @@ export class ClinicProfileServicesComponent implements OnInit {
 		{ title: 'Physiotherapy', active: false },
 	]
 
+	constructor(private modalService: ModalService) {}
+
 	ngOnInit(): void {}
+
+	showModal(header: any, body: any, footer: any) {
+		this.modalService.showModal({
+			value: true,
+			header: header,
+			body: body,
+			footer: footer,
+			type: 'Center Large',
+		})
+
+		localStorage.setItem('type', 'Center Large')
+	}
 }
