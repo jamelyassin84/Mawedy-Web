@@ -33,7 +33,10 @@
 	</div>
 
 	<div class="d-flex w-100 aic">
-		<button class="btn ml-auto aic d-flex add-service-button">
+		<button
+			(click)="showModal(header, body, footer)"
+			class="btn ml-auto aic d-flex add-service-button"
+		>
 			<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
 			<span>Add Services</span>
 		</button>

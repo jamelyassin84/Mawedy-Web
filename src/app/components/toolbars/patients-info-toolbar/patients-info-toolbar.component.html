@@ -17,8 +17,81 @@
 		/>
 	</div>
 
-	<button class="add-patient d-flex aic jcc btn">
+	<button
+		(click)="showModal(header, body, footer)"
+		class="add-patient d-flex aic jcc btn"
+	>
 		<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
 		<span>Add Patient</span>
 	</button>
 </div>
+
+<ng-template #header>
+	<div class="patients-profile">Patient Profile</div>
+</ng-template>
+
+<ng-template #body>
+	<patients-profile-modal-body></patients-profile-modal-body>
+</ng-template>
+
+<ng-template #footer>
+	<span class="add-btn">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width="164"
+			height="94"
+			viewBox="0 0 164 94"
+		>
+			<defs>
+				<filter
+					id="Rectangle_2714"
+					x="0"
+					y="0"
+					width="164"
+					height="94"
+					filterUnits="userSpaceOnUse"
+				>
+					<feOffset dy="3" input="SourceAlpha" />
+					<feGaussianBlur stdDeviation="8" result="blur" />
+					<feFlood flood-color="#00b074" flood-opacity="0.251" />
+					<feComposite operator="in" in2="blur" />
+					<feComposite in="SourceGraphic" />
+				</filter>
+			</defs>
+			<g id="button" transform="translate(24.13 21)">
+				<g
+					transform="matrix(1, 0, 0, 1, -24.13, -21)"
+					filter="url(#Rectangle_2714)"
+				>
+					<rect
+						id="Rectangle_2714-2"
+						data-name="Rectangle 2714"
+						width="116"
+						height="46"
+						rx="12"
+						transform="translate(24 21)"
+						fill="#00b074"
+					/>
+				</g>
+				<g
+					id="Group_73719"
+					data-name="Group 73719"
+					transform="translate(43 11)"
+				>
+					<text
+						id="Add"
+						transform="translate(14.87 17)"
+						fill="#fff"
+						font-size="16"
+						font-family="Avenir-Heavy, Avenir"
+						font-weight="800"
+						letter-spacing="0.002em"
+					>
+						<tspan x="-15" y="0">Add</tspan>
+					</text>
+				</g>
+			</g>
+		</svg>
+	</span>
+</ng-template>
