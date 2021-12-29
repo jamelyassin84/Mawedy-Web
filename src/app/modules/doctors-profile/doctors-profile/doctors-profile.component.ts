@@ -22,4 +22,16 @@ export class DoctorsProfileComponent implements OnInit {
 
 		localStorage.setItem('type', 'Right')
 	}
+
+	viewAvailability(header: any, body: any, footer: any) {
+		this.modalService.showModal({
+			value: true,
+			header: header,
+			body: body,
+			footer: footer,
+			type: 'Center Medium',
+		})
+
+		localStorage.setItem('type', 'Center Medium')
+	}
 }

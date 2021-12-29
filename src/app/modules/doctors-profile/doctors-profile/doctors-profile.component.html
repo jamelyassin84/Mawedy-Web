@@ -27,7 +27,18 @@
 					<td>Cardiology</td>
 					<td>25 Years</td>
 					<td>+98-7862-43453</td>
-					<td class="underlined">View</td>
+					<td
+						class="underlined"
+						(click)="
+							viewAvailability(
+								availabilityHeader,
+								availabilityBody,
+								availabilityFooter
+							)
+						"
+					>
+						View
+					</td>
 					<td class="text-right">
 						<button
 							(click)="showModal(header, body, footer)"
@@ -41,6 +52,14 @@
 		</table>
 	</div>
 </div>
+
+<ng-template #availabilityHeader>
+	<div>Availability</div>
+</ng-template>
+
+<ng-template #availabilityBody></ng-template>
+
+<ng-template #availabilityFooter></ng-template>
 
 <ng-template #header>
 	<div class="doctors-profile">Dr. Hanadi Yassin</div>
