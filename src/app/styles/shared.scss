@@ -1,0 +1,100 @@
+* {
+	font-family: 'normal';
+}
+html,
+body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.page {
+	background: #f5f6fa;
+	padding: 30px;
+}
+
+.page-content {
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border-radius: 16px;
+	min-height: 76vh;
+	padding: 20px 30px;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px white;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #bfc8d5;
+	border-radius: 30px;
+}
+
+.aic {
+	align-items: center;
+}
+
+.jcc {
+	justify-content: center;
+}
+
+.bold {
+	font-family: bold;
+}
+
+thead tr:first-child th {
+	position: sticky;
+	top: -20px;
+	background: white;
+	transition: 0.5s ease-in;
+}
+table thead th {
+	border: none !important;
+	border-bottom: 1px solid #f7f8fa !important;
+	font-family: bold !important;
+	font-size: 1rem !important;
+	color: #6f7d8f !important;
+}
+
+tbody {
+	color: #0a2440;
+	font-size: 14px;
+	tr:nth-child(2n) {
+		background-color: #f7f8fa !important;
+	}
+}
+
+.underlined {
+	color: #0a2440;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+label {
+	margin: 9px 0;
+	color: #0a2440;
+	font-family: bold;
+	letter-spacing: 0.03px;
+	font-size: 16px;
+}
+
+.form-control {
+	margin-bottom: 20px;
+	color: #0a2440;
+	padding-left: 12px;
+	height: 40px !important;
+}
+
+.separator {
+	width: 100%;
+	height: 1px;
+	border: 1px solid #e3ebf5;
+	margin: 29px 0;
+}
+
+.touchable {
+	&:hover {
+		box-shadow: 0px 0px 5px var(--accent);
+	}
+}

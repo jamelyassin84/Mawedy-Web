@@ -1,0 +1,20 @@
+.login-container {
+	background: rgba($color: var(--bg2), $alpha: 0.4) !important;
+	position: relative;
+	z-index: 88;
+}
+
+.login-nav {
+	background: var(--bg1);
+}
+
+.login-input {
+	background: var(--bg1) !important;
+	color: var(--color1) !important;
+	position: relative;
+	z-index: 100;
+}
+
+.forgot-password {
+	color: var(--color1) !important;
+}
