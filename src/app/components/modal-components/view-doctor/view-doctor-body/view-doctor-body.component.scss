@@ -1,0 +1,69 @@
+.body {
+	padding: 40px 70px;
+	.doctor-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		img {
+			height: 100px;
+			width: 100px;
+			object-fit: contain;
+			border-radius: 50%;
+			margin: auto;
+			margin-bottom: 24px;
+		}
+	}
+
+	.doctor-name {
+		letter-spacing: 0.04px;
+		color: #0a2440;
+		text-transform: capitalize;
+		font-size: 18px;
+		font-family: bold;
+	}
+	.doctor-title {
+		font-size: 14px;
+		letter-spacing: 0.03px;
+		color: #6f7d8f;
+		text-transform: capitalize;
+	}
+	.years-of-experience,
+	.position {
+		font-size: 18px;
+		text-align: center;
+		letter-spacing: 0.03px;
+		color: #0a2440;
+		margin-top: 5px;
+	}
+	.position {
+		margin-top: 14px;
+	}
+}
+
+.label {
+	font-size: 14px;
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: #6f7d8f;
+	margin-bottom: 15px;
+}
+
+.about {
+	font-size: 14px;
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: #0a2440;
+	margin-bottom: 47px;
+}
+
+.description {
+	font-size: 14px;
+	text-align: left;
+	letter-spacing: 0.19px;
+	color: #0a2440;
+}
+
+.working-schedule {
+	margin-top: 57px;
+}
