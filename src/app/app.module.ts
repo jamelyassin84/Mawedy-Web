@@ -31,6 +31,7 @@ import { MainModalComponent } from './components/modals/main-modal/main-modal.co
 import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
 import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
+import { AppointmentDetailsBodyComponent } from './components/modal-components/appointment-details/appointment-details-body/appointment-details-body.component'
 
 @NgModule({
 	declarations: [

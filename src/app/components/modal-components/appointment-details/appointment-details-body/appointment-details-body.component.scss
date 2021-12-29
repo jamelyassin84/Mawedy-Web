@@ -1,0 +1,32 @@
+.row {
+	padding: 30px 40px;
+}
+
+.label {
+	letter-spacing: 0.03px;
+	color: #6f7d8f;
+}
+
+.description {
+	letter-spacing: 0.19px;
+	color: #0a2440;
+	margin-bottom: 47px;
+	font-family: bold;
+}
+
+.shape-wrapper {
+	position: relative;
+	margin-bottom: 49px;
+	.shape-container {
+		position: absolute;
+	}
+}
+
+.sms {
+	margin-right: 20px;
+}
+
+.sms,
+.email {
+	cursor: pointer;
+}
