@@ -1,5 +1,3 @@
-// @import url('./app/styles/dark/dark.scss');
-
 @import url('./assets/tiny-dash-light/css/apexcharts.css');
 @import url('./assets/tiny-dash-light/css/app-light.css');
 @import url('./assets/tiny-dash-light/css/app-rtl.css');
@@ -46,22 +44,26 @@ html {
 html[theme='dark'] {
 	--bg1: #171717;
 	--bg2: #212121;
-	--bg3: #000000;
-	--loginNav: #212121;
+	--bg3: #171717;
+	--loginNav: #ac8585;
 	--loginNavColor: #00b074;
-
 	--searchInput: #3a3b3c;
-
 	--color1: white;
 	--color2: lightgray;
 	--color3: gray;
-
 	--border1: #282828;
-
+	--border2: #282828;
 	--shadow1: #02110929;
 	--shadow2: #06b98363;
-
 	--sidebarActiveBG: #282828;
+	--page: #1e1e1e;
+	--toolbar: #242526;
+	--toolbarShadow: 0px 0px 315px var(--accent);
+	--pageContent: #171717;
+	--table: transparent;
+	--thColor: white;
+	--trColor: #878787;
+	--trBg2: #1e1e1ea2;
 }
 
 html[theme='light'] {
@@ -70,17 +72,21 @@ html[theme='light'] {
 	--bg3: white;
 	--loginNav: white;
 	--loginNavColor: #00b074;
-
 	--searchInput: #f4f6f8;
-
 	--color1: #0a2440;
 	--color2: lightgray;
 	--color3: gray;
-
 	--border1: #e3ebf5b3;
-
+	--border2: #f7f8fa;
 	--shadow1: #00000029;
 	--shadow2: #00000063;
-
 	--sidebarActiveBG: #ebf9f4;
+	--page: #f5f6fa;
+	--toolbar: white;
+	--toolbarShadow: none;
+	--pageContent: white;
+	--table: white;
+	--thColor: #6f7d8f;
+	--trColor: #0a2440;
+	--trBg2: #f7f8fa;
 }

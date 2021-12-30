@@ -8,14 +8,14 @@ body {
 }
 
 .page {
-	background: #f5f6fa;
+	background: var(--page);
 	padding: 30px;
 }
 
 .page-content {
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--pageContent) 0% 0% no-repeat padding-box;
 	border-radius: 16px;
-	min-height: 76vh;
+	min-height: 76.4vh;
 	padding: 20px 30px;
 }
 
@@ -46,27 +46,28 @@ body {
 thead tr:first-child th {
 	position: sticky;
 	top: -20px;
-	background: white;
+	background: var(--table);
 	transition: 0.5s ease-in;
 }
 table thead th {
 	border: none !important;
-	border-bottom: 1px solid #f7f8fa !important;
+	border-bottom: 1px solid var(--border2) !important;
 	font-family: bold !important;
 	font-size: 1rem !important;
-	color: #6f7d8f !important;
+	color: var(--thColor) !important;
 }
 
 tbody {
-	color: #0a2440;
+	color: var(--trColor);
 	font-size: 14px;
-	tr:nth-child(2n) {
-		background-color: #f7f8fa !important;
-	}
+}
+
+.table td {
+	border-top: 0px transparent !important;
 }
 
 .underlined {
-	color: #0a2440;
+	color: var(--color1);
 	text-decoration: underline;
 	cursor: pointer;
 }

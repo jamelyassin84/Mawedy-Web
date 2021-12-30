@@ -8,3 +8,9 @@ button {
 	letter-spacing: 0.03px;
 	color: #ffffff;
 }
+tr:nth-child(even) {
+	background-color: var(--trBg2) !important;
+}
+tr:nth-child(odd) {
+	background-color: var(--table) !important;
+}

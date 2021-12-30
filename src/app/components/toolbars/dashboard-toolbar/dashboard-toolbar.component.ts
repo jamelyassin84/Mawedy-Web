@@ -16,14 +16,12 @@ export class DashboardToolbarComponent implements OnInit {
 
 	today = Date.now()
 
-	activeTab!: string
+	activeTab: number = 1
 
-	ngOnInit(): void {
-		this.activeTab = this.tabs[0].name
-	}
+	ngOnInit(): void {}
 
 	setActiveTab(tab: AppointmentTabType) {
+		this.activeTab = tab.id
 		this.router.navigate([tab.route])
-		this.activeTab = tab.name
 	}
 }

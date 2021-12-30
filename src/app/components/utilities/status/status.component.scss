@@ -1,7 +1,7 @@
 .outer {
 	width: 22px;
 	height: 22px;
-	background: #fdf0ef 0% 0% no-repeat padding-box;
+	background: rgba($color: #fe4b39, $alpha: 0.1) 0% 0% no-repeat padding-box;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -17,7 +17,7 @@
 .active {
 	width: 22px;
 	height: 22px;
-	background: #ddf5e7 0% 0% no-repeat padding-box;
+	background: rgba($color: #0db354, $alpha: 0.1) 0% 0% no-repeat padding-box;
 	opacity: 1;
 	align-items: center;
 	justify-content: center;

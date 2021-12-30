@@ -13,7 +13,7 @@
 		justify-content: center;
 		padding: 5px 9px;
 		color: #6d7c8d;
-		background: #f4f6f8 0% 0% no-repeat padding-box;
+		background: var(--bg1) 0% 0% no-repeat padding-box;
 	}
 	.border-div {
 		height: 5px;
@@ -34,7 +34,7 @@
 	font-family: bold;
 
 	.badge {
-		color: #ffffff;
+		color: white;
 		background: #00b074 0% 0% no-repeat padding-box;
 	}
 
@@ -55,16 +55,16 @@
 	}
 
 	.input-container {
+		background: var(--searchInput) 0% 0% no-repeat padding-box;
+		border: 2px solid var(--border1);
 		margin-left: 68px;
 		height: 40px;
-		background: #ffffff 0% 0% no-repeat padding-box;
-		box-shadow: 0px 1px 2px #eff2f2;
+		box-shadow: 0px 1px 2px var(--border1);
 		width: 219px;
 		display: flex;
 		margin-top: -10px;
 		align-items: center;
 		border-radius: 4px;
-		border: 2px solid #e3ebf5;
 		input {
 			border: none;
 			outline: none;
@@ -86,7 +86,8 @@
 		letter-spacing: 0.03px;
 		color: #6f7d8f;
 		border-radius: 4px;
-		border: 2px solid #e3ebf5;
+		background: var(--searchInput) 0% 0% no-repeat padding-box;
+		border: 2px solid var(--border1);
 		margin-top: -10px;
 		display: flex;
 		align-items: center;

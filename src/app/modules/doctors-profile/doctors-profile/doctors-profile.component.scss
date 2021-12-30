@@ -13,3 +13,9 @@
 		color: #00b074;
 	}
 }
+tr:nth-child(even) {
+	background-color: var(--trBg2) !important;
+}
+tr:nth-child(odd) {
+	background-color: var(--table) !important;
+}
