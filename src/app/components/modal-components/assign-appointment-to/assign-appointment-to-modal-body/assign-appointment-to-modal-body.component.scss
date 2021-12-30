@@ -1,8 +1,11 @@
 .body {
 	padding: 30px;
 }
-tr:nth-child(2n) {
-	background-color: #f7f8fa !important;
+tr:nth-child(even) {
+	background-color: var(--trBg2) !important;
+}
+tr:nth-child(odd) {
+	background-color: var(--table) !important;
 }
 
 .appointment-details-container {

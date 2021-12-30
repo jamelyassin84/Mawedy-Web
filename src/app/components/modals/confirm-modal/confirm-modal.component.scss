@@ -12,9 +12,9 @@
 }
 
 .confirm-container {
-	background: #ffffff 0% 0% no-repeat padding-box;
-	box-shadow: 0px 2px 8px #6f7d8f2e;
-	border: 1px solid #fafafa;
+	background: var(--bg1) 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 8px var(--shadow1);
+	border: 1px solid var(--border1);
 	border-radius: 16px;
 	opacity: 1;
 	width: 100%;
@@ -25,7 +25,7 @@
 .are-you-sure {
 	text-align: left;
 	letter-spacing: 0.05px;
-	color: #0a2440;
+	color: var(--color1);
 	font-size: 22px;
 	font-family: bold;
 }

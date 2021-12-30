@@ -85,11 +85,16 @@ label {
 	padding-left: 12px;
 	font-family: bold;
 	height: 40px !important;
-	background: var(--searchInput) !important;
+	background-color: var(--searchInput) !important;
 	border: 1px solid var(--inputBorder) !important;
 }
 
 ::placeholder {
+	color: var(--color2);
+	font-family: normal !important;
+}
+
+option[value=''][disabled] {
 	color: var(--color2);
 	font-family: normal !important;
 }
@@ -101,6 +106,21 @@ input[type='search']::-webkit-search-cancel-button {
 	background: url('../../assets/app/x-circle.svg') no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
+}
+
+SELECT {
+	background: url('../../assets/app/dropdown-icon.svg') no-repeat !important;
+	background-position: calc(100% - 0.75rem) center !important;
+	-moz-appearance: none !important;
+	-webkit-appearance: none !important;
+	appearance: none !important;
+	padding-right: 2rem !important;
+}
+
+::-webkit-calendar-picker-indicator {
+	background-image: url('../../assets/app/calendar-icon.svg');
+	cursor: pointer;
+	margin-left: 0.5rem;
 }
 
 .form-control:focus {

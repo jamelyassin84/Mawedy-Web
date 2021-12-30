@@ -1,6 +1,6 @@
 .modal-container {
 	width: 550px;
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--bg3) 0% 0% no-repeat padding-box;
 	z-index: 11;
 	margin: auto;
 	margin-top: 150px;
@@ -14,7 +14,7 @@
 	left: 1340px;
 	width: 100%;
 	height: 70px;
-	background: #f7f8fa 0% 0% no-repeat padding-box;
+	background: var(--modalHeader) 0% 0% no-repeat padding-box;
 	padding: 21px 20px;
 	padding-left: 50px;
 	z-index: 100;
@@ -34,8 +34,8 @@
 }
 
 .modal-footer {
-	background: #ffffff 0% 0% no-repeat padding-box;
-	border-top: 1px solid #e3ebf5;
+	border-top: 1px solid var(--bg3);
+	backdrop-filter: blur(15px);
 	width: 100%;
 	height: 90px;
 	display: flex;
