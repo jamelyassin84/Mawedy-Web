@@ -1,6 +1,7 @@
 .login-nav {
 	display: flex;
 	align-items: center;
+	background-color: var(--loginNav);
 }
 .logo {
 	height: 76px;
@@ -18,11 +19,16 @@
 		align-items: center;
 		margin-top: 20px;
 		li {
-			margin-left: 56px;
 			list-style: none;
-			color: #00b074;
+			color: var(--loginNavColor);
 			font-size: 16px;
+			padding: 5px 20px;
+			margin-right: 6px;
 			cursor: pointer;
+			&:hover {
+				background: var(--loginNavColor);
+				color: white;
+			}
 		}
 	}
 }

@@ -42,3 +42,33 @@
 html {
 	--accent: #00b074;
 }
+
+html[theme='dark'] {
+	--bg1: #171717;
+	--bg2: #212121;
+	--bg3: #000000;
+	--loginNav: #212121;
+	--loginNavColor: #00b074;
+
+	--color1: white;
+	--color2: lightgray;
+	--color3: gray;
+
+	--shadow1: #02110929;
+	--shadow2: #06b98363;
+}
+
+html[theme='light'] {
+	--bg1: #1e1e1e;
+	--bg2: #f4f6f8;
+	--bg3: white;
+	--loginNav: white;
+	--loginNavColor: #00b074;
+
+	--color1: #0a2440;
+	--color2: lightgray;
+	--color3: gray;
+
+	--shadow1: 00000029;
+	--shadow2: 00000063;
+}
