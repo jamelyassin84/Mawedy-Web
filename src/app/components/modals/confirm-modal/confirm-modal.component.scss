@@ -1,0 +1,47 @@
+.blur-modal {
+	width: 580px;
+	position: fixed;
+	height: 100%;
+	right: 0;
+	top: 0;
+	z-index: 11;
+	backdrop-filter: blur(25px);
+	padding: 70px;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.confirm-container {
+	background: #ffffff 0% 0% no-repeat padding-box;
+	box-shadow: 0px 2px 8px #6f7d8f2e;
+	border: 1px solid #fafafa;
+	border-radius: 16px;
+	opacity: 1;
+	width: 100%;
+	min-height: 230px;
+	padding: 20px 30px;
+}
+
+.are-you-sure {
+	text-align: left;
+	letter-spacing: 0.05px;
+	color: #0a2440;
+	font-size: 22px;
+	font-family: bold;
+}
+
+.button-container {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 53px;
+	align-items: center;
+}
+
+.no {
+	margin-top: -7px;
+}
+
+.no,
+.yes {
+	cursor: pointer;
+}

@@ -7,17 +7,18 @@ import { ModalService } from 'src/app/services/modal.service'
 	styleUrls: ['./view-doctor-footer.component.scss'],
 })
 export class ViewDoctorFooterComponent implements OnInit {
-	constructor(private modalService: ModalService) {
-		this.modalService
-			.getConfirmModalValue()
-			.subscribe((value: boolean) => (this.wantsToDelete = value))
-	}
+	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
 
-	wantsToDelete: boolean = false as boolean
-
 	deleteDoctor() {
-		this.wantsToDelete = true
+		this.modalService.showConfirm({
+			firstLine: 'Are you sure you want to delete',
+			secondLine: 'Dr. Jamel Yassin?',
+			onCLose: () => {},
+			onSubmit: () => {},
+			value: true,
+		})
+		localStorage.setItem('type', 'Confirm')
 	}
 }

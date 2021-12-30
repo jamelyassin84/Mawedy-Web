@@ -18,6 +18,11 @@ export class MainModalComponent implements OnInit {
 	@Input() footer: any
 	type: any = localStorage.getItem('type')
 
+	@Input() firstLine: string | undefined
+	@Input() secondLine: string | undefined
+	@Input() onCLose: Function | undefined
+	@Input() onSubmit: Function | undefined
+
 	hide(): void {
 		this.modalService.showModal({
 			value: false,

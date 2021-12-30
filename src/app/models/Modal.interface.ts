@@ -12,3 +12,11 @@ export interface Modal {
 	footer: any
 	value: boolean
 }
+
+export interface ConfirmModal {
+	firstLine: string
+	secondLine: string
+	onCLose: Function
+	onSubmit: Function
+	value: boolean
+}

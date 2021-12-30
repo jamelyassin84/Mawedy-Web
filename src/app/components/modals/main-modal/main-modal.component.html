@@ -19,4 +19,12 @@
 		[body]="body"
 		[footer]="footer"
 	></center-medium-modal>
+
+	<confirm-modal
+		*ngIf="type === 'Confirm'"
+		[firstLine]="firstLine"
+		[secondLine]="secondLine"
+		[onCLose]="onCLose"
+		[onSubmit]="onSubmit"
+	></confirm-modal>
 </div>

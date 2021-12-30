@@ -12,6 +12,6 @@ export class RightBlurBackgroundModalComponent implements OnInit {
 	ngOnInit(): void {}
 
 	close() {
-		this.service.showConfirm(false)
+		// this.service.showConfirm(false)
 	}
 }

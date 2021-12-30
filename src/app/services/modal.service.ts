@@ -1,4 +1,4 @@
-import { Modal } from './../models/Modal.interface'
+import { ConfirmModal, Modal } from './../models/Modal.interface'
 import { Injectable } from '@angular/core'
 import { Subject } from 'rxjs'
 
@@ -9,7 +9,7 @@ export class ModalService {
 	constructor() {}
 
 	private modal = new Subject<Modal | undefined>()
-	private confirmModal = new Subject<boolean>()
+	private confirmModal = new Subject<ConfirmModal>()
 
 	showModal(modalData: Modal | undefined): void {
 		this.modal.next(modalData)
@@ -19,8 +19,8 @@ export class ModalService {
 		return this.modal.asObservable()
 	}
 
-	showConfirm(value: boolean) {
-		this.confirmModal.next(value)
+	showConfirm(confirmData: ConfirmModal) {
+		this.confirmModal.next(confirmData)
 	}
 
 	getConfirmModalValue() {
