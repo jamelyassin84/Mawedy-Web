@@ -50,25 +50,37 @@ html[theme='dark'] {
 	--loginNav: #212121;
 	--loginNavColor: #00b074;
 
+	--searchInput: #3a3b3c;
+
 	--color1: white;
 	--color2: lightgray;
 	--color3: gray;
 
+	--border1: #282828;
+
 	--shadow1: #02110929;
 	--shadow2: #06b98363;
+
+	--sidebarActiveBG: #282828;
 }
 
 html[theme='light'] {
-	--bg1: #1e1e1e;
+	--bg1: white;
 	--bg2: #f4f6f8;
 	--bg3: white;
 	--loginNav: white;
 	--loginNavColor: #00b074;
 
+	--searchInput: #f4f6f8;
+
 	--color1: #0a2440;
 	--color2: lightgray;
 	--color3: gray;
 
-	--shadow1: 00000029;
-	--shadow2: 00000063;
+	--border1: #e3ebf5b3;
+
+	--shadow1: #00000029;
+	--shadow2: #00000063;
+
+	--sidebarActiveBG: #ebf9f4;
 }

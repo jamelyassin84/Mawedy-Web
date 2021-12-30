@@ -1,6 +1,6 @@
 .sidebar {
-	background: #ffffff;
-	box-shadow: 1px 1px 0px #e3ebf5;
+	background: var(--bg3);
+	box-shadow: 1px 1px 0px var(--border1);
 	opacity: 1;
 	width: 280px;
 	height: 100%;
@@ -40,7 +40,7 @@
 		text-transform: capitalize;
 		font-family: 'bold';
 	}
-	background: #ebf9f4 0% 0% no-repeat padding-box;
+	background: var(--sidebarActiveBG) 0% 0% no-repeat padding-box;
 	border-radius: 6px;
 }
 

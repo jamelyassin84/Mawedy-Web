@@ -1,8 +1,8 @@
 nav {
 	height: 90px;
 	width: 100vw;
-	border-bottom: 1px solid #e3ebf5b3;
-	background: #ffffff 0% 0% no-repeat padding-box;
+	border-bottom: 1px solid var(--border1);
+	background: var(--bg3) 0% 0% no-repeat padding-box;
 	padding: 23px 0;
 	padding-right: 30px;
 	display: flex;
@@ -23,19 +23,20 @@ nav {
 	.search-input {
 		width: 370px;
 		height: 46px;
-		background: #f4f6f8 0% 0% no-repeat padding-box;
+		background: var(--searchInput) 0% 0% no-repeat padding-box;
 		border-radius: 100px;
 		display: flex;
 		flex-direction: row;
 		padding-left: 18px;
+		paint-order: 58px;
+		align-items: center;
 		.search {
-			width: 20px;
 			height: 20px;
 			margin-right: 18px;
 		}
-
 		input {
 			width: calc(100% - 28px);
+			height: 100%;
 			border: none !important;
 			background: transparent;
 			color: #6d7c8d;

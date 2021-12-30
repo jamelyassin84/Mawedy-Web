@@ -5,43 +5,6 @@
 		<title>Mawedy</title>
 		<base href="/" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- <script src="./assets/tiny-dash-light/js/jquery.mask.min.js"></script> -->
-		<script src="./assets/tiny-dash-light/js/jquery.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.sparkline.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.steps.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.stickOnScroll.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.timepicker.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.validate.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/jquery.dataTables.min.js"></script>
-
-		<!-- <script src="./assets/tiny-dash-light/js/datamaps.all.min.js"></script> -->
-
-		<script src="./assets/tiny-dash-light/js/d3.min.js"></script>
-
-		<!-- <script src="./assets/tiny-dash-light/js/apexcharts.custom.js"></script> -->
-		<script src="./assets/tiny-dash-light/js/moment.min.js"></script>
-		<!-- <script src="./assets/tiny-dash-light/js/apps.js"></script> -->
-		<script src="./assets/tiny-dash-light/js/bootstrap-datepicker.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/bootstrap.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/Chart.min.js"></script>
-		<!-- <script src="./assets/tiny-dash-light/js/config.js"></script> -->
-		<!-- <script src="./assets/tiny-dash-light/js/datamaps-zoomto.js"></script> -->
-		<script src="./assets/tiny-dash-light/js/datamaps.custom.js"></script>
-		<script src="./assets/tiny-dash-light/js/dataTables.bootstrap4.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/daterangepicker.js"></script>
-		<script src="./assets/tiny-dash-light/js/dropzone.min.js"></script>
-		<!-- <script src="./assets/tiny-dash-light/js/fullcalendar.custom.js"></script> -->
-		<script src="./assets/tiny-dash-light/js/gauge.min.js"></script>
-
-		<script src="./assets/tiny-dash-light/js/moment.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/perfect-scrollbar.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/popper.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/quill.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/select2.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/simplebar.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/tinycolor-min.js"></script>
-		<script src="./assets/tiny-dash-light/js/topojson.min.js"></script>
-		<script src="./assets/tiny-dash-light/js/uppy.min.js"></script>
 		<link rel="icon" type="image/png" href="/assets/app/logo.png" />
 	</head>
 	<body>
@@ -56,15 +19,6 @@
 						.getElementById('html')
 						.setAttribute('theme', 'dark')
 					return
-				}
-				if (localStorage.getItem('theme') === undefined) {
-					document
-						.getElementById('html')
-						.setAttribute('theme', 'light')
-				} else {
-					document
-						.getElementById('html')
-						.setAttribute('theme', localStorage.getItem('theme'))
 				}
 			}
 			setInterval(() => {
