@@ -1,0 +1,56 @@
+.body {
+	padding: 30px;
+}
+tr:nth-child(2n) {
+	background-color: #f7f8fa !important;
+}
+
+.appointment-details-container {
+	background: #f7f8fa;
+	display: flex;
+	padding: 27px 30px;
+	border-radius: 5px;
+	border: 1px solid rgba($color: #6f7d8f, $alpha: 0.2);
+	margin-bottom: 30px;
+	.appointment-details {
+		font-family: bold;
+		text-align: left;
+		letter-spacing: 0.03px;
+		color: #0a2440;
+	}
+
+	.date-time {
+		color: #6f7d8f;
+		text-align: left;
+		letter-spacing: 0.03px;
+	}
+
+	.actual-date {
+		font-family: bold;
+		text-align: left;
+		letter-spacing: 0.03px;
+		color: #0a2440;
+	}
+}
+
+.available-patients {
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: #0a2440;
+	font-family: 14px;
+}
+
+.btn-custom {
+	width: 81px;
+	height: 36px;
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border: 1px solid #cfdae8;
+	border-radius: 12px;
+	letter-spacing: 0.19px;
+	color: #6f7d8f;
+	text-align: center;
+	&:hover {
+		color: #00b074;
+		background: #00b0741a 0% 0% no-repeat padding-box;
+	}
+}

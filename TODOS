@@ -38,10 +38,15 @@ https://xd.adobe.com/view/dda8d375-f334-4be6-bd57-a8666c1a92a4-88fb/
 Deadline: January 30
 
 Touchable
-modal propagination
+modal propagation
 escape key
 polish fonts
 shared css
 break down css
-Fix Allignment
+Fix Alignment
 Responsive on Multiple devices
+polish design
+dark mode
+directive
+pipe
+interceptors

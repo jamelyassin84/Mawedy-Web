@@ -33,6 +33,8 @@ import { NewAppointmentModalFooterComponent } from './components/modal-component
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
 import { AppointmentCancellationBodyComponent } from './components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
+import { AssignAppointmentToModalBodyComponent } from './components/modal-components/assign-appointment-to/assign-appointment-to-modal-body/assign-appointment-to-modal-body.component'
+import { AssignAppointmentToModalFooterComponent } from './components/modal-components/assign-appointment-to/assign-appointment-to-modal-footer/assign-appointment-to-modal-footer.component'
 @NgModule({
 	declarations: [
 		AppComponent,

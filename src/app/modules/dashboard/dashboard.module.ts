@@ -15,6 +15,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 import { StatusComponent } from 'src/app/components/utilities/status/status.component'
 import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-components/appointment-details/appointment-details-body/appointment-details-body.component'
 import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
+import { AssignAppointmentToModalBodyComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-body/assign-appointment-to-modal-body.component'
+import { AssignAppointmentToModalFooterComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-footer/assign-appointment-to-modal-footer.component'
 
 @NgModule({
 	declarations: [
@@ -31,6 +33,8 @@ import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-c
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
+		AssignAppointmentToModalBodyComponent,
+		AssignAppointmentToModalFooterComponent,
 	],
 	imports: [CommonModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -40,6 +44,8 @@ import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-c
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
+		AssignAppointmentToModalBodyComponent,
+		AssignAppointmentToModalFooterComponent,
 	],
 })
 export class DashboardModule {}
