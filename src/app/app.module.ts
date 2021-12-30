@@ -31,11 +31,8 @@ import { MainModalComponent } from './components/modals/main-modal/main-modal.co
 import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
 import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
-import { AppointmentDetailsBodyComponent } from './components/modal-components/appointment-details/appointment-details-body/appointment-details-body.component'
-import { AddMedicalServicesModalBodyComponent } from './components/modal-components/add-medical-services/add-medical-services-modal-body/add-medical-services-modal-body.component'
-import { DoctorAvailabilityModalBodyComponent } from './components/modal-components/doctor-avaiability/doctor-availability-modal-body/doctor-availability-modal-body.component';
+import { AppointmentCancellationBodyComponent } from './components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
-
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -57,7 +54,7 @@ import { CenterSmallModalComponent } from './components/modals/center-small-moda
 		NewAppointmentModalBodyComponent,
 		NewAppointmentModalFooterComponent,
 		NewAppointmentModalHeaderComponent,
-  CenterSmallModalComponent,
+		CenterSmallModalComponent,
 	],
 	imports: [
 		BrowserModule,

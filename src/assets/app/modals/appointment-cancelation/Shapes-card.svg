@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="440" height="130" viewBox="0 0 440 130">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="popup-bg" width="438" height="128" rx="8" transform="translate(1411 431)" fill="#f7f8fa" stroke="#fafafa" stroke-width="1"/>
+    </clipPath>
+    <filter id="Ellipse_280" x="-120" y="63" width="230" height="230" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#e3ebf5" flood-opacity="0.702"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_281" x="371" y="-162" width="230" height="230" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#e3ebf5" flood-opacity="0.702"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Shapes-card" transform="translate(-1410 -430)">
+    <g id="popup-bg-2" data-name="popup-bg" transform="translate(1410 430)" fill="#f7f8fa" stroke="#cfdae8" stroke-width="1">
+      <rect width="440" height="130" rx="8" stroke="none"/>
+      <rect x="0.5" y="0.5" width="439" height="129" rx="7.5" fill="none"/>
+    </g>
+    <g id="Mask_Group_9" data-name="Mask Group 9" clip-path="url(#clip-path)">
+      <g transform="matrix(1, 0, 0, 1, 1410, 430)" filter="url(#Ellipse_280)">
+        <circle id="Ellipse_280-2" data-name="Ellipse 280" cx="106" cy="106" r="106" transform="translate(-111 70)" fill="#fff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 1410, 430)" filter="url(#Ellipse_281)">
+        <circle id="Ellipse_281-2" data-name="Ellipse 281" cx="106" cy="106" r="106" transform="translate(380 -155)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+.text {
+	text-align: left;
+	color: #0a2440;
+	font-family: bold;
+	font-size: 24px;
+	margin-left: 30px;
+}
+
+.shape-container {
+	position: relative;
+	margin-top: 49px;
+	display: flex;
+	flex-direction: row-reverse;
+	.shape {
+		position: absolute;
+		z-index: 9;
+		left: -15px;
+	}
+	.button {
+		position: relative;
+		z-index: 10;
+		cursor: pointer;
+	}
+}
+
+.button-container {
+	margin-top: 15px;
+	.button-text {
+		text-align: left;
+		letter-spacing: 0.04px;
+		color: #0a2440;
+		font-family: bold;
+		font-size: 16px;
+		position: relative;
+		z-index: 10;
+		padding: 20px;
+	}
+}
+
+.modal-container {
+	padding: 0 30px;
+}

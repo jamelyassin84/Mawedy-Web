@@ -14,6 +14,7 @@ import { DashboardToolbarComponent } from 'src/app/components/toolbars/dashboard
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { StatusComponent } from 'src/app/components/utilities/status/status.component'
 import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-components/appointment-details/appointment-details-body/appointment-details-body.component'
+import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-compon
 		StatusComponent,
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
+		AppointmentCancellationBodyComponent,
 	],
 	imports: [CommonModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -37,6 +39,7 @@ import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-compon
 		StatusComponent,
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
+		AppointmentCancellationBodyComponent,
 	],
 })
 export class DashboardModule {}
