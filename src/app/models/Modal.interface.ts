@@ -7,6 +7,7 @@ export interface Modal {
 		| 'Loader'
 		| 'Right Blur'
 		| 'Right'
+		| 'none'
 	header: any
 	body: any
 	footer: any
@@ -14,6 +15,15 @@ export interface Modal {
 }
 
 export interface ConfirmModal {
+	type:
+		| 'Center Large'
+		| 'Center Medium'
+		| 'Confirm'
+		| 'File-Upload'
+		| 'Loader'
+		| 'Right Blur'
+		| 'Right'
+		| 'none'
 	firstLine: string
 	secondLine: string
 	onCLose: Function
