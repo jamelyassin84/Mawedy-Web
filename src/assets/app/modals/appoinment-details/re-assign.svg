@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="46" viewBox="0 0 116 46">
+  <g id="button" transform="translate(-52)">
+    <g id="Rectangle_2714" data-name="Rectangle 2714" transform="translate(52 0)" fill="none" stroke="#00b074" stroke-width="1.5">
+      <rect width="116" height="46" rx="12" stroke="none"/>
+      <rect x="0.75" y="0.75" width="114.5" height="44.5" rx="11.25" fill="none"/>
+    </g>
+    <g id="Group_73719" data-name="Group 73719" transform="translate(17 11)">
+      <text id="Reassign" transform="translate(93 17)" fill="#00b074" font-size="16" font-family="Avenir-Heavy, Avenir" font-weight="800" letter-spacing="0.002em"><tspan x="-32" y="0">Reassign</tspan></text>
+    </g>
+  </g>
+</svg>

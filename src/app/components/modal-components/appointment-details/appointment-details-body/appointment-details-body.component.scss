@@ -16,17 +16,26 @@
 
 .shape-wrapper {
 	position: relative;
-	margin-bottom: 49px;
+	margin-bottom: 29px;
 	.shape-container {
 		position: absolute;
 	}
 }
 
-.sms {
-	margin-right: 20px;
-}
-
-.sms,
-.email {
-	cursor: pointer;
+.btn-container {
+	margin-left: -20px;
+	.cancel {
+		cursor: pointer;
+		margin-top: -50px;
+	}
+	.re-schedule {
+		margin-top: -57px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+	.re-assign {
+		margin-top: -57px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
 }
