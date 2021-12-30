@@ -1,13 +1,5 @@
 export interface Modal {
-	type:
-		| 'Center Large'
-		| 'Center Medium'
-		| 'Confirm'
-		| 'File-Upload'
-		| 'Loader'
-		| 'Right Blur'
-		| 'Right'
-		| 'none'
+	type: ModalType
 	header: any
 	body: any
 	footer: any
@@ -15,18 +7,21 @@ export interface Modal {
 }
 
 export interface ConfirmModal {
-	type:
-		| 'Center Large'
-		| 'Center Medium'
-		| 'Confirm'
-		| 'File-Upload'
-		| 'Loader'
-		| 'Right Blur'
-		| 'Right'
-		| 'none'
+	type: ModalType
 	firstLine: string
 	secondLine: string
 	onCLose: Function
 	onSubmit: Function
 	value: boolean
 }
+
+type ModalType =
+	| 'Center Large'
+	| 'Center Medium'
+	| 'Center Small'
+	| 'Right'
+	| 'Right Blur'
+	| 'Confirm'
+	| 'Loader'
+	| 'File-Upload'
+	| 'none'

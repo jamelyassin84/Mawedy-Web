@@ -3,7 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export const openFromRight = () => {
 	const contentOpen = {
 		opacity: 0,
-		transform: 'translateY(-50%)',
+		// transform: 'translateY(-50%)',
 	}
 	const contentClose = {
 		transform: 'translateX(-50%) scale(5)',

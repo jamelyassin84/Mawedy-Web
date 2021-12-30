@@ -164,7 +164,7 @@
 		<div class="description">Make changes to this appointment</div>
 
 		<div class="d-flex btn-container aic">
-			<span class="cancel">
+			<span (click)="cancelSchedule()" class="cancel">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -226,7 +226,7 @@
 					</g>
 				</svg>
 			</span>
-			<span class="re-schedule">
+			<span (click)="reSchedule()" class="re-schedule">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="116"
@@ -277,7 +277,7 @@
 					</g>
 				</svg>
 			</span>
-			<span class="re-assign">
+			<span (click)="reAssign()" class="re-assign">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="116"
