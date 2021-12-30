@@ -1,3 +1,4 @@
+import { ModalService } from './../../../../services/modal.service'
 import { Component, OnInit } from '@angular/core'
 
 @Component({
@@ -6,7 +7,18 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./appointment-cancellation-body.component.scss'],
 })
 export class AppointmentCancellationBodyComponent implements OnInit {
-	constructor() {}
+	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
+
+	assignSlotToANewPatient(header: any, body: any, footer: any) {
+		this.modalService.showModal({
+			value: true,
+			header: header,
+			body: body,
+			footer: footer,
+			type: 'Center Large',
+		})
+		localStorage.setItem('type', 'Center Large')
+	}
 }

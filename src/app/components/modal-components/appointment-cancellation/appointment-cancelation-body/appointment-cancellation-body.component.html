@@ -1,3 +1,9 @@
+<ng-template #header>
+	<div class="ssign=appointment-to">Assign Appointment To</div>
+</ng-template>
+<ng-template #body></ng-template>
+<ng-template #footer></ng-template>
+
 <div class="modal-container">
 	<div class="d-flex aic jcc">
 		<div class="icon">
@@ -275,7 +281,10 @@
 			<div class="button-text">
 				Would you like to assign this slot to a new patient?
 			</div>
-			<div class="button">
+			<div
+				(click)="assignSlotToANewPatient(header, body, footer)"
+				class="button"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
