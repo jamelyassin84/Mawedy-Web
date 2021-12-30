@@ -1,5 +1,5 @@
 .back-drop {
-	background: rgba($color: #0a2440, $alpha: 0.7) 0% 0% no-repeat padding-box;
+	background: var(--modalBackdrop) 0% 0% no-repeat padding-box;
 	height: 100%;
 	width: 100%;
 	position: fixed;

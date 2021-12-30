@@ -49,10 +49,11 @@ html[theme='dark'] {
 	--loginNavColor: #00b074;
 	--searchInput: #3a3b3c;
 	--color1: white;
-	--color2: lightgray;
+	--color2: #a6a6a6;
 	--color3: gray;
 	--border1: #282828;
 	--border2: #282828;
+	--inputBorder: #2c333a;
 	--shadow1: #02110929;
 	--shadow2: #06b98363;
 	--sidebarActiveBG: #282828;
@@ -64,6 +65,11 @@ html[theme='dark'] {
 	--thColor: white;
 	--trColor: #878787;
 	--trBg2: #1e1e1ea2;
+	--modalBackdrop: #021b14ad;
+	--modalHeader: #1e1e1e;
+	--modalFooter: #171717;
+	--onlyLight: none;
+	--onlyDark: block;
 }
 
 html[theme='light'] {
@@ -74,10 +80,11 @@ html[theme='light'] {
 	--loginNavColor: #00b074;
 	--searchInput: #f4f6f8;
 	--color1: #0a2440;
-	--color2: lightgray;
+	--color2: #6f7d8f;
 	--color3: gray;
 	--border1: #e3ebf5b3;
 	--border2: #f7f8fa;
+	--inputBorder: #dee2e6;
 	--shadow1: #00000029;
 	--shadow2: #00000063;
 	--sidebarActiveBG: #ebf9f4;
@@ -89,4 +96,9 @@ html[theme='light'] {
 	--thColor: #6f7d8f;
 	--trColor: #0a2440;
 	--trBg2: #f7f8fa;
+	--modalBackdrop: #0a2440b2;
+	--modalHeader: #f7f8fa;
+	--modalFooter: white;
+	--onlyLight: block;
+	--onlyDark: none;
 }

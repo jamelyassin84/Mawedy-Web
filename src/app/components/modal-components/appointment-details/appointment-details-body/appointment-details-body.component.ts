@@ -12,7 +12,6 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 	ngOnInit(): void {}
 
 	cancelSchedule(header: any, body: any) {
-		// this.hideModal()
 		this.modalService.showConfirm({
 			type: 'Confirm',
 			firstLine: 'Are you sure you to cancel',
@@ -39,15 +38,5 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 			type: 'Center Small',
 		})
 		localStorage.setItem('type', 'Center Small')
-	}
-
-	hideModal() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'Confirm',
-		})
 	}
 }
