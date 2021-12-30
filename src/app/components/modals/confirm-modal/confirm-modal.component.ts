@@ -30,6 +30,5 @@ export class ConfirmModalComponent implements OnInit {
 
 	submit() {
 		this.onSubmit()
-		this.close()
 	}
 }

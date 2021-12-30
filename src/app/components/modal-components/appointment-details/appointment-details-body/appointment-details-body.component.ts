@@ -11,7 +11,7 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cancelSchedule() {
+	cancelSchedule(header: any, body: any) {
 		this.hideModal()
 		this.modalService.showConfirm({
 			type: 'Confirm',
@@ -19,7 +19,7 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 			secondLine: 'this appointment?',
 			onCLose: () => {},
 			onSubmit: () => {
-				this.showConfirmation()
+				this.showConfirmation(header, body)
 			},
 			value: true,
 		})
@@ -30,7 +30,16 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 
 	reAssign() {}
 
-	showConfirmation() {}
+	showConfirmation(header: any, body: any) {
+		this.modalService.showModal({
+			value: true,
+			header: header,
+			body: body,
+			footer: '',
+			type: 'Center Small',
+		})
+		localStorage.setItem('type', 'Center Small')
+	}
 
 	hideModal() {
 		this.modalService.showModal({

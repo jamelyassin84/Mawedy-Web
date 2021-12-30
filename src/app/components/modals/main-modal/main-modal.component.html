@@ -20,6 +20,15 @@
 		[footer]="footer"
 	></center-medium-modal>
 
+	<center-small-modal
+		*ngIf="type === 'Center Small'"
+		[header]="header"
+		[body]="body"
+	>
+	</center-small-modal>
+
+	<!-- Confirm Modal  -->
+
 	<confirm-modal
 		*ngIf="type === 'Confirm'"
 		[firstLine]="firstLine"

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { openFromRight } from 'src/app/animations/FromRight'
-import { ConfirmModal } from 'src/app/models/Modal.interface'
+import { ConfirmModal, Modal } from 'src/app/models/Modal.interface'
 import { ModalService } from 'src/app/services/modal.service'
 
 @Component({
@@ -19,6 +19,15 @@ export class MainModalComponent implements OnInit {
 				this.onCLose = confirmData.onCLose
 				this.onSubmit = confirmData.onSubmit
 				this.type = confirmData.type
+			})
+
+		this.modalService
+			.getModalValue()
+			.subscribe((modalData: Modal | any) => {
+				this.header = modalData.header
+				this.body = modalData.body
+				this.footer = modalData.footer
+				this.type = modalData.type
 			})
 	}
 

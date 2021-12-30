@@ -164,7 +164,7 @@
 		<div class="description">Make changes to this appointment</div>
 
 		<div class="d-flex btn-container aic">
-			<span (click)="cancelSchedule()" class="cancel">
+			<span (click)="cancelSchedule(header, body)" class="cancel">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -331,3 +331,8 @@
 		</div>
 	</div>
 </div>
+
+<ng-template #header>
+	<div>CONFIRMATION</div>
+</ng-template>
+<ng-template #body></ng-template>
