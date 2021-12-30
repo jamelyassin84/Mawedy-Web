@@ -11,18 +11,7 @@ export class ViewDoctorFooterComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	hideModal() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'Confirm',
-		})
-	}
-
 	deleteDoctor() {
-		this.hideModal()
 		this.modalService.showConfirm({
 			type: 'Confirm',
 			firstLine: 'Are you sure you want to delete',

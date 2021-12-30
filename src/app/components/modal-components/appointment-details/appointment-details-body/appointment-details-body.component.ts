@@ -12,7 +12,7 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 	ngOnInit(): void {}
 
 	cancelSchedule(header: any, body: any) {
-		this.hideModal()
+		// this.hideModal()
 		this.modalService.showConfirm({
 			type: 'Confirm',
 			firstLine: 'Are you sure you to cancel',

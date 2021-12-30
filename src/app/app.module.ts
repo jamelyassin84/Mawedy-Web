@@ -27,7 +27,6 @@ import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm
 import { RightLargeModalComponent } from './components/modals/right-large-modal/right-large-modal.component'
 import { CenterLargeModalComponent } from './components/modals/center-large-modal/center-large-modal.component'
 import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component'
-import { MainModalComponent } from './components/modals/main-modal/main-modal.component'
 import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
 import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
@@ -35,6 +34,7 @@ import { AppointmentCancellationBodyComponent } from './components/modal-compone
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { AssignAppointmentToModalBodyComponent } from './components/modal-components/assign-appointment-to/assign-appointment-to-modal-body/assign-appointment-to-modal-body.component'
 import { AssignAppointmentToModalFooterComponent } from './components/modal-components/assign-appointment-to/assign-appointment-to-modal-footer/assign-appointment-to-modal-footer.component'
+import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
 @NgModule({
 	declarations: [
 		AppComponent,

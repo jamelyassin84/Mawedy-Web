@@ -1,6 +1,6 @@
 <div class="back-drop" [@content]>
 	<right-large-modal
-		*ngIf="type === 'Right'"
+		*ngIf="type === 'Right' || type === 'Confirm'"
 		[header]="header"
 		[body]="body"
 		[footer]="footer"

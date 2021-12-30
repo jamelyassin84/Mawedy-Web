@@ -5,11 +5,10 @@
 	right: 0;
 	top: 0;
 	z-index: 11;
-	backdrop-filter: blur(25px);
 	padding: 70px;
 	display: flex;
 	flex-direction: column-reverse;
-	background-color: rgba($color: white, $alpha: 0.8);
+	backdrop-filter: blur(21px);
 }
 
 .confirm-container {
