@@ -13,5 +13,13 @@ import {
 export class AppointmentsToolbarComponent implements OnInit {
 	constructor(private router: Router) {}
 
-	ngOnInit(): void {}
+	today = Date.now()
+
+	now: Date = new Date()
+
+	ngOnInit(): void {
+		setInterval(() => {
+			this.now = new Date()
+		}, 1)
+	}
 }

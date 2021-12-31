@@ -1,0 +1,41 @@
+.right {
+	margin-left: auto;
+	flex: 1;
+	select {
+		width: 250px;
+	}
+}
+
+.center {
+	flex: 1;
+}
+
+.left {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	.date {
+		font-weight: bold;
+		color: var(--color1);
+	}
+	.date {
+		height: 20px;
+		transform: translateY(-10px);
+	}
+	.time {
+		height: 20px;
+		transform: translateY(-10px);
+		margin-left: 66px;
+		margin-right: 6px;
+	}
+}
+
+.chevron-left {
+	margin-right: 18px;
+	transform: translateY(-10px);
+}
+
+.chevron-right {
+	transform: translateY(-10px);
+	margin-right: 19px;
+}

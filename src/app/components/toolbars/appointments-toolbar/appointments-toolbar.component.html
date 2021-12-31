@@ -1,0 +1,44 @@
+<div class="d-flex aic" style="width: calc(100vw + 10%)">
+	<div class="left">
+		<img
+			class="chevron-left"
+			src="../../../../assets/app/toolbars/left.svg"
+			alt=""
+			role="button"
+		/>
+		<img
+			class="chevron-right"
+			src="../../../../assets/app/toolbars/right.svg"
+			alt=""
+			role="button"
+		/>
+
+		<img
+			class="date"
+			src="../../../../assets/app/calendar-icon.svg"
+			alt=""
+		/>
+		<span class="ml-2 date">
+			{{ today | date: 'MMM yyyy' }}
+		</span>
+
+		<img
+			class="time"
+			src="../../../../assets/app/time-line (1).svg"
+			alt=""
+		/>
+		<span class="ml-2 date">
+			{{ now | date: 'hh:mm a' }}
+		</span>
+	</div>
+
+	<div class="center">
+		<appointment-toolbar-tabs></appointment-toolbar-tabs>
+	</div>
+
+	<div class="right">
+		<select class="form-control">
+			<option>All Doctors</option>
+		</select>
+	</div>
+</div>

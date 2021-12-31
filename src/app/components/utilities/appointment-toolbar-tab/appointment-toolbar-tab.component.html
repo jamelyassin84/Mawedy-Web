@@ -1,0 +1,14 @@
+<div class="tab-container">
+	<button (click)="setActiveTab(tab)" *ngFor="let tab of tabs" class="tab">
+		{{ tab.name }}
+	</button>
+
+	<button
+		[class.first]="activeTab === 1"
+		[class.second]="activeTab === 2"
+		[class.third]="activeTab === 3"
+		class="pointer"
+	>
+		{{ tabs[activeTab - 1].name }}
+	</button>
+</div>

@@ -17,6 +17,7 @@ import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-compon
 import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
 import { AssignAppointmentToModalBodyComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-body/assign-appointment-to-modal-body.component'
 import { AssignAppointmentToModalFooterComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-footer/assign-appointment-to-modal-footer.component'
+import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
 
 @NgModule({
 	declarations: [
@@ -35,6 +36,7 @@ import { AssignAppointmentToModalFooterComponent } from 'src/app/components/moda
 		AssignAppointmentToModalBodyComponent,
 		AssignAppointmentToModalFooterComponent,
 		SelectTimeSlotComponent,
+		AppointmentToolbarTabComponent,
 	],
 	imports: [CommonModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -47,6 +49,7 @@ import { AssignAppointmentToModalFooterComponent } from 'src/app/components/moda
 		AssignAppointmentToModalBodyComponent,
 		AssignAppointmentToModalFooterComponent,
 		SelectTimeSlotComponent,
+		AppointmentToolbarTabComponent,
 	],
 })
 export class DashboardModule {}

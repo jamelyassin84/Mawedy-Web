@@ -1,0 +1,41 @@
+.tab-container {
+	display: flex;
+	width: 315px;
+	background: #f4f6f8 0% 0% no-repeat padding-box;
+	height: 40px;
+	align-self: center;
+	justify-content: center;
+	position: relative;
+	transform: translateY(-8px);
+	border-radius: 8px;
+	.tab {
+		flex: 1;
+		border: none;
+		color: var(--color2);
+		background: transparent;
+	}
+	.pointer {
+		width: 103px;
+		height: 34px;
+		background: #ffffff 0% 0% no-repeat padding-box;
+		box-shadow: 0px 2px 6px #e3ebf5b3;
+		border-radius: 6px;
+		position: absolute;
+		left: 2px;
+		top: 3px;
+		border: none;
+		transition: 0.2s ease-in;
+		color: var(--accent);
+		font-family: bold;
+	}
+
+	.first {
+		transform: translateX(0);
+	}
+	.second {
+		transform: translateX(103px);
+	}
+	.third {
+		transform: translateX(calc(103px + 103px));
+	}
+}

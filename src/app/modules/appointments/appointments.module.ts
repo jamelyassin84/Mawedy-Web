@@ -6,6 +6,7 @@ import { AppointmentsDayComponent } from './appointments-day/appointments-day.co
 import { RouterModule } from '@angular/router'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
 
 @NgModule({
 	declarations: [
@@ -14,5 +15,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		AppointmentsDayComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
+	exports: [],
 })
 export class AppointmentsModule {}
