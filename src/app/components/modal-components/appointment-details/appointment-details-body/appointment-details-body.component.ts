@@ -24,7 +24,15 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 		})
 	}
 
-	reSchedule() {}
+	reSchedule(body: any) {
+		this.modalService.showModal({
+			value: true,
+			header: '',
+			body: body,
+			footer: '',
+			type: 'Right Blur',
+		})
+	}
 
 	reAssign() {}
 

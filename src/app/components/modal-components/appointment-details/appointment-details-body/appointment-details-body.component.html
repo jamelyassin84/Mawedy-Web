@@ -226,7 +226,7 @@
 					</g>
 				</svg>
 			</span>
-			<span (click)="reSchedule()" class="re-schedule">
+			<span (click)="reSchedule(timeSlot)" class="re-schedule">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="116"
@@ -331,6 +331,10 @@
 		</div>
 	</div>
 </div>
+
+<ng-template #timeSlot>
+	<select-time-slot-component></select-time-slot-component>
+</ng-template>
 
 <ng-template #header>
 	<div>CONFIRMATION</div>

@@ -11,9 +11,9 @@ export class ModalService {
 	private modal = new Subject<Modal | undefined>()
 	private confirmModal = new Subject<ConfirmModal>()
 
-	showModal(modalData: Modal | undefined | any): void {
+	showModal(modalData: Modal | undefined): void {
 		this.modal.next(modalData)
-		localStorage.setItem('type', modalData?.type)
+		localStorage.setItem('type', modalData?.type + '')
 	}
 
 	getModalValue() {

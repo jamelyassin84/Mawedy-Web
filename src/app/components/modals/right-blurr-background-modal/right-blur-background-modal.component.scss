@@ -10,3 +10,15 @@
 	display: flex;
 	flex-direction: column-reverse;
 }
+.blur-modal {
+	width: 580px;
+	position: fixed;
+	height: 100%;
+	right: 0;
+	top: 0;
+	z-index: 11;
+	padding: 70px;
+	display: flex;
+	flex-direction: column;
+	backdrop-filter: blur(21px);
+}

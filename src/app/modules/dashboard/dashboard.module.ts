@@ -1,9 +1,9 @@
+import { SelectTimeSlotComponent } from '../../components/modal-components/select-time-slot-component/select-time-slot-component.component'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AppointmentsComponent } from './appointments/appointments.component'
 import { PatientOutreachComponent } from './patient-outreach/patient-outreach.component'
 import { NewAppointmentsComponent } from './appointments/modals/new-appointments/new-appointments.component'
-import { SelectTimeSlotComponent } from './appointments/modals/select-time-slot/select-time-slot.component'
 import { SelectDoctorComponent } from './appointments/modals/select-doctor/select-doctor.component'
 import { ConfirmationComponent } from './appointments/modals/confirmation/confirmation.component'
 import { AssignAppointmentToComponent } from './appointments/modals/assign-appointment-to/assign-appointment-to.component'
@@ -23,7 +23,6 @@ import { AssignAppointmentToModalFooterComponent } from 'src/app/components/moda
 		AppointmentsComponent,
 		PatientOutreachComponent,
 		NewAppointmentsComponent,
-		SelectTimeSlotComponent,
 		SelectDoctorComponent,
 		ConfirmationComponent,
 		AssignAppointmentToComponent,
@@ -35,6 +34,7 @@ import { AssignAppointmentToModalFooterComponent } from 'src/app/components/moda
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
 		AssignAppointmentToModalFooterComponent,
+		SelectTimeSlotComponent,
 	],
 	imports: [CommonModule, AppRoutingModule, RouterModule],
 	exports: [
@@ -46,6 +46,7 @@ import { AssignAppointmentToModalFooterComponent } from 'src/app/components/moda
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
 		AssignAppointmentToModalFooterComponent,
+		SelectTimeSlotComponent,
 	],
 })
 export class DashboardModule {}
