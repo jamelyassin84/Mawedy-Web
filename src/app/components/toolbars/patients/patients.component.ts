@@ -19,7 +19,5 @@ export class PatientsToolbarComponent implements OnInit {
 			footer: footer,
 			type: 'Center Large',
 		})
-
-		localStorage.setItem('type', 'Center Large')
 	}
 }

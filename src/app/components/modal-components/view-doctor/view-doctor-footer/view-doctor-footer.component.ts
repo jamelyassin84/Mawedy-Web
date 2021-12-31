@@ -20,6 +20,5 @@ export class ViewDoctorFooterComponent implements OnInit {
 			onSubmit: () => {},
 			value: true,
 		})
-		localStorage.setItem('type', 'Confirm')
 	}
 }

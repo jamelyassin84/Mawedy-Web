@@ -19,8 +19,6 @@ export class DoctorsProfileComponent implements OnInit {
 			footer: footer,
 			type: 'Right',
 		})
-
-		localStorage.setItem('type', 'Right')
 	}
 
 	viewAvailability(header: any, body: any, footer: any) {
@@ -31,7 +29,5 @@ export class DoctorsProfileComponent implements OnInit {
 			footer: footer,
 			type: 'Center Medium',
 		})
-
-		localStorage.setItem('type', 'Center Medium')
 	}
 }

@@ -1,5 +1,5 @@
 import { ModalService } from 'src/app/services/modal.service'
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
 	selector: 'right-blur-background-modal',
@@ -11,5 +11,5 @@ export class RightBlurBackgroundModalComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	close() {}
+	@Input() body: any
 }

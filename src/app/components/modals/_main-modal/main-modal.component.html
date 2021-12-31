@@ -6,6 +6,11 @@
 		[footer]="footer"
 	></right-large-modal>
 
+	<right-blur-background-modal
+		*ngIf="type === 'Right Blur'"
+		[body]="body"
+	></right-blur-background-modal>
+
 	<center-large-modal
 		*ngIf="type === 'Center Large'"
 		[header]="header"

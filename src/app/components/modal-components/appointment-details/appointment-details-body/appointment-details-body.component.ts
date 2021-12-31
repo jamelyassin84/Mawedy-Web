@@ -22,7 +22,6 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 			},
 			value: true,
 		})
-		localStorage.setItem('type', 'Confirm')
 	}
 
 	reSchedule() {}
@@ -37,6 +36,5 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 			footer: '',
 			type: 'Center Small',
 		})
-		localStorage.setItem('type', 'Center Small')
 	}
 }

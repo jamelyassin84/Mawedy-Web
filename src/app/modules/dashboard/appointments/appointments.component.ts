@@ -19,7 +19,5 @@ export class AppointmentsComponent implements OnInit {
 			footer: footer,
 			type: 'Right',
 		})
-
-		localStorage.setItem('type', 'Right')
 	}
 }
