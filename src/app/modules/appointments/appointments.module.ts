@@ -1,3 +1,7 @@
+import { CalendarStrikeThroughComponent } from './../../components/utilities/calendar-strike-through/calendar-strike-through.component'
+import { CalendarBadgeDayComponent } from './../../components/utilities/calendar-badges/calendar-badge-day/calendar-badge-day.component'
+import { CalendarBadgeWeekComponent } from './../../components/utilities/calendar-badges/calendar-badge-week/calendar-badge-week.component'
+import { CalendarBadgeMonthComponent } from './../../components/utilities/calendar-badges/calendar-badge-month/calendar-badge-month.component'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AppointmentsMonthComponent } from './appointments-month/appointments-month.component'
@@ -6,15 +10,23 @@ import { AppointmentsDayComponent } from './appointments-day/appointments-day.co
 import { RouterModule } from '@angular/router'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
-import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
 
 @NgModule({
 	declarations: [
 		AppointmentsMonthComponent,
 		AppointmentsWeekComponent,
 		AppointmentsDayComponent,
+		CalendarBadgeMonthComponent,
+		CalendarBadgeWeekComponent,
+		CalendarBadgeDayComponent,
+		CalendarStrikeThroughComponent,
 	],
 	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
-	exports: [],
+	exports: [
+		CalendarBadgeMonthComponent,
+		CalendarBadgeWeekComponent,
+		CalendarBadgeDayComponent,
+		CalendarStrikeThroughComponent,
+	],
 })
 export class AppointmentsModule {}

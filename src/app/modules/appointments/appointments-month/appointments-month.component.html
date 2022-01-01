@@ -30,6 +30,18 @@
 							{{ day }}
 						</div>
 					</div>
+
+					<div class="calendar-badge">
+						<calendar-badge-month
+							type="Clinic"
+						></calendar-badge-month>
+					</div>
+					<div class="calendar-badge">
+						<calendar-badge-month
+							type="Phone"
+						></calendar-badge-month>
+					</div>
+					<span class="more">3 more</span>
 				</div>
 
 				<div class="day disabled-date" *ngFor="let day of afterDays">
