@@ -10,16 +10,17 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	color: var(--color1);
 }
 
 .phone {
-	background: #edeaf7;
+	background: var(--calendar1);
 }
 
 .mobile {
-	background: #edeaf7;
+	background: var(--calendar2);
 }
 
 .clinic {
-	background: #e9f0f1;
+	background: var(--calendar3);
 }

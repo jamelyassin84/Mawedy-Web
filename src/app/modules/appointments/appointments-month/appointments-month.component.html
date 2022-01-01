@@ -11,13 +11,20 @@
 			</div>
 
 			<div class="days">
-				<div class="day disabled-date" *ngFor="let day of previousDays">
+				<!-- Last Month -->
+				<div
+					routerLink="/home/appointments/day"
+					class="day disabled-date"
+					*ngFor="let day of previousDays"
+				>
 					<div class="day-number">
 						{{ day }}
 					</div>
 				</div>
 
+				<!-- This Month -->
 				<div
+					routerLink="/home/appointments/day"
 					[class.active]="today === day"
 					class="day"
 					*ngFor="let day of days"
@@ -41,10 +48,15 @@
 							type="Phone"
 						></calendar-badge-month>
 					</div>
-					<span class="more">3 more</span>
+					<div class="more">3 more</div>
 				</div>
 
-				<div class="day disabled-date" *ngFor="let day of afterDays">
+				<!-- Next Month -->
+				<div
+					routerLink="/home/appointments/day"
+					class="day disabled-date"
+					*ngFor="let day of afterDays"
+				>
 					<div class="day-number">
 						{{ day }}
 					</div>

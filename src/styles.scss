@@ -45,6 +45,7 @@ html[theme='dark'] {
 	--bg1: #1e1e1e;
 	--bg2: #212121;
 	--bg3: #171717;
+	--bg4: #212121c2;
 	--loginNav: #ac8585;
 	--loginNavColor: #00b074;
 	--searchInput: #3a3b3c;
@@ -57,6 +58,7 @@ html[theme='dark'] {
 	--inputBorder: #2c333a;
 	--shadow1: #02110929;
 	--shadow2: #06b98363;
+	--shadow3: #02110929;
 	--sidebarActiveBG: #282828;
 	--page: #1e1e1e;
 	--toolbar: #242526;
@@ -71,12 +73,16 @@ html[theme='dark'] {
 	--modalFooter: #171717;
 	--onlyLight: none;
 	--onlyDark: block;
+	--calendar1: #468cc65b;
+	--calendar2: #644abb4f;
+	--calendar3: #6192984d;
 }
 
 html[theme='light'] {
 	--bg1: white;
 	--bg2: #f4f6f8;
 	--bg3: white;
+	--bg4: #f7f8fa;
 	--loginNav: white;
 	--loginNavColor: #00b074;
 	--searchInput: #f4f6f8;
@@ -89,6 +95,7 @@ html[theme='light'] {
 	--inputBorder: #dee2e6;
 	--shadow1: #00000029;
 	--shadow2: #00000063;
+	--shadow3: #e3ebf5b3;
 	--sidebarActiveBG: #ebf9f4;
 	--page: #f5f6fa;
 	--toolbar: white;
@@ -103,4 +110,7 @@ html[theme='light'] {
 	--modalFooter: white;
 	--onlyLight: block;
 	--onlyDark: none;
+	--calendar1: #e5eff7;
+	--calendar2: #edeaf7;
+	--calendar3: #e9f0f1;
 }

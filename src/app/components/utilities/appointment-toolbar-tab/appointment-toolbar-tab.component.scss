@@ -1,7 +1,7 @@
 .tab-container {
 	display: flex;
 	width: 315px;
-	background: #f4f6f8 0% 0% no-repeat padding-box;
+	background: var(--bg4) 0% 0% no-repeat padding-box;
 	height: 40px;
 	align-self: center;
 	justify-content: center;
@@ -17,8 +17,8 @@
 	.pointer {
 		width: 103px;
 		height: 34px;
-		background: #ffffff 0% 0% no-repeat padding-box;
-		box-shadow: 0px 2px 6px #e3ebf5b3;
+		background: var(--bg3) 0% 0% no-repeat padding-box;
+		box-shadow: 0px 2px 6px var(--shadow3);
 		border-radius: 6px;
 		position: absolute;
 		left: 2px;

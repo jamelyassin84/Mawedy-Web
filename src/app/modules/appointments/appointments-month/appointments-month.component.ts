@@ -53,6 +53,7 @@ export class AppointmentsMonthComponent implements OnInit {
 			this.previousDays.push(previousLastDayOfTheMonth - x + 1)
 		}
 
+		// This Month
 		for (let day = 1; day < lastDayOfTheMonth + 1; day++) {
 			this.days.push(day)
 		}
