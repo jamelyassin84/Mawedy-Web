@@ -1,0 +1,105 @@
+.calendar-container {
+	.weekdays {
+		height: 90px;
+		background: var(--bg4) 0% 0% no-repeat padding-box;
+		border: 1px solid var(--border1);
+		border-radius: 8px 8px 0px 0px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.day-of-the-week-wrapper {
+			font-size: 16;
+			width: calc(100% / 7);
+			text-align: center;
+			.day-of-the-week {
+				letter-spacing: 0px;
+				color: var(--color1);
+				text-transform: uppercase;
+				font-size: 11px;
+			}
+			.day-of-the-week-date {
+				font-size: 16px;
+				font-family: bold;
+				color: var(--color1);
+			}
+		}
+	}
+	.days {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		.day {
+			height: calc(66.9px);
+			border: 1px solid var(--border1);
+			width: calc(100% / 7);
+			padding: 20px 22px;
+			padding-top: 5px;
+			cursor: pointer;
+			&:hover {
+				background: var(--bg2);
+			}
+			.day-number {
+				margin-left: auto;
+				letter-spacing: 0px;
+				color: var(--color1);
+				font-family: bold;
+				font-size: 18px;
+			}
+		}
+		.disabled-date {
+			.day-number {
+				color: var(--color3);
+				font-family: normal;
+				opacity: 0.5;
+			}
+		}
+
+		.badge {
+			color: white;
+			align-items: center;
+			justify-content: center;
+			float: right;
+		}
+	}
+}
+
+.active {
+	border: 1px solid var(--accent) !important;
+	.day-number {
+		color: var(--accent) !important;
+		text-shadow: 0px 0px 1px var(--accent);
+	}
+}
+
+.today {
+	color: var(--accent) !important;
+}
+
+.more {
+	text-align: left;
+	letter-spacing: 0px;
+	color: #6f7d8f;
+	font-size: 10px;
+	margin-top: 3px;
+}
+
+.times {
+	width: 100%;
+	font-size: 12px;
+	margin-top: 90px;
+	.time {
+		text-align: right !important;
+		white-space: nowrap;
+		margin-bottom: 49px;
+		margin-right: 25px;
+	}
+}
+.col,
+.row {
+	padding: 0;
+	margin: 0;
+}
+
+.calendar-badge {
+	margin-bottom: 5px;
+}

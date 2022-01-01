@@ -4,5 +4,98 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content">Week</div>
+	<div class="page-content">
+		<div class="row">
+			<div class="col-md-2z col">
+				<div class="times">
+					<div *ngFor="let time of weeklyTimesAM" class="time">
+						{{ time }}:00 AM
+					</div>
+					<div *ngFor="let time of weeklyTimesPM" class="time">
+						{{ time }}:00 PM
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-11 col">
+				<div class="calendar-container">
+					<div class="weekdays">
+						<div
+							*ngFor="let day of weekdays; let i = index"
+							class="day-of-the-week-wrapper"
+						>
+							<div
+								class="day-of-the-week"
+								[class.today]="days[i] === today"
+							>
+								{{ day }}
+							</div>
+
+							<div
+								class="day-of-the-week-date"
+								[class.today]="days[i] === today"
+							>
+								{{ days[i] }}
+							</div>
+						</div>
+					</div>
+
+					<!-- This Week -->
+					<div
+						class="days"
+						*ngFor="let time of weeklyTimesAM; let i = index"
+					>
+						<div
+							routerLink="/home/appointments/day"
+							class="day"
+							*ngFor="let day of days; let j = index"
+						>
+							<div
+								*ngIf="
+									(days[j] === today && now === time) ||
+									(days[j] === today && now - 12 === time)
+								"
+								class="badge badge-danger"
+							>
+								Now serving...
+							</div>
+							<div class="calendar-badge">
+								<calendar-badge-month
+									type="Phone"
+								></calendar-badge-month>
+							</div>
+							<div class="more">1 more</div>
+						</div>
+					</div>
+
+					<div
+						class="days"
+						*ngFor="let time of weeklyTimesPM; let i = index"
+					>
+						<div
+							routerLink="/home/appointments/day"
+							class="day"
+							*ngFor="let day of days; let j = index"
+						>
+							<div
+								*ngIf="
+									(days[j] === today && now === time) ||
+									(days[j] === today && now - 12 === time)
+								"
+								class="badge badge-danger"
+							>
+								Now serving...
+							</div>
+							<div class="calendar-badge">
+								<calendar-badge-month
+									type="Mobile"
+								></calendar-badge-month>
+							</div>
+							<div class="more">1 more</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

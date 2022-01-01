@@ -29,36 +29,34 @@ export class AppointmentsMonthComponent implements OnInit {
 	setCalendarDays(date: Date | any) {
 		this.clearCalendar()
 
-		const lastDayOfTheMonth: 30 | 31 | number = new Date(
-			date.getFullYear(),
-			date.getMonth() + 1,
-			0,
-		).getDate()
+		const weekDay = date.getDay()
 
+		// Last Month
 		const previousLastDayOfTheMonth: 30 | 31 | number = new Date(
 			date.getFullYear(),
 			date.getMonth(),
 			0,
 		).getDate()
-
-		const lastDayWeekDay: number = new Date(
-			date.getFullYear(),
-			date.getMonth() + 1,
-			0,
-		).getDay()
-
-		const weekDay = date.getDay()
-		// Last Month
 		for (let x = weekDay; x > 0; x--) {
 			this.previousDays.push(previousLastDayOfTheMonth - x + 1)
 		}
 
 		// This Month
+		const lastDayOfTheMonth: 30 | 31 | number = new Date(
+			date.getFullYear(),
+			date.getMonth() + 1,
+			0,
+		).getDate()
 		for (let day = 1; day < lastDayOfTheMonth + 1; day++) {
 			this.days.push(day)
 		}
 
 		// Next Month
+		const lastDayWeekDay: number = new Date(
+			date.getFullYear(),
+			date.getMonth() + 1,
+			0,
+		).getDay()
 		for (let x = 1; x <= 7 - lastDayWeekDay; x++) {
 			this.afterDays.push(x)
 		}

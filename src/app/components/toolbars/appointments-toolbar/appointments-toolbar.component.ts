@@ -19,14 +19,18 @@ export class AppointmentsToolbarComponent implements OnInit {
 
 	today = Date.now()
 
-	now: Date = new Date()
-
 	currentMonth = new Date(Date.now())
 
+	now: Date = new Date()
+	timer: any
 	ngOnInit(): void {
-		setInterval(() => {
+		this.timer = setInterval(() => {
 			this.now = new Date()
 		}, 1)
+	}
+
+	ngOnDestroy(): void {
+		clearInterval(this.timer)
 	}
 
 	next() {
