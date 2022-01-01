@@ -51,3 +51,5 @@ directive
 pipe
 interceptors
 Define Static Images and svg source
+
+Add individual Toolbar Service
