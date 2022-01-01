@@ -4,6 +4,7 @@ import {
 	weeklyTimesPM,
 } from 'src/app/constants/App.constants'
 import { Component, OnInit } from '@angular/core'
+import { AppointmentService } from 'src/app/services/toolbars/appointment.service'
 
 @Component({
 	selector: 'appointments-appointments-week',
@@ -11,7 +12,13 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./appointments-week.component.scss'],
 })
 export class AppointmentsWeekComponent implements OnInit {
-	constructor() {}
+	constructor(private appointmentService: AppointmentService) {
+		// this.appointmentService
+		// 	.getDate()
+		// 	.subscribe((date: number) =>
+		// 		this.setWeeklyAppointments(new Date(date)),
+		// 	)
+	}
 
 	weekdays: string[] = weekDaysShort
 

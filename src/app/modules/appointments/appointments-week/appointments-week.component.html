@@ -9,10 +9,10 @@
 			<div class="col-md-2z col">
 				<div class="times">
 					<div *ngFor="let time of weeklyTimesAM" class="time">
-						{{ time }}:00 AM
+						{{ time }}:00
 					</div>
 					<div *ngFor="let time of weeklyTimesPM" class="time">
-						{{ time }}:00 PM
+						{{ time }}:00
 					</div>
 				</div>
 			</div>
@@ -51,16 +51,17 @@
 							*ngFor="let day of days; let j = index"
 						>
 							<div
-								*ngIf="
-									(days[j] === today && now === time) ||
-									(days[j] === today && now - 12 === time)
-								"
+								*ngIf="days[j] === today && now === time"
 								class="badge badge-danger"
 							>
 								Now serving...
 							</div>
 							<div class="calendar-badge">
 								<calendar-badge-month
+									[text]="
+										time +
+										':30  Dr. Kamini Naik & Kamini Naik'
+									"
 									type="Phone"
 								></calendar-badge-month>
 							</div>
@@ -78,16 +79,17 @@
 							*ngFor="let day of days; let j = index"
 						>
 							<div
-								*ngIf="
-									(days[j] === today && now === time) ||
-									(days[j] === today && now - 12 === time)
-								"
+								*ngIf="days[j] === today && now === time"
 								class="badge badge-danger"
 							>
 								Now serving...
 							</div>
 							<div class="calendar-badge">
 								<calendar-badge-month
+									[text]="
+										time +
+										':30  Dr. Kamini Naik & Kamini Naik'
+									"
 									type="Mobile"
 								></calendar-badge-month>
 							</div>
