@@ -7,6 +7,7 @@
 	<div class="page-content">
 		<div class="row">
 			<div class="col-md-2z col">
+				<!-- Time -->
 				<div class="times">
 					<div *ngFor="let time of weeklyTimesAM" class="time">
 						{{ time }}:00
@@ -19,6 +20,7 @@
 
 			<div class="col-md-11 col">
 				<div class="calendar-container">
+					<!-- Weekdays and date -->
 					<div class="weekdays">
 						<div
 							*ngFor="let day of weekdays; let i = index"
@@ -40,7 +42,7 @@
 						</div>
 					</div>
 
-					<!-- This Week -->
+					<!-- AM -->
 					<div
 						class="days"
 						*ngFor="let time of weeklyTimesAM; let i = index"
@@ -54,21 +56,24 @@
 								*ngIf="days[j] === today && now === time"
 								class="badge badge-danger"
 							>
-								Now serving...
+								Now treating...
 							</div>
+
 							<div class="calendar-badge">
 								<calendar-badge-month
 									[text]="
 										time +
-										':30  Dr. Kamini Naik & Kamini Naik'
+										':00  Dr. Kamini Naik & Kamini Naik'
 									"
-									type="Phone"
+									type="Mobile"
 								></calendar-badge-month>
 							</div>
-							<div class="more">1 more</div>
+
+							<div class="more">5 more..</div>
 						</div>
 					</div>
 
+					<!-- PM -->
 					<div
 						class="days"
 						*ngFor="let time of weeklyTimesPM; let i = index"
@@ -82,18 +87,18 @@
 								*ngIf="days[j] === today && now === time"
 								class="badge badge-danger"
 							>
-								Now serving...
+								treating...
 							</div>
 							<div class="calendar-badge">
 								<calendar-badge-month
 									[text]="
 										time +
-										':30  Dr. Kamini Naik & Kamini Naik'
+										':00  Dr. Kamini Naik & Kamini Naik'
 									"
-									type="Mobile"
+									type="Clinic"
 								></calendar-badge-month>
 							</div>
-							<div class="more">1 more</div>
+							<div class="more">5 more..</div>
 						</div>
 					</div>
 				</div>

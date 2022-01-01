@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core'
 export class CalendarBadgeMonthComponent implements OnInit {
 	constructor() {}
 	@Input() type: string = 'Phone'
-	@Input() text: string | any = 'Phone'
+	@Input() text: string = ''
 
 	ngOnInit(): void {}
 }
