@@ -20,11 +20,21 @@ export const workingSchedules: { day: string; value: boolean }[] = [
 ]
 
 export const weekDays: string[] = [
+	'Sunday',
 	'Monday',
 	'Tuesday',
 	'Wednesday',
 	'Thursday',
 	'Friday',
 	'Saturday',
-	'Sunday',
+]
+
+export const weekDaysShort: string[] = [
+	'Sun',
+	'Mon',
+	'Tue',
+	'Wed',
+	'Thu',
+	'Fri',
+	'Sat',
 ]

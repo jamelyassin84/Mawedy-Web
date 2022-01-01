@@ -4,5 +4,36 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content">Month</div>
+	<div class="page-content">
+		<div class="calendar-container">
+			<div class="weekdays">
+				<div *ngFor="let day of weekdays">{{ day }}</div>
+			</div>
+
+			<div class="days">
+				<div
+					[class.active]="today === day"
+					class="day"
+					*ngFor="let day of days"
+				>
+					<div class="d-flex">
+						<div *ngIf="today === day" class="badge badge-success">
+							Today
+						</div>
+						<div class="day-number">
+							{{ day }}
+						</div>
+					</div>
+				</div>
+				<div
+					class="day disabled-date"
+					*ngFor="let day of [1, 2, 3, 4, 5, 6]"
+				>
+					<div class="day-number">
+						{{ day }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
