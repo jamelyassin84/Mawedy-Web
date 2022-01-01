@@ -18,3 +18,13 @@ export const workingSchedules: { day: string; value: boolean }[] = [
 	{ day: 'Sat', value: false },
 	{ day: 'Sun', value: false },
 ]
+
+export const weekDays: string[] = [
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday',
+	'Sunday',
+]

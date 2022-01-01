@@ -19,7 +19,6 @@ import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
 import { PatientsComponent } from './modules/patients/patients/patients.component'
-import { PatientProfileComponent } from './modules/patients/modals/patient-profile/patient-profile.component'
 
 import { LoaderModalComponent } from './components/modals/loader-modal/loader-modal.component'
 import { FileUploadModalComponent } from './components/modals/file-upload-modal/file-upload-modal.component'
@@ -32,7 +31,6 @@ import { NewAppointmentModalFooterComponent } from './components/modal-component
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
-import { AppointmentToolbarTabComponent } from './components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
 
 @NgModule({
 	declarations: [
@@ -50,7 +48,6 @@ import { AppointmentToolbarTabComponent } from './components/utilities/appointme
 		ConfirmModalComponent,
 		FileUploadModalComponent,
 		LoaderModalComponent,
-		PatientProfileComponent,
 		MainModalComponent,
 		NewAppointmentModalBodyComponent,
 		NewAppointmentModalFooterComponent,
