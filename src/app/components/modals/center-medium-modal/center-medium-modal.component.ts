@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ModalService } from 'src/app/services/modal.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'center-medium-modal',

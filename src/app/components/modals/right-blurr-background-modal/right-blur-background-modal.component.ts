@@ -1,5 +1,5 @@
-import { ModalService } from 'src/app/services/modal.service'
 import { Component, Input, OnInit } from '@angular/core'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'right-blur-background-modal',

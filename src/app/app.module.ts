@@ -1,8 +1,10 @@
+import { ResponsiveTableDirective } from './directives/responsive-table.directive'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { ClinicProfileModule } from './modules/clinic-profile/clinic-profile.module'
 import { DoctorsProfileModule } from './modules/doctors-profile/doctors-profile.module'
@@ -31,6 +33,7 @@ import { NewAppointmentModalFooterComponent } from './components/modal-component
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
+import { MainInterceptor } from './interceptors/main'
 
 @NgModule({
 	declarations: [
@@ -65,8 +68,16 @@ import { MainModalComponent } from './components/modals/_main-modal/main-modal.c
 		PatientsModule,
 		PromotionsModule,
 		BrowserAnimationsModule,
+		HttpClientModule,
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: MainInterceptor,
+			multi: true,
+		},
+		ResponsiveTableDirective,
+	],
 	bootstrap: [AppComponent],
 	exports: [],
 })

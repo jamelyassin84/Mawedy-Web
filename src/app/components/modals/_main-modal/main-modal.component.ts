@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { openFromRight } from 'src/app/animations/FromRight'
 import { ConfirmModal, Modal } from 'src/app/models/Modal.interface'
-import { ModalService } from 'src/app/services/modal.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'app-main-modal',

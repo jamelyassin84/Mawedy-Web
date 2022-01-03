@@ -1,4 +1,4 @@
-import { ConfirmModal, Modal } from './../models/Modal.interface'
+import { ConfirmModal, Modal } from '../../models/Modal.interface'
 import { Injectable } from '@angular/core'
 import { Subject } from 'rxjs'
 

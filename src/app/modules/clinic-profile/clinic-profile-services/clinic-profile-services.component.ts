@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
-import { ModalService } from 'src/app/services/modal.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'clinic-profile-services',

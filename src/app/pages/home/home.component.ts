@@ -1,6 +1,6 @@
 import { ConfirmModal, Modal } from './../../models/Modal.interface'
 import { Component, OnInit } from '@angular/core'
-import { ModalService } from 'src/app/services/modal.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'app-home',
