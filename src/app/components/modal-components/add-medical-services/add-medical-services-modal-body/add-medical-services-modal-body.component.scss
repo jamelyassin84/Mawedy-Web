@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-	background: #f7f8fa 0% 0% no-repeat padding-box;
+	background: var(--bg2) 0% 0% no-repeat padding-box;
 	border-radius: 20px;
 	opacity: 1;
 	padding: 20px 30px;
@@ -13,18 +13,19 @@
 }
 
 .label {
-	font-size: 13px;
-	text-align: left;
+	margin: 9px 0;
+	color: var(--color2);
 	letter-spacing: 0.03px;
-	color: #6f7d8f;
+	font-size: 16px;
 }
+
 input {
 	background: #ffffff 0% 0% no-repeat padding-box;
 	border-radius: 5px;
 
 	text-align: left;
 	letter-spacing: 0.18px;
-	color: #0a2440;
+	color: var(--color1);
 	text-transform: capitalize;
 	opacity: 1;
 	margin-top: 5px;
@@ -38,7 +39,7 @@ textarea {
 .doctors {
 	text-align: left;
 	letter-spacing: 0.03px;
-	color: #0a2440;
+	color: var(--color1);
 	margin-top: 1rem;
 	margin-left: 1rem;
 }
