@@ -25,21 +25,16 @@
 	src: url('./assets/fonts/avenir.ttf');
 }
 
-@font-face {
-	font-family: 'sf';
-	src: url('./assets/fonts/sf.ttf');
-}
-
-@font-face {
-	font-family: 'feather';
-	src: url('./assets/tiny-dash-light//fonts/feather.ttf');
-}
-
-@import url('./app/styles/root.scss');
-
 html {
 	--accent: #00b074;
 }
+
+$mobile: 480px;
+$tabletsLQ: 767px;
+$tabletsHQ: 1024px;
+$laptop: 1024px;
+$desktop: 1280px;
+$large: 1281px;
 
 html[theme='dark'] {
 	--bg1: #1e1e1e;
@@ -124,3 +119,5 @@ html[theme='light'] {
 	--tabContainer: #ebf9f4;
 	--disabled: #cfdae8;
 }
+
+@import url('./app/styles/root.scss');
