@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { timeSlots } from 'src/app/constants/App.constants'
 
 @Component({
 	selector: 'select-time-slot-component',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core'
 })
 export class SelectTimeSlotComponent implements OnInit {
 	constructor() {}
+
+	timeSlots: string[] = timeSlots
 
 	ngOnInit(): void {}
 }

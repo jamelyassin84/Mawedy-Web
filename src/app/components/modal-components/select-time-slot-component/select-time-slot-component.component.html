@@ -1,1 +1,17 @@
-<p>select-time-slot-component works!</p>
+<div class="modal-container">
+	<div class="header d-flex aic">
+		<span class="header-title">Select time slot</span>
+		<span class="filter">Filter</span>
+		<div class="filter-btn">
+			<select>
+				<option>View all</option>
+			</select>
+		</div>
+	</div>
+	<div class="body">
+		<span class="selected-date">Selected Date - 12/10/2021</span>
+		<div *ngFor="let time of timeSlots" class="time-slot-badges">
+			{{ time }}
+		</div>
+	</div>
+</div>
