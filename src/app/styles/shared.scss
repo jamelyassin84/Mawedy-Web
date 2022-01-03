@@ -135,7 +135,7 @@ SELECT {
 .separator {
 	width: 100%;
 	height: 1px;
-	border: 1px solid #e3ebf5;
+	border: 1px solid var(--border);
 	margin: 29px 0;
 }
 

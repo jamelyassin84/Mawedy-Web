@@ -12,9 +12,15 @@
 	}
 }
 table {
-	border-top: 1px solid #f5f6fa;
+	border-top: 1px solid var(--border1);
 
 	* {
 		font-size: 16px !important;
 	}
+}
+tr:nth-child(even) {
+	background-color: var(--trBg2) !important;
+}
+tr:nth-child(odd) {
+	background-color: var(--table) !important;
 }

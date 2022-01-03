@@ -1,5 +1,5 @@
 <div class="d-flex aic jcc footer-container">
-	<span class="cancel">
+	<span (click)="cancelBtn()" class="cancel">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="116"
@@ -12,7 +12,7 @@
 					data-name="Rectangle 2714"
 					transform="translate(52 0)"
 					fill="none"
-					stroke="#c3cdde"
+					stroke="var(--color2)"
 					stroke-width="1.5"
 				>
 					<rect width="116" height="46" rx="12" stroke="none" />
@@ -33,7 +33,7 @@
 					<text
 						id="Cancel"
 						transform="translate(93 17)"
-						fill="#c3cdde"
+						fill="var(--color2)"
 						font-size="16"
 						font-family="Avenir-Heavy, Avenir"
 						font-weight="800"
@@ -45,7 +45,7 @@
 			</g>
 		</svg>
 	</span>
-	<span class="schedule">
+	<span (click)="scheduleBtn()" class="schedule">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="116"
@@ -60,7 +60,7 @@
 					height="46"
 					rx="12"
 					transform="translate(52 0)"
-					fill="#c3cdde"
+					fill="var(--accent)"
 				/>
 				<g
 					id="Group_73719"

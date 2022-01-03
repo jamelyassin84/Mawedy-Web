@@ -15,6 +15,7 @@
 		position: absolute;
 		z-index: 9;
 		left: -15px;
+		display: var(--onlyLight);
 	}
 	.button {
 		position: relative;
@@ -28,7 +29,7 @@
 	.button-text {
 		text-align: left;
 		letter-spacing: 0.04px;
-		color: #0a2440;
+		color: var(--color);
 		font-family: bold;
 		font-size: 16px;
 		position: relative;

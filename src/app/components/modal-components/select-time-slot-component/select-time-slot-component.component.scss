@@ -24,7 +24,7 @@
 		}
 
 		.filter-btn {
-			background: var(--bg) 0% 0% no-repeat padding-box;
+			background: var(--bg3) 0% 0% no-repeat padding-box;
 			box-shadow: 0px 1px 2px var(--shadow4);
 			border-radius: 6px;
 			width: 110px;
@@ -40,6 +40,7 @@
 				&:focus {
 					outline: 0 !important;
 				}
+				cursor: pointer;
 			}
 		}
 	}

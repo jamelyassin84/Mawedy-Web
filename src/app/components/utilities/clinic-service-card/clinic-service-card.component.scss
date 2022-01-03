@@ -1,7 +1,7 @@
 .wrapper {
 	width: 432px;
 	height: 131px;
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--bg3) 0% 0% no-repeat padding-box;
 	box-shadow: 0px 3px 8px #6f7d8f38;
 	border-radius: 10px;
 	padding: 20px;
@@ -10,11 +10,10 @@
 	.title {
 		text-align: left;
 		letter-spacing: 0.04px;
-		color: #0a2440;
+		color: var(--color1);
 		font-size: 18px;
 	}
 	.description {
-		color: var(--unnamed-color-6f7d8f);
 		text-align: left;
 		letter-spacing: 0px;
 		color: #6f7d8f;

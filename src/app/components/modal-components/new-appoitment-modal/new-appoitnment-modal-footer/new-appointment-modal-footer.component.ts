@@ -1,3 +1,4 @@
+import { ModalService } from 'src/app/services/modal.service'
 import { Component, OnInit } from '@angular/core'
 
 @Component({
@@ -6,7 +7,19 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./new-appointment-modal-footer.component.scss'],
 })
 export class NewAppointmentModalFooterComponent implements OnInit {
-	constructor() {}
+	constructor(protected modalService: ModalService) {}
 
 	ngOnInit(): void {}
+
+	cancelBtn() {
+		this.modalService.showModal({
+			value: false,
+			header: '',
+			body: '',
+			footer: '',
+			type: 'Right',
+		})
+	}
+
+	scheduleBtn() {}
 }

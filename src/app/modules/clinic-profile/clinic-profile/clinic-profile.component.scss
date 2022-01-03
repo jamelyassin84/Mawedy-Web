@@ -1,9 +1,8 @@
 .header {
-	background: #ffffff 0% 0% no-repeat padding-box;
 	width: 100%;
 	.clinic-promotion {
 		letter-spacing: 0.05px;
-		color: #0a2440;
+		color: var(--color1);
 		text-transform: capitalize;
 		opacity: 1;
 		font-size: 25px;
@@ -32,7 +31,7 @@
 label {
 	text-align: left;
 	letter-spacing: 0.04px;
-	color: #252525;
+	color: var(--color2);
 	text-transform: capitalize;
 	font-size: 22px;
 	margin-top: 17px;
@@ -50,11 +49,11 @@ label {
 .map {
 	width: 100%;
 	height: 312px;
-	background: #f5f6fa;
+	background: var(--searchInput);
 }
 
 .contact-form {
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--searchInput) 0% 0% no-repeat padding-box;
 	border: 0.5px solid rgba($color: #707070, $alpha: 0.4);
 	border-radius: 5px;
 	height: 45px;
@@ -75,6 +74,7 @@ label {
 		outline: 0 !important;
 		border: none;
 		box-shadow: none;
+		color: var(--color1);
 		padding-left: 1rem;
 		border-left: 0.5px solid rgba($color: #707070, $alpha: 0.4);
 		&:focus {
@@ -99,32 +99,33 @@ label {
 }
 
 .timings {
-	letter-spacing: var(--unnamed-character-spacing-0-03);
 	text-align: left;
-	font: normal normal medium 16px/31px Avenir;
 	letter-spacing: 0.03px;
-	color: #0a2440;
+	color: var(--color1);
 	font-size: 16px;
 	height: 25px;
 	margin-bottom: 12px;
 }
 
 .timings-input {
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--searchInput) 0% 0% no-repeat padding-box;
 	border: 1px solid #00b074;
 	border-radius: 5px;
 	height: 25px;
 	letter-spacing: 0.03px;
-	color: #0a2440;
+	color: var(--color1);
 	text-transform: uppercase;
 	font-size: 13px;
 	max-width: 106px;
 	margin-bottom: 12px;
 	padding: 3px 8px;
 	text-align: center;
+	&:focus {
+		outline: 0 !important;
+	}
 }
 .disabled {
-	background: #cfdae8 0% 0% no-repeat padding-box;
+	background: var(--disabled) 0% 0% no-repeat padding-box;
 	color: #99a8bc;
 	border: transparent;
 	pointer-events: none;

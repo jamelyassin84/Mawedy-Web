@@ -1,7 +1,7 @@
 .checkbox {
 	width: 28px;
 	height: 28px;
-	background: #ffffff 0% 0% no-repeat padding-box;
+	background: var(--searchInput) 0% 0% no-repeat padding-box;
 	border: 1px solid #00b074;
 	border-radius: 5px;
 	cursor: pointer;
