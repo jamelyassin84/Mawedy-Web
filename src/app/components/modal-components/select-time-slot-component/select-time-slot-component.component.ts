@@ -1,3 +1,4 @@
+import { ModalService } from './../../../services/modal.service'
 import { Component, OnInit } from '@angular/core'
 import { timeSlots } from 'src/app/constants/App.constants'
 
@@ -7,9 +8,19 @@ import { timeSlots } from 'src/app/constants/App.constants'
 	styleUrls: ['./select-time-slot-component.component.scss'],
 })
 export class SelectTimeSlotComponent implements OnInit {
-	constructor() {}
+	constructor(protected modalService: ModalService) {}
 
 	timeSlots: string[] = timeSlots
 
 	ngOnInit(): void {}
+
+	cancel() {
+		this.modalService.showModal({
+			value: false,
+			header: '',
+			body: '',
+			footer: '',
+			type: 'Right Blur',
+		})
+	}
 }

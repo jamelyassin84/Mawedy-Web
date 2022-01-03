@@ -34,8 +34,6 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 		})
 	}
 
-	reAssign() {}
-
 	showConfirmation(header: any, body: any) {
 		this.modalService.showModal({
 			value: true,
