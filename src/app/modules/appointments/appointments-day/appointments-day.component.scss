@@ -1,0 +1,77 @@
+.calendar-container {
+	.day {
+		min-height: calc(66.9px);
+		border: 1px solid var(--border1);
+		width: 100%;
+		padding: 20px 22px;
+		padding-top: 5px;
+		cursor: pointer;
+		&:hover {
+			background: var(--bg2);
+		}
+		.day-number {
+			margin-left: auto;
+			letter-spacing: 0px;
+			color: var(--color1);
+			font-family: bold;
+			font-size: 18px;
+		}
+	}
+	.disabled-date {
+		.day-number {
+			color: var(--color3);
+			font-family: normal;
+			opacity: 0.5;
+		}
+	}
+
+	.badge {
+		color: white;
+		align-items: center;
+		justify-content: center;
+		float: right;
+		margin-bottom: -15px;
+		position: relative;
+		z-index: 100;
+		opacity: 0.9;
+	}
+}
+
+.active {
+	border: 1px solid var(--accent) !important;
+	.day-number {
+		color: var(--accent) !important;
+		text-shadow: 0px 0px 1px var(--accent);
+	}
+}
+
+.today {
+	color: var(--accent) !important;
+}
+
+.times {
+	width: 100%;
+	font-size: 12px;
+	.time {
+		text-align: right !important;
+		white-space: nowrap;
+		margin-bottom: 49px;
+		margin-right: 25px;
+	}
+}
+.col,
+.row {
+	padding: 0;
+	margin: 0;
+}
+
+.calendar-badge {
+	margin-top: 15px;
+}
+.more {
+	text-align: left;
+	letter-spacing: 0px;
+	color: #6f7d8f;
+	font-size: 10px;
+	margin-top: 10px;
+}

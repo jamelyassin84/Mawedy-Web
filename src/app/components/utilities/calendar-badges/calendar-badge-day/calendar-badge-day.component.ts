@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-calendar-badge-day',
-  templateUrl: './calendar-badge-day.component.html',
-  styleUrls: ['./calendar-badge-day.component.scss']
+	selector: 'calendar-badge-day',
+	templateUrl: './calendar-badge-day.component.html',
+	styleUrls: ['./calendar-badge-day.component.scss'],
 })
 export class CalendarBadgeDayComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
+	@Input() doctor: string = ''
+	@Input() appointment: string = ''
 
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }

@@ -1,0 +1,25 @@
+.calendar-badge {
+	height: 28px;
+	max-height: 28px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-family: bold;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--color1);
+	padding: 6px 12px;
+}
+
+.phone {
+	background: var(--calendar1);
+}
+
+.mobile {
+	background: var(--calendar2);
+}
+
+.clinic {
+	background: var(--calendar3);
+}

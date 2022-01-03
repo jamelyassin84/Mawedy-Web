@@ -1,1 +1,9 @@
-<p>calendar-badge-day works!</p>
+<div
+	class="calendar-badge d-flex"
+	[class.mobile]="appointment.includes('Phone')"
+	[class.phone]="appointment.includes('Online')"
+	[class.clinic]="appointment.includes('Clinic')"
+>
+	<span class="doctor">{{ doctor }}</span>
+	<span class="appointment ml-auto">{{ appointment }}</span>
+</div>

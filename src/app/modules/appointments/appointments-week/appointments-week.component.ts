@@ -12,13 +12,7 @@ import { AppointmentService } from 'src/app/services/toolbars/appointment.servic
 	styleUrls: ['./appointments-week.component.scss'],
 })
 export class AppointmentsWeekComponent implements OnInit {
-	constructor(private appointmentService: AppointmentService) {
-		// this.appointmentService
-		// 	.getDate()
-		// 	.subscribe((date: number) =>
-		// 		this.setWeeklyAppointments(new Date(date)),
-		// 	)
-	}
+	constructor(private appointmentService: AppointmentService) {}
 
 	weekdays: string[] = weekDaysShort
 
