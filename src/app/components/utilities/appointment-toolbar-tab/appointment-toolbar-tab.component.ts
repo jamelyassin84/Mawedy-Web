@@ -17,7 +17,7 @@ export class AppointmentToolbarTabComponent implements OnInit {
 	}
 
 	tabs: CalendarTabType[] = CalendarTabs as CalendarTabType[]
-	activeTab: number | any = 1
+	activeTab: number = 1
 
 	setActiveTab(tab: CalendarTabType) {
 		this.router.navigate([tab.route])

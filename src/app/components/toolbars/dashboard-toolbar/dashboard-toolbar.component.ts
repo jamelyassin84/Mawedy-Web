@@ -11,17 +11,29 @@ import {
 	styleUrls: ['./dashboard-toolbar.component.scss'],
 })
 export class DashboardToolbarComponent implements OnInit {
-	constructor(private router: Router) {}
+	constructor(private router: Router) {
+		router.events.subscribe(() => this.changeTab())
+	}
 	tabs: AppointmentTabType[] = AppointmentTabs
 
 	today = Date.now()
 
 	activeTab: number = 1
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.changeTab()
+	}
 
 	setActiveTab(tab: AppointmentTabType) {
-		this.activeTab = tab.id
 		this.router.navigate([tab.route])
+	}
+
+	changeTab() {
+		if (this.router.url.includes('appointments')) {
+			this.activeTab = 1
+		}
+		if (this.router.url.includes('patient-outreach')) {
+			this.activeTab = 2
+		}
 	}
 }
