@@ -53,7 +53,7 @@ export class AppointmentsWeekComponent implements OnInit {
 
 		this.days.push(monday.getDate() - 1)
 
-		for (let i = 1; i < 6; i++) {
+		for (let i = 0; i < 5; i++) {
 			this.days.push(
 				new Date(monday.getTime() + i * milliseconds).getDate(),
 			)

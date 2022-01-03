@@ -5,26 +5,43 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<div class="row">
-			<div class="col-md-2z col">
-				<!-- Time -->
-				<div class="times">
-					<div *ngFor="let time of weeklyTimesAM" class="time">
-						{{ time }}:00
-					</div>
-					<div *ngFor="let time of weeklyTimesPM" class="time">
-						{{ time }}:00
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-11 col">
-				<div class="calendar-container">
+		<div class="calendar-container">
+			<div class="row">
+				<div class="col-md-2z col"></div>
+				<div class="col-md-11 col">
 					<div
 						class="day"
 						*ngFor="let time of weeklyTimesAM; let i = index"
 					>
+						<div class="time">{{ weeklyTimesAM[i] }}:00</div>
 						<div routerLink="/home/appointments/day">
+							<div
+								*ngIf="now === time"
+								class="badge badge-danger"
+							>
+								Now treating...
+							</div>
+
+							<div class="calendar-badge">
+								<calendar-badge-day
+									doctor=" Dr. Kamini Naik & Kamini Naik"
+									appointment="Phone Appointment"
+								></calendar-badge-day>
+								<div class="calendar-badge">
+									<calendar-badge-day
+										doctor=" Dr. Kamini Naik & Kamini Naik"
+										appointment="Through Clinic"
+									></calendar-badge-day>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="day"
+						*ngFor="let time of weeklyTimesPM; let i = index"
+					>
+						<div routerLink="/home/appointments/day">
+							<div class="time">{{ weeklyTimesPM[i] }}:00</div>
 							<div
 								*ngIf="now === time"
 								class="badge badge-danger"
@@ -38,30 +55,10 @@
 									appointment="Through Clinic"
 								></calendar-badge-day>
 							</div>
-							<!-- <div class="calendar-badge">
-								<calendar-badge-day
-									doctor=" Dr. Kamini Naik & Kamini Naik"
-									appointment="Online"
-								></calendar-badge-day>
-							</div> -->
-						</div>
-					</div>
-					<div
-						class="day"
-						*ngFor="let time of weeklyTimesPM; let i = index"
-					>
-						<div routerLink="/home/appointments/day">
-							<div
-								*ngIf="now === time"
-								class="badge badge-danger"
-							>
-								Now treating...
-							</div>
-
 							<div class="calendar-badge">
 								<calendar-badge-day
 									doctor=" Dr. Kamini Naik & Kamini Naik"
-									appointment="Phone Appointment"
+									appointment="Online"
 								></calendar-badge-day>
 							</div>
 						</div>
