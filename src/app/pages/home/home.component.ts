@@ -39,5 +39,6 @@ export class HomeComponent implements OnInit {
 	onSubmit: any
 
 	showModal = false
+
 	ngOnInit(): void {}
 }

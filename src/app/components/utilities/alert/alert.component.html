@@ -1,0 +1,60 @@
+<div
+	*ngIf="isShowing"
+	[@content]
+	[class.success]="type === 'success'"
+	[class.info]="type === 'info'"
+	[class.warning]="type === 'warning'"
+	[class.error]="type === 'error'"
+	class="alert"
+	(click)="callback()"
+>
+	<span class="border"></span>
+	<div class="icon">
+		<img
+			*ngIf="type == 'success'"
+			src="../../../../assets/app/alert/success-icon.svg"
+			alt=""
+		/>
+		<img
+			*ngIf="type == 'info'"
+			src="../../../../assets/app/alert/info-icon.jpeg"
+			alt=""
+		/>
+		<img
+			*ngIf="type == 'warning'"
+			src="../../../../assets/app/alert/warning-icon.svg"
+			alt=""
+		/>
+		<img
+			*ngIf="type == 'error'"
+			src="../../../../assets/app/alert/danger-icon.svg"
+			alt=""
+		/>
+	</div>
+	<div class="body">
+		<div (click)="close()" class="close-button">
+			<img
+				*ngIf="type == 'success'"
+				src="../../../../assets/app/alert/close-success.svg"
+				alt=""
+			/>
+			<img
+				*ngIf="type == 'info'"
+				src="../../../../assets/app/alert/close-info.svg"
+				alt=""
+			/>
+			<img
+				*ngIf="type == 'warning'"
+				src="../../../../assets/app/alert/close-warning.svg"
+				alt=""
+			/>
+			<img
+				*ngIf="type == 'error'"
+				src="../../../../assets/app/alert/close-danger.svg"
+				alt=""
+			/>
+		</div>
+		<div class="title">{{ title }}</div>
+		<div class="description">{{ description }}</div>
+	</div>
+</div>

@@ -33,7 +33,8 @@ import { NewAppointmentModalFooterComponent } from './components/modal-component
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
-import { MainInterceptor } from './interceptors/main'
+import { MainInterceptor } from './interceptors/main';
+import { AlertComponent } from './components/utilities/alert/alert.component'
 
 @NgModule({
 	declarations: [
@@ -56,6 +57,7 @@ import { MainInterceptor } from './interceptors/main'
 		NewAppointmentModalFooterComponent,
 		NewAppointmentModalHeaderComponent,
 		CenterSmallModalComponent,
+  AlertComponent,
 	],
 	imports: [
 		BrowserModule,
