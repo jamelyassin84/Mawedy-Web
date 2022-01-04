@@ -1,2 +1,4 @@
-@media (min-width: $large) {
+@use '../../styles/variables.scss' as screen;
+
+@media (min-width: screen.$large) {
 }

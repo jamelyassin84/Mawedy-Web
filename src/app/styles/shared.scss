@@ -141,6 +141,13 @@ SELECT {
 
 .touchable {
 	&:hover {
-		box-shadow: 0px 0px 5px var(--accent);
+		transform: scale(1.03) !important;
+		transition: 0.2s;
+		border-radius: 30px !important;
+		box-shadow: none !important;
+	}
+	&:active {
+		opacity: 0.5;
+		transform: scale(1) !important;
 	}
 }

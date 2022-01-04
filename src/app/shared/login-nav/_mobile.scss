@@ -1,5 +1,7 @@
-@media (max-width: $mobile) {
-	.aside {
+@use '../../../../src/app/styles/variables.scss' as variable;
+
+@media only screen and (max-width: variable.$mobile) {
+	* {
 		display: none;
 	}
 }

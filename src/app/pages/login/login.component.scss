@@ -66,3 +66,19 @@ h1 {
 		margin-top: 78px;
 	}
 }
+
+.tag-line {
+	display: none;
+}
+.touchable {
+	&:hover {
+		transform: scale(1.03) !important;
+		transition: 0.2s;
+		border-radius: 30px !important;
+		box-shadow: none !important;
+	}
+	&:active {
+		opacity: 0.5;
+		transform: scale(1) !important;
+	}
+}

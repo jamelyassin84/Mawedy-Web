@@ -1,2 +1,4 @@
-@media (min-width: calc($laptop + 1px)) and (max-width: $desktop) {
+@use '../../styles/variables.scss' as screen;
+
+@media (min-width: calc(screen.$laptop + 1px)) and (max-width: screen.$desktop) {
 }
