@@ -1,57 +1,98 @@
-<login-nav></login-nav>
-<div class="overlay"></div>
-<div class="row p-0 m-0" style="position: fixed">
-	<div class="col-md-6 left">
-		<h1>Helping people for better health.</h1>
-	</div>
-	<div class="col-md-6 right">
-		<div class="login-container">
-			<div class="h1">Howdy!</div>
-			<p class="text-center text-muted">
-				Sign-in with your mawedy account.
-			</p>
-			<div class="form-group mt-3">
-				<input
-					#username
-					[(ngModel)]="data.username"
-					type="text"
-					class="form-control"
-					placeholder="Password"
-				/>
-			</div>
-			<div class="form-group mt-3">
-				<input
-					[(ngModel)]="data.password"
-					(keyup.enter)="login()"
-					type="password"
-					class="form-control"
-					placeholder="Username"
-				/>
-			</div>
+<div class="root">
+	<login-nav></login-nav>
+	<div class="overlay"></div>
+	<div class="row p-0 m-0">
+		<div class="col-md-6 left">
+			<h1>Helping people for better health.</h1>
+		</div>
+		<div class="col-md-6 right">
+			<div class="login-container">
+				<div class="h1">Howdy!</div>
+				<p class="text-center text-muted">
+					Sign-in with your mawedy account.
+				</p>
+				<div class="form-group mt-3">
+					<input
+						#username
+						[(ngModel)]="data.username"
+						type="text"
+						class="form-control"
+						placeholder="Password"
+					/>
+				</div>
+				<div class="form-group mt-3">
+					<input
+						[(ngModel)]="data.password"
+						(keyup.enter)="login()"
+						type="password"
+						class="form-control"
+						placeholder="Username"
+					/>
+				</div>
 
-			<div
-				(click)="login()"
-				[class.isProcessing]="isProcessing === true"
-				[class.isComplete]="isProcessing === 'complete'"
-				class="d-flex mt-3"
-			>
-				<button class="btn primary-button w-100">
-					<span *ngIf="isProcessing === 'complete'">
-						<i-feather name="check"></i-feather>
-					</span>
-					<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
+				<div
+					(click)="login()"
+					[class.isProcessing]="isProcessing === true"
+					[class.isComplete]="isProcessing === 'complete'"
+					class="d-flex mt-3"
+				>
+					<button class="btn primary-button w-100">
+						<span *ngIf="isProcessing === 'complete'">
+							<i-feather name="check"></i-feather>
+						</span>
+						<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
 
-					<div
-						style="color: var(--accent) !important"
-						*ngIf="isProcessing === true"
-						class="spinner-border text-success"
-						role="status"
-					></div>
-				</button>
-			</div>
-			<div class="d-flex w-10">
-				<a class="link w-100">Forgot Password?</a>
+						<div
+							style="color: var(--accent) !important"
+							*ngIf="isProcessing === true"
+							class="spinner-border text-success"
+							role="status"
+						></div>
+					</button>
+				</div>
+				<div class="d-flex w-10">
+					<a class="link w-100">Forgot Password?</a>
+				</div>
 			</div>
 		</div>
+	</div>
+	<div class="container">
+		<div class="row jumbotron p-0 m-0 mt-5 pt-5 form-container">
+			<div class="col-md-6" style="margin-top: 10rem">
+				<div class="card">
+					<div class="card-body p-5">
+						<h2>Clinic Information</h2>
+						<div class="form-group">
+							<label for="">Clinic Name</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label for="">Clinic Address</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label for="">Email</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label for="">Mobile No.</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="d-flex mt-5">
+							<button class="btn ml-auto">Next</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 pl-5">
+				<div class="h1">Partner with us!</div>
+				<p class="text-center mt-3 text-muted">
+					Get benefits for being a Mawedy partner.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row jumbotron p-0 m-0">
+		<h1>Linte</h1>
 	</div>
 </div>

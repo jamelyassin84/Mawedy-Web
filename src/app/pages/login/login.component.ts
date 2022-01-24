@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 	data: any = {
 		username: '',
 		password: '',
-		type: 'admin',
+		type: 'clinic',
 	}
 
 	login(): void {
@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
 				})
 			}
 		}
+		this.router.navigate(['/home'])
 
 		// new BaseService(this.http, ROUTES.LOGIN).create(this.data).subscribe(
 		// 	(data) => {
@@ -73,6 +74,7 @@ export class LoginComponent implements OnInit {
 		for (let key in this.data) {
 			this.data[key] = ''
 		}
+		this.data['type'] = 'clinic'
 		this.usernameInput.nativeElement.focus()
 	}
 }

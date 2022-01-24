@@ -1,14 +1,17 @@
+.jumbotron {
+	height: 100vh;
+}
 .overlay {
 	background: url('../../../assets/app/login/bg.jpg');
 	background-size: 100% 100%;
 	height: calc(100vh - 10vh + 20px);
 	width: 100%;
-	position: fixed;
+	position: absolute;
 }
 h1 {
 	color: white;
 	font-size: 91px;
-	padding: 30vh 10vw;
+	padding: 25vh 9vw;
 	padding-right: 0;
 }
 
@@ -62,51 +65,49 @@ h1 {
 		color: var(--color1);
 		text-transform: capitalize;
 	}
-
+}
+.btn {
+	background: var(--accent);
+	span {
+		color: var(--bg1);
+	}
+	border-radius: 9999px;
+	font-size: 1.2rem;
+	height: 50px;
+	transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.isProcessing {
 	.btn {
-		background: var(--accent);
-		span {
-			color: var(--bg1);
-		}
-		border-radius: 9999px;
-		font-size: 1.2rem;
-		height: 50px;
-		transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-	.isProcessing {
-		.btn {
-			width: 50px !important;
-			border-radius: 50%;
-			align-self: center;
-			margin: auto;
-			background: var(--bg);
-			border: none;
-			margin-top: calc(83px - 45px);
-			padding: 0 !important;
-		}
-	}
-	.btn :focus {
-		outline: 0 !important;
-	}
-	button:focus {
-		outline: 0 !important;
-	}
-	.btn :active {
-		font-size: 0.95rem;
-	}
-	.isComplete {
-		.btn {
-			width: 150px !important;
-			border-radius: 30px;
-			margin: auto;
-			opacity: 1;
-			font-size: 1.5rem;
-			margin-top: calc(83px - 45px);
-			padding-top: 0;
-		}
+		width: 50px !important;
+		border-radius: 50%;
+		align-self: center;
+		margin: auto;
+		background: var(--bg);
+		border: none;
+		margin-top: calc(83px - 45px);
+		padding: 0 !important;
 	}
 }
-
+.btn :focus {
+	outline: 0 !important;
+}
+button:focus {
+	outline: 0 !important;
+}
+.btn :active {
+	font-size: 0.95rem;
+}
+.isComplete {
+	.btn {
+		width: 150px !important;
+		border-radius: 30px;
+		margin: auto;
+		opacity: 1;
+		font-size: 1.5rem;
+		margin-top: calc(83px - 45px);
+		padding-top: 0;
+	}
+}
 a {
 	text-align: center;
 	color: #00b074 !important;
@@ -131,4 +132,34 @@ a {
 		opacity: 0.5;
 		transform: scale(1) !important;
 	}
+}
+.root {
+	background: var(--bg1);
+}
+.container {
+	max-width: 1300px !important;
+}
+.form-container {
+	background: var(--bg1);
+	.h1 {
+		font-size: 3rem !important;
+		margin-bottom: 0;
+		margin-top: 15rem;
+	}
+	p {
+		color: var(--color1);
+		font-size: 2rem !important;
+		margin-bottom: 0;
+	}
+
+	button {
+		min-width: 150px;
+		color: white;
+	}
+}
+
+.card {
+	box-shadow: rgba(183, 207, 194, 0.2) 0px 7px 29px 0px;
+	border: none;
+	border-radius: 25px;
 }
