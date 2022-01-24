@@ -10,7 +10,7 @@
 }
 h1 {
 	color: white;
-	font-size: 4rem;
+	font-size: 5rem;
 	padding-top: 10rem;
 	padding-right: 0;
 }
@@ -162,4 +162,41 @@ a {
 	box-shadow: rgba(183, 207, 194, 0.2) 0px 7px 29px 0px;
 	border: none;
 	border-radius: 25px;
+}
+
+.features {
+	.card {
+		&:hover {
+			box-shadow: rgba(17, 116, 66, 0.2363) 0px 48px 200px 0px;
+		}
+		cursor: pointer;
+	}
+	background: var(--page1);
+	h1 {
+		color: var(--accent);
+		margin: 0 !important;
+		padding-top: 5vh;
+	}
+	.item {
+		flex-direction: column;
+		padding: 0 2rem;
+		margin-top: -8rem;
+	}
+	.circle {
+		border-radius: 50%;
+		width: 7rem;
+		height: 7rem;
+		background: var(--accent);
+		margin-bottom: 2rem;
+	}
+
+	.title {
+		font-size: 1.3rem;
+		color: var(--color1);
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	p {
+		text-align: center;
+	}
 }

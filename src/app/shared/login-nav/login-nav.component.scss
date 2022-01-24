@@ -38,3 +38,25 @@
 		}
 	}
 }
+
+.get-started {
+	border-radius: 30px;
+	padding: 10px 30px;
+	color: white !important;
+	cursor: pointer;
+	font-weight: 900;
+	background: linear-gradient(
+		111.54deg,
+		#295d51 -5.45%,
+		#00b074 -5.45%,
+		#00b074 54.6%,
+		#48ab84 82.64%
+	);
+	transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		transform: scale(0.95);
+	}
+}
