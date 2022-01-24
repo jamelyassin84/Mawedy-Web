@@ -1,66 +1,83 @@
 <div class="root">
 	<login-nav></login-nav>
 	<div class="overlay"></div>
-	<div class="row p-0 m-0">
-		<div class="col-md-6 left">
-			<h1>Helping people for better health.</h1>
-		</div>
-		<div class="col-md-6 right">
-			<div class="login-container">
-				<div class="h1">Howdy!</div>
-				<p class="text-center text-muted">
-					Sign-in with your mawedy account.
+	<div class="container">
+		<div class="row p-0 m-0 mt-5">
+			<div class="col-md-6 left">
+				<h1>CLINIC APPOINTMENTS MADE EASY.</h1>
+				<p class="text-white" style="font-size: 2rem; opacity: 0.5">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					recusandae saepe.
 				</p>
-				<div class="form-group mt-3">
-					<input
-						#username
-						[(ngModel)]="data.username"
-						type="text"
-						class="form-control"
-						placeholder="Password"
-					/>
-				</div>
-				<div class="form-group mt-3">
-					<input
-						[(ngModel)]="data.password"
-						(keyup.enter)="login()"
-						type="password"
-						class="form-control"
-						placeholder="Username"
-					/>
-				</div>
-
-				<div
-					(click)="login()"
-					[class.isProcessing]="isProcessing === true"
-					[class.isComplete]="isProcessing === 'complete'"
-					class="d-flex mt-3"
+				<button class="btn btn-success text-white mt-5 pl-4 pr-4">
+					Get Started
+					<i-feather class="ml-2" name="arrow-right"> </i-feather>
+				</button>
+				<button
+					class="btn btn-light mt-5 pl-4 pr-4 ml-4"
+					style="background: white !important"
 				>
-					<button class="btn primary-button w-100">
-						<span *ngIf="isProcessing === 'complete'">
-							<i-feather name="check"></i-feather>
-						</span>
-						<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
+					Contact Sales
+					<i-feather class="ml-2" name="arrow-right"> </i-feather>
+				</button>
+			</div>
+			<div class="col-md-6 right">
+				<div class="login-container">
+					<div class="h1">Howdy!</div>
+					<p class="text-center text-muted">
+						Sign-in with your mawedy account.
+					</p>
+					<div class="form-group mt-3">
+						<input
+							#username
+							[(ngModel)]="data.username"
+							type="text"
+							class="form-control"
+							placeholder="Password"
+						/>
+					</div>
+					<div class="form-group mt-3">
+						<input
+							[(ngModel)]="data.password"
+							(keyup.enter)="login()"
+							type="password"
+							class="form-control"
+							placeholder="Username"
+						/>
+					</div>
 
-						<div
-							style="color: var(--accent) !important"
-							*ngIf="isProcessing === true"
-							class="spinner-border text-success"
-							role="status"
-						></div>
-					</button>
-				</div>
-				<div class="d-flex w-10">
-					<a class="link w-100">Forgot Password?</a>
+					<div
+						(click)="login()"
+						[class.isProcessing]="isProcessing === true"
+						[class.isComplete]="isProcessing === 'complete'"
+						class="d-flex mt-3"
+					>
+						<button class="btn primary-button w-100">
+							<span *ngIf="isProcessing === 'complete'">
+								<i-feather name="check"></i-feather>
+							</span>
+							<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
+
+							<div
+								style="color: var(--accent) !important"
+								*ngIf="isProcessing === true"
+								class="spinner-border text-success"
+								role="status"
+							></div>
+						</button>
+					</div>
+					<div class="d-flex w-10">
+						<a class="link w-100">Forgot Password?</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
-		<div class="row jumbotron p-0 m-0 mt-5 pt-5 form-container">
+		<div class="row jumbotron p-0 m-0 form-container">
 			<div class="col-md-6" style="margin-top: 10rem">
 				<div class="card">
-					<div class="card-body p-5">
+					<div class="card-body p-5" *ngIf="signInTab === 1">
 						<h2>Clinic Information</h2>
 						<div class="form-group">
 							<label for="">Clinic Name</label>
@@ -79,7 +96,77 @@
 							<input type="text" class="form-control" />
 						</div>
 						<div class="d-flex mt-5">
-							<button class="btn ml-auto">Next</button>
+							<button (click)="next()" class="btn ml-auto">
+								Next
+							</button>
+						</div>
+					</div>
+					<div class="card-body p-5" *ngIf="signInTab === 2">
+						<h2>Account</h2>
+
+						<div class="form-group">
+							<label for="">Trade License No.</label>
+							<input type="text" class="form-control" />
+						</div>
+						<button class="btn mt-3 mb-5">
+							Upload Trade License
+						</button>
+						<div class="form-group">
+							<label for="">Subscription</label>
+							<select type="text" class="form-control">
+								<option selected disabled>
+									Select a package
+								</option>
+								<option value="trial">
+									Free Trial (2 months)
+								</option>
+								<option disabled value="solution">
+									Web Solution
+								</option>
+								<option disabled value="app">
+									Clinic Advertisement on Mawedy Mobile
+									Application
+								</option>
+								<option disabled value="premium">
+									Premium
+								</option>
+							</select>
+							<span role="button" class="text-info underlined"
+								>Click here for more information about
+								subscription packages.</span
+							>
+						</div>
+						<div class="form-group">
+							<label for="">Number of Users</label>
+							<input
+								value="2"
+								type="number"
+								class="form-control"
+							/>
+						</div>
+						<div class="row">
+							<div *ngFor="let account of users" class="col-md-4">
+								<label for="">User #{{ account }}</label>
+								<input
+									placeholder="Account name"
+									type="text"
+									class="form-control"
+								/>
+							</div>
+						</div>
+						<div class="d-flex mt-5 aic">
+							<span
+								(click)="signInTab = 1"
+								role="button"
+								class="mr-4 ml-auto"
+							>
+								<i-feather class="mr-2" name="arrow-left">
+								</i-feather>
+								Back</span
+							>
+							<button (click)="register()" class="btn">
+								Register
+							</button>
 						</div>
 					</div>
 				</div>

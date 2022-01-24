@@ -2,14 +2,18 @@
 	display: flex;
 	align-items: center;
 	background-color: var(--bg1);
-	position: sticky;
+	position: fixed;
 	top: 0;
+	z-index: 99;
+	width: 100%;
+	box-shadow: rgba(183, 207, 194, 0.2) 0px 7px 29px 0px;
 }
 .logo {
 	height: 76px;
 	object-fit: contain;
 	padding: 10px 10vw;
 	cursor: pointer;
+	transform: scale(1.5);
 }
 .aside {
 	display: flex;

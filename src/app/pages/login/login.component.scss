@@ -1,5 +1,5 @@
 .jumbotron {
-	height: 100vh;
+	min-height: 103vh;
 }
 .overlay {
 	background: url('../../../assets/app/login/bg.jpg');
@@ -10,8 +10,8 @@
 }
 h1 {
 	color: white;
-	font-size: 91px;
-	padding: 25vh 9vw;
+	font-size: 4rem;
+	padding-top: 10rem;
 	padding-right: 0;
 }
 

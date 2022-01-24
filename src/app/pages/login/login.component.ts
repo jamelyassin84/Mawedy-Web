@@ -33,9 +33,24 @@ export class LoginComponent implements OnInit {
 
 	data: any = {
 		username: '',
-		password: '',
 		type: 'clinic',
 	}
+
+	signInTab = 1
+	next() {
+		this.signInTab = 2
+	}
+
+	users: any = [1, 2]
+	addUsers(input: any) {
+		this.users = []
+		const count = parseInt(input.target.value)
+		for (let i = 0; i < count; i++) {
+			this.users.push(i + 1)
+		}
+	}
+
+	register(): void {}
 
 	login(): void {
 		this.isProcessing = true
