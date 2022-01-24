@@ -1,39 +1,38 @@
-import { throwError } from 'rxjs'
 import { FileInterface } from '../models/File.model'
 export const trigger = (id: string): void => {
 	return document.getElementById(id)?.click()
 }
 
-export const readFile = (event: any): FileInterface | void => {
-	if (event.target.files && event.target.files[0]) {
-		const reader = new FileReader()
-		reader.readAsDataURL(event.target.files[0])
-		reader.onload = (e: any) => {
-			return {
-				base64: e.target.result,
-				imageSource: event.target.files[0],
-			}
+export const readFile = (
+	file: any,
+	isBase64: boolean = false,
+): Promise<string> => {
+	return new Promise<string>((resolve, reject) => {
+		if (!file) {
+			resolve('')
 		}
-	}
-	return console.error('No file has been selected')
+		const reader: any = new FileReader()
+		reader.onload = (e: any) => {
+			const text = reader.result.toString()
+			resolve(text)
+		}
+		reader.readAsText(file)
+	})
 }
 
-export const readFiles = (event: any): FileInterface | void => {
-	if (event.target.files && event.target.files[0]) {
-		let base64: FileReader[] = []
-		let imageSource: File[] = []
-		Object.keys(event.target.files).forEach((i: any) => {
-			const reader = new FileReader()
-			reader.readAsDataURL(event.target.files[i])
-			reader.onload = (event: any) => {
-				base64.push(event.target.result as FileReader)
-				imageSource.push(event.target.files[i] as File)
-			}
-		})
-		return {
-			base64: base64,
-			imageSource: imageSource,
+export const readFiles = (event: any): FileInterface => {
+	let base64: FileReader[] = []
+	let files: File[] = []
+	Object.keys(event.target.files).forEach((i: any) => {
+		const reader = new FileReader()
+		reader.readAsDataURL(event.target.files[i])
+		reader.onload = (event: any) => {
+			base64.push(event.target.result as FileReader)
+			files.push(event.target.files[i] as File)
 		}
+	})
+	return {
+		base64: base64,
+		files: files,
 	}
-	return console.error('No file(s) has been selected')
 }

@@ -31,7 +31,7 @@
 						<input
 							#username
 							[(ngModel)]="data.username"
-							type="text"
+							type="search"
 							class="form-control"
 							placeholder="Password"
 						/>
@@ -81,19 +81,35 @@
 						<h2>Clinic Information</h2>
 						<div class="form-group">
 							<label for="">Clinic Name</label>
-							<input type="text" class="form-control" />
+							<input
+								[(ngModel)]="clinic.name"
+								type="search"
+								class="form-control"
+							/>
 						</div>
 						<div class="form-group">
 							<label for="">Clinic Address</label>
-							<input type="text" class="form-control" />
+							<input
+								[(ngModel)]="clinic.address"
+								type="search"
+								class="form-control"
+							/>
 						</div>
 						<div class="form-group">
 							<label for="">Email</label>
-							<input type="text" class="form-control" />
+							<input
+								[(ngModel)]="clinic.email"
+								type="search"
+								class="form-control"
+							/>
 						</div>
 						<div class="form-group">
 							<label for="">Mobile No.</label>
-							<input type="text" class="form-control" />
+							<input
+								[(ngModel)]="clinic.phone"
+								type="search"
+								class="form-control"
+							/>
 						</div>
 						<div class="d-flex mt-5">
 							<button (click)="next()" class="btn ml-auto">
@@ -106,14 +122,40 @@
 
 						<div class="form-group">
 							<label for="">Trade License No.</label>
-							<input type="text" class="form-control" />
+							<input
+								[(ngModel)]="clinic.tradeLicenseNumber"
+								type="search"
+								class="form-control"
+							/>
 						</div>
-						<button class="btn mt-3 mb-5">
+						<button (click)="trigger('file')" class="btn mt-3">
 							Upload Trade License
 						</button>
+						<div class="mb-5 mt-2 ml-3">
+							{{ filename }}
+						</div>
+						<input
+							(change)="readFile($event)"
+							type="file"
+							id="file"
+							style="display: none"
+						/>
+						<div class="form-group">
+							<label for="">Username</label>
+							<input
+								[(ngModel)]="clinic.username"
+								type="search"
+								class="form-control"
+							/>
+						</div>
+
 						<div class="form-group">
 							<label for="">Subscription</label>
-							<select type="text" class="form-control">
+							<select
+								[(ngModel)]="clinic.subscriptionType"
+								type="search"
+								class="form-control"
+							>
 								<option selected disabled>
 									Select a package
 								</option>
@@ -147,10 +189,11 @@
 						</div>
 						<div class="row">
 							<div *ngFor="let account of users" class="col-md-4">
-								<label for="">User #{{ account }}</label>
+								<label for="">User #{{ account.id }}</label>
 								<input
+									[(ngModel)]="account.name"
 									placeholder="Account name"
-									type="text"
+									type="search"
 									class="form-control"
 								/>
 							</div>
@@ -161,8 +204,9 @@
 								role="button"
 								class="mr-4 ml-auto"
 							>
-								<i-feather class="mr-2" name="arrow-left">
+								<i-feather class="ml-2" name="arrow-left">
 								</i-feather>
+
 								Back</span
 							>
 							<button (click)="register()" class="btn">

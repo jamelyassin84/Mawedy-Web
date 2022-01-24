@@ -1,3 +1,6 @@
+import { BaseService } from './../../services/api/base.api.service'
+import { ROUTES } from './../../routes/api.routes'
+import { ClinicDto } from './../../models/clinic.model'
 import { HttpClient } from '@angular/common/http'
 import { AlertService } from './../../services/utilities/alert.service'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
@@ -23,7 +26,9 @@ export class LoginComponent implements OnInit {
 		private http: HttpClient,
 	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.populateUser(2)
+	}
 
 	ngAfterViewInit() {
 		this.usernameInput.nativeElement.focus()
@@ -41,7 +46,8 @@ export class LoginComponent implements OnInit {
 		this.signInTab = 2
 	}
 
-	users: any = [1, 2]
+	users: any = []
+
 	addUsers(input: any) {
 		this.users = []
 		const count = parseInt(input.target.value)
@@ -50,7 +56,30 @@ export class LoginComponent implements OnInit {
 		}
 	}
 
-	register(): void {}
+	clinic: ClinicDto | any = {
+		registeredVia: 'web',
+	}
+	file!: File
+	register(): void {
+		new BaseService(this.http, ROUTES.CLINICS)
+			.create(Object.assign(this.clinic, { users: this.users }))
+			.subscribe(
+				(data: any) => {
+					console.log(data)
+				},
+				() => (this.isProcessing = false),
+			)
+	}
+
+	trigger(id: any) {
+		document.getElementById(id)?.click()
+	}
+
+	filename!: string
+	readFile(event: any) {
+		const file: File = event.target.files[0]
+		this.filename = file.name
+	}
 
 	login(): void {
 		this.isProcessing = true
@@ -91,5 +120,15 @@ export class LoginComponent implements OnInit {
 		}
 		this.data['type'] = 'clinic'
 		this.usernameInput.nativeElement.focus()
+	}
+
+	populateUser(iterations: number) {
+		this.users = []
+		for (let i = 0; i < iterations; i++) {
+			this.users.push({
+				id: i,
+				name: '',
+			})
+		}
 	}
 }
