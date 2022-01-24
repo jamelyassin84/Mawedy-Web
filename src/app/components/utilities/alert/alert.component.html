@@ -1,60 +1,61 @@
-<div
-	*ngIf="isShowing"
-	[@content]
-	[class.success]="type === 'success'"
-	[class.info]="type === 'info'"
-	[class.warning]="type === 'warning'"
-	[class.error]="type === 'error'"
-	class="alert"
-	(click)="callback()"
->
-	<span class="border"></span>
-	<div class="icon">
-		<img
-			*ngIf="type == 'success'"
-			src="../../../../assets/app/alert/success-icon.svg"
-			alt=""
-		/>
-		<img
-			*ngIf="type == 'info'"
-			src="../../../../assets/app/alert/info-icon.jpeg"
-			alt=""
-		/>
-		<img
-			*ngIf="type == 'warning'"
-			src="../../../../assets/app/alert/warning-icon.svg"
-			alt=""
-		/>
-		<img
-			*ngIf="type == 'error'"
-			src="../../../../assets/app/alert/danger-icon.svg"
-			alt=""
-		/>
-	</div>
-	<div class="body">
-		<div (click)="close()" class="close-button">
+<div [@alert]="alerts.length" class="alert-wrapper">
+	<div
+		[class.success]="alert.type === 'success'"
+		[class.info]="alert.type === 'info'"
+		[class.warning]="alert.type === 'warning'"
+		[class.error]="alert.type === 'error'"
+		class="alert"
+		(click)="alert.callback()"
+		*ngFor="let alert of alerts; let i = index"
+	>
+		<span class="border"></span>
+		<div class="icon">
 			<img
-				*ngIf="type == 'success'"
-				src="../../../../assets/app/alert/close-success.svg"
+				*ngIf="alert.type == 'success'"
+				src="../../../../assets/app/alert/success-icon.svg"
 				alt=""
 			/>
 			<img
-				*ngIf="type == 'info'"
-				src="../../../../assets/app/alert/close-info.svg"
+				*ngIf="alert.type == 'info'"
+				src="../../../../assets/app/alert/info-icon.jpeg"
 				alt=""
 			/>
 			<img
-				*ngIf="type == 'warning'"
-				src="../../../../assets/app/alert/close-warning.svg"
+				*ngIf="alert.type == 'warning'"
+				src="../../../../assets/app/alert/warning-icon.svg"
 				alt=""
 			/>
 			<img
-				*ngIf="type == 'error'"
-				src="../../../../assets/app/alert/close-danger.svg"
+				*ngIf="alert.type == 'error'"
+				src="../../../../assets/app/alert/danger-icon.svg"
 				alt=""
 			/>
 		</div>
-		<div class="title">{{ title }}</div>
-		<div class="description">{{ description }}</div>
+		<div class="body">
+			<div (click)="close(i)" class="close-button">
+				<img
+					*ngIf="alert.type == 'success'"
+					src="../../../../assets/app/alert/close-success.svg"
+					alt=""
+				/>
+				<img
+					*ngIf="alert.type == 'info'"
+					src="../../../../assets/app/alert/close-info.svg"
+					alt=""
+				/>
+				<img
+					*ngIf="alert.type == 'warning'"
+					src="../../../../assets/app/alert/close-warning.svg"
+					alt=""
+				/>
+				<img
+					*ngIf="alert.type == 'error'"
+					src="../../../../assets/app/alert/close-danger.svg"
+					alt=""
+				/>
+			</div>
+			<div class="title">{{ alert.title }}</div>
+			<div class="description">{{ alert.description }}</div>
+		</div>
 	</div>
 </div>

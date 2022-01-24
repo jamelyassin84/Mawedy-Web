@@ -1,3 +1,4 @@
+import { IconsModule } from './modules/icon/icon.module'
 import { ResponsiveTableDirective } from './directives/responsive-table.directive'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -33,8 +34,9 @@ import { NewAppointmentModalFooterComponent } from './components/modal-component
 import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
-import { MainInterceptor } from './interceptors/main';
+import { MainInterceptor } from './interceptors/main'
 import { AlertComponent } from './components/utilities/alert/alert.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -57,7 +59,7 @@ import { AlertComponent } from './components/utilities/alert/alert.component'
 		NewAppointmentModalFooterComponent,
 		NewAppointmentModalHeaderComponent,
 		CenterSmallModalComponent,
-  AlertComponent,
+		AlertComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -71,6 +73,9 @@ import { AlertComponent } from './components/utilities/alert/alert.component'
 		PromotionsModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		FormsModule,
+
+		IconsModule,
 	],
 	providers: [
 		{

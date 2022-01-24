@@ -12,18 +12,30 @@ h1 {
 	padding-right: 0;
 }
 
+.h1 {
+	text-align: left;
+	letter-spacing: 0.07px;
+	color: var(--accent);
+	font-size: 34px;
+	margin-bottom: 24px;
+	text-align: center;
+	font-family: bold;
+	font-weight: 900;
+}
+
 .right {
 	padding: 10vh 10vw;
 	.login-container {
-		border-radius: 25px;
-		width: 550px;
-		height: 673px;
+		width: 500px;
+		background: var(--bg1) 0% 0% no-repeat padding-box;
+		border-radius: 15px;
+		margin: auto;
 		display: flex;
 		flex-direction: column;
-		padding: 51px;
-		background: var(--bg1);
-		box-shadow: 0px 6px 9px var(--shadow2);
-		border-radius: 25px;
+		justify-content: center;
+		padding: 90px 100px;
+		min-height: 550px;
+		box-shadow: var(--dropShadow);
 	}
 	.logo {
 		width: 159px;
@@ -33,17 +45,14 @@ h1 {
 	}
 
 	input {
-		background: var(--bg2);
-		color: var(--color1);
+		border: 1px solid rgba($color: gray, $alpha: 0.2) !important;
+		margin-bottom: 0px;
 		font-size: 1rem;
-		box-shadow: 0px 3px 6px var(--shadow1);
-		border-radius: 5px;
-		margin-bottom: 27px;
-		padding: 16px 23px;
-		height: 66px;
-		height: 66px !important;
-		border: none;
+		border-radius: 9999px;
+		padding: 1rem !important;
+		height: 3.1rem !important;
 	}
+
 	.forgot-password {
 		text-align: right;
 		margin-top: -1rem;
@@ -55,16 +64,57 @@ h1 {
 	}
 
 	.btn {
-		background: #00b074 0% 0% no-repeat padding-box;
-		box-shadow: 0px 3px 6px #00000059;
-		border-radius: 10px;
-		opacity: 1;
-		padding: 16px;
-		min-width: 176px;
-		color: white;
-		margin: 0 auto;
-		margin-top: 78px;
+		background: var(--accent);
+		span {
+			color: var(--bg1);
+		}
+		border-radius: 9999px;
+		font-size: 1.2rem;
+		height: 50px;
+		transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
+	.isProcessing {
+		.btn {
+			width: 50px !important;
+			border-radius: 50%;
+			align-self: center;
+			margin: auto;
+			background: var(--bg);
+			border: none;
+			margin-top: calc(83px - 45px);
+			padding: 0 !important;
+		}
+	}
+	.btn :focus {
+		outline: 0 !important;
+	}
+	button:focus {
+		outline: 0 !important;
+	}
+	.btn :active {
+		font-size: 0.95rem;
+	}
+	.isComplete {
+		.btn {
+			width: 150px !important;
+			border-radius: 30px;
+			margin: auto;
+			opacity: 1;
+			font-size: 1.5rem;
+			margin-top: calc(83px - 45px);
+			padding-top: 0;
+		}
+	}
+}
+
+a {
+	text-align: center;
+	color: #00b074 !important;
+	font-size: 19px;
+	font-weight: 500;
+	align-self: center;
+	margin-top: 33px;
+	cursor: pointer;
 }
 
 .tag-line {

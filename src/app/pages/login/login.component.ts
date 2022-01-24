@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http'
 import { AlertService } from './../../services/utilities/alert.service'
-import { Component, OnInit } from '@angular/core'
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { Router } from '@angular/router'
 
 @Component({
@@ -15,28 +16,63 @@ import { Router } from '@angular/router'
 	],
 })
 export class LoginComponent implements OnInit {
-	constructor(private router: Router, protected alert: AlertService) {}
+	@ViewChild('username') usernameInput!: ElementRef
+	constructor(
+		private router: Router,
+		protected alert: AlertService,
+		private http: HttpClient,
+	) {}
 
 	ngOnInit(): void {}
 
-	login() {
-		this.router.navigate(['/home'])
-		this.success()
+	ngAfterViewInit() {
+		this.usernameInput.nativeElement.focus()
 	}
-	success() {
-		this.alert.Fire({
-			title: 'Welcome Back!',
-			description: 'Jamel Eid Yassin',
-			type: 'success',
-			isShowing: true,
-		})
+
+	isProcessing: boolean | 'complete' = false
+
+	data: any = {
+		username: '',
+		password: '',
+		type: 'admin',
 	}
-	error() {
-		this.alert.Fire({
-			title: 'Invalid Credentials',
-			description: 'Username or password is incorrect',
-			type: 'error',
-			isShowing: true,
-		})
+
+	login(): void {
+		this.isProcessing = true
+		for (let key in this.data) {
+			if (this.data[key] === '') {
+				this.isProcessing = false
+				this.clearFields()
+				return this.alert.Fire({
+					title: 'Error',
+					description: `${
+						key.charAt(0).toUpperCase() +
+						key.substr(1).toLowerCase()
+					} should not be empty`,
+					type: 'error',
+				})
+			}
+		}
+
+		// new BaseService(this.http, ROUTES.LOGIN).create(this.data).subscribe(
+		// 	(data) => {
+		// 		localStorage.setItem('user', JSON.stringify(data.user))
+		// 		localStorage.setItem('token', data.token)
+		// 		setTimeout(() => {
+		// 			this.isProcessing = 'complete'
+		// 			setTimeout(() => {
+		// 				this.router.navigate(['/home'])
+		// 			}, 700)
+		// 		}, 1500)
+		// 	},
+		// 	() => (this.isProcessing = false),
+		// )
+	}
+
+	clearFields(): void {
+		for (let key in this.data) {
+			this.data[key] = ''
+		}
+		this.usernameInput.nativeElement.focus()
 	}
 }

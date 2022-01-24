@@ -30,6 +30,7 @@ html {
 }
 
 html[theme='dark'] {
+	--dropShadow: rgba(14, 14, 14, 0.363) 0px 48px 100px 0px;
 	--bg1: #1e1e1e;
 	--bg2: #212121;
 	--bg3: #171717;
@@ -72,6 +73,7 @@ html[theme='dark'] {
 }
 
 html[theme='light'] {
+	--dropShadow: rgba(14, 14, 14, 0.363) 0px 48px 100px 0px;
 	--bg1: white;
 	--bg2: #f4f6f8;
 	--bg3: white;

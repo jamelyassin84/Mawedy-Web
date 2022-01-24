@@ -1,40 +1,32 @@
+import { alertAnimation } from './../../../animations/alert.animation'
 import { AlertService } from './../../../services/utilities/alert.service'
 import { Alert, AlertType } from './../../../models/Alert.type'
 import { Component, Input, OnInit } from '@angular/core'
-import { SlideInTop } from 'src/app/animations/SlideInTop'
 
 @Component({
 	selector: 'app-alert',
 	templateUrl: './alert.component.html',
 	styleUrls: ['./alert.component.scss'],
-	animations: SlideInTop(),
+	animations: [alertAnimation],
 })
 export class AlertComponent implements OnInit {
 	constructor(private service: AlertService) {
-		this.service.listen().subscribe((data: Alert | undefined) => {
-			this.title = data?.title as string
-			this.description = data?.description as string
-			this.callback = data?.callback as Function
-			this.type = data?.type as AlertType
-			this.isShowing = data?.isShowing as boolean
+		this.service.listen().subscribe((alert: Alert | any) => {
+			this.alerts.push(alert)
 		})
 	}
 
-	title: string = 'test'
-	description: string = 'test'
-	callback: Function | any
-	type: AlertType = 'info'
-	isShowing = false
+	alerts: Alert[] = [] as Alert[]
 
 	timer: any
 	ngOnInit(): void {
 		this.timer = setTimeout(() => {
-			this.isShowing = false
-		}, 5000)
+			this.alerts.shift()
+		}, 1000)
 	}
 
-	close() {
-		this.isShowing = false
+	close(index: number) {
+		this.alerts.splice(index, 1)
 	}
 
 	ngOnDestroy(): void {

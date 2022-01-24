@@ -6,31 +6,52 @@
 	</div>
 	<div class="col-md-6 right">
 		<div class="login-container">
-			<img class="logo" src="../../../assets/app/logo.png" alt="" />
-			<h1 class="tag-line">Helping people for better health.</h1>
-			<div class="form-group">
+			<div class="h1">Howdy!</div>
+			<p class="text-center text-muted">
+				Sign-in with your mawedy account.
+			</p>
+			<div class="form-group mt-3">
 				<input
+					#username
+					[(ngModel)]="data.username"
 					type="text"
-					placeholder="Username"
-					class="form-control login-input"
+					class="form-control"
+					placeholder="Password"
 				/>
 			</div>
-			<div class="form-group">
+			<div class="form-group mt-3">
 				<input
+					[(ngModel)]="data.password"
 					(keyup.enter)="login()"
 					type="password"
-					placeholder="Password"
-					class="form-control login-input"
+					class="form-control"
+					placeholder="Username"
 				/>
 			</div>
-			<a class="forgot-password">Forgot Password?</a>
 
-			<button
+			<div
 				(click)="login()"
-				class="btn btn-lg btn-success btn-sign-in touchable"
+				[class.isProcessing]="isProcessing === true"
+				[class.isComplete]="isProcessing === 'complete'"
+				class="d-flex mt-3"
 			>
-				Sign in
-			</button>
+				<button class="btn primary-button w-100">
+					<span *ngIf="isProcessing === 'complete'">
+						<i-feather name="check"></i-feather>
+					</span>
+					<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
+
+					<div
+						style="color: var(--accent) !important"
+						*ngIf="isProcessing === true"
+						class="spinner-border text-success"
+						role="status"
+					></div>
+				</button>
+			</div>
+			<div class="d-flex w-10">
+				<a class="link w-100">Forgot Password?</a>
+			</div>
 		</div>
 	</div>
 </div>
