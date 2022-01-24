@@ -83,7 +83,6 @@ import { FormsModule } from '@angular/forms'
 			useClass: MainInterceptor,
 			multi: true,
 		},
-		ResponsiveTableDirective,
 	],
 	bootstrap: [AppComponent],
 	exports: [],

@@ -58,17 +58,21 @@ export class LoginComponent implements OnInit {
 
 	clinic: ClinicDto | any = {
 		registeredVia: 'web',
+		password: '123',
 	}
 	file!: File
 	register(): void {
-		new BaseService(this.http, ROUTES.CLINICS)
-			.create(Object.assign(this.clinic, { users: this.users }))
-			.subscribe(
-				(data: any) => {
-					console.log(data)
-				},
-				() => (this.isProcessing = false),
-			)
+		const data = Object.assign(this.clinic, { users: this.users })
+		let formData = new FormData()
+		for (let key in data) {
+			formData.append(key, data[key])
+		}
+		new BaseService(this.http, ROUTES.CLINICS).create(formData).subscribe(
+			(data: any) => {
+				console.log(data)
+			},
+			() => (this.isProcessing = false),
+		)
 	}
 
 	trigger(id: any) {
