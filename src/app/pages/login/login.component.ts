@@ -62,11 +62,17 @@ export class LoginComponent implements OnInit {
 	}
 	file!: File
 	register(): void {
-		const data = Object.assign(this.clinic, { users: this.users })
+		const data = Object.assign(this.clinic, {
+			users: this.users,
+		})
 		let formData = new FormData()
 		for (let key in data) {
 			formData.append(key, data[key])
 		}
+		for (let file of this.files) {
+			formData.append('files[]', file, file.name)
+		}
+
 		new BaseService(this.http, ROUTES.CLINICS).create(formData).subscribe(
 			(data: any) => {
 				console.log(data)
@@ -80,9 +86,9 @@ export class LoginComponent implements OnInit {
 	}
 
 	filename!: string
+	files!: File[]
 	readFile(event: any) {
-		const file: File = event.target.files[0]
-		this.filename = file.name
+		this.files = event.target.files as File[]
 	}
 
 	login(): void {

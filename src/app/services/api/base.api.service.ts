@@ -16,7 +16,7 @@ export class BaseService {
 		let token = localStorage.getItem('token')
 		let headers: any = {
 			Accept: 'application/json',
-			'Content-Type': [],
+			'Access-Control-Allow-Origin': '*',
 		}
 		if (token !== null) {
 			headers['Authorization'] + 'Bearer ' + token

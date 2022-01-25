@@ -10,6 +10,7 @@ import {
 import { Observable, throwError } from 'rxjs'
 import { retry, catchError, tap, finalize } from 'rxjs/operators'
 import { AlertMessage } from '../constants/Alert'
+import { toSentence } from '../constants/Helpers'
 
 @Injectable()
 export class MainInterceptor implements HttpInterceptor {
@@ -33,31 +34,31 @@ export class MainInterceptor implements HttpInterceptor {
 	}
 
 	errorMessage(response: HttpErrorResponse) {
-		if (response.status == 404) {
-			AlertMessage(
-				'HTTP Error',
-				`The requested URL was ${response.statusText}`,
-				'error',
-			)
-		}
-		if (response.status == 401) {
-			AlertMessage(response.error.error, response.error.message, 'error')
-		}
-		if (response.status == 500) {
-			AlertMessage(
-				'HTTP Error',
-				`Internal Server Error Contact Developers`,
-				'error',
-			)
-		}
-		for (let message in response.error.errors) {
-			AlertMessage(
-				`Error!`,
-				JSON.stringify(response.error.errors[message]),
-				'error',
-			)
-			break
-		}
+		AlertMessage(
+			`${response.statusText}`,
+			response.error.message[0].length === 1
+				? toSentence(response.error.message)
+				: toSentence(response.error.message[0]),
+			'error',
+		)
+		// if (response.status == 404) {
+		// 	AlertMessage(
+		// 		'HTTP Error',
+		// 		`The requested URL was ${response.statusText}`,
+		// 		'error',
+		// 	)
+		// }
+		// if (response.status == 401) {
+		// 	AlertMessage(response.error.error, response.error.message, 'error')
+		// }
+		// if (response.status == 500) {
+		// 	AlertMessage(
+		// 		'HTTP Error',
+		// 		`Internal Server Error Contact Developers`,
+		// 		'error',
+		// 	)
+		// }
+
 		return throwError(response)
 	}
 }
