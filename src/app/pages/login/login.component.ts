@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	signInTab = 1
+
 	next() {
 		this.signInTab = 2
 	}
@@ -60,25 +61,35 @@ export class LoginComponent implements OnInit {
 		registeredVia: 'web',
 		password: '123',
 	}
+
 	file!: File
+
 	register(): void {
-		const data = Object.assign(this.clinic, {
-			users: this.users,
+		const data = Object.assign(this.clinic, { users: this.users })
+
+		new BaseService(this.http, ROUTES.CLINICS).create(data).subscribe({
+			next: (response) => {
+				this.uploadFiles(response.id)
+				this.isProcessing = false
+			},
+
+			complete: () => {},
 		})
+	}
+
+	uploadFiles(id: string) {
 		let formData = new FormData()
-		for (let key in data) {
-			formData.append(key, data[key])
-		}
+
 		for (let file of this.files) {
 			formData.append('files[]', file, file.name)
 		}
 
-		new BaseService(this.http, ROUTES.CLINICS).create(formData).subscribe(
-			(data: any) => {
-				console.log(data)
-			},
-			() => (this.isProcessing = false),
-		)
+		formData.append('id', id)
+		new BaseService(this.http, `${ROUTES.CLINICS}/files`)
+			.create(formData)
+			.subscribe({
+				complete: () => {},
+			})
 	}
 
 	trigger(id: any) {
@@ -108,20 +119,6 @@ export class LoginComponent implements OnInit {
 			}
 		}
 		this.router.navigate(['/home'])
-
-		// new BaseService(this.http, ROUTES.LOGIN).create(this.data).subscribe(
-		// 	(data) => {
-		// 		localStorage.setItem('user', JSON.stringify(data.user))
-		// 		localStorage.setItem('token', data.token)
-		// 		setTimeout(() => {
-		// 			this.isProcessing = 'complete'
-		// 			setTimeout(() => {
-		// 				this.router.navigate(['/home'])
-		// 			}, 700)
-		// 		}, 1500)
-		// 	},
-		// 	() => (this.isProcessing = false),
-		// )
 	}
 
 	clearFields(): void {
