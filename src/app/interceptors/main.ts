@@ -39,7 +39,7 @@ export class MainInterceptor implements HttpInterceptor {
 			response.error.message[0].length === 1
 				? toSentence(response.error.message)
 				: toSentence(response.error.message[0]),
-			'error',
+			'warning',
 		)
 		// if (response.status == 404) {
 		// 	AlertMessage(

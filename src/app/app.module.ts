@@ -1,5 +1,4 @@
 import { IconsModule } from './modules/icon/icon.module'
-import { ResponsiveTableDirective } from './directives/responsive-table.directive'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
@@ -41,10 +40,10 @@ import { LoginSection1Component } from './pages/login/login-section1/login-secti
 import { LoginSection2Component } from './pages/login/login-section2/login-section2.component'
 import { LoginSection3Component } from './pages/login/login-section3/login-section3.component'
 import { LoginSection4Component } from './pages/login/login-section4/login-section4.component'
-import { LoginFooterComponent } from './pages/login/login-footer/login-footer.component';
-import { PageNotFoundComponent } from './pages/redirects/page-not-found/page-not-found.component';
-import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/under-maintenance.component';
-import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component';
+import { LoginFooterComponent } from './pages/login/login-footer/login-footer.component'
+import { PageNotFoundComponent } from './pages/redirects/page-not-found/page-not-found.component'
+import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/under-maintenance.component'
+import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
 
 @NgModule({
@@ -74,10 +73,10 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 		LoginSection3Component,
 		LoginSection4Component,
 		LoginFooterComponent,
-  PageNotFoundComponent,
-  UnderMaintenanceComponent,
-  InternalServerErrorComponent,
-  NoInternetComponent,
+		PageNotFoundComponent,
+		UnderMaintenanceComponent,
+		InternalServerErrorComponent,
+		NoInternetComponent,
 	],
 	imports: [
 		BrowserModule,
