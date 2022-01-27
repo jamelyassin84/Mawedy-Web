@@ -158,3 +158,12 @@ SELECT {
 textarea {
 	height: 150px !important;
 }
+
+.card {
+	padding: 33px;
+	border-radius: 15px;
+	background: var(--bg1);
+	border: none;
+	box-shadow: var(--dropShadow);
+	background: var(--bg3);
+}

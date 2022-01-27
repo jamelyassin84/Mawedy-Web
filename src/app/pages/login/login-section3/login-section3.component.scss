@@ -1,0 +1,32 @@
+.card {
+	&:hover {
+		box-shadow: rgba(17, 116, 66, 0.2363) 0px 48px 150px 0px;
+	}
+	cursor: pointer;
+}
+h1 {
+	color: var(--accent);
+	margin: 0 !important;
+	padding-top: 5vh;
+}
+.item {
+	flex-direction: column;
+	padding: 0 2rem;
+}
+.circle {
+	border-radius: 50%;
+	width: 7rem;
+	height: 7rem;
+	background: var(--accent);
+	margin-bottom: 2rem;
+}
+
+.title {
+	font-size: 1.3rem;
+	color: var(--color1);
+	margin-bottom: 2rem;
+	text-align: center;
+}
+p {
+	text-align: center;
+}

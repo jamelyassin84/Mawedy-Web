@@ -1,0 +1,140 @@
+<div class="row jumbotron p-0 m-0 form-container" style="transition: 1s ease">
+	<div class="col-md-6 pr-5">
+		<div class="h1 text-left">Be a partner</div>
+		<p class="text-left mt-3 text-muted">
+			Get your clinic advertised, easy appointments for your valued
+			patients, web solutions and many more!
+		</p>
+	</div>
+	<div class="col-md-6" style="margin-top: 10rem">
+		<div class="card">
+			<div class="card-body p-2" *ngIf="signInTab === 1">
+				<h2>Clinic Information</h2>
+				<div class="form-group">
+					<label for="">Clinic name</label>
+					<input
+						[(ngModel)]="clinic.name"
+						type="search"
+						class="form-control w-50"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="">Clinic address</label>
+					<input
+						[(ngModel)]="clinic.address"
+						type="search"
+						class="form-control"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="">Clinic email</label>
+					<input
+						[(ngModel)]="clinic.email"
+						type="search"
+						class="form-control"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="">Trade License No.</label>
+					<input
+						[(ngModel)]="clinic.tradeLicenseNumber"
+						type="search"
+						class="form-control w-50"
+					/>
+				</div>
+				<div
+					role="button"
+					(click)="trigger('file')"
+					class="mt-3 trade-license-upload-btn d-flex aic"
+				>
+					<i-feather name="upload-cloud" class="mr-3"></i-feather>
+					<span class="mt-2">Upload Trade License</span>
+				</div>
+				<div *ngFor="let file of files" class="file mt-2 ml-3">
+					{{ file.name }}
+				</div>
+				<input
+					multiple
+					(change)="readFile($event)"
+					type="file"
+					id="file"
+					style="display: none"
+				/>
+				<div class="d-flex mt-5">
+					<button (click)="next()" class="btn ml-auto">
+						Get free account
+						<i-feather class="ml-2" name="arrow-right"> </i-feather>
+					</button>
+				</div>
+			</div>
+			<div class="card-body p-2" *ngIf="signInTab === 2">
+				<h2>Set up your account</h2>
+
+				<div class="form-group">
+					<label for="">Username</label>
+					<input
+						[(ngModel)]="clinic.username"
+						type="search"
+						class="form-control w-50"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="">Subscription</label>
+					<select
+						[(ngModel)]="clinic.subscriptionType"
+						type="search"
+						class="form-control"
+					>
+						<option selected disabled>Select a package</option>
+						<option value="trial">Free Trial (2 months)</option>
+						<option disabled value="solution">Web Solution</option>
+						<option disabled value="app">
+							Clinic Advertisement on Mawedy Mobile Application
+						</option>
+						<option disabled value="premium">Premium</option>
+					</select>
+					<label
+						style="transform: translateY(-1rem)"
+						class="text-info small"
+						>Good for 2 Users</label
+					>
+				</div>
+				<div class="row" style="margin-top: -1rem">
+					<div *ngFor="let account of users" class="col-md-4">
+						<label for="">Account #{{ account.id }}</label>
+						<input
+							[(ngModel)]="account.name"
+							placeholder="John Doe"
+							type="search"
+							class="form-control"
+						/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="">Comments</label>
+					<textarea
+						type="number"
+						class="form-control"
+						[(ngModel)]="clinic.message"
+					></textarea>
+				</div>
+				<div class="d-flex mt-5 aic">
+					<span
+						(click)="signInTab = 1"
+						role="button"
+						class="mr-4 ml-auto"
+					>
+						<i-feather class="ml-2" name="arrow-left"> </i-feather>
+
+						Back</span
+					>
+					<button (click)="register()" class="btn">
+						<i-feather name="log-in"></i-feather>
+						Register
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

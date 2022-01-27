@@ -12,14 +12,15 @@
 			function setTheme() {
 				if (
 					window.matchMedia &&
-					window.matchMedia('(prefers-color-scheme: dark)').matches &&
-					localStorage.getItem('user') === null
+					window.matchMedia('(prefers-color-scheme: dark)').matches
 				) {
 					document
 						.getElementById('html')
 						.setAttribute('theme', 'dark')
 					return
 				}
+				document.getElementById('html').setAttribute('theme', 'light')
+				return
 			}
 			setInterval(() => {
 				setTheme()

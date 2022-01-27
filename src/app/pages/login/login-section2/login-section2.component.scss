@@ -1,0 +1,98 @@
+textarea {
+	height: 150px !important;
+}
+
+h2 {
+	color: var(--accent);
+}
+.card {
+	box-shadow: var(--dropShadow);
+	border: none;
+	border-radius: 25px;
+}
+
+.form-container {
+	background: var(--bg1);
+	.h1 {
+		font-size: 3rem !important;
+		margin-bottom: 0;
+		margin-top: 15rem;
+	}
+	p {
+		color: var(--color1);
+		font-size: 2rem !important;
+		margin-bottom: 0;
+	}
+
+	button {
+		min-width: 150px;
+		color: white;
+	}
+}
+
+.btn {
+	background: var(--accent);
+	span {
+		color: var(--bg1);
+	}
+	border-radius: 9999px;
+	font-size: 1.2rem;
+	height: 50px;
+	transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+	padding-right: 30px;
+	padding-left: 30px;
+}
+.isProcessing {
+	.btn {
+		width: 50px !important;
+		border-radius: 50%;
+		align-self: center;
+		margin: auto;
+		background: var(--bg);
+		border: none;
+		margin-top: calc(83px - 45px);
+		padding: 0 !important;
+	}
+}
+
+.btn :focus {
+	outline: 0 !important;
+}
+
+button:focus {
+	outline: 0 !important;
+}
+
+.btn :active {
+	opacity: 0.5;
+}
+
+.isComplete {
+	.btn {
+		width: 150px !important;
+		border-radius: 30px;
+		margin: auto;
+		opacity: 1;
+		font-size: 1.5rem;
+		margin-top: calc(83px - 45px);
+		padding-top: 0;
+	}
+}
+
+.trade-license-upload-btn {
+	* {
+		color: var(--color1) !important;
+	}
+	&:hover {
+		span {
+			text-decoration: underline;
+		}
+	}
+}
+
+.file {
+	display: inline-block;
+	border-radius: 99px;
+	padding: 10px 20px;
+	background: var(--bg2);
+}

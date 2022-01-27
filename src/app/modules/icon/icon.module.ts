@@ -17,6 +17,9 @@ import {
 	ArrowRight,
 	AlignRight,
 	Menu,
+	UploadCloud,
+	Upload,
+	LogIn,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -35,6 +38,9 @@ const icons = {
 	ArrowRight,
 	AlignRight,
 	Menu,
+	UploadCloud,
+	Upload,
+	LogIn,
 }
 
 @NgModule({

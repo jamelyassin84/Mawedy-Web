@@ -1,0 +1,72 @@
+<div class="row p-0 m-0 mt-5">
+	<div class="col-md-6 left">
+		<h1>CLINIC APPOINTMENTS MADE EASY.</h1>
+		<p class="text-white" style="font-size: 2rem; opacity: 0.5">
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. recusandae
+			saepe.
+		</p>
+		<button class="btn btn-success text-white mt-5 pl-4 pr-4">
+			Try Mawedy
+			<i-feather class="ml-2" name="arrow-right"> </i-feather>
+		</button>
+		<button
+			class="btn btn-light mt-5 pl-4 pr-4 ml-4"
+			style="background: white !important"
+		>
+			Contact Sales
+			<i-feather class="ml-2" name="arrow-right"> </i-feather>
+		</button>
+	</div>
+	<div class="col-md-6 right">
+		<div class="login-container">
+			<div class="h1">Howdy!</div>
+			<p class="text-center text-muted">
+				Sign-in with your mawedy account.
+			</p>
+			<div class="form-group mt-3">
+				<input
+					#username
+					[(ngModel)]="data.username"
+					type="search"
+					class="form-control"
+					placeholder="Password"
+				/>
+			</div>
+			<div class="form-group mt-3">
+				<input
+					[(ngModel)]="data.password"
+					(keyup.enter)="login()"
+					type="password"
+					class="form-control"
+					placeholder="Username"
+				/>
+			</div>
+			<!-- button  -->
+			<div
+				(click)="login()"
+				[class.isProcessing]="isProcessing === true"
+				[class.isComplete]="isProcessing === 'complete'"
+				class="d-flex mt-3"
+			>
+				<button class="btn primary-button w-100">
+					<span *ngIf="isProcessing === 'complete'">
+						<i-feather name="check"></i-feather>
+					</span>
+					<span *ngIf="!isProcessing"> Yallah! Sign-in</span>
+
+					<div
+						style="color: var(--accent) !important"
+						*ngIf="isProcessing === true"
+						class="spinner-border text-success"
+						role="status"
+					></div>
+				</button>
+			</div>
+			<!-- button  -->
+
+			<div class="d-flex w-10">
+				<a class="link w-100">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>
