@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { NavigationEnd, Router } from '@angular/router'
+import { filter } from 'rxjs'
 import { SidebarNav, SidebarNavType } from './SidebarNavs'
 
 @Component({
@@ -8,12 +10,26 @@ import { SidebarNav, SidebarNavType } from './SidebarNavs'
 })
 export class SidebarComponent implements OnInit {
 	nav: SidebarNavType[] = SidebarNav
-	constructor() {}
+	constructor(private router: Router) {
+		router.events
+			.pipe(filter((event) => event instanceof NavigationEnd))
+			.subscribe((event: any) => {
+				this.handleChangeTab(event?.url)
+			})
+	}
 
 	activeIcon!: string
 
 	ngOnInit(): void {
-		this.activeIcon = this.nav[0].name
+		this.router.url === '/home/clinic-profile'
+			? this.setActiveIcon('Clinic Profile')
+			: this.setActiveIcon('Dashboard')
+	}
+
+	handleChangeTab(url: string) {
+		this.activeIcon = this.nav.filter((nav: SidebarNavType) => {
+			return url.includes(nav.route)
+		})[0].name
 	}
 
 	setActiveIcon(nav: string) {
