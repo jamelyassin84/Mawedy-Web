@@ -1,5 +1,4 @@
 import { DateInterface } from './date.type'
-
 export interface ClinicDto extends DateInterface {
 	id: number
 
@@ -14,8 +13,6 @@ export interface ClinicDto extends DateInterface {
 	username: string
 
 	password?: string | null
-
-	avatar: string | null | undefined
 
 	tradeLicenseNumber: string
 
@@ -54,5 +51,6 @@ export interface ClinicDto extends DateInterface {
 	clinicAccounts: any
 
 	phones: any
+	photos?: any
 	devices: any
 }

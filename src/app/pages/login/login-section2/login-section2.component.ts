@@ -1,10 +1,10 @@
-import { ClinicDto } from './../../../models/clinic.model'
 import { BaseService } from './../../../services/api/base.api.service'
 import { ROUTES } from './../../../routes/api.routes'
 import { HttpClient } from '@angular/common/http'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { Router } from '@angular/router'
 import { Component, OnInit } from '@angular/core'
+import { ClinicDto } from 'src/app/models/clinic.type'
 
 @Component({
 	selector: 'app-login-section2',

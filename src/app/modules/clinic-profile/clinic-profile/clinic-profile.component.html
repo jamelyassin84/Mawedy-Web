@@ -7,109 +7,190 @@
 	<div class="page-content">
 		<div class="header d-flex aic">
 			<div class="clinic-promotion">Clinic Information</div>
-			<div role="button" class="view-statistic d-flex aic">
-				Upload Banner
-				<span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="#0472FF"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="feather feather-upload"
-					>
-						<path
-							d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-						></path>
-						<polyline points="17 8 12 3 7 8"></polyline>
-						<line x1="12" y1="3" x2="12" y2="15"></line>
-					</svg>
-				</span>
+			<div
+				*ngIf="clinic.photos.length !== 0"
+				role="button"
+				class="view-statistic d-flex aic"
+			>
+				<i-feather name="upload-cloud" class="mr-3"></i-feather>
+				<span> Change Banner </span>
 			</div>
 		</div>
 		<img
+			*ngIf="clinic.photos.length !== 0"
 			class="clinic-image"
 			src="../../../../assets/app/clinic-profile/bg.png"
 			alt=""
 		/>
 
+		<div *ngIf="clinic.photos.length === 0 && !file">
+			<label for="">Add a Banner</label>
+			<div (click)="trigger('file')" class="clinic-image-placeholder">
+				<i-feather class="image-icon" name="image"></i-feather>
+			</div>
+		</div>
+
+		<img
+			role="button"
+			*ngIf="clinic.photos.length === 0 && file"
+			class="clinic-image"
+			[src]="src"
+			alt=""
+			(click)="trigger('file')"
+		/>
+
+		<input
+			multiple
+			(change)="readFile($event)"
+			type="file"
+			id="file"
+			style="display: none"
+		/>
+
 		<div class="row mt-5">
 			<div class="col-md-6">
 				<div class="form-group col-md-12">
-					<label for="">Clinic Name</label>
-					<input type="text" class="form-control" />
+					<label for="">Address</label>
+					<input
+						[(ngModel)]="clinic.address"
+						type="text"
+						class="form-control"
+					/>
 				</div>
 
 				<div class="form-group col-md-12">
 					<label for="">Clinic Description</label>
-					<textarea class="form-control"></textarea>
-				</div>
-
-				<div class="form-group col-md-12 row">
-					<div class="col-md-3">
-						<label>Timings</label>
-						<div class="timings" *ngFor="let time of timings">
-							{{ time }}
-						</div>
-					</div>
-
-					<div class="col-md-3">
-						<div class="open-close">Open - Close</div>
-						<div
-							class="timings d-flex aic"
-							*ngFor="let time of timings; let i = index"
-						>
-							<input
-								*ngIf="i !== 7"
-								value="12AM - 12PM"
-								class="timings-input"
-								type="text"
-								[class.disabled]="i < 4"
-							/>
-							<app-checkbox
-								[alt]="true"
-								*ngIf="i === 7"
-							></app-checkbox>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="">
-							<label for="">Contact No.</label>
-						</label>
-
-						<div class="contact-form d-flex aic">
-							<button class="btn">+971</button>
-							<input type="number" />
-						</div>
-						<div class="contact-form d-flex aic">
-							<button class="btn">+971</button>
-							<input type="number" />
-						</div>
-					</div>
+					<textarea
+						[(ngModel)]="clinic.description"
+						class="form-control"
+					></textarea>
 				</div>
 			</div>
-
 			<div class="col-md-6">
 				<div class="form-group col-md-12">
-					<label for="">Address</label>
-					<input type="text" class="form-control" />
+					<label for="">Clinic Name</label>
+					<input
+						[(ngModel)]="clinic.name"
+						type="text"
+						class="form-control"
+					/>
 				</div>
 
 				<div class="form-group col-md-12">
 					<label for="">Pin Location</label>
-					<div class="map"></div>
+					<agm-map
+						class="map"
+						[latitude]="lat"
+						[longitude]="lng"
+						[zoom]="15"
+					>
+						<agm-marker
+							(dragEnd)="markerDragEnd({}, $event)"
+							[latitude]="lat"
+							[longitude]="lng"
+							[draggable]="true"
+						></agm-marker>
+					</agm-map>
 				</div>
+			</div>
+
+			<div class="form-group col-md-12 row pl-4 m-0">
+				<div class="col-md-3 p-0">
+					<div class="d-flex mb-3">
+						<label><span>Timings</span></label>
+						<label class="ml-auto mr-2">Open - Close</label>
+					</div>
+
+					<div
+						class="d-flex aic"
+						*ngFor="let time of timings; let i = index"
+					>
+						<div
+							[style.margin-top]="i === 7 ? '0' : '-1rem'"
+							style="margin-top: -1rem"
+						>
+							{{ time }}
+						</div>
+						<div class="ml-auto">
+							<div
+								*ngIf="i !== 7"
+								class="timings-input d-flex"
+								[class.disabled]="is24Hrs"
+							>
+								<input
+									*ngIf="i !== 7"
+									type="text"
+									placeholder="12:30PM"
+								/>
+								<input
+									*ngIf="i !== 7"
+									type="text"
+									placeholder="12:30PM"
+								/>
+							</div>
+
+							<div class="app-checkbox" *ngIf="i === 7">
+								<app-checkbox
+									[checked]="is24Hrs"
+									(onCheck)="set24Hrs($event)"
+									[alt]="true"
+									*ngIf="i === 7"
+								>
+								</app-checkbox>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 pl-5">
+					<label for="">Contact numbers</label>
+
+					<div class="form-group">
+						<input
+							placeholder=""
+							type="number"
+							class="form-control"
+						/>
+					</div>
+					<div class="form-group">
+						<input
+							placeholder=""
+							type="number"
+							class="form-control"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<!-- button  -->
+				<div
+					(click)="save()"
+					[class.isProcessing]="isProcessing === true"
+					[class.isComplete]="isProcessing === 'complete'"
+					class="d-flex mt-5"
+				>
+					<button class="btn primary-button">
+						<span *ngIf="isProcessing === 'complete'">
+							<i-feather name="check"></i-feather>
+						</span>
+						<span *ngIf="!isProcessing"> Save</span>
+
+						<div
+							style="color: var(--accent) !important"
+							*ngIf="isProcessing === true"
+							class="spinner-border text-success"
+							role="status"
+						></div>
+					</button>
+				</div>
+				<!-- button  -->
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="page">
+<!-- <div class="page">
 	<div class="page-content">
 		<clinic-profile-services></clinic-profile-services>
 	</div>
-</div>
+</div> -->

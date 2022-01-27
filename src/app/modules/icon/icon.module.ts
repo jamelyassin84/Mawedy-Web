@@ -20,6 +20,7 @@ import {
 	UploadCloud,
 	Upload,
 	LogIn,
+	Image,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -41,6 +42,7 @@ const icons = {
 	UploadCloud,
 	Upload,
 	LogIn,
+	Image,
 }
 
 @NgModule({

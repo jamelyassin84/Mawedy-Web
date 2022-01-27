@@ -1,5 +1,5 @@
-import { ClinicDto } from './../../models/clinic.model'
 import { Injectable } from '@angular/core'
+import { ClinicDto } from 'src/app/models/clinic.type'
 
 @Injectable({
 	providedIn: 'root',

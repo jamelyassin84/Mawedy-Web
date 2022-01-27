@@ -1,3 +1,6 @@
+import { environment } from 'src/environments/environment'
+import { AgmCoreModule } from '@agm/core'
+import { IconsModule } from './../icon/icon.module'
 import { AddMedicalServicesModalBodyComponent } from './../../components/modal-components/add-medical-services/add-medical-services-modal-body/add-medical-services-modal-body.component'
 import { PatientsModule } from './../patients/patients.module'
 import { NgModule } from '@angular/core'
@@ -10,6 +13,7 @@ import { ClinicProfileToolbarComponent } from 'src/app/components/toolbars/clinc
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -26,6 +30,11 @@ import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 		PatientsModule,
 		AppRoutingModule,
 		RouterModule,
+		IconsModule,
+		FormsModule,
+		AgmCoreModule.forRoot({
+			apiKey: environment.GOOGLEMAPS,
+		}),
 	],
 	exports: [
 		ClinicProfileToolbarComponent,
