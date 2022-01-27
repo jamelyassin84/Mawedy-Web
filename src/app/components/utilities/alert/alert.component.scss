@@ -1,8 +1,8 @@
 .alert-wrapper {
 	z-index: 9999999;
 	position: fixed;
-	bottom: 0;
-	left: 1rem;
+	bottom: 1rem;
+	right: 1rem;
 	display: flex;
 	flex-direction: column-reverse;
 	height: 100%;

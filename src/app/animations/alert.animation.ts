@@ -1,4 +1,4 @@
-    import {
+import {
 	trigger,
 	style,
 	animate,
@@ -13,7 +13,7 @@ const contentOpen = {
 }
 
 const contentClose = {
-	transform: 'translateX(-150%)',
+	transform: 'translateY(150%)',
 	opacity: 0.5,
 }
 

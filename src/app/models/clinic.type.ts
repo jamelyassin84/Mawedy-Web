@@ -53,4 +53,5 @@ export interface ClinicDto extends DateInterface {
 	phones: any
 	photos?: any
 	devices: any
+	clinicTimings: any
 }
