@@ -23,6 +23,8 @@ import {
 	Image,
 	Activity,
 	PlusCircle,
+	Info,
+	Clipboard,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -47,6 +49,8 @@ const icons = {
 	Image,
 	Activity,
 	PlusCircle,
+	Info,
+	Clipboard,
 }
 
 @NgModule({
