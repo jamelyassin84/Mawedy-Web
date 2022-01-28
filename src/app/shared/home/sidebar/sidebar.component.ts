@@ -1,6 +1,11 @@
+import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { filter } from 'rxjs'
+import { ClinicDto } from 'src/app/models/clinic.type'
+import { ROUTES } from 'src/app/routes/api.routes'
+import { BaseService } from 'src/app/services/api/base.api.service'
+import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { SidebarNav, SidebarNavType } from './SidebarNavs'
 
 @Component({
@@ -10,7 +15,11 @@ import { SidebarNav, SidebarNavType } from './SidebarNavs'
 })
 export class SidebarComponent implements OnInit {
 	nav: SidebarNavType[] = SidebarNav
-	constructor(private router: Router) {
+	constructor(
+		private router: Router,
+		private http: HttpClient,
+		private clinicService: ClinicService,
+	) {
 		router.events
 			.pipe(filter((event) => event instanceof NavigationEnd))
 			.subscribe((event: any) => {
@@ -20,12 +29,6 @@ export class SidebarComponent implements OnInit {
 
 	activeIcon!: string
 
-	ngOnInit(): void {
-		this.router.url === '/home/clinic-profile'
-			? this.setActiveIcon('Clinic Profile')
-			: this.setActiveIcon('Dashboard')
-	}
-
 	handleChangeTab(url: string) {
 		this.activeIcon = this.nav.filter((nav: SidebarNavType) => {
 			return url.includes(nav.route)
@@ -34,5 +37,21 @@ export class SidebarComponent implements OnInit {
 
 	setActiveIcon(nav: string) {
 		this.activeIcon = nav
+	}
+
+	banner = ''
+	getClinic() {
+		new BaseService(this.http, ROUTES.CLINICS)
+			.show(this.clinicService.getID())
+			.subscribe((data: ClinicDto) => {
+				this.banner = data.photos[0].avatar
+			})
+	}
+
+	ngOnInit(): void {
+		this.getClinic()
+		this.router.url === '/home/clinic-profile'
+			? this.setActiveIcon('Clinic Profile')
+			: this.setActiveIcon('Clinic Profile')
 	}
 }

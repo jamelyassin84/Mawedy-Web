@@ -32,7 +32,7 @@ const routes: Routes = [
 			{
 				path: '',
 				pathMatch: 'full',
-				redirectTo: hasEdited(),
+				redirectTo: 'clinic-profile',
 			},
 			{
 				path: 'dashboard',

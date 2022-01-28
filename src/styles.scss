@@ -74,6 +74,7 @@ html[theme='dark'] {
 	--active1: #c3cdde57;
 	--tabContainer: #0feb9e13;
 	--disabled: #cfdae81c;
+	--form-control: #3a3b3c;
 }
 
 html[theme='light'] {
@@ -93,7 +94,7 @@ html[theme='light'] {
 	--color3: gray;
 	--border1: #e3ebf5b3;
 	--border2: #f7f8fa;
-	--inputBorder: #dee2e6;
+	--inputBorder: #e8eef6;
 	--shadow1: #00000029;
 	--shadow2: #00000063;
 	--shadow3: #e3ebf5b3;
@@ -119,4 +120,5 @@ html[theme='light'] {
 	--active1: #c3cdde;
 	--tabContainer: #ebf9f4;
 	--disabled: #cfdae8;
+	--form-control: white;
 }

@@ -10,14 +10,13 @@ nav {
 	align-items: center;
 	position: fixed;
 	top: 0;
-	z-index: 9;
+	z-index: 99999999999999999999999;
 	.logo-div {
 		width: 280px;
 		display: flex;
 		flex-direction: row;
 		.logo {
-			width: 80px;
-			height: 65px;
+			height: 105px;
 			margin: 0 auto;
 		}
 	}

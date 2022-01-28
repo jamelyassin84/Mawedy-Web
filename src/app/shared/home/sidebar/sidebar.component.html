@@ -15,8 +15,9 @@
 	</div>
 
 	<img
+		*ngIf="banner !== undefined"
 		class="powered-image"
-		src="../../../../assets/app/sidebar/aster clinic@2x.png"
+		[src]="banner"
 		alt=""
 	/>
 

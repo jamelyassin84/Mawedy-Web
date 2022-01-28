@@ -6,6 +6,29 @@
 <div class="page">
 	<div class="page-content" *ngIf="clinic">
 		<div class="row">
+			<div class="col-md-8">
+				<label for="">Banners</label>
+				<carousel
+					*ngIf="clinic?.photos.length !== 0"
+					[height]="500"
+					[cellsToShow]="1.1"
+					[dots]="true"
+					[borderRadius]="5"
+					[margin]="0"
+					[autoplay]="true"
+					[autoplayInterval]="2500"
+					[loop]="true"
+				>
+					<div
+						*ngFor="let image of clinic?.photos"
+						class="carousel-cell"
+						style="background: var(--bg)"
+					>
+						<img style="object-fit: stretch" [src]="image.avatar" />
+					</div>
+				</carousel>
+			</div>
+
 			<div
 				*ngIf="clinic?.photos.length === 0 && !files"
 				class="col-md-8 mb-3"
@@ -15,7 +38,11 @@
 					(click)="trigger('banners')"
 					class="clinic-image-placeholder d-flex aic jcc"
 				>
-					<i-feather class="image-icon" name="image"></i-feather>
+					<i-feather
+						*ngIf="clinic?.photos.length === 0"
+						class="image-icon"
+						name="image"
+					></i-feather>
 				</div>
 			</div>
 
@@ -31,8 +58,9 @@
 				>
 					<img
 						role="button"
-						*ngIf="clinic?.photos.length === 0 && file"
+						*ngIf="logoSrc"
 						class="clinic-image"
+						style="border-radius: 50%"
 						[src]="logoSrc"
 						alt=""
 						(click)="trigger('file')"
@@ -49,14 +77,16 @@
 		<input
 			multiple
 			(change)="readFiles($event)"
-			type="banners"
-			id="file"
+			type="file"
+			id="banners"
+			accept="image/*"
 			style="display: none"
 		/>
 
 		<input
 			(change)="readFile($event)"
 			type="file"
+			accept="image/*"
 			id="logo"
 			style="display: none"
 		/>

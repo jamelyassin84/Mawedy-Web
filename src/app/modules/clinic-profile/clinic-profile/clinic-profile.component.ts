@@ -35,10 +35,7 @@ export class ClinicProfileComponent implements OnInit {
 					this.clinicTimings = this.clinic.clinicTimings
 					this.is24Hrs = this.checkTimings(this.clinic.clinicTimings)
 				}
-				// this.file = this.getAvatar(data.avatar.avatar)
-				if (Object.keys(data.avatar).length !== 0) {
-					this.file = data.avatar.avatar
-				}
+				this.logoSrc = data.avatar?.avatar
 			})
 	}
 
@@ -58,19 +55,13 @@ export class ClinicProfileComponent implements OnInit {
 	files!: File[]
 	bannerSrc!: any
 	readFiles(event: any) {
-		// this.file = event.target.files as File[]
-		// const reader = new FileReader()
-		// reader.readAsDataURL(this.files)
-		// reader.onload = (e: any) => {
-		// 	this.src = e.target.result
-		// }
+		this.files = event.target.files as File[]
+		this.savePhotos()
 	}
 
 	file!: File | any
 	logoSrc!: any
 	readFile(event: any) {
-		console.log(event)
-
 		this.file = event.target.files[0] as File
 
 		const reader = new FileReader()
@@ -80,6 +71,7 @@ export class ClinicProfileComponent implements OnInit {
 		reader.onload = (e: any) => {
 			this.logoSrc = e.target.result
 		}
+		this.saveAvatar()
 	}
 
 	is24Hrs: boolean = false
@@ -109,8 +101,6 @@ export class ClinicProfileComponent implements OnInit {
 			.update(this.clinic.id, this.clinic)
 			.subscribe({
 				complete: () => {
-					this.saveAvatar()
-
 					setTimeout(() => {
 						this.alert.Fire({
 							title: `Saved Successfully`,
@@ -142,22 +132,41 @@ export class ClinicProfileComponent implements OnInit {
 		new BaseService(this.http, `${ROUTES.CLINIC_AVATARS}/upload`)
 			.create(form)
 			.subscribe({
-				complete: () => {},
+				complete: () => {
+					this.alert.Fire({
+						title: `Logo Uploaded`,
+						description: `${this.clinic.name}'s logo has been updated`,
+						type: 'success',
+					})
+					this.getClinic(this.clinic.id)
+				},
 			})
 	}
 
 	savePhotos() {
-		if (!this.file) {
+		if (this.files.length === 0) {
 			return
 		}
-
 		let form = new FormData()
 
 		for (let file of this.files) {
-			form.append('files[]', file, file.name)
+			form.append('photos', file, file.name)
 		}
 
 		form.append('id', this.clinic?.id + '')
+
+		new BaseService(this.http, `${ROUTES.CLINIC_PHOTOS}/upload`)
+			.create(form)
+			.subscribe({
+				complete: () => {
+					this.alert.Fire({
+						title: `Banners Uploaded`,
+						description: `${this.clinic.name}'s banners has been updated`,
+						type: 'success',
+					})
+					this.getClinic(this.clinic.id)
+				},
+			})
 	}
 
 	markerDragEnd(m: marker | any, $event: any) {

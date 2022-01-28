@@ -14,6 +14,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 import { FormsModule } from '@angular/forms'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms'
 		RouterModule,
 		IconsModule,
 		FormsModule,
+		IvyCarouselModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.GOOGLEMAPS,
 		}),

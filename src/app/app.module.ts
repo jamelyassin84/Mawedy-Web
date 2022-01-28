@@ -1,11 +1,17 @@
-import { IconsModule } from './modules/icon/icon.module'
+//Angular Modules
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
 
+//ThirdParty Modules
+import { IconsModule } from './modules/icon/icon.module'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
+
+//Shared Modules
 import { ClinicProfileModule } from './modules/clinic-profile/clinic-profile.module'
 import { DoctorsProfileModule } from './modules/doctors-profile/doctors-profile.module'
 import { PatientsModule } from './modules/patients/patients.module'
@@ -13,6 +19,9 @@ import { PromotionsModule } from './modules/promotions/promotions.module'
 import { DashboardModule } from './modules/dashboard/dashboard.module'
 import { AppointmentsModule } from './modules/appointments/appointments.module'
 
+//Directives
+//Pipes
+//Shared Components
 import { AppComponent } from './app.component'
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component'
@@ -21,7 +30,6 @@ import { LoginNavComponent } from './shared/login-nav/login-nav.component'
 import { NavbarComponent } from './shared/home/navbar/navbar.component'
 import { SidebarComponent } from './shared/home/sidebar/sidebar.component'
 import { PatientsComponent } from './modules/patients/patients/patients.component'
-
 import { LoaderModalComponent } from './components/modals/loader-modal/loader-modal.component'
 import { FileUploadModalComponent } from './components/modals/file-upload-modal/file-upload-modal.component'
 import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm-modal.component'
@@ -35,7 +43,6 @@ import { CenterSmallModalComponent } from './components/modals/center-small-moda
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
 import { MainInterceptor } from './interceptors/main'
 import { AlertComponent } from './components/utilities/alert/alert.component'
-import { FormsModule } from '@angular/forms'
 import { LoginSection1Component } from './pages/login/login-section1/login-section1.component'
 import { LoginSection2Component } from './pages/login/login-section2/login-section2.component'
 import { LoginSection3Component } from './pages/login/login-section3/login-section3.component'
@@ -79,20 +86,25 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 		NoInternetComponent,
 	],
 	imports: [
+		//Angular Modules
 		BrowserModule,
 		AppRoutingModule,
 		RouterModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
+		FormsModule,
+
+		//Third Modules
+		IvyCarouselModule,
+		IconsModule,
+
+		//Shared Modules
 		AppointmentsModule,
 		ClinicProfileModule,
 		DashboardModule,
 		DoctorsProfileModule,
 		PatientsModule,
 		PromotionsModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
-		FormsModule,
-
-		IconsModule,
 	],
 	providers: [
 		{

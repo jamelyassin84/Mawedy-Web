@@ -1,6 +1,6 @@
 <nav>
 	<div class="logo-div">
-		<img class="logo" src="../../../assets/app/logo.png" alt="" />
+		<img class="logo" src="../../../assets/app/logo.svg" alt="" />
 	</div>
 	<div class="search-input d-flex aic">
 		<img
@@ -115,7 +115,8 @@
 		<img
 			role="button"
 			class="avatar"
-			src="../../../../assets/app//navbar/user.png"
+			*ngIf="logo !== undefined"
+			[src]="logo"
 			alt=""
 		/>
 
