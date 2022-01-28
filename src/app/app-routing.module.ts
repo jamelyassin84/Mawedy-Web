@@ -1,3 +1,4 @@
+import { ClinicProfileServicesComponent } from './modules/clinic-profile/clinic-profile-services/clinic-profile-services.component'
 import { AppointmentsDayComponent } from './modules/appointments/appointments-day/appointments-day.component'
 import { AppointmentsWeekComponent } from './modules/appointments/appointments-week/appointments-week.component'
 import { AppointmentsMonthComponent } from './modules/appointments/appointments-month/appointments-month.component'
@@ -82,7 +83,18 @@ const routes: Routes = [
 			},
 			{
 				path: 'clinic-profile',
-				component: ClinicProfileComponent,
+				children: [
+					{
+						path: '',
+						pathMatch: 'full',
+						redirectTo: 'information',
+					},
+					{ path: 'information', component: ClinicProfileComponent },
+					{
+						path: 'services',
+						component: ClinicProfileServicesComponent,
+					},
+				],
 			},
 			{
 				path: 'promotions',

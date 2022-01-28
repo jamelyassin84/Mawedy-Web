@@ -50,16 +50,16 @@
 		<div class="row mt-5 p-0">
 			<div class="col-md-6 p-0">
 				<div class="form-group col-md-12">
-					<label for="">Address</label>
+					<label for="">Name</label>
 					<input
-						[(ngModel)]="clinic.address"
+						[(ngModel)]="clinic.name"
 						type="text"
 						class="form-control"
 					/>
 				</div>
 
 				<div class="form-group col-md-12">
-					<label for="">Clinic Description</label>
+					<label for="">Description</label>
 					<textarea
 						[(ngModel)]="clinic.description"
 						class="form-control"
@@ -68,9 +68,9 @@
 			</div>
 			<div class="col-md-6">
 				<div class="form-group col-md-12">
-					<label for="">Clinic Name</label>
+					<label for="">Address</label>
 					<input
-						[(ngModel)]="clinic.name"
+						[(ngModel)]="clinic.address"
 						type="text"
 						class="form-control"
 					/>
@@ -175,7 +175,14 @@
 						<span *ngIf="isProcessing === 'complete'">
 							<i-feather name="check"></i-feather>
 						</span>
-						<span *ngIf="!isProcessing"> Save</span>
+						<span *ngIf="!isProcessing">
+							<i-feather
+								class="ml-2 text-white"
+								name="upload-cloud"
+							>
+							</i-feather>
+							Update information</span
+						>
 
 						<div
 							style="color: var(--accent) !important"
@@ -190,9 +197,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <div class="page">
-	<div class="page-content">
-		<clinic-profile-services></clinic-profile-services>
-	</div>
-</div> -->

@@ -21,6 +21,8 @@ import {
 	Upload,
 	LogIn,
 	Image,
+	Activity,
+	PlusCircle,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -43,6 +45,8 @@ const icons = {
 	Upload,
 	LogIn,
 	Image,
+	Activity,
+	PlusCircle,
 }
 
 @NgModule({

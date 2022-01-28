@@ -1,114 +1,124 @@
-<div class="header d-flex aic">
-	<span style="color: var(--color1)">Services</span>
-	<button
-		(click)="showModal(header, body, footer)"
-		class="btn add-medical-services ml-auto d-flex aic"
-	>
-		<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
-		<span>Add Medical Services</span>
-	</button>
-</div>
+<ng-template #component>
+	<toolbar-profile></toolbar-profile>
+</ng-template>
 
-<app-tabs [tabs]="tabs"></app-tabs>
-<div class="tab-container">
-	<div class="row">
-		<div
-			class="col-md-4"
-			*ngFor="
-				let item of [
-					'Dental Implant',
-					'Dental Bridge',
-					'Dental Veneers',
-					'Dentures',
-					'Root Canal'
-				]
-			"
+<home-toolbar [component]="component"></home-toolbar>
+<div class="page">
+	<div class="page-content">
+		<button
+			(click)="showModal(header, body, footer)"
+			class="btn add-medical-services ml-auto d-flex aic"
 		>
-			<app-service-card
-				[title]="item"
-				description="Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam.."
-				image="../../../../assets/app/clinic-profile/veneers.png"
-			></app-service-card>
+			<i-feather name="plus-circle" class="mr-3"></i-feather>
+
+			<span>Add Department</span>
+		</button>
+
+		<app-tabs [tabs]="tabs"></app-tabs>
+		<div class="tab-container">
+			<div class="row">
+				<div
+					class="col-md-4"
+					*ngFor="
+						let item of [
+							'Dental Implant',
+							'Dental Bridge',
+							'Dental Veneers',
+							'Dentures',
+							'Root Canal'
+						]
+					"
+				>
+					<app-service-card
+						[title]="item"
+						description="Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam.."
+						image="../../../../assets/app/clinic-profile/veneers.png"
+					></app-service-card>
+				</div>
+			</div>
+
+			<div class="d-flex w-100 aic">
+				<button
+					(click)="showModal(header, body, footer)"
+					class="btn ml-auto aic d-flex add-service-button"
+				>
+					<img
+						src="../../../assets/app/toolbars/patients/plus.png"
+						alt=""
+					/>
+					<span>Add Services</span>
+				</button>
+			</div>
 		</div>
 	</div>
 
-	<div class="d-flex w-100 aic">
-		<button
-			(click)="showModal(header, body, footer)"
-			class="btn ml-auto aic d-flex add-service-button"
-		>
-			<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
-			<span>Add Services</span>
-		</button>
-	</div>
-</div>
+	<ng-template #header>
+		<div class="title">Add Medical Services</div>
+	</ng-template>
 
-<ng-template #header>
-	<div class="title">Add Medical Services</div>
-</ng-template>
+	<ng-template #body>
+		<add-medical-services-modal-body></add-medical-services-modal-body>
+	</ng-template>
 
-<ng-template #body>
-	<add-medical-services-modal-body></add-medical-services-modal-body>
-</ng-template>
-
-<ng-template #footer>
-	<span class="save">
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			width="164"
-			height="94"
-			viewBox="0 0 164 94"
-		>
-			<defs>
-				<filter
-					id="Rectangle_2714"
-					x="0"
-					y="0"
-					width="164"
-					height="94"
-					filterUnits="userSpaceOnUse"
-				>
-					<feOffset dy="3" input="SourceAlpha" />
-					<feGaussianBlur stdDeviation="8" result="blur" />
-					<feFlood flood-color="#00b074" flood-opacity="0.251" />
-					<feComposite operator="in" in2="blur" />
-					<feComposite in="SourceGraphic" />
-				</filter>
-			</defs>
-			<g id="button" transform="translate(24.13 21)">
-				<g
-					transform="matrix(1, 0, 0, 1, -24.13, -21)"
-					filter="url(#Rectangle_2714)"
-				>
-					<rect
-						id="Rectangle_2714-2"
-						data-name="Rectangle 2714"
-						width="116"
-						height="46"
-						rx="12"
-						transform="translate(24 21)"
-						fill="#00b074"
-					/>
-				</g>
-				<g
-					id="Group_73719"
-					data-name="Group 73719"
-					transform="translate(43 11)"
-				>
-					<text
-						id="Save"
-						transform="translate(14.87 17)"
-						fill="#fff"
-						font-size="16"
-						font-family="Avenir-Heavy, Avenir"
-						font-weight="800"
-						letter-spacing="0.002em"
+	<ng-template #footer>
+		<span class="save">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				width="164"
+				height="94"
+				viewBox="0 0 164 94"
+			>
+				<defs>
+					<filter
+						id="Rectangle_2714"
+						x="0"
+						y="0"
+						width="164"
+						height="94"
+						filterUnits="userSpaceOnUse"
 					>
-						<tspan x="-17" y="0">Save</tspan>
-					</text>
+						<feOffset dy="3" input="SourceAlpha" />
+						<feGaussianBlur stdDeviation="8" result="blur" />
+						<feFlood flood-color="#00b074" flood-opacity="0.251" />
+						<feComposite operator="in" in2="blur" />
+						<feComposite in="SourceGraphic" />
+					</filter>
+				</defs>
+				<g id="button" transform="translate(24.13 21)">
+					<g
+						transform="matrix(1, 0, 0, 1, -24.13, -21)"
+						filter="url(#Rectangle_2714)"
+					>
+						<rect
+							id="Rectangle_2714-2"
+							data-name="Rectangle 2714"
+							width="116"
+							height="46"
+							rx="12"
+							transform="translate(24 21)"
+							fill="#00b074"
+						/>
+					</g>
+					<g
+						id="Group_73719"
+						data-name="Group 73719"
+						transform="translate(43 11)"
+					>
+						<text
+							id="Save"
+							transform="translate(14.87 17)"
+							fill="#fff"
+							font-size="16"
+							font-family="Avenir-Heavy, Avenir"
+							font-weight="800"
+							letter-spacing="0.002em"
+						>
+							<tspan x="-17" y="0">Save</tspan>
+						</text>
+					</g>
 				</g>
-			</g>
-		</svg>
-	</span>
-</ng-template>
+			</svg>
+		</span>
+	</ng-template>
+</div>
