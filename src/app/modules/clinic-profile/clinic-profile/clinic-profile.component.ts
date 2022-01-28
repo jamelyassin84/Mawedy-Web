@@ -24,6 +24,7 @@ export class ClinicProfileComponent implements OnInit {
 	timings: string[] = timings
 
 	lat: number = 40.76
+
 	lng: number = -73.983
 
 	getClinic(id: number) {
@@ -31,10 +32,13 @@ export class ClinicProfileComponent implements OnInit {
 			.show(id)
 			.subscribe((data: ClinicDto) => {
 				this.clinic = data
+
 				if (this.clinic.clinicTimings.lenth !== 0) {
 					this.clinicTimings = this.clinic.clinicTimings
+
 					this.is24Hrs = this.checkTimings(this.clinic.clinicTimings)
 				}
+
 				this.logoSrc = data.avatar?.avatar
 			})
 	}
@@ -53,9 +57,11 @@ export class ClinicProfileComponent implements OnInit {
 	}
 
 	files!: File[]
+
 	bannerSrc!: any
 	readFiles(event: any) {
 		this.files = event.target.files as File[]
+
 		this.savePhotos()
 	}
 
@@ -71,6 +77,7 @@ export class ClinicProfileComponent implements OnInit {
 		reader.onload = (e: any) => {
 			this.logoSrc = e.target.result
 		}
+
 		this.saveAvatar()
 	}
 
@@ -138,6 +145,7 @@ export class ClinicProfileComponent implements OnInit {
 						description: `${this.clinic.name}'s logo has been updated`,
 						type: 'success',
 					})
+
 					this.getClinic(this.clinic.id)
 				},
 			})
@@ -147,6 +155,7 @@ export class ClinicProfileComponent implements OnInit {
 		if (this.files.length === 0) {
 			return
 		}
+
 		let form = new FormData()
 
 		for (let file of this.files) {
@@ -164,6 +173,7 @@ export class ClinicProfileComponent implements OnInit {
 						description: `${this.clinic.name}'s banners has been updated`,
 						type: 'success',
 					})
+
 					this.getClinic(this.clinic.id)
 				},
 			})
@@ -188,6 +198,7 @@ export class ClinicProfileComponent implements OnInit {
 		})
 
 		this.getClinic(this.service.getID())
+
 		this.geoLocationService.getPosition().subscribe((pos: any) => {
 			;(this.lat = +pos.coords.latitude),
 				(this.lng = +pos.coords.longitude)
