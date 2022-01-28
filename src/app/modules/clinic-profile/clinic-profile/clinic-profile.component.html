@@ -29,10 +29,7 @@
 				</carousel>
 			</div>
 
-			<div
-				*ngIf="clinic?.photos.length === 0 && !files"
-				class="col-md-8 mb-3"
-			>
+			<div *ngIf="clinic?.photos.length === 0 && !files" class="col-md-8 mb-3">
 				<label for="">Banners</label>
 				<div
 					(click)="trigger('banners')"
@@ -65,11 +62,7 @@
 						alt=""
 						(click)="trigger('file')"
 					/>
-					<i-feather
-						*ngIf="!file"
-						class="image-icon"
-						name="image"
-					></i-feather>
+					<i-feather *ngIf="!file" class="image-icon" name="image"></i-feather>
 				</div>
 			</div>
 		</div>
@@ -95,39 +88,23 @@
 			<div class="col-md-6 p-0">
 				<div class="form-group col-md-12">
 					<label for="">Name</label>
-					<input
-						[(ngModel)]="clinic.name"
-						type="text"
-						class="form-control"
-					/>
+					<input [(ngModel)]="clinic.name" type="text" class="form-control" />
 				</div>
 
 				<div class="form-group col-md-12">
 					<label for="">Description</label>
-					<textarea
-						[(ngModel)]="clinic.description"
-						class="form-control"
-					></textarea>
+					<textarea [(ngModel)]="clinic.description" class="form-control"></textarea>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group col-md-12">
 					<label for="">Address</label>
-					<input
-						[(ngModel)]="clinic.address"
-						type="text"
-						class="form-control"
-					/>
+					<input [(ngModel)]="clinic.address" type="text" class="form-control" />
 				</div>
 
 				<div class="form-group col-md-12">
 					<label for="">Pin Location</label>
-					<agm-map
-						class="map"
-						[latitude]="lat"
-						[longitude]="lng"
-						[zoom]="15"
-					>
+					<agm-map class="map" [latitude]="lat" [longitude]="lng" [zoom]="15">
 						<agm-marker
 							(dragEnd)="markerDragEnd({}, $event)"
 							[latitude]="lat"
@@ -171,10 +148,7 @@
 						<label class="ml-auto mr-2">Open - Close</label>
 					</div>
 
-					<div
-						class="d-flex aic"
-						*ngFor="let day of timings; let i = index"
-					>
+					<div class="d-flex aic" *ngFor="let day of timings; let i = index">
 						<div
 							[style.margin-top]="i === 7 ? '0' : '-1rem'"
 							style="margin-top: -1rem"
@@ -228,11 +202,7 @@
 							<i-feather name="check"></i-feather>
 						</span>
 						<span *ngIf="!isProcessing">
-							<i-feather
-								class="ml-2 text-white"
-								name="upload-cloud"
-							>
-							</i-feather>
+							<i-feather class="ml-2 text-white" name="upload-cloud"> </i-feather>
 							Update information</span
 						>
 

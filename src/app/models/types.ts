@@ -67,6 +67,12 @@ export interface ConfirmModal {
 	value: boolean
 }
 
+export interface marker {
+	lat: number
+	lng: number
+	label?: string
+}
+
 export type AlertType = 'success' | 'info' | 'warning' | 'error'
 
 export type SubscriptionType = 'trial' | 'solution' | 'app' | 'premium'

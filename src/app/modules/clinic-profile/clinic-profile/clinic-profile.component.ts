@@ -1,3 +1,4 @@
+import { marker } from './../../../models/types'
 import { AlertService } from './../../../services/utilities/alert.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
@@ -7,7 +8,6 @@ import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { GeoLocationService } from 'src/app/services/utilities/geolocation.service'
-
 @Component({
 	selector: 'clinic-profile-index',
 	templateUrl: './clinic-profile.component.html',
@@ -15,9 +15,9 @@ import { GeoLocationService } from 'src/app/services/utilities/geolocation.servi
 })
 export class ClinicProfileComponent implements OnInit {
 	constructor(
+		private geoLocationService: GeoLocationService,
 		private service: ClinicService,
 		private http: HttpClient,
-		private geoLocationService: GeoLocationService,
 		private alert: AlertService,
 	) {}
 
@@ -27,7 +27,23 @@ export class ClinicProfileComponent implements OnInit {
 
 	lng: number = -73.983
 
-	getClinic(id: number) {
+	files!: File[]
+
+	bannerSrc!: any
+
+	file!: File | any
+
+	logoSrc!: any
+
+	is24Hrs: boolean = false
+
+	clinic!: ClinicDto
+
+	isProcessing: boolean | 'complete' = false
+
+	clinicTimings: any = []
+
+	getClinic(id: number): void {
 		new BaseService(this.http, ROUTES.CLINICS)
 			.show(id)
 			.subscribe((data: ClinicDto) => {
@@ -43,7 +59,7 @@ export class ClinicProfileComponent implements OnInit {
 			})
 	}
 
-	checkTimings(timings: any) {
+	checkTimings(timings: any): boolean {
 		for (let timing of timings) {
 			if (timing['isAlwaysOpen'] === true) {
 				return true
@@ -52,22 +68,21 @@ export class ClinicProfileComponent implements OnInit {
 		return false
 	}
 
-	trigger(id: any) {
+	markerDragEnd(m: marker | any, $event: any): void {}
+
+	clickedMarker(label: string, index: number): void {}
+
+	trigger(id: string): void {
 		document.getElementById(id)?.click()
 	}
 
-	files!: File[]
-
-	bannerSrc!: any
-	readFiles(event: any) {
+	readFiles(event: any): void {
 		this.files = event.target.files as File[]
 
 		this.savePhotos()
 	}
 
-	file!: File | any
-	logoSrc!: any
-	readFile(event: any) {
+	readFile(event: any): void {
 		this.file = event.target.files[0] as File
 
 		const reader = new FileReader()
@@ -81,9 +96,7 @@ export class ClinicProfileComponent implements OnInit {
 		this.saveAvatar()
 	}
 
-	is24Hrs: boolean = false
-	clinic!: ClinicDto
-	set24Hrs(value: boolean) {
+	set24Hrs(value: boolean): void {
 		this.is24Hrs = value
 
 		if (value === true) {
@@ -97,9 +110,7 @@ export class ClinicProfileComponent implements OnInit {
 		}
 	}
 
-	isProcessing: boolean | 'complete' = false
-	clinicTimings: any = []
-	save() {
+	save(): void {
 		this.isProcessing = true
 
 		this.clinic['clinicTimings'] = this.clinicTimings
@@ -125,7 +136,7 @@ export class ClinicProfileComponent implements OnInit {
 			})
 	}
 
-	saveAvatar() {
+	saveAvatar(): void {
 		if (!this.file) {
 			return
 		}
@@ -151,7 +162,7 @@ export class ClinicProfileComponent implements OnInit {
 			})
 	}
 
-	savePhotos() {
+	savePhotos(): void {
 		if (this.files.length === 0) {
 			return
 		}
@@ -179,14 +190,6 @@ export class ClinicProfileComponent implements OnInit {
 			})
 	}
 
-	markerDragEnd(m: marker | any, $event: any) {
-		console.log('dragEnd', m, $event)
-	}
-
-	clickedMarker(label: string, index: number) {
-		console.log(`clicked the marker: ${label || index}`)
-	}
-
 	ngOnInit(): void {
 		this.timings.forEach((day: string) => {
 			this.clinicTimings.push({
@@ -200,14 +203,7 @@ export class ClinicProfileComponent implements OnInit {
 		this.getClinic(this.service.getID())
 
 		this.geoLocationService.getPosition().subscribe((pos: any) => {
-			;(this.lat = +pos.coords.latitude),
-				(this.lng = +pos.coords.longitude)
+			;(this.lat = +pos.coords.latitude), (this.lng = +pos.coords.longitude)
 		})
 	}
-}
-
-interface marker {
-	lat: number
-	lng: number
-	label?: string
 }
