@@ -1,47 +1,36 @@
 .tab {
 	font-family: normal;
 	text-align: left;
-	letter-spacing: 0.04px;
-	position: relative;
-	font-family: bold;
 	cursor: pointer;
-	padding-bottom: 20px;
-	.badge {
-		letter-spacing: 0.03px;
-		border-radius: 14px;
-		font-size: 12px;
-		justify-content: center;
-		padding: 5px 9px;
-		color: #6d7c8d;
-		background: var(--bg1) 0% 0% no-repeat padding-box;
-	}
-	.border-div {
-		height: 5px;
-		width: 100px;
-		border-top-left-radius: 6px;
-		border-top-right-radius: 6px;
-		bottom: 0;
-		position: absolute;
-	}
+	padding: 10px 30px;
+	display: flex;
+	align-items: center;
 	.tab-text {
-		font-size: 20px;
+		font-size: 1.2rem;
+		color: var(--color2);
+	}
+	transform: translateY(3px);
+	margin: 0;
+	border-radius: 10px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	&:hover {
+		background-color: var(--bg2);
+		color: var(--color1);
 	}
 }
-
+.feather {
+	transform: translateY(-3px);
+}
 .active {
-	color: #00b074;
+	.tab-text {
+		color: white !important;
+	}
 	text-transform: capitalize;
 	font-family: bold;
-
-	.badge {
-		color: white;
-		background: #00b074 0% 0% no-repeat padding-box;
-	}
-
-	.border-div {
-		width: 100px;
-		background: #00b074;
-	}
+	background-color: var(--accent) !important;
+	box-shadow: rgba(0, 176, 116, 0.3) 0px 4px 16px,
+		rgba(0, 176, 116, 0.05) 0px 8px 32px;
 }
 
 .aside {
