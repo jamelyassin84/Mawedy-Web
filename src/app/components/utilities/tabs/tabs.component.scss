@@ -3,7 +3,7 @@
 		padding: 14px 31px;
 		text-align: left;
 		letter-spacing: 0.04px;
-		color: var(--color1);
+		color: var(--color2);
 		margin-bottom: -3px;
 		font-size: 20px;
 		cursor: pointer;
@@ -15,7 +15,11 @@
 		font-family: bold;
 		border-top-right-radius: 5px;
 		border-top-left-radius: 5px;
-		color: var(--color4);
+		color: var(--color1);
 	}
 	margin-top: 23px;
+}
+
+.feather:active {
+	opacity: 0.5;
 }

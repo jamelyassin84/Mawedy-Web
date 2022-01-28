@@ -25,6 +25,7 @@ import {
 	PlusCircle,
 	Info,
 	Clipboard,
+	MinusCircle,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -51,6 +52,7 @@ const icons = {
 	PlusCircle,
 	Info,
 	Clipboard,
+	MinusCircle,
 }
 
 @NgModule({
