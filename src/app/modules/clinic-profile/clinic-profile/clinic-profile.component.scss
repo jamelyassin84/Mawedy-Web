@@ -121,9 +121,6 @@ textarea {
 .clinic-image-placeholder {
 	width: 100%;
 	background: var(--bg2);
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	padding: 15vh;
 	margin-bottom: -2rem;
 	cursor: pointer;
@@ -132,6 +129,21 @@ textarea {
 		height: 5rem;
 	}
 }
+
+.clinic-logo-placeholder {
+	height: 250px;
+	background: var(--bg2);
+	width: 250px;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+	.image-icon {
+		width: 5rem;
+		height: 5rem;
+	}
+}
+
 .app-checkbox {
 	margin-top: 1rem;
 	margin-right: calc(140px - 1.5rem);

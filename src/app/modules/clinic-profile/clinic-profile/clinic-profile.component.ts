@@ -51,15 +51,30 @@ export class ClinicProfileComponent implements OnInit {
 		document.getElementById(id)?.click()
 	}
 
-	filename!: string
+	files!: File[]
+	bannerSrc!: any
+	readFiles(event: any) {
+		// this.file = event.target.files as File[]
+		// const reader = new FileReader()
+		// reader.readAsDataURL(this.files)
+		// reader.onload = (e: any) => {
+		// 	this.src = e.target.result
+		// }
+	}
+
 	file!: File
-	src!: any
+	logoSrc!: any
 	readFile(event: any) {
+		console.log(event)
+
 		this.file = event.target.files[0] as File
+
 		const reader = new FileReader()
+
 		reader.readAsDataURL(this.file)
+
 		reader.onload = (e: any) => {
-			this.src = e.target.result
+			this.logoSrc = e.target.result
 		}
 	}
 
@@ -67,6 +82,7 @@ export class ClinicProfileComponent implements OnInit {
 	clinic!: ClinicDto
 	set24Hrs(value: boolean) {
 		this.is24Hrs = value
+
 		if (value === true) {
 			for (let timing of this.clinicTimings) {
 				timing['isAlwaysOpen'] = true
@@ -82,26 +98,63 @@ export class ClinicProfileComponent implements OnInit {
 	clinicTimings: any = []
 	save() {
 		this.isProcessing = true
+
 		this.clinic['clinicTimings'] = this.clinicTimings
+
 		new BaseService(this.http, ROUTES.CLINICS)
 			.update(this.clinic.id, this.clinic)
 			.subscribe({
 				complete: () => {
+					this.saveAvatar()
+
 					setTimeout(() => {
 						this.alert.Fire({
 							title: `Saved Successfully`,
 							description: `${this.clinic.name}'s profile has been updated`,
 							type: 'success',
 						})
+
 						this.isProcessing = 'complete'
+
 						this.getClinic(this.clinic.id)
+
 						setTimeout(() => (this.isProcessing = false), 2700)
 					}, 500)
 				},
 			})
 	}
 
-	saveAvatar(id: number) {}
+	saveAvatar() {
+		if (!this.file) {
+			return
+		}
+
+		let form = new FormData()
+
+		form.append('avatar', this.file, this.file.name)
+
+		form.append('id', this.clinic?.id + '')
+
+		new BaseService(this.http, `${ROUTES.CLINIC_AVATARS}/upload`)
+			.create(form)
+			.subscribe({
+				complete: () => {},
+			})
+	}
+
+	savePhotos() {
+		if (!this.file) {
+			return
+		}
+
+		let form = new FormData()
+
+		for (let file of this.files) {
+			form.append('files[]', file, file.name)
+		}
+
+		form.append('id', this.clinic?.id + '')
+	}
 
 	markerDragEnd(m: marker | any, $event: any) {
 		console.log('dragEnd', m, $event)

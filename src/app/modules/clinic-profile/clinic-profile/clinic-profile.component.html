@@ -4,46 +4,60 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content">
-		<div class="header d-flex aic">
-			<div class="clinic-promotion">Clinic Information</div>
+	<div class="page-content" *ngIf="clinic">
+		<div class="row">
 			<div
-				*ngIf="clinic.photos.length !== 0"
-				role="button"
-				class="view-statistic d-flex aic"
+				*ngIf="clinic?.photos.length === 0 && !files"
+				class="col-md-8 mb-3"
 			>
-				<i-feather name="upload-cloud" class="mr-3"></i-feather>
-				<span> Change Banner </span>
+				<label for="">Banners</label>
+				<div
+					(click)="trigger('banners')"
+					class="clinic-image-placeholder d-flex aic jcc"
+				>
+					<i-feather class="image-icon" name="image"></i-feather>
+				</div>
+			</div>
+
+			<div
+				role="button"
+				class="mb-3 col-md-4 w-100 d-flex aic jcc"
+				style="flex-direction: column"
+			>
+				<label for="">Logo</label>
+				<div
+					(click)="trigger('logo')"
+					class="clinic-logo-placeholder d-flex aic jcc"
+				>
+					<img
+						role="button"
+						*ngIf="clinic?.photos.length === 0 && file"
+						class="clinic-image"
+						[src]="logoSrc"
+						alt=""
+						(click)="trigger('file')"
+					/>
+					<i-feather
+						*ngIf="!file"
+						class="image-icon"
+						name="image"
+					></i-feather>
+				</div>
 			</div>
 		</div>
-		<img
-			*ngIf="clinic.photos.length !== 0"
-			class="clinic-image"
-			src="../../../../assets/app/clinic-profile/bg.png"
-			alt=""
-		/>
-
-		<div *ngIf="clinic.photos.length === 0 && !file">
-			<label for="">Add a Banner</label>
-			<div (click)="trigger('file')" class="clinic-image-placeholder">
-				<i-feather class="image-icon" name="image"></i-feather>
-			</div>
-		</div>
-
-		<img
-			role="button"
-			*ngIf="clinic.photos.length === 0 && file"
-			class="clinic-image"
-			[src]="src"
-			alt=""
-			(click)="trigger('file')"
-		/>
 
 		<input
 			multiple
+			(change)="readFiles($event)"
+			type="banners"
+			id="file"
+			style="display: none"
+		/>
+
+		<input
 			(change)="readFile($event)"
 			type="file"
-			id="file"
+			id="logo"
 			style="display: none"
 		/>
 
@@ -94,7 +108,33 @@
 				</div>
 			</div>
 
-			<div class="form-group col-md-12 row pl-4 m-0">
+			<div class="form-group col-md-12 row p-0 m-0">
+				<div class="col-md-3 pr-5">
+					<label for="">Contact numbers</label>
+					<input placeholder="" type="text" class="form-control" />
+					<input placeholder="" type="text" class="form-control" />
+					<label>Facebook</label>
+					<input
+						[(ngModel)]="clinic.facebook"
+						placeholder=""
+						type="text"
+						class="form-control"
+					/>
+					<label>Instagram</label>
+					<input
+						[(ngModel)]="clinic.instagram"
+						placeholder=""
+						type="text"
+						class="form-control"
+					/>
+					<label>Google</label>
+					<input
+						[(ngModel)]="clinic.google"
+						placeholder=""
+						type="text"
+						class="form-control"
+					/>
+				</div>
 				<div class="col-md-3 p-0">
 					<div class="d-flex mb-3">
 						<label><span>Timings</span></label>
@@ -141,24 +181,6 @@
 								</app-checkbox>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-2 pl-5">
-					<label for="">Contact numbers</label>
-
-					<div class="form-group">
-						<input
-							placeholder=""
-							type="text"
-							class="form-control"
-						/>
-					</div>
-					<div class="form-group">
-						<input
-							placeholder=""
-							type="text"
-							class="form-control"
-						/>
 					</div>
 				</div>
 			</div>
