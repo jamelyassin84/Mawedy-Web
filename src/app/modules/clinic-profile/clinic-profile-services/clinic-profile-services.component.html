@@ -12,7 +12,13 @@
 			<i-feather name="plus-circle" class="mr-3"></i-feather>
 			<span>Add department</span>
 		</button>
-		<app-tabs [tabs]="tabs"></app-tabs>
+
+		<app-tabs
+			[tabs]="tabs"
+			[active]="activeTab"
+			(OnSetActiveTab)="setActiveTab($event)"
+		></app-tabs>
+
 		<div class="tab-container">
 			<div class="row">
 				<div

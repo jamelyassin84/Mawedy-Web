@@ -1,14 +1,20 @@
 <div class="tab-container d-flex aic">
 	<div
 		class="tabs"
-		*ngFor="let tab of tabs"
-		[class.active]="tab.active"
-		[class.bold]="tab.active"
+		*ngFor="let tab of tabs; let i = index"
+		[class.active]="tab.id === active"
+		[class.bold]="tab.id === active"
+		(click)="setActiveTab(tab.id)"
 	>
-		{{ tab.title }}
+		{{ tab.name }}
 		<i-feather
 			(click)="showModal(header, body, footer)"
 			name="plus-circle"
+			class="ml-3 feather"
+		></i-feather>
+		<i-feather
+			(click)="removeDepartment(tab.id)"
+			name="x"
 			class="ml-3 feather"
 		></i-feather>
 	</div>

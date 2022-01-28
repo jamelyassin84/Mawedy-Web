@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
+import { ROUTES } from 'src/app/routes/api.routes'
+import { BaseService } from 'src/app/services/api/base.api.service'
+import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
@@ -8,14 +12,35 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	styleUrls: ['./clinic-profile-services.component.scss'],
 })
 export class ClinicProfileServicesComponent implements OnInit {
-	constructor(private modalService: ModalService) {}
-	ngOnInit(): void {}
-	tabs: TabType[] = [
-		{ title: 'Dentistry', active: true },
-		{ title: 'Radiology', active: false },
-		{ title: 'Pediatric', active: false },
-		{ title: 'Physiotherapy', active: false },
-	]
+	constructor(
+		private modalService: ModalService,
+		private http: HttpClient,
+		private clinic: ClinicService,
+	) {}
+
+	ngOnInit(): void {
+		this.getDepartments()
+	}
+
+	getDepartments() {
+		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
+			.show(this.clinic.getID())
+			.subscribe({
+				next: (data) => {
+					this.tabs = data
+					this.activeTab = data[0].id
+				},
+			})
+	}
+
+	tabs: TabType[] = []
+	activeTab: any = 0
+	setActiveTab(id: number | string) {
+		this.activeTab = id
+		this.getServices(id)
+	}
+
+	getServices(id: number | string) {}
 
 	showModal(header: any, body: any, footer: any) {
 		this.modalService.showModal({
