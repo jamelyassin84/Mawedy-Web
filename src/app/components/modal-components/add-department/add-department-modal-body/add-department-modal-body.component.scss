@@ -1,0 +1,39 @@
+.isProcessing {
+	.btn {
+		background: none !important;
+		border: none;
+		:focus {
+			outline: 0 !important;
+		}
+		.btn:focus {
+			outline: 0 !important;
+		}
+
+		button:focus {
+			outline: 0 !important;
+		}
+	}
+}
+.btn {
+	background: var(--accent);
+	span {
+		color: white;
+	}
+	border-radius: 9999px;
+	font-size: 1.2rem;
+	height: 50px;
+	transition: 1.3s ease;
+	padding-left: 30px;
+	padding-right: 30px;
+	:focus {
+		outline: 0 !important;
+	}
+}
+
+.btn :active {
+	font-size: 0.95rem;
+}
+
+.form-group {
+	padding: 1rem 4rem;
+}

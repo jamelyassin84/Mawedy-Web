@@ -1,3 +1,4 @@
+import { AddDepartmentModalBodyComponent } from './../../components/modal-components/add-department/add-department-modal-body/add-department-modal-body.component'
 import { environment } from 'src/environments/environment'
 import { AgmCoreModule } from '@agm/core'
 import { IconsModule } from './../icon/icon.module'
@@ -24,6 +25,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		TabsComponent,
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
+		AddDepartmentModalBodyComponent,
 	],
 	imports: [
 		CommonModule,

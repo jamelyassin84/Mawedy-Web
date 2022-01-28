@@ -1,0 +1,39 @@
+<div class="form-group">
+	<label>Department</label>
+	<input
+		#form
+		(keyup.enter)="save()"
+		[(ngModel)]="name"
+		type="text"
+		class="form-control"
+	/>
+</div>
+
+<div class="d-flex w-100 aic jcc">
+	<!-- button  -->
+	<div
+		(click)="save()"
+		[class.isProcessing]="isProcessing === true"
+		[class.isComplete]="isProcessing === 'complete'"
+		class="d-flex"
+	>
+		<button class="btn primary-button">
+			<span *ngIf="isProcessing === 'complete'">
+				<i-feather name="check"></i-feather>
+			</span>
+			<span *ngIf="!isProcessing">
+				<i-feather class="ml-2 text-white" name="upload-cloud">
+				</i-feather>
+				Save Department</span
+			>
+
+			<div
+				style="color: var(--accent) !important"
+				*ngIf="isProcessing === true"
+				class="spinner-border text-success"
+				role="status"
+			></div>
+		</button>
+	</div>
+	<!-- button  -->
+</div>

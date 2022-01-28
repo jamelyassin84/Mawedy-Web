@@ -5,11 +5,12 @@
 	right: 1rem;
 	display: flex;
 	flex-direction: column-reverse;
-	height: 100%;
 	background: transparent;
+	z-index: 9999999999999999999999999999999999;
 }
 .alert {
 	box-shadow: var(--dropShadow);
+	position: relative;
 	min-height: 50px;
 	width: 440px;
 	border-radius: 9999px;

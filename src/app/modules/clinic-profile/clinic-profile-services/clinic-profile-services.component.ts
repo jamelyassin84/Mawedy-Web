@@ -8,6 +8,8 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	styleUrls: ['./clinic-profile-services.component.scss'],
 })
 export class ClinicProfileServicesComponent implements OnInit {
+	constructor(private modalService: ModalService) {}
+	ngOnInit(): void {}
 	tabs: TabType[] = [
 		{ title: 'Dentistry', active: true },
 		{ title: 'Radiology', active: false },
@@ -15,17 +17,13 @@ export class ClinicProfileServicesComponent implements OnInit {
 		{ title: 'Physiotherapy', active: false },
 	]
 
-	constructor(private modalService: ModalService) {}
-
-	ngOnInit(): void {}
-
 	showModal(header: any, body: any, footer: any) {
 		this.modalService.showModal({
 			value: true,
 			header: header,
 			body: body,
 			footer: footer,
-			type: 'Center Large',
+			type: 'Center Small',
 		})
 	}
 }
