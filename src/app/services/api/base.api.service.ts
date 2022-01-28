@@ -35,7 +35,7 @@ export class BaseService {
 		return this.http.get<any>(url, this.headers())
 	}
 
-	show(id: Number) {
+	show(id: Number | string) {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.get<any>(url, this.headers())
 	}

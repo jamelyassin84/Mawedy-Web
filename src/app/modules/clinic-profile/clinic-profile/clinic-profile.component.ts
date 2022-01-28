@@ -35,6 +35,10 @@ export class ClinicProfileComponent implements OnInit {
 					this.clinicTimings = this.clinic.clinicTimings
 					this.is24Hrs = this.checkTimings(this.clinic.clinicTimings)
 				}
+				// this.file = this.getAvatar(data.avatar.avatar)
+				if (Object.keys(data.avatar).length !== 0) {
+					this.file = data.avatar.avatar
+				}
 			})
 	}
 
@@ -62,7 +66,7 @@ export class ClinicProfileComponent implements OnInit {
 		// }
 	}
 
-	file!: File
+	file!: File | any
 	logoSrc!: any
 	readFile(event: any) {
 		console.log(event)
