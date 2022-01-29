@@ -194,3 +194,34 @@ textarea {
 .invalid-feedback {
 	margin-top: -0.8rem;
 }
+
+.swal2-container.swal2-bottom,
+.swal2-container.swal2-center,
+.swal2-container.swal2-top {
+	position: absolute;
+	z-index: 9999999999999999999999999999999999999999999999;
+	background: var(--modalBackdrop) !important;
+}
+
+#swal2-title {
+	font-family: bold !important;
+}
+
+#swal2-html-container,
+.swal2-actions {
+	font-family: normal !important;
+}
+
+.swal2-styled.swal2-confirm {
+	background: var(--accent) !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+	box-shadow: 0 0 0 3px #00b07588;
+}
+
+.swal2-cancel {
+	background: var(--bg) !important;
+	color: var(--color1) !important;
+	border: 2px solid var(--border1) !important;
+}

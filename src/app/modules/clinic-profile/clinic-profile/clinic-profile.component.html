@@ -6,12 +6,34 @@
 <div class="page">
 	<div class="page-content" *ngIf="clinic">
 		<div class="row">
-			<div class="col-md-8">
+			<div
+				role="button"
+				class="mb-3 col-md-2 w-100 d-flex aic jcc"
+				style="flex-direction: column"
+			>
+				<label for="">Logo</label>
+				<div
+					(click)="trigger('logo')"
+					class="clinic-logo-placeholder d-flex aic jcc"
+				>
+					<img
+						role="button"
+						*ngIf="logoSrc"
+						class="clinic-image"
+						style="border-radius: 5px"
+						[src]="logoSrc"
+						alt=""
+						(click)="trigger('file')"
+					/>
+					<i-feather *ngIf="!file" class="image-icon" name="image"></i-feather>
+				</div>
+			</div>
+			<div class="col-md-10">
 				<label for="">Banners</label>
 				<carousel
 					*ngIf="clinic?.photos.length !== 0"
 					[height]="500"
-					[cellsToShow]="1.1"
+					[cellsToShow]="1"
 					[dots]="true"
 					[borderRadius]="5"
 					[margin]="0"
@@ -24,7 +46,7 @@
 						class="carousel-cell"
 						style="background: var(--bg)"
 					>
-						<img style="object-fit: stretch" [src]="image.avatar" />
+						<img style="object-fit: cover" [src]="image.avatar" />
 					</div>
 				</carousel>
 			</div>
@@ -40,29 +62,6 @@
 						class="image-icon"
 						name="image"
 					></i-feather>
-				</div>
-			</div>
-
-			<div
-				role="button"
-				class="mb-3 col-md-4 w-100 d-flex aic jcc"
-				style="flex-direction: column"
-			>
-				<label for="">Logo</label>
-				<div
-					(click)="trigger('logo')"
-					class="clinic-logo-placeholder d-flex aic jcc"
-				>
-					<img
-						role="button"
-						*ngIf="logoSrc"
-						class="clinic-image"
-						style="border-radius: 50%"
-						[src]="logoSrc"
-						alt=""
-						(click)="trigger('file')"
-					/>
-					<i-feather *ngIf="!file" class="image-icon" name="image"></i-feather>
 				</div>
 			</div>
 		</div>

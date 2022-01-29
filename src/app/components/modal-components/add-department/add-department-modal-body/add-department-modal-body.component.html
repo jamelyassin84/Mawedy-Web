@@ -17,13 +17,12 @@
 		[class.isComplete]="isProcessing === 'complete'"
 		class="d-flex"
 	>
-		<button class="btn primary-button">
+		<button class="btn primary-button w-100">
 			<span *ngIf="isProcessing === 'complete'">
 				<i-feather name="check"></i-feather>
 			</span>
 			<span *ngIf="!isProcessing">
-				<i-feather class="ml-2 text-white" name="upload-cloud">
-				</i-feather>
+				<i-feather class="ml-2 text-white" name="upload-cloud"> </i-feather>
 				Save Department</span
 			>
 
