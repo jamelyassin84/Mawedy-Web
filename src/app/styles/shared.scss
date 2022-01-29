@@ -95,6 +95,10 @@ label {
 	border: 1px solid var(--inputBorder);
 }
 
+.form-control:focus {
+	background-color: var(--searchInput);
+}
+
 ::placeholder {
 	color: var(--color2);
 	font-family: normal !important;

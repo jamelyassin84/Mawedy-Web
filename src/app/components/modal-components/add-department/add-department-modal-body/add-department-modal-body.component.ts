@@ -11,7 +11,6 @@ import { ClinicService } from 'src/app/services/utilities/clnic.service'
 	styleUrls: ['./add-department-modal-body.component.scss'],
 })
 export class AddDepartmentModalBodyComponent implements OnInit {
-	@ViewChild('form') form!: ElementRef
 	constructor(
 		private http: HttpClient,
 		private clinic: ClinicService,
@@ -20,9 +19,16 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 
 	ngOnInit(): void {}
 
+	ngAfterViewInit() {
+		this.form.nativeElement.focus()
+	}
+
+	@ViewChild('form') form!: ElementRef
+
 	name: string = ''
 
 	isProcessing: boolean | 'complete' = false
+
 	save() {
 		if (this.name === '') {
 			return this.alert.Fire({

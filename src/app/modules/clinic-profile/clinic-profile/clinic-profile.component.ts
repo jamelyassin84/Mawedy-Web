@@ -60,11 +60,17 @@ export class ClinicProfileComponent implements OnInit {
 
 	clinicTimings: any = []
 
+	phone1: any = ''
+
+	phone2: any = ''
+
 	getClinic(id: number): void {
 		new BaseService(this.http, ROUTES.CLINICS)
 			.show(id)
 			.subscribe((data: ClinicDto) => {
 				this.clinic = data
+
+				this.getPhone(data)
 
 				if (this.clinic.clinicTimings.length !== 0) {
 					this.clinicTimings = this.clinic.clinicTimings
@@ -75,6 +81,19 @@ export class ClinicProfileComponent implements OnInit {
 					this.logoSrc = data.avatar?.avatar
 				}
 			})
+	}
+
+	getPhone(clinic: ClinicDto) {
+		console.log(clinic.phones)
+		if (clinic.phones?.length !== 0) {
+			clinic.phones?.[0] === undefined
+				? ''
+				: (this.phone1 = clinic.phones?.[0].phone)
+
+			clinic.phones?.[1] === undefined
+				? ''
+				: (this.phone1 = clinic.phones?.[2].phone)
+		}
 	}
 
 	checkTimings(timings: any): boolean {
@@ -137,6 +156,8 @@ export class ClinicProfileComponent implements OnInit {
 			.update(this.clinic.id, this.clinic)
 			.subscribe({
 				complete: () => {
+					this.savePhone()
+
 					setTimeout(() => {
 						this.alert.Fire({
 							title: `Saved Successfully`,
@@ -152,6 +173,26 @@ export class ClinicProfileComponent implements OnInit {
 					}, 500)
 				},
 			})
+	}
+
+	savePhone() {
+		if (this.phone1 !== '') {
+			new BaseService(this.http, `${ROUTES.CLINICS}/phone`)
+				.create({
+					id: this.clinic.id,
+					phone: this.phone1,
+				})
+				.subscribe()
+		}
+
+		if (this.phone2 !== '') {
+			new BaseService(this.http, `${ROUTES.CLINICS}/phone`)
+				.create({
+					id: this.clinic.id,
+					phone: this.phone2,
+				})
+				.subscribe()
+		}
 	}
 
 	saveAvatar(): void {
