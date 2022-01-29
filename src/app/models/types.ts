@@ -6,7 +6,7 @@ export interface Alert {
 	isShowing: boolean
 }
 
-export interface ClinicDto extends DateInterface {
+export interface Clinic extends DateInterface {
 	id: number
 	name?: string
 	email?: string
@@ -25,6 +25,7 @@ export interface ClinicDto extends DateInterface {
 	apple?: string | null
 	isApproved: boolean
 	registeredVia?: 'web' | 'app'
+	subscription?: string
 	isActive?: boolean
 	isLoggedIn?: boolean
 	message: string | null

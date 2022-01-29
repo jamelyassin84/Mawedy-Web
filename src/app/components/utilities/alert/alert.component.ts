@@ -22,7 +22,7 @@ export class AlertComponent implements OnInit {
 	ngOnInit(): void {
 		this.timer = setTimeout(() => {
 			this.alerts.shift()
-		}, 1000)
+		}, 5000)
 	}
 
 	close(index: number) {

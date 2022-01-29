@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 //ThirdParty Modules
 import { IconsModule } from './modules/icon/icon.module'
@@ -93,6 +93,7 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 		BrowserAnimationsModule,
 		HttpClientModule,
 		FormsModule,
+		ReactiveFormsModule,
 
 		//Third Modules
 		IvyCarouselModule,

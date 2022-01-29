@@ -91,8 +91,8 @@ label {
 	padding-left: 12px;
 	font-family: bold;
 	height: 40px !important;
-	background-color: var(--searchInput) !important;
-	border: 1px solid var(--inputBorder) !important;
+	background-color: var(--searchInput);
+	border: 1px solid var(--inputBorder);
 }
 
 ::placeholder {
@@ -175,4 +175,18 @@ textarea {
 	font-size: 1.3rem;
 	font-family: bold;
 	color: var(--color1);
+}
+
+.btn-disabled {
+	background: var(--disabled) !important;
+}
+
+.is-invalid {
+	border: 1px solid rgba(255, 0, 0, 0.205);
+	box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.171);
+	background: var(--bg);
+}
+
+.invalid-feedback {
+	margin-top: -0.8rem;
 }

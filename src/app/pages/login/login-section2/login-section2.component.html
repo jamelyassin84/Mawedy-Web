@@ -1,135 +1,196 @@
 <div class="row jumbotron p-0 m-0 form-container" style="transition: 1s ease">
 	<div class="col-md-6 pr-5">
-		<div class="h1 text-left">Be a partner</div>
+		<div class="h1 text-left">Partner with mawedy!</div>
 		<p class="text-left mt-3 text-muted">
-			Get your clinic advertised, easy appointments for your valued
-			patients, web solutions and many more!
+			Get your clinic advertised, easy appointments for your valued patients, web
+			solutions and many more.
 		</p>
 	</div>
 	<div class="col-md-6" style="margin-top: 10rem">
 		<div class="card">
-			<div class="card-body p-2" *ngIf="signInTab === 1">
-				<h2>Clinic Information</h2>
-				<div class="form-group">
-					<label for="">Clinic name</label>
+			<form [formGroup]="informationForm" (ngSubmit)="next()">
+				<div class="card-body p-2" *ngIf="signInTab === 1">
+					<h2>Clinic Information</h2>
+
+					<div class="form-group">
+						<label for="name">Clinic name</label>
+						<input
+							id="name"
+							formControlName="name"
+							[(ngModel)]="clinic.name"
+							[class.is-invalid]="
+								informationForm.get('name')?.invalid &&
+								informationForm.get('name')?.touched
+							"
+							class="form-control"
+							type="text"
+							class="form-control"
+						/>
+						<div class="invalid-feedback">
+							<div class="text=danger">Clinic name is required.</div>
+							<div class="text=danger">Must have at least 3 characters.</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="address">Clinic address</label>
+						<textarea
+							id="address"
+							formControlName="address"
+							[class.is-invalid]="
+								informationForm.get('address')?.invalid &&
+								informationForm.get('address')?.touched
+							"
+							type="text"
+							class="form-control"
+						></textarea>
+						<div class="invalid-feedback">
+							<div class="text=danger">Clinic address is required.</div>
+							<div class="text=danger">Must have at least 5 characters.</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Clinic email</label>
+						<input
+							id="email"
+							formControlName="email"
+							[class.is-invalid]="
+								informationForm.get('email')?.invalid &&
+								informationForm.get('email')?.touched
+							"
+							type="text"
+							class="form-control"
+						/>
+						<div class="invalid-feedback">
+							<div class="text=danger">Clinic email is required.</div>
+							<div class="text=danger">Must have an email valid format</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="tradeLicenseNumber"> Trade License No. </label>
+						<input
+							id="tradeLicenseNumber"
+							formControlName="tradeLicenseNumber"
+							type="text"
+							maxlength="6"
+							minlength="6"
+							class="form-control w-50"
+						/>
+					</div>
+
+					<div
+						role="button"
+						(click)="trigger('file')"
+						class="mt-3 trade-license-upload-btn d-flex aic"
+					>
+						<i-feather name="upload-cloud" class="mr-3"></i-feather>
+						<span class="mt-2">Upload Trade License</span>
+					</div>
+
+					<div *ngFor="let file of files" class="file mt-3 mr-3">
+						{{ file.name }}
+					</div>
+
 					<input
-						[(ngModel)]="clinic.name"
-						type="search"
-						class="form-control w-50"
+						multiple
+						(change)="readFile($event)"
+						type="file"
+						id="file"
+						style="display: none"
 					/>
+
+					<div class="d-flex mt-5">
+						<button
+							[class.btn-disabled]="!informationForm.valid"
+							[disabled]="!informationForm.valid"
+							type="submit"
+							class="btn ml-auto"
+						>
+							Get free account
+							<i-feather class="ml-2" name="arrow-right"> </i-feather>
+						</button>
+					</div>
 				</div>
-				<div class="form-group">
-					<label for="">Clinic address</label>
-					<input
-						[(ngModel)]="clinic.address"
-						type="search"
-						class="form-control"
-					/>
-				</div>
-				<div class="form-group">
-					<label for="">Clinic email</label>
-					<input
-						[(ngModel)]="clinic.email"
-						type="search"
-						class="form-control"
-					/>
-				</div>
-				<div class="form-group">
-					<label for="">Trade License No.</label>
-					<input
-						[(ngModel)]="clinic.tradeLicenseNumber"
-						type="search"
-						class="form-control w-50"
-					/>
-				</div>
-				<div
-					role="button"
-					(click)="trigger('file')"
-					class="mt-3 trade-license-upload-btn d-flex aic"
-				>
-					<i-feather name="upload-cloud" class="mr-3"></i-feather>
-					<span class="mt-2">Upload Trade License</span>
-				</div>
-				<div *ngFor="let file of files" class="file mt-2 ml-3">
-					{{ file.name }}
-				</div>
-				<input
-					multiple
-					(change)="readFile($event)"
-					type="file"
-					id="file"
-					style="display: none"
-				/>
-				<div class="d-flex mt-5">
-					<button (click)="next()" class="btn ml-auto">
-						Get free account
-						<i-feather class="ml-2" name="arrow-right"> </i-feather>
-					</button>
-				</div>
-			</div>
+			</form>
 			<div class="card-body p-2" *ngIf="signInTab === 2">
 				<h2>Set up your account</h2>
 
 				<div class="form-group">
-					<label for="">Username</label>
+					<label for="username">Username</label>
 					<input
+						id="username"
 						[(ngModel)]="clinic.username"
-						type="search"
+						type="text"
 						class="form-control w-50"
 					/>
+					<div class="invalid-feedback">
+						<div class="text=danger">Username is required.</div>
+						<div class="text=danger">Must have at least 8 characters.</div>
+					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="">Subscription</label>
+					<label for="subscription">Subscription</label>
 					<select
-						[(ngModel)]="clinic.subscriptionType"
-						type="search"
+						[(ngModel)]="clinic.subscription"
+						id="subscription"
+						type="text"
 						class="form-control"
 					>
 						<option selected disabled>Select a package</option>
+
 						<option value="trial">Free Trial (2 months)</option>
+
 						<option disabled value="solution">Web Solution</option>
+
 						<option disabled value="app">
 							Clinic Advertisement on Mawedy Mobile Application
 						</option>
+
 						<option disabled value="premium">Premium</option>
 					</select>
-					<label
-						style="transform: translateY(-1rem)"
-						class="text-info small"
-						>Good for 2 Users</label
-					>
+
+					<label style="transform: translateY(-1rem)" class="text-info small">
+						Good for 2 Users
+					</label>
 				</div>
+
 				<div class="row" style="margin-top: -1rem">
 					<div *ngFor="let account of users" class="col-md-4">
 						<label for="">Account #{{ account.id }}</label>
 						<input
 							[(ngModel)]="account.name"
 							placeholder="John Doe"
-							type="search"
+							type="text"
 							class="form-control"
 						/>
 					</div>
 				</div>
+
 				<div class="form-group">
-					<label for="">Comments</label>
+					<label for="message">Message to Mawedy</label>
 					<textarea
+						id="message"
 						type="number"
 						class="form-control"
 						[(ngModel)]="clinic.message"
 					></textarea>
 				</div>
+
 				<div class="d-flex mt-5 aic">
-					<span
-						(click)="signInTab = 1"
-						role="button"
-						class="mr-4 ml-auto"
-					>
+					<div (click)="signInTab = 1" role="button" class="mr-4 ml-auto">
 						<i-feather class="ml-2" name="arrow-left"> </i-feather>
 
-						Back</span
+						<span>Back</span>
+					</div>
+					<button
+						(click)="register()"
+						[class.btn-disabled]="clinic.username == undefined"
+						[disabled]="clinic.username == undefined"
+						class="btn"
 					>
-					<button (click)="register()" class="btn">
 						<i-feather name="log-in"></i-feather>
 						Register
 					</button>

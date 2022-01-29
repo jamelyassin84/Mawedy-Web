@@ -1,3 +1,4 @@
+import { AlertService } from 'src/app/services/utilities/alert.service'
 import { Component, OnInit } from '@angular/core'
 
 @Component({
@@ -13,5 +14,12 @@ import { Component, OnInit } from '@angular/core'
 	],
 })
 export class LoginComponent implements OnInit {
+	constructor(private alert: AlertService) {
+		this.alert.Fire({
+			title: 'We use cookies',
+			description: 'We use cookies for you to have the optimum browser experience.',
+			type: 'info',
+		})
+	}
 	ngOnInit(): void {}
 }
