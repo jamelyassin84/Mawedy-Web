@@ -52,6 +52,7 @@ import { PageNotFoundComponent } from './pages/redirects/page-not-found/page-not
 import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/under-maintenance.component'
 import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
+import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
 
 @NgModule({
 	declarations: [
@@ -84,6 +85,7 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 		UnderMaintenanceComponent,
 		InternalServerErrorComponent,
 		NoInternetComponent,
+		WhosAccountComponent,
 	],
 	imports: [
 		//Angular Modules

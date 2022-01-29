@@ -88,3 +88,11 @@ export type ModalType =
 	| 'Loader'
 	| 'File-Upload'
 	| 'none'
+
+export interface ClinicAccount {
+	id?: number | any
+	name: string
+	isActive?: boolean
+	isLoggedIn?: boolean
+	clinic: Clinic
+}

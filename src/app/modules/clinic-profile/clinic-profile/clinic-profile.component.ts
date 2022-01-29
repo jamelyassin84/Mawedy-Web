@@ -21,6 +21,23 @@ export class ClinicProfileComponent implements OnInit {
 		private alert: AlertService,
 	) {}
 
+	ngOnInit(): void {
+		this.timings.forEach((day: string) => {
+			this.clinicTimings.push({
+				openedAt: '00:00AM',
+				closedAt: '00:00PM',
+				day: day,
+				isAlwaysOpen: false,
+			})
+		})
+
+		this.getClinic(this.service.getID())
+
+		this.geoLocationService.getPosition().subscribe((pos: any) => {
+			;(this.lat = +pos.coords.latitude), (this.lng = +pos.coords.longitude)
+		})
+	}
+
 	timings: string[] = timings
 
 	lat: number = 40.76
@@ -49,13 +66,14 @@ export class ClinicProfileComponent implements OnInit {
 			.subscribe((data: ClinicDto) => {
 				this.clinic = data
 
-				if (this.clinic.clinicTimings.lenth !== 0) {
+				if (this.clinic.clinicTimings.length !== 0) {
 					this.clinicTimings = this.clinic.clinicTimings
 
 					this.is24Hrs = this.checkTimings(this.clinic.clinicTimings)
 				}
-
-				this.logoSrc = data.avatar?.avatar
+				if (data.avatar !== null) {
+					this.logoSrc = data.avatar?.avatar
+				}
 			})
 	}
 
@@ -122,7 +140,7 @@ export class ClinicProfileComponent implements OnInit {
 					setTimeout(() => {
 						this.alert.Fire({
 							title: `Saved Successfully`,
-							description: `${this.clinic.name}'s profile has been updated`,
+							description: `Profile has been updated`,
 							type: 'success',
 						})
 
@@ -153,11 +171,11 @@ export class ClinicProfileComponent implements OnInit {
 				complete: () => {
 					this.alert.Fire({
 						title: `Logo Uploaded`,
-						description: `${this.clinic.name}'s logo has been updated`,
+						description: `Logo has been updated`,
 						type: 'success',
 					})
 
-					this.getClinic(this.clinic.id)
+					location.reload()
 				},
 			})
 	}
@@ -181,29 +199,12 @@ export class ClinicProfileComponent implements OnInit {
 				complete: () => {
 					this.alert.Fire({
 						title: `Banners Uploaded`,
-						description: `${this.clinic.name}'s banners has been updated`,
+						description: `Banners has been updated`,
 						type: 'success',
 					})
 
-					this.getClinic(this.clinic.id)
+					location.reload()
 				},
 			})
-	}
-
-	ngOnInit(): void {
-		this.timings.forEach((day: string) => {
-			this.clinicTimings.push({
-				openedAt: '00:00AM',
-				closedAt: '00:00PM',
-				day: day,
-				isAlwaysOpen: false,
-			})
-		})
-
-		this.getClinic(this.service.getID())
-
-		this.geoLocationService.getPosition().subscribe((pos: any) => {
-			;(this.lat = +pos.coords.latitude), (this.lng = +pos.coords.longitude)
-		})
 	}
 }

@@ -1,0 +1,16 @@
+<div class="backdrop">
+	<div class="logo">
+		<img src="/assets/app/logo.svg" alt="" />
+	</div>
+	<h1 class="text-center">Who's account is this?</h1>
+	<div class="container d-flex aic jcc">
+		<div
+			(click)="selectAccount(account)"
+			*ngFor="let account of accounts; let i = index"
+			class="avatar"
+		>
+			<img [src]="resolveAvatar(i)" alt="" />
+			<div class="name">{{ account.name }}</div>
+		</div>
+	</div>
+</div>

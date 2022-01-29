@@ -1,3 +1,4 @@
+<app-whos-account *ngIf="shouldChooseAccount === true"></app-whos-account>
 <nav>
 	<div class="logo-div">
 		<img class="logo" src="../../../assets/app/logo.svg" alt="" />
@@ -8,10 +9,7 @@
 			src="../../../assets/app/toolbars/dashboard/search.png"
 			alt=""
 		/>
-		<input
-			type="search"
-			placeholder="Search by patient, doctor, departments"
-		/>
+		<input type="search" placeholder="Search by patient, doctor, departments" />
 	</div>
 
 	<div class="aside">
@@ -31,12 +29,7 @@
 				height="24"
 				viewBox="0 0 24 24"
 			>
-				<path
-					id="Path_6204"
-					data-name="Path 6204"
-					d="M0,0H24V24H0Z"
-					fill="none"
-				/>
+				<path id="Path_6204" data-name="Path 6204" d="M0,0H24V24H0Z" fill="none" />
 				<path
 					id="Path_6205"
 					data-name="Path 6205"
@@ -49,8 +42,7 @@
 		<img
 			role="button"
 			class="avatar"
-			*ngIf="logo !== undefined"
-			[src]="logo"
+			src="../../../../assets/app/avatars/2.jpg"
 			alt=""
 		/>
 
@@ -61,10 +53,7 @@
 				height="8"
 				viewBox="0 0 12 8"
 			>
-				<g
-					id="arrow-drop-down-line"
-					transform="translate(-7.757 -9.343)"
-				>
+				<g id="arrow-drop-down-line" transform="translate(-7.757 -9.343)">
 					<path
 						id="Path_6226"
 						data-name="Path 6226"

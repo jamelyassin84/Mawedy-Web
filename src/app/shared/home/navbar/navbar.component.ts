@@ -18,6 +18,18 @@ export class NavbarComponent implements OnInit {
 		private clinicService: ClinicService,
 	) {}
 
+	ngOnInit(): void {
+		this.checkIfHasUserAccount()
+	}
+
+	shouldChooseAccount: boolean = true
+
+	checkIfHasUserAccount() {
+		if (localStorage.getItem('account') !== null) {
+			this.shouldChooseAccount = false
+		}
+	}
+
 	showModal(header: any, body: any, footer: any) {
 		this.modalService.showModal({
 			value: true,
@@ -26,17 +38,5 @@ export class NavbarComponent implements OnInit {
 			footer: footer,
 			type: 'Right',
 		})
-	}
-
-	logo = ''
-	getClinic() {
-		new BaseService(this.http, ROUTES.CLINICS)
-			.show(this.clinicService.getID())
-			.subscribe((data: ClinicDto) => {
-				this.logo = data.avatar.avatar
-			})
-	}
-	ngOnInit(): void {
-		this.getClinic()
 	}
 }
