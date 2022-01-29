@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { AlertMessage } from 'src/app/constants/Alert'
 @Component({
 	selector: 'app-login-section2',
 	templateUrl: './login-section2.component.html',
@@ -32,6 +33,15 @@ export class LoginSection2Component implements OnInit {
 		password: '123',
 	}
 
+	radios: any = {
+		premium: false,
+		trial: true,
+		web: false,
+		mobile: false,
+	}
+
+	emailAlreadyExist = false
+
 	informationForm = new FormGroup({
 		name: new FormControl('', [Validators.required, Validators.minLength(3)]),
 
@@ -41,6 +51,15 @@ export class LoginSection2Component implements OnInit {
 
 		tradeLicenseNumber: new FormControl('', [Validators.required]),
 	})
+
+	handleEmailChange(event: any) {
+		new BaseService(this.http, `${ROUTES.EMAILS}/check-if-exist`)
+			.create({ email: event.target.value })
+			.subscribe({
+				next: (data: boolean) =>
+					!data ? (this.emailAlreadyExist = false) : (this.emailAlreadyExist = true),
+			})
+	}
 
 	uploadFiles(id: string) {
 		let formData = new FormData()
@@ -87,8 +106,15 @@ export class LoginSection2Component implements OnInit {
 		this.signInTab = 2
 	}
 
+	handleRadio(radio: string) {
+		for (let key in this.radios) {
+			this.radios[key] = false
+		}
+		this.radios[radio] = true
+		this.clinic.subscription = radio
+	}
+
 	register(): void {
-		alert('ari')
 		if (this.clinic.username.length < 8) {
 			return this.alert.Fire({
 				title: 'Username is too short.',
@@ -97,7 +123,11 @@ export class LoginSection2Component implements OnInit {
 			})
 		}
 
-		const data = Object.assign(this.clinic, { users: this.users })
+		const data = Object.assign(
+			{ users: this.users },
+			this.informationForm.value,
+			this.clinic,
+		)
 
 		new BaseService(this.http, ROUTES.CLINICS).create(data).subscribe({
 			next: (response) => {
@@ -105,8 +135,16 @@ export class LoginSection2Component implements OnInit {
 
 				this.isProcessing = false
 			},
-
-			complete: () => {},
+			complete: () => {
+				this.signInTab = 1
+				this.informationForm.reset()
+				this.files = []
+				AlertMessage(
+					'We are excited to become your partner!',
+					'Mawedy is verifying your account and will send you an email regarding your registration',
+					'success',
+				)
+			},
 		})
 	}
 

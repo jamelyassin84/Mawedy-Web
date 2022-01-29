@@ -97,3 +97,11 @@ button:focus {
 	padding: 10px 20px;
 	background: var(--bg2);
 }
+
+.form-check {
+	label {
+		transform: translateY(0.6rem);
+	}
+	border-bottom: 1px solid var(--border1);
+	padding-bottom: 1.5rem;
+}

@@ -16,8 +16,8 @@ import { Component, OnInit } from '@angular/core'
 export class LoginComponent implements OnInit {
 	constructor(private alert: AlertService) {
 		this.alert.Fire({
-			title: 'We use cookies',
-			description: 'We use cookies for you to have the optimum browser experience.',
+			title: 'Hi there! We are using cookies',
+			description: 'We use them for you to have an optimum browser experience.',
 			type: 'info',
 		})
 	}

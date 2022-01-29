@@ -17,7 +17,6 @@
 						<input
 							id="name"
 							formControlName="name"
-							[(ngModel)]="clinic.name"
 							[class.is-invalid]="
 								informationForm.get('name')?.invalid &&
 								informationForm.get('name')?.touched
@@ -54,6 +53,7 @@
 						<label for="email">Clinic email</label>
 						<input
 							id="email"
+							(input)="handleEmailChange($event)"
 							formControlName="email"
 							[class.is-invalid]="
 								informationForm.get('email')?.invalid &&
@@ -65,6 +65,9 @@
 						<div class="invalid-feedback">
 							<div class="text=danger">Clinic email is required.</div>
 							<div class="text=danger">Must have an email valid format</div>
+						</div>
+						<div class="small" *ngIf="emailAlreadyExist">
+							<span class="text-danger small"> Email already exist</span>
 						</div>
 					</div>
 
@@ -117,7 +120,70 @@
 			<div class="card-body p-2" *ngIf="signInTab === 2">
 				<h2>Set up your account</h2>
 
-				<div class="form-group">
+				<div class="form-group mb-2">
+					<label for="free-trial">Select a package</label>
+					<div class="form-check d-flex aic">
+						<input
+							disabled
+							(click)="handleRadio('premium')"
+							[checked]="radios.premium === true"
+							class="form-check-input mr-5 mr-2"
+							type="radio"
+							id="premium"
+						/>
+						<label class="form-check-label ml-3" for="premium">
+							Premium Complete Solution
+							<br />
+							<span class="text-success">(150 AED/mo)</span>
+						</label>
+					</div>
+					<div class="form-check d-flex aic">
+						<input
+							(click)="handleRadio('trial')"
+							[checked]="radios.trial === true"
+							class="form-check-input mr-5 mr-2"
+							type="radio"
+							id="free-trial"
+						/>
+						<label class="form-check-label ml-3" for="free-trial">
+							2 months Free Trial
+							<br />
+							<span class="text-success">(Complete Solution)</span>s
+						</label>
+					</div>
+					<div class="form-check d-flex aic">
+						<input
+							disabled
+							(click)="handleRadio('web')"
+							[checked]="radios.web === true"
+							class="form-check-input mr-5 mr-2"
+							type="radio"
+							id="web-solution"
+						/>
+						<label class="form-check-label ml-3" for="web-solution">
+							Web Solution
+							<br />
+							<span class="text-success">(100 AED/mo)</span>
+						</label>
+					</div>
+					<div class="form-check d-flex aic">
+						<input
+							disabled
+							(click)="handleRadio('mobile')"
+							[checked]="radios.mobile === true"
+							class="form-check-input mr-5 mr-2"
+							type="radio"
+							id="mobile"
+						/>
+						<label class="form-check-label ml-3" for="mobile">
+							Clinic Advertisement on Mawedy Mobile Application
+							<br />
+							<span class="text-success">(50 AED/mo)</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group mt-3">
 					<label for="username">Username</label>
 					<input
 						id="username"
@@ -131,37 +197,12 @@
 					</div>
 				</div>
 
-				<div class="form-group">
-					<label for="subscription">Subscription</label>
-					<select
-						[(ngModel)]="clinic.subscription"
-						id="subscription"
-						type="text"
-						class="form-control"
-					>
-						<option selected disabled>Select a package</option>
-
-						<option value="trial">Free Trial (2 months)</option>
-
-						<option disabled value="solution">Web Solution</option>
-
-						<option disabled value="app">
-							Clinic Advertisement on Mawedy Mobile Application
-						</option>
-
-						<option disabled value="premium">Premium</option>
-					</select>
-
-					<label style="transform: translateY(-1rem)" class="text-info small">
-						Good for 2 Users
-					</label>
-				</div>
-
 				<div class="row" style="margin-top: -1rem">
 					<div *ngFor="let account of users" class="col-md-4">
-						<label for="">Account #{{ account.id }}</label>
+						<label [for]="account.id">Account #{{ account.id }}</label>
 						<input
 							[(ngModel)]="account.name"
+							[id]="account.id"
 							placeholder="John Doe"
 							type="text"
 							class="form-control"
@@ -170,9 +211,13 @@
 				</div>
 
 				<div class="form-group">
-					<label for="message">Message to Mawedy</label>
+					<label for="message" class="d-flex aic">
+						<div>Want a custom package? Reach Us.</div>
+						<div class="text-info ml-auto">Optional</div>
+					</label>
 					<textarea
 						id="message"
+						placeholder="Aa"
 						type="number"
 						class="form-control"
 						[(ngModel)]="clinic.message"
