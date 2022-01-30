@@ -12,4 +12,5 @@ export class RightBlurBackgroundModalComponent implements OnInit {
 	ngOnInit(): void {}
 
 	@Input() body: any
+	@Input() animationState!: boolean
 }

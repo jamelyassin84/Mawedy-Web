@@ -18,6 +18,10 @@ import { PatientsModule } from './modules/patients/patients.module'
 import { PromotionsModule } from './modules/promotions/promotions.module'
 import { DashboardModule } from './modules/dashboard/dashboard.module'
 import { AppointmentsModule } from './modules/appointments/appointments.module'
+import { StoreModule } from '@ngrx/store'
+
+// Reducers
+import { modalReducer } from './actions/modal/modal.reducer'
 
 //Directives
 //Pipes
@@ -100,7 +104,7 @@ import { WhosAccountComponent } from './components/modals/whos-account/whos-acco
 		//Third Modules
 		IvyCarouselModule,
 		IconsModule,
-
+		StoreModule.forRoot(modalReducer),
 		//Shared Modules
 		AppointmentsModule,
 		ClinicProfileModule,

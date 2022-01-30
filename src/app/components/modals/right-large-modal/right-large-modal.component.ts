@@ -8,15 +8,11 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [slideLeft],
 })
 export class RightLargeModalComponent implements OnInit {
-	constructor(private modalService: ModalService) {
-		this.modalService.getModalValue().subscribe((modal: any) => {
-			this.animationState = modal.value === true ? 'in' : 'out'
-		})
-	}
+	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
 
-	animationState: 'in' | 'out' = 'out'
+	@Input() animationState!: boolean
 
 	@Input() header: any
 

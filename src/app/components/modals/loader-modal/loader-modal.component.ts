@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
 	selector: 'loader-modal',
@@ -9,4 +9,5 @@ export class LoaderModalComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+	@Input() animationState!: boolean
 }

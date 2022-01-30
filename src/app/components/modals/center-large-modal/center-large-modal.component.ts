@@ -11,8 +11,12 @@ export class CenterLargeModalComponent implements OnInit {
 
 	ngOnInit(): void {}
 
+	@Input() animationState!: boolean
+
 	@Input() header: any
+
 	@Input() body: any
+
 	@Input() footer: any
 
 	hide() {

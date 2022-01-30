@@ -15,6 +15,7 @@ export class ConfirmModalComponent implements OnInit {
 	@Input() onSubmit: Function | any
 
 	ngOnInit(): void {}
+	@Input() animationState!: boolean
 
 	close() {
 		this.onCLose()

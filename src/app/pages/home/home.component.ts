@@ -26,13 +26,16 @@ export class HomeComponent implements OnInit {
 				this.onCLose = confirmData.onCLose
 				this.onSubmit = confirmData.onSubmit
 				this.showModal = confirmData.value
+				this.type = confirmData.type
+				this.animationState = confirmData.value === false ? 'out' : 'in'
 			})
 	}
 
+	animationState: 'in' | 'out' = 'out'
 	header: any
 	body: any
 	footer: any
-
+	type: any
 	firstLine: any
 	secondLine: any
 	onCLose: any

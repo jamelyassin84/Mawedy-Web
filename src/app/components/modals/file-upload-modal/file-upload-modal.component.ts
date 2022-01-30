@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
 	selector: 'file-upload-modal',
@@ -9,4 +9,5 @@ export class FileUploadModalComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+	@Input() animationState!: boolean
 }

@@ -4,11 +4,13 @@
 		[header]="header"
 		[body]="body"
 		[footer]="footer"
+		[animationState]="animationState"
 	></right-large-modal>
 
 	<right-blur-background-modal
 		*ngIf="type === 'Right Blur'"
 		[body]="body"
+		[animationState]="animationState"
 	></right-blur-background-modal>
 
 	<center-large-modal
@@ -16,6 +18,7 @@
 		[header]="header"
 		[body]="body"
 		[footer]="footer"
+		[animationState]="animationState"
 	></center-large-modal>
 
 	<center-medium-modal
@@ -23,12 +26,14 @@
 		[header]="header"
 		[body]="body"
 		[footer]="footer"
+		[animationState]="animationState"
 	></center-medium-modal>
 
 	<center-small-modal
 		*ngIf="type === 'Center Small'"
 		[header]="header"
 		[body]="body"
+		[animationState]="animationState"
 	>
 	</center-small-modal>
 
@@ -40,5 +45,6 @@
 		[secondLine]="secondLine"
 		[onCLose]="onCLose"
 		[onSubmit]="onSubmit"
+		[animationState]="animationState"
 	></confirm-modal>
 </div>

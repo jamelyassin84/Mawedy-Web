@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { trigger, transition, query, animate, style } from '@angular/animations'
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ConfirmModal, Modal } from 'src/app/models/Modal.interface'
 import { ModalService } from 'src/app/services/utilities/modal.service'
 
@@ -31,18 +32,22 @@ export class MainModalComponent implements OnInit {
 			this.footer = modalData.footer
 
 			this.type = modalData.type
+
+			this.animationState = modalData.value
 		})
 	}
 
 	ngOnInit(): void {}
 
-	type: any
+	@Input() type: any = localStorage.getItem('type')
 
 	@Input() header: any
 
 	@Input() body: any
 
 	@Input() footer: any
+
+	@Input() animationState: boolean = false
 
 	@Input() firstLine: string | undefined
 
