@@ -19,31 +19,20 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr
-					*ngFor="
-						let item of [
-							1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1
-						];
-						let i = index
-					"
-				>
+			<tbody [@listAnimation]="5">
+				<tr *ngFor="let item of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; let i = index">
 					<td>10 December</td>
 					<td>10:30 AM - 11:00 AM</td>
 					<td>Riyad Abdallah</td>
 					<td>Dr. Hanadi Yassin</td>
 					<td>Returning Patient</td>
 					<td class="d-flex aic">
-						<app-status
-							[active]="i == 0 ? true : false"
-						></app-status>
+						<app-status [active]="i == 0 ? true : false"></app-status>
 						Cancelled
 					</td>
 					<td>AA586468870</td>
 					<td>
-						<span
-							(click)="showModal(header, body, footer)"
-							class="underlined"
+						<span (click)="showModal(header, body, footer)" class="underlined"
 							>Details</span
 						>
 					</td>

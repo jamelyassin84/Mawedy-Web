@@ -4,11 +4,19 @@
 .patient-details {
 	text-align: left;
 	letter-spacing: 0.03px;
-	color: #6f7d8f;
+	color: var(--accent);
 	text-transform: capitalize;
-	font-size: 16px;
+	font-size: 1.3rem;
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
 }
 
 textarea {
-	height: 90px !important;
+	height: 190px !important;
+}
+
+@for $i from 1 through 10 {
+	.col-md-12:nth-child(#{$i}n) {
+		animation-delay: #{$i * 0.5}s;
+	}
 }

@@ -5,13 +5,12 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<button
-			(click)="showModal(header, body, footer)"
-			class="btn add-medical-services ml-auto d-flex aic"
-		>
-			<i-feather name="plus-circle" class="mr-3"></i-feather>
-			<span>Add department</span>
-		</button>
+		<modal
+			[button]="button"
+			[component]="body"
+			title="Add Department"
+			type="Center Small"
+		></modal>
 
 		<app-tabs
 			[tabs]="tabs"
@@ -20,7 +19,7 @@
 		></app-tabs>
 
 		<div class="tab-container">
-			<div class="row">
+			<div class="row" [@listAnimation]="5">
 				<div
 					class="col-md-4"
 					*ngFor="
@@ -43,13 +42,14 @@
 		</div>
 	</div>
 
-	<ng-template #header>
-		<div class="modal-title">Add Department</div>
+	<ng-template #button>
+		<button class="btn add-medical-services ml-auto d-flex aic">
+			<i-feather name="plus-circle" class="mr-3"></i-feather>
+			<span>Add Department</span>
+		</button>
 	</ng-template>
 
 	<ng-template #body>
 		<add-department-modal-body></add-department-modal-body>
 	</ng-template>
-
-	<ng-template #footer> </ng-template>
 </div>

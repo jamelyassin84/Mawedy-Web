@@ -5,11 +5,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Fire } from 'src/app/constants/Alert'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ROUTES } from 'src/app/routes/api.routes'
+import { listAnimation } from 'src/app/animations/List.animation'
 
 @Component({
 	selector: 'app-tabs',
 	templateUrl: './tabs.component.html',
 	styleUrls: ['./tabs.component.scss'],
+	animations: [listAnimation],
 })
 export class TabsComponent implements OnInit {
 	constructor(
@@ -43,17 +45,15 @@ export class TabsComponent implements OnInit {
 			'Are you sure you want to remove the department?',
 			'question',
 			() => {
-				new BaseService(this.http, ROUTES.CLINIC_DEPARTMENT)
-					.destroy(id)
-					.subscribe({
-						next: () => {
-							this.alert.Fire({
-								title: 'Removed',
-								description: 'Department has been removed',
-								type: 'info',
-							})
-						},
-					})
+				new BaseService(this.http, ROUTES.CLINIC_DEPARTMENT).destroy(id).subscribe({
+					next: () => {
+						this.alert.Fire({
+							title: 'Removed',
+							description: 'Department has been removed',
+							type: 'info',
+						})
+					},
+				})
 			},
 		)
 	}

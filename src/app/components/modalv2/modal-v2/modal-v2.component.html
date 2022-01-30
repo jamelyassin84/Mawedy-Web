@@ -1,0 +1,84 @@
+<div
+	class="back-drop custom-modal-container"
+	[class.hidden]="!isShowing"
+	(click)="close($event)"
+>
+	<div click-stop-propagation>
+		<div
+			[class.cl]="type === 'Center Large'"
+			[@slideLeft]="type === 'Right' ? (!isShowing ? 'out' : 'in') : ''"
+			[@scaleX]="type === 'Center Small' ? (!isShowing ? 'out' : 'in') : ''"
+			[class.cm]="type === 'Center Medium'"
+			[class.cs]="type === 'Center Small'"
+			[class.r]="type === 'Right'"
+			[class.rb]="type === 'Right Blur'"
+			[class.c]="type === 'Confirm'"
+			[class.l]="type === 'Loader'"
+			[class.f]="type === 'File-Upload'"
+			[class.n]="type === 'none'"
+			click-stop-propagation
+		>
+			<div class="modal-container" click-stop-propagation>
+				<div class="modal-header d-flex aic jcc">
+					<span class="modal-title">{{ title }}</span>
+					<span class="ml-auto aic jcc">
+						<span (click)="isShowing = false" class="close-btn">Close </span>
+						<span (click)="isShowing = false" class="close-button">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="40"
+								height="40"
+								viewBox="0 0 40 40"
+							>
+								<g id="close-icon" transform="translate(-1695 -105)">
+									<g
+										id="Rectangle_3224"
+										data-name="Rectangle 3224"
+										transform="translate(1695 105)"
+										fill="var(--bg3)"
+										stroke="var(--border)"
+										stroke-width="1.5"
+									>
+										<rect width="40" height="40" rx="6" stroke="none" />
+										<rect
+											x="0.75"
+											y="0.75"
+											width="38.5"
+											height="38.5"
+											rx="5.25"
+											fill="none"
+										/>
+									</g>
+									<g id="close-fill" transform="translate(1703 113)">
+										<path
+											id="Path_6230"
+											data-name="Path 6230"
+											d="M0,0H24V24H0Z"
+											fill="none"
+										/>
+										<path
+											id="Path_6231"
+											data-name="Path 6231"
+											d="M12,10.586l4.95-4.95L18.364,7.05,13.414,12l4.95,4.95L16.95,18.364,12,13.414l-4.95,4.95L5.636,16.95,10.586,12,5.636,7.05,7.05,5.636Z"
+											fill="#99a8bc"
+										/>
+									</g>
+								</g>
+							</svg>
+						</span>
+					</span>
+				</div>
+				<div class="modal-body">
+					<div [ngTemplateOutlet]="component"></div>
+				</div>
+				<div *ngIf="footer" class="modal-footer">
+					<div [ngTemplateOutlet]="footer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div (click)="isShowing = true">
+	<div [ngTemplateOutlet]="button"></div>
+</div>

@@ -57,6 +57,7 @@ import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/u
 import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
 import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
+import { ClickStopPropagation } from './directives/stop-propagation.directive'
 
 @NgModule({
 	declarations: [

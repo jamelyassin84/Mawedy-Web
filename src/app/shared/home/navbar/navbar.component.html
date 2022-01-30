@@ -13,13 +13,13 @@
 	</div>
 
 	<div class="aside">
-		<button
-			(click)="showModal(header, body, footer)"
-			class="btn btn-lg text-white mr-5 d-flex aib pl-3 pr-3"
-		>
-			<i-feather class="image-icon mr-2" name="plus"></i-feather>
-			<div style="margin-top: 2px">New Appointment</div>
-		</button>
+		<modal
+			[button]="button"
+			[component]="body"
+			[footer]="footer"
+			title="New Appointment"
+			type="Right"
+		></modal>
 
 		<div role="button" class="notification mr-5">
 			<svg
@@ -67,8 +67,11 @@
 	</div>
 </nav>
 
-<ng-template #header>
-	<app-new-appointment-modal-header></app-new-appointment-modal-header>
+<ng-template #button>
+	<button class="btn btn-lg text-white mr-5 d-flex aib pl-3 pr-3">
+		<i-feather class="image-icon mr-2" name="plus"></i-feather>
+		<div style="margin-top: 2px">New Appointment</div>
+	</button>
 </ng-template>
 
 <ng-template #body>

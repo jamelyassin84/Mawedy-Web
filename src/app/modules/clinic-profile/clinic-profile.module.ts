@@ -1,3 +1,4 @@
+import { ModalV2Component } from './../../components/modalv2/modal-v2/modal-v2.component'
 import { AddDepartmentModalBodyComponent } from './../../components/modal-components/add-department/add-department-modal-body/add-department-modal-body.component'
 import { environment } from 'src/environments/environment'
 import { AgmCoreModule } from '@agm/core'
@@ -16,6 +17,8 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 import { FormsModule } from '@angular/forms'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
 	declarations: [
@@ -26,6 +29,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
 		AddDepartmentModalBodyComponent,
+		ModalV2Component,
+		ClickStopPropagation,
 	],
 	imports: [
 		CommonModule,
@@ -36,6 +41,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		IconsModule,
 		FormsModule,
 		IvyCarouselModule,
+		BrowserAnimationsModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.GOOGLEMAPS,
 		}),
@@ -45,6 +51,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		TabsComponent,
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
+		ModalV2Component,
+		ClickStopPropagation,
 	],
 })
 export class ClinicProfileModule {}

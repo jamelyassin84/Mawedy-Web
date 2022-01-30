@@ -7,31 +7,29 @@ import {
 	group,
 } from '@angular/animations'
 
-export const slideLeft = trigger('slideLeft', [
+export const fadeIn = trigger('fadeIn', [
 	state(
 		'in',
 		style({
-			opacity: '1',
-			transform: 'translateX(0%)',
+			background: '1',
 		}),
 	),
 	state(
 		'out',
 		style({
 			opacity: '0',
-			transform: 'translateX(100%)',
 		}),
 	),
 	transition('in => out', [
 		group([
 			animate(
-				'220ms ease',
+				'1120ms linear',
 				style({
-					transform: 'translateX(100%)',
+					opacity: '1',
 				}),
 			),
 			animate(
-				'330ms ease',
+				'1130ms linear',
 				style({
 					opacity: '0',
 				}),
@@ -41,16 +39,15 @@ export const slideLeft = trigger('slideLeft', [
 	transition('out => in', [
 		group([
 			animate(
-				'100ms ease',
+				'1200ms linear',
 				style({
 					opacity: '0',
 				}),
 			),
 			animate(
-				'200ms ease',
+				'1300ms linear',
 				style({
 					opacity: '1',
-					transform: 'translateX(0%)',
 				}),
 			),
 		]),

@@ -17,7 +17,7 @@
 					<th>Profile</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody [@listAnimation]="20">
 				<tr *ngFor="let item of [1, 1, 1]; let i = index">
 					<td>AA</td>
 					<td>Clarrise Umair</td>
@@ -26,9 +26,7 @@
 					<td>+98-7862-43453</td>
 					<td>Flat 1167 Majid Building Business Bay Dubai UAE</td>
 					<td>
-						<button routerLink="/home/patients/information/1">
-							View
-						</button>
+						<button routerLink="/home/patients/information/1">View</button>
 					</td>
 				</tr>
 			</tbody>
