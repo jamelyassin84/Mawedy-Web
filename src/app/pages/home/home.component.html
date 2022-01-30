@@ -6,7 +6,8 @@
 	[secondLine]="secondLine"
 	[onCLose]="onCLose"
 	[onSubmit]="onSubmit"
-	*ngIf="showModal"
+	[class.hidden]="!showModal"
+	class="custom-modal-container"
 ></app-main-modal>
 <home-navbar></home-navbar>
 

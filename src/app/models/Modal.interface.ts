@@ -1,5 +1,5 @@
 export interface Modal {
-	type: ModalType
+	type: ModalType | undefined
 	header: any
 	body: any
 	footer: any
@@ -7,7 +7,7 @@ export interface Modal {
 }
 
 export interface ConfirmModal {
-	type: ModalType
+	type: ModalType | undefined
 	firstLine: string
 	secondLine: string
 	onCLose: Function

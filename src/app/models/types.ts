@@ -60,7 +60,7 @@ export interface Modal {
 }
 
 export interface ConfirmModal {
-	type: ModalType
+	type: ModalType | undefined
 	firstLine: string
 	secondLine: string
 	onCLose: Function

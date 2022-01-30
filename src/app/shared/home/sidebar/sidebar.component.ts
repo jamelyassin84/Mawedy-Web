@@ -44,7 +44,9 @@ export class SidebarComponent implements OnInit {
 		new BaseService(this.http, ROUTES.CLINICS)
 			.show(this.clinicService.getID())
 			.subscribe((data: ClinicDto) => {
-				this.banner = data.photos[0].avatar
+				if (data.photos.length !== 0) {
+					this.banner = data.photos[0].avatar
+				}
 			})
 	}
 

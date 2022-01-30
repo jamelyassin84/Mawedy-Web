@@ -28,7 +28,9 @@ export class ClinicProfileServicesComponent implements OnInit {
 			.subscribe({
 				next: (data) => {
 					this.tabs = data
-					this.activeTab = data[0].id
+					if (data.length !== 0) {
+						this.activeTab = data[0].id
+					}
 				},
 			})
 	}

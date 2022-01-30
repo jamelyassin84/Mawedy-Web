@@ -2,3 +2,9 @@
 	overflow: hidden;
 	margin-left: 280px;
 }
+.custom-modal-container {
+	transition: 0.25s linear;
+}
+.hidden {
+	visibility: hidden;
+}
