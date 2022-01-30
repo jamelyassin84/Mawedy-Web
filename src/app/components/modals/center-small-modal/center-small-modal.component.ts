@@ -1,6 +1,6 @@
 import { ModalService } from '../../../services/utilities/modal.service'
 import { Component, Input, OnInit } from '@angular/core'
-import { scaleX } from 'src/app/animations/scalex.animation'
+import { scaleX } from 'src/app/animations/scaleX.animation'
 
 @Component({
 	selector: 'center-small-modal',
