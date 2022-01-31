@@ -92,11 +92,7 @@ label {
 	font-family: bold;
 	height: 40px !important;
 	background-color: var(--bg);
-	border: 3px solid var(--border1);
-}
-
-.form-control:focus {
-	background-color: var(--searchInput);
+	border: 2px solid var(--border1);
 }
 
 ::placeholder {
@@ -134,7 +130,8 @@ SELECT {
 }
 
 .form-control:focus {
-	box-shadow: 0 0 0 0.2rem #00b0759c !important;
+	box-shadow: 0 0 0 0.2rem #00b0759c, rgba(93, 185, 105, 0.563) 0px 3px 15px 0px;
+	border: none !important;
 }
 
 .modal-header {
@@ -176,10 +173,9 @@ textarea {
 }
 
 .modal-title {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-family: bold;
 	color: var(--color1);
-	color: var(--accent);
 }
 
 .btn-disabled {

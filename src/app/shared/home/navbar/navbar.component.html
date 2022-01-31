@@ -21,24 +21,54 @@
 			type="Right"
 		></modal>
 
-		<div role="button" class="notification mr-5">
-			<svg
-				id="notification"
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-			>
-				<path id="Path_6204" data-name="Path 6204" d="M0,0H24V24H0Z" fill="none" />
-				<path
-					id="Path_6205"
-					data-name="Path 6205"
-					d="M22,20H2V18H3V11.031a9,9,0,1,1,18,0V18h1ZM5,18H19V11.031a7,7,0,1,0-14,0Zm4.5,3h5a2.5,2.5,0,1,1-5,0Z"
-					fill="#99a8bc"
-				/>
-			</svg>
-		</div>
+		<dropdown-lg
+			[button]="notificationBtn"
+			dropdownTitle="Notifications"
+			[component]="notification"
+		>
+			<ng-template #notification> Coming Soon. </ng-template>
+		</dropdown-lg>
 
+		<dropdown-sm [button]="profileBtn" [component]="profile">
+			<ng-template #profile>
+				<div class="item d-flex">
+					<div class="icon">
+						<i-feather name="user" class="feather"></i-feather>
+					</div>
+					<div class="text">Profile</div>
+				</div>
+				<div class="item d-flex">
+					<div class="icon">
+						<i-feather name="pen-tool" class="feather"></i-feather>
+					</div>
+					<div class="text">Change Logo</div>
+				</div>
+				<hr />
+				<div class="item d-flex">
+					<div class="icon">
+						<i-feather name="settings" class="feather"></i-feather>
+					</div>
+					<div class="text">Settings</div>
+				</div>
+				<div class="item d-flex">
+					<div class="icon">
+						<i-feather name="help-circle" class="feather"></i-feather>
+					</div>
+					<div class="text">Help</div>
+				</div>
+				<div class="item d-flex">
+					<div class="icon">
+						<i-feather name="log-out" class="feather"></i-feather>
+					</div>
+					<div class="text">Sign-out</div>
+				</div>
+			</ng-template>
+		</dropdown-sm>
+	</div>
+</nav>
+
+<ng-template #profileBtn>
+	<div class="d-flex">
 		<img
 			role="button"
 			class="avatar"
@@ -65,7 +95,27 @@
 			</svg>
 		</div>
 	</div>
-</nav>
+</ng-template>
+
+<ng-template #notificationBtn>
+	<div role="button" class="notification mr-5">
+		<svg
+			id="notification"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+		>
+			<path id="Path_6204" data-name="Path 6204" d="M0,0H24V24H0Z" fill="none" />
+			<path
+				id="Path_6205"
+				data-name="Path 6205"
+				d="M22,20H2V18H3V11.031a9,9,0,1,1,18,0V18h1ZM5,18H19V11.031a7,7,0,1,0-14,0Zm4.5,3h5a2.5,2.5,0,1,1-5,0Z"
+				fill="#99a8bc"
+			/>
+		</svg>
+	</div>
+</ng-template>
 
 <ng-template #button>
 	<button class="btn btn-lg text-white mr-5 d-flex aib pl-3 pr-3">

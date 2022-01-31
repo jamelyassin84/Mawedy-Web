@@ -1,0 +1,14 @@
+<div class="ghost-btn" (click)="toggleShow()">
+	<div [ngTemplateOutlet]="button"></div>
+</div>
+<div class="wrapper">
+	<div
+		[class.hidden]="!isShowing"
+		[@dropDownAnim]="!isShowing ? 'out' : 'in'"
+		class="dropdown-menu1"
+	>
+		<div class="dropdown-body">
+			<div [ngTemplateOutlet]="component"></div>
+		</div>
+	</div>
+</div>

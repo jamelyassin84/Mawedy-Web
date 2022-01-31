@@ -7,33 +7,33 @@ import {
 	group,
 } from '@angular/animations'
 
-export const slideLeft = trigger('slideLeft', [
+export const dropDownAnim = trigger('dropDownAnim', [
 	state(
 		'in',
 		style({
 			opacity: '1',
-			transform: 'translateX(0%)',
+			transform: 'translateY(0)',
 		}),
 	),
 	state(
 		'out',
 		style({
 			opacity: '0',
-			transform: 'translateX(100%)',
+			transform: 'translateY(2rem)',
 		}),
 	),
 	transition('in => out', [
 		group([
 			animate(
-				'420ms ease',
+				'200ms linear',
 				style({
-					transform: 'translateX(100%)',
+					transform: 'translateY(-0)',
 				}),
 			),
 			animate(
-				'350ms ease',
+				'300ms linear',
 				style({
-					opacity: '0',
+					transform: 'translateY(2rem)',
 				}),
 			),
 		]),
@@ -41,16 +41,17 @@ export const slideLeft = trigger('slideLeft', [
 	transition('out => in', [
 		group([
 			animate(
-				'100ms ease',
+				'50ms linear',
 				style({
 					opacity: '0',
+					transform: 'translateY(2rem)',
 				}),
 			),
 			animate(
-				'200ms ease',
+				'100ms linear',
 				style({
 					opacity: '1',
-					transform: 'translateX(0%)',
+					transform: 'translateY(0)',
 				}),
 			),
 		]),

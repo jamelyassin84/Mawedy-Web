@@ -28,6 +28,10 @@ import {
 	MinusCircle,
 	Plus,
 	X,
+	Settings,
+	PenTool,
+	LogOut,
+	HelpCircle,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -57,6 +61,10 @@ const icons = {
 	MinusCircle,
 	Plus,
 	X,
+	Settings,
+	PenTool,
+	LogOut,
+	HelpCircle,
 }
 
 @NgModule({

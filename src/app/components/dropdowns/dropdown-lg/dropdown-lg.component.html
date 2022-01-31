@@ -1,0 +1,23 @@
+<div class="ghost-btn" (click)="toggleShow()">
+	<div [ngTemplateOutlet]="button"></div>
+</div>
+<div class="wrapper">
+	<div
+		[class.hidden]="!isShowing"
+		[@dropDownAnim]="!isShowing ? 'out' : 'in'"
+		class="dropdown-menu1"
+	>
+		<div class="dropdown-header">
+			<h4 class="d-flex w-100">
+				{{ dropdownTitle }}
+
+				<span role="button" (click)="toggleShow()" class="ml-auto">
+					<i-feather name="x"></i-feather>
+				</span>
+			</h4>
+		</div>
+		<div class="dropdown-body">
+			<div [ngTemplateOutlet]="component"></div>
+		</div>
+	</div>
+</div>

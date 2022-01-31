@@ -78,3 +78,25 @@ input[type='search']::-webkit-search-cancel-button {
 		rgba(0, 176, 116, 0.05) 0px 8px 32px;
 	border-radius: 12px;
 }
+
+.item {
+	width: 100%;
+	padding: 0.65rem 1.28rem;
+	clear: both;
+	white-space: nowrap;
+	width: auto;
+	cursor: pointer;
+	font-size: 0.9rem;
+	align-items: center;
+	.icon {
+		width: 2.5rem;
+	}
+	.feather {
+		transform: translateY(-2px);
+	}
+
+	&:hover {
+		background-color: var(--page1);
+		color: var(--accent);
+	}
+}

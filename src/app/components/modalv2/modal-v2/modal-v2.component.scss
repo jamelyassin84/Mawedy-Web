@@ -99,7 +99,7 @@
 		z-index: 11;
 		margin: auto;
 		margin-top: 180px;
-		border-radius: 16px !important;
+		border-radius: 1rem !important;
 	}
 
 	.modal-header {
@@ -148,5 +148,18 @@
 				opacity: 0.9;
 			}
 		}
+	}
+}
+
+.modal-container {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.ghost-btn {
+	&:active {
+		transform: scale(0.98);
+		transform-origin: center;
+		transition: 0.2s linear;
 	}
 }
