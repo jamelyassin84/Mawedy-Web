@@ -32,6 +32,10 @@ import {
 	PenTool,
 	LogOut,
 	HelpCircle,
+	MoreVertical,
+	MoreHorizontal,
+	Delete,
+	FastForward,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -65,6 +69,10 @@ const icons = {
 	PenTool,
 	LogOut,
 	HelpCircle,
+	MoreVertical,
+	MoreHorizontal,
+	Delete,
+	FastForward,
 }
 
 @NgModule({

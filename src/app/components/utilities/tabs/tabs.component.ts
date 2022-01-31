@@ -14,18 +14,12 @@ import { listAnimation } from 'src/app/animations/List.animation'
 	animations: [listAnimation],
 })
 export class TabsComponent implements OnInit {
-	constructor(
-		private modalService: ModalService,
-		private http: HttpClient,
-		private alert: AlertService,
-	) {}
+	constructor(private http: HttpClient, private alert: AlertService) {}
 	ngOnInit(): void {}
 
 	@Input() tabs!: TabType[]
 	@Input() active!: number
 	@Output() OnSetActiveTab = new EventEmitter<number>()
-
-	showModal(header: any, body: any, footer: any) {}
 
 	setActiveTab(id: any) {
 		this.OnSetActiveTab.emit(id)

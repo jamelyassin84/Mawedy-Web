@@ -5,13 +5,15 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<modal
-			[button]="button"
-			[component]="body"
-			title="Add Department"
-			type="Center Small"
-		></modal>
-
+		<div class="d-flex">
+			<modal
+				class="ml-auto"
+				[button]="button"
+				[component]="body"
+				title="Add Department"
+				type="Center Small"
+			></modal>
+		</div>
 		<app-tabs
 			[tabs]="tabs"
 			[active]="activeTab"

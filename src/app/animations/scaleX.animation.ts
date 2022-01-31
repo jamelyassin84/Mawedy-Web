@@ -25,12 +25,13 @@ export const scaleX = trigger('scaleX', [
 	transition('in => out', [
 		group([
 			animate(
-				'200ms linear',
+				'130ms linear',
 				style({
-					transform: 'scale(0)',
+					opacity: '0',
+					transform: 'scaleY(0)',
 				}),
 			),
-			animate('300ms linear', style({})),
+			animate('120ms linear', style({})),
 		]),
 	]),
 	transition('out => in', [

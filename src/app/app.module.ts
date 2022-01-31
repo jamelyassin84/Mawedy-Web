@@ -56,9 +56,7 @@ import { PageNotFoundComponent } from './pages/redirects/page-not-found/page-not
 import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/under-maintenance.component'
 import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
-import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component';
-import { DropdownSmComponent } from './components/dropdowns/dropdown-sm/dropdown-sm.component';
-import { DropdownLgComponent } from './components/dropdowns/dropdown-lg/dropdown-lg.component'
+import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
 
 @NgModule({
 	declarations: [
@@ -92,8 +90,6 @@ import { DropdownLgComponent } from './components/dropdowns/dropdown-lg/dropdown
 		InternalServerErrorComponent,
 		NoInternetComponent,
 		WhosAccountComponent,
-  DropdownSmComponent,
-  DropdownLgComponent,
 	],
 	imports: [
 		//Angular Modules

@@ -19,6 +19,27 @@
 	}
 	margin-top: 23px;
 }
+.item {
+	width: 100%;
+	padding: 0.65rem 1.28rem;
+	clear: both;
+	white-space: nowrap;
+	width: auto;
+	cursor: pointer;
+	font-size: 0.9rem;
+	align-items: center;
+	.icon {
+		margin-right: 1rem;
+	}
+	.feather {
+		margin-left: -0.5rem;
+	}
+
+	&:hover {
+		background-color: var(--page1);
+		color: var(--accent);
+	}
+}
 
 .feather:active {
 	opacity: 0.5;

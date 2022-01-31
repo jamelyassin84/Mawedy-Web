@@ -1,24 +1,46 @@
 <div class="tab-container d-flex aic" [@listAnimation]="15">
 	<div
-		class="tabs"
+		class="tabs d-flex"
 		*ngFor="let tab of tabs; let i = index"
 		[class.active]="tab.id === active"
 		[class.bold]="tab.id === active"
 		(click)="setActiveTab(tab.id)"
 	>
 		{{ tab.name }}
-		<i-feather
-			(click)="showModal(header, body, footer)"
-			name="plus-circle"
-			class="ml-3 feather"
-		></i-feather>
-		<i-feather
-			(click)="removeDepartment(tab.id)"
-			name="x"
-			class="ml-3 feather"
-		></i-feather>
-	</div>
+
+		<dropdown-sm click-stop-propagation [button]="more" [component]="options">
+			<ng-template #options>
+				<div class="wrapper">
+					<div class="item d-flex">
+						<div class="icon">
+							<i-feather name="plus-circle" class="feather"></i-feather>
+						</div>
+						<div class="text">Add Services</div>
+					</div>
+					<div class="item d-flex">
+						<div class="icon">
+							<i-feather name="pen-tool" class="feather"></i-feather>
+						</div>
+						<div class="text">Edit</div>
+					</div>
+					<hr />
+					<div class="item d-flex" (click)="removeDepartment(tab.id)">
+						<div class="icon">
+							<i-feather name="delete" class="feather"></i-feather>
+						</div>
+						<div class="text">Remove</div>
+					</div>
+				</div>
+			</ng-template>
+		</dropdown-sm>
+
+		<!-- 
+		--></div>
 </div>
+
+<ng-template #more>
+	<i-feather name="chevron-down" class="ml-3 feather"></i-feather>
+</ng-template>
 
 <ng-template #header>
 	<div class="title">Add Medical Services</div>

@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DropdownSmComponent } from 'src/app/components/dropdowns/dropdown-sm/dropdown-sm.component'
+import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dropdown-lg.component'
 
 @NgModule({
 	declarations: [
@@ -31,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 		AddDepartmentModalBodyComponent,
 		ModalV2Component,
 		ClickStopPropagation,
+		DropdownSmComponent,
+		DropdownLgComponent,
 	],
 	imports: [
 		CommonModule,
@@ -53,6 +57,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 		AddMedicalServicesModalBodyComponent,
 		ModalV2Component,
 		ClickStopPropagation,
+		DropdownSmComponent,
+		DropdownLgComponent,
 	],
 })
 export class ClinicProfileModule {}
