@@ -4,6 +4,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
+import { Department } from 'src/app/models/types'
+import { DepartmentService } from 'src/app/services/components/department.service'
 
 @Component({
 	selector: 'add-department-modal-body',
@@ -15,6 +17,7 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 		private http: HttpClient,
 		private clinic: ClinicService,
 		private alert: AlertService,
+		private departmentService: DepartmentService,
 	) {}
 
 	ngOnInit(): void {}
@@ -42,6 +45,7 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 			.create({ clinicId: this.clinic.getID(), name: this.name })
 			.subscribe({
 				complete: () => {
+					this.getDepartments()
 					setTimeout(() => {
 						this.alert.Fire({
 							title: `Saved!`,
@@ -55,6 +59,16 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 							this.name = ''
 						}, 2700)
 					}, 500)
+				},
+			})
+	}
+
+	getDepartments() {
+		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
+			.show(this.clinic.getID())
+			.subscribe({
+				next: (data: Department[]) => {
+					this.departmentService.setDepartment(data)
 				},
 			})
 	}

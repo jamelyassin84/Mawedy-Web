@@ -36,6 +36,7 @@ import {
 	MoreHorizontal,
 	Delete,
 	FastForward,
+	GitPullRequest,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -73,6 +74,7 @@ const icons = {
 	MoreHorizontal,
 	Delete,
 	FastForward,
+	GitPullRequest,
 }
 
 @NgModule({

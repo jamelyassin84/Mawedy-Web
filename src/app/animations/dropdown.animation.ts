@@ -25,15 +25,15 @@ export const dropDownAnim = trigger('dropDownAnim', [
 	transition('in => out', [
 		group([
 			animate(
-				'200ms linear',
+				'1200ms linear',
 				style({
 					transform: 'translateY(-0)',
 				}),
 			),
 			animate(
-				'300ms linear',
+				'1300ms linear',
 				style({
-					transform: 'translateY(2rem)',
+					transform: 'translateY(5rem)',
 				}),
 			),
 		]),

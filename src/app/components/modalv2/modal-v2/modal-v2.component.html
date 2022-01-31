@@ -1,4 +1,5 @@
 <div
+	*ngIf="ready"
 	class="back-drop custom-modal-container"
 	[class.hidden]="!isShowing"
 	(click)="close($event)"

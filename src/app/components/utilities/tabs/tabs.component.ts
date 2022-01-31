@@ -20,9 +20,14 @@ export class TabsComponent implements OnInit {
 	@Input() tabs!: TabType[]
 	@Input() active!: number
 	@Output() OnSetActiveTab = new EventEmitter<number>()
+	@Output() onDelete = new EventEmitter<void>()
 
 	setActiveTab(id: any) {
 		this.OnSetActiveTab.emit(id)
+	}
+
+	trigger(id: string) {
+		document.getElementById(id)?.click
 	}
 
 	removeDepartment(id: any) {
@@ -38,6 +43,7 @@ export class TabsComponent implements OnInit {
 							description: 'Department has been removed',
 							type: 'info',
 						})
+						this.onDelete.emit()
 					},
 				})
 			},
@@ -48,5 +54,5 @@ export class TabsComponent implements OnInit {
 export type TabType = {
 	id?: number | string
 	name: string
-	active: boolean
+	isActive: boolean
 }

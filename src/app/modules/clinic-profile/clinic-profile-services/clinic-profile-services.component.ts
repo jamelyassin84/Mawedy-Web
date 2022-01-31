@@ -1,3 +1,4 @@
+import { DepartmentService } from './../../../services/components/department.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
@@ -15,10 +16,17 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 })
 export class ClinicProfileServicesComponent implements OnInit {
 	constructor(
-		private modalService: ModalService,
 		private http: HttpClient,
 		private clinic: ClinicService,
-	) {}
+		private departmentService: DepartmentService,
+	) {
+		this.departmentService.getDepartments().subscribe((data) => {
+			this.tabs = data
+			if (data.length !== 0) {
+				this.activeTab = data[0].id
+			}
+		})
+	}
 
 	ngOnInit(): void {
 		this.getDepartments()
@@ -45,6 +53,4 @@ export class ClinicProfileServicesComponent implements OnInit {
 	}
 
 	getServices(id: number | string) {}
-
-	showModal(header: any, body: any, footer: any) {}
 }

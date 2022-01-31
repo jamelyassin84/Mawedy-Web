@@ -21,6 +21,7 @@ import { ClickStopPropagation } from 'src/app/directives/stop-propagation.direct
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DropdownSmComponent } from 'src/app/components/dropdowns/dropdown-sm/dropdown-sm.component'
 import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dropdown-lg.component'
+import { ViewDepartmentsComponent } from 'src/app/components/modal-components/view-departments/view-departments.component'
 
 @NgModule({
 	declarations: [
@@ -35,6 +36,7 @@ import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dr
 		ClickStopPropagation,
 		DropdownSmComponent,
 		DropdownLgComponent,
+		ViewDepartmentsComponent,
 	],
 	imports: [
 		CommonModule,
@@ -59,6 +61,7 @@ import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dr
 		ClickStopPropagation,
 		DropdownSmComponent,
 		DropdownLgComponent,
+		ViewDepartmentsComponent,
 	],
 })
 export class ClinicProfileModule {}

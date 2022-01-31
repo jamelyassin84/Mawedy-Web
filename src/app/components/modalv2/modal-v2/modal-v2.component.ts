@@ -17,6 +17,12 @@ export class ModalV2Component implements OnInit {
 		this.service.getModalValue().subscribe((value) => (this.isShowing = value))
 	}
 
+	ngAfterViewInit(): void {
+		this.ready = true
+	}
+
+	ready = false
+
 	@Input() button!: any
 	@Input() title!: any
 	@Input() type!: ModalType
