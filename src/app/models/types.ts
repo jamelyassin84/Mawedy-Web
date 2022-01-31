@@ -89,7 +89,7 @@ export type ModalType =
 	| 'File-Upload'
 	| 'none'
 
-export interface ClinicAccount {
+export interface ClinicAccount extends DateInterface {
 	id?: number | any
 	name: string
 	isActive?: boolean
@@ -97,8 +97,21 @@ export interface ClinicAccount {
 	clinic: Clinic
 }
 
-export interface Department {
+export interface Department extends DateInterface {
 	id?: number
 	name: string
 	isActive: boolean
+}
+
+export interface Doctor extends DateInterface {
+	id?: number
+	name: string
+	title: string
+	profession: string
+	specialties: string
+	yearsOfExperience: number
+	about: string
+	isAvailable: boolean
+	isActive: boolean
+	clinicId: number
 }
