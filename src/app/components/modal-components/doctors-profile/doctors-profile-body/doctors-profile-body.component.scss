@@ -3,28 +3,18 @@
 	padding-right: 327px;
 }
 
-.upload-photo {
-	flex-direction: column;
-	padding-left: 125px;
+.clinic-logo-placeholder {
+	height: 250px;
+	border-radius: 50%;
+	background: var(--bg2);
+	width: 250px;
 	img {
-		width: 206px;
-		height: 206px;
-		border-radius: 50%;
-		border: 1px solid #f5f6fa;
+		height: 100%;
+		width: 100%;
 	}
-	span {
-		text-align: center;
-		letter-spacing: 0.03px;
-		color: #6f7d8f;
-		opacity: 1;
-		font-size: 16px;
-		margin-top: 10px;
-	}
-	.upload-photo-btn {
-		word-break: keep-all;
-		text-align: center;
-		letter-spacing: 0.03px;
-		color: #6f7d8f;
+	.image-icon {
+		width: 5rem;
+		height: 5rem;
 	}
 }
 

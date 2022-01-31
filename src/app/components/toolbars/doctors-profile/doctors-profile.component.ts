@@ -9,9 +9,7 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [listAnimation],
 })
 export class DoctorsProfileToolbarComponent implements OnInit {
-	constructor(private modalService: ModalService) {}
+	constructor() {}
 
 	ngOnInit(): void {}
-
-	showModal(header: any, body: any, footer: any) {}
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { fadeIn } from 'src/app/animations/fade-in.animation'
 import { scaleX } from 'src/app/animations/scaleX.animation'
+import { slideTop } from 'src/app/animations/SlideInTop'
 import { slideLeft } from 'src/app/animations/SlideLeftAnimation'
 import { Modal } from 'src/app/models/Modal.interface'
 import { ModalType } from 'src/app/models/types'
@@ -10,7 +11,7 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	selector: 'modal',
 	templateUrl: './modal-v2.component.html',
 	styleUrls: ['./modal-v2.component.scss'],
-	animations: [slideLeft, fadeIn, scaleX],
+	animations: [slideLeft, fadeIn, scaleX, slideTop],
 })
 export class ModalV2Component implements OnInit {
 	constructor(private service: ModalService) {

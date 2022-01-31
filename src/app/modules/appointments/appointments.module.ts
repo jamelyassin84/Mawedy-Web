@@ -11,6 +11,8 @@ import { AppointmentsDayComponent } from './appointments-day/appointments-day.co
 import { RouterModule } from '@angular/router'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { ModalV2Component } from 'src/app/components/modalv2/modal-v2/modal-v2.component'
+import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
 
 @NgModule({
 	declarations: [
@@ -21,6 +23,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		CalendarBadgeWeekComponent,
 		CalendarBadgeDayComponent,
 		CalendarStrikeThroughComponent,
+		ModalV2Component,
+		ClickStopPropagation,
 	],
 	imports: [
 		CommonModule,
@@ -34,6 +38,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 		CalendarBadgeWeekComponent,
 		CalendarBadgeDayComponent,
 		CalendarStrikeThroughComponent,
+		ModalV2Component,
+		ClickStopPropagation,
 	],
 })
 export class AppointmentsModule {}

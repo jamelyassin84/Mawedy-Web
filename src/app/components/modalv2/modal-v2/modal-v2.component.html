@@ -6,9 +6,10 @@
 >
 	<div click-stop-propagation>
 		<div
-			[class.cl]="type === 'Center Large'"
 			[@slideLeft]="type === 'Right' ? (!isShowing ? 'out' : 'in') : ''"
 			[@scaleX]="type === 'Center Small' ? (!isShowing ? 'out' : 'in') : ''"
+			[@slideTop]="type === 'Center Large' ? (!isShowing ? 'out' : 'in') : ''"
+			[class.cl]="type === 'Center Large'"
 			[class.cm]="type === 'Center Medium'"
 			[class.cs]="type === 'Center Small'"
 			[class.r]="type === 'Right'"
@@ -69,7 +70,8 @@
 						</span>
 					</span>
 				</div>
-				<div class="modal-body">
+
+				<div class="modal-body" click-stop-propagation>
 					<div [ngTemplateOutlet]="component"></div>
 				</div>
 				<div *ngIf="footer" class="modal-footer">

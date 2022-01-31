@@ -18,25 +18,25 @@
 		/>
 	</div>
 
-	<button
-		(click)="showModal(header, body, footer)"
-		class="add-doctor d-flex aic jcc btn"
+	<modal
+		[button]="addDoctorBtn"
+		[component]="body"
+		title="Doctors Profile"
+		type="Center Large"
 	>
-		<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
-		<span>Add Doctor</span>
-	</button>
+	</modal>
+
+	<ng-template #addDoctorBtn>
+		<button class="add-doctor d-flex aic jcc btn">
+			<i-feather name="plus" class="feather"></i-feather>
+			<span>Add Doctor</span>
+		</button>
+	</ng-template>
 
 	<button class="export d-flex aic jcc btn"><span>Export List</span></button>
 </div>
 
-<ng-template #header>
-	<div class="doctors-profile">Doctors Profile</div>
-</ng-template>
-
 <ng-template #body>
 	<app-doctors-profile-body></app-doctors-profile-body>
-</ng-template>
-
-<ng-template #footer>
-	<app-doctors-profile-footer></app-doctors-profile-footer>
+	<button class="btn btn-add btn-success">Add</button>
 </ng-template>

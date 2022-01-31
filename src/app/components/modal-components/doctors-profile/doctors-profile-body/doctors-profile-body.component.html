@@ -1,27 +1,62 @@
-<div class="row body">
-	<div class="col-md-3">
-		<div class="upload-photo d-flex jcc aic">
-			<img
+<div class="row">
+	<div class="col-md-4">
+		<div class="upload-photo d-flex aic mr-5" style="flex-direction: column">
+			<div
 				role="button"
-				src="../../../assets/app/patients/male.jpg"
-				alt=""
-			/>
+				class="mb-3 col-md-4 w-100 d-flex aic jcc"
+				style="flex-direction: column"
+			>
+				<div
+					(click)="trigger('logo')"
+					class="clinic-logo-placeholder d-flex aic jcc"
+				>
+					<img
+						role="button"
+						*ngIf="avatarSrc"
+						class="clinic-image"
+						style="border-radius: 50%"
+						[src]="avatarSrc"
+						alt=""
+						(click)="trigger('file')"
+					/>
+					<i-feather *ngIf="!avatar" class="image-icon" name="image"></i-feather>
+				</div>
+			</div>
+
 			<span class="upload-photo-btn" role="button">Upload Photo</span>
+			<input
+				(change)="readFile($event)"
+				type="file"
+				accept="image/*"
+				id="logo"
+				style="display: none"
+			/>
 		</div>
 	</div>
-	<div class="col-md-8 container-wrapper">
-		<input type="text" placeholder="Name" class="form-control" />
-		<input type="text" placeholder="Profession" class="form-control" />
-		<input type="text" placeholder="Specialties" class="form-control" />
-		<input
-			type="text"
-			placeholder="Years Of Experience"
-			class="form-control"
-		/>
+	<div class="col-md-4 mt-4">
+		<div class="form-group">
+			<label for="Name">Name</label>
+			<input type="text" id="Name" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="Profession">Profession</label>
+			<input type="text" id="Profession" class="form-control" />
+		</div>
+	</div>
+	<div class="col-md-4 mt-4">
+		<div class="form-group">
+			<label for="Specialties">Specialties</label>
+			<input type="text" id="Specialties" class="form-control" />
+		</div>
+
+		<div class="form-group">
+			<label for="Years Of Experience">Years Of Experience</label>
+			<input type="text" id="Years Of Experience" class="form-control" />
+		</div>
 	</div>
 
 	<div class="col-md-12">
-		<div class="separator"></div>
+		<hr />
 	</div>
 
 	<div class="col-md-12">
@@ -31,20 +66,12 @@
 
 	<div class="col-md-3">
 		<label for="">Phone</label>
-		<input
-			type="text"
-			class="form-control custom-form"
-			placeholder="+971 00 000 0000"
-		/>
+		<input type="text" class="form-control custom-form" />
 	</div>
 
 	<div class="col-md-3">
 		<label for="">Email</label>
-		<input
-			type="text"
-			class="form-control custom-form"
-			placeholder="info@gmail.com"
-		/>
+		<input type="text" class="form-control custom-form" />
 	</div>
 
 	<div class="col-md-12">

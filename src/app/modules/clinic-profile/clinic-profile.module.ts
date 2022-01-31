@@ -17,11 +17,11 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
 import { FormsModule } from '@angular/forms'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
-import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { DropdownSmComponent } from 'src/app/components/dropdowns/dropdown-sm/dropdown-sm.component'
 import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dropdown-lg.component'
 import { ViewDepartmentsComponent } from 'src/app/components/modal-components/view-departments/view-departments.component'
+import { AppointmentsModule } from '../appointments/appointments.module'
 
 @NgModule({
 	declarations: [
@@ -32,8 +32,6 @@ import { ViewDepartmentsComponent } from 'src/app/components/modal-components/vi
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
 		AddDepartmentModalBodyComponent,
-		ModalV2Component,
-		ClickStopPropagation,
 		DropdownSmComponent,
 		DropdownLgComponent,
 		ViewDepartmentsComponent,
@@ -48,6 +46,7 @@ import { ViewDepartmentsComponent } from 'src/app/components/modal-components/vi
 		FormsModule,
 		IvyCarouselModule,
 		BrowserAnimationsModule,
+		AppointmentsModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.GOOGLEMAPS,
 		}),
@@ -57,8 +56,6 @@ import { ViewDepartmentsComponent } from 'src/app/components/modal-components/vi
 		TabsComponent,
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
-		ModalV2Component,
-		ClickStopPropagation,
 		DropdownSmComponent,
 		DropdownLgComponent,
 		ViewDepartmentsComponent,

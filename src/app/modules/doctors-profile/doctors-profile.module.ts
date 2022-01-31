@@ -1,3 +1,4 @@
+import { IconsModule } from './../icon/icon.module'
 import { PassiveWorkingScheduleComponent } from './../../components/utilities/passive-working-schedule/passive-working-schedule.component'
 import { ViewDoctorFooterComponent } from './../../components/modal-components/view-doctor/view-doctor-footer/view-doctor-footer.component'
 import { ViewDoctorBodyComponent } from './../../components/modal-components/view-doctor/view-doctor-body/view-doctor-body.component'
@@ -13,6 +14,7 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/right-blurr-background-modal/right-blur-background-modal.component'
 import { DoctorAvailabilityModalBodyComponent } from 'src/app/components/modal-components/doctor-avaiability/doctor-availability-modal-body/doctor-availability-modal-body.component'
+import { AppointmentsModule } from '../appointments/appointments.module'
 
 @NgModule({
 	declarations: [
@@ -28,7 +30,14 @@ import { DoctorAvailabilityModalBodyComponent } from 'src/app/components/modal-c
 		DoctorAvailabilityModalBodyComponent,
 		RightBlurBackgroundModalComponent,
 	],
-	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
+	imports: [
+		CommonModule,
+		DashboardModule,
+		AppRoutingModule,
+		RouterModule,
+		IconsModule,
+		AppointmentsModule,
+	],
 	exports: [
 		DoctorsProfileToolbarComponent,
 		DoctorsProfileBodyComponent,
