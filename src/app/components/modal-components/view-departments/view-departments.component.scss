@@ -32,10 +32,9 @@
 		width: 5rem;
 	}
 }
-
-.btn-success {
+.rounded {
 	background: var(--accent);
-	color: var(--bg1);
+	color: white;
 	border-radius: 50%;
 	height: 2rem;
 	width: 2rem;
@@ -43,4 +42,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.btn-success {
+	background: var(--accent);
+	color: white;
 }

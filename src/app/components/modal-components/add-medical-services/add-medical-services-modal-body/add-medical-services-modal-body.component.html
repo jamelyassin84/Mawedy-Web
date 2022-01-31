@@ -1,266 +1,60 @@
-<div class="row body">
-	<div class="col-md-6">
-		<div class="wrapper">
-			<div class="label">Department</div>
-			<input type="text" class="form-control" placeholder="Dentistry" />
+<div class="p-4">
+	<div
+		role="button"
+		class="mb-3 w-100 d-flex aic jcc"
+		style="flex-direction: column; width: 100"
+	>
+		<label class="text-left w-100">New Medical Service Banners</label>
+		<div (click)="trigger('logo')" class="service-image d-flex aic jcc">
+			<!-- <img
+						role="button"
+						*ngIf="logoSrc"
+						class="clinic-image"
+						style="border-radius: 50%"
+						[src]="logoSrc"
+						alt=""
+						(click)="trigger('file')"
+					/> -->
+			<i-feather class="image-icon" name="image"></i-feather>
 		</div>
 
-		<div class="wrapper">
-			<div class="plus">+</div>
-
-			<div class="row">
-				<div class="col-md-8">
-					<div class="label">Services</div>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="Dental Bridge"
-					/>
-				</div>
-				<div class="col-md-4 d-flex img-container-column">
-					<div class="img-container">
-						<img
-							src="../../../../../assets/app/modals/add-medical-services/veneers.png"
-							alt=""
-						/>
-					</div>
-				</div>
-			</div>
-
-			<div class="label">Description</div>
-			<textarea
-				type="text"
-				class="form-control"
-				placeholder="Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolor"
-			></textarea>
-
-			<div class="label">Doctor Available</div>
-			<select
-				type="text"
-				class="form-control"
-				placeholder="Dental Bridge"
-			>
-				<option>Select Doctors</option>
-			</select>
-
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-
-			<div class="btn-container">
-				<span class="edit-btn">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						width="162"
-						height="93"
-						viewBox="0 0 162 93"
-					>
-						<defs>
-							<filter
-								id="Rectangle_2714"
-								x="0"
-								y="0"
-								width="162"
-								height="93"
-								filterUnits="userSpaceOnUse"
-							>
-								<feOffset dy="3" input="SourceAlpha" />
-								<feGaussianBlur
-									stdDeviation="8"
-									result="blur"
-								/>
-								<feFlood
-									flood-color="#00b074"
-									flood-opacity="0.251"
-								/>
-								<feComposite operator="in" in2="blur" />
-								<feComposite in="SourceGraphic" />
-							</filter>
-						</defs>
-						<g id="button" transform="translate(23.852 20.97)">
-							<g
-								transform="matrix(1, 0, 0, 1, -23.85, -20.97)"
-								filter="url(#Rectangle_2714)"
-							>
-								<rect
-									id="Rectangle_2714-2"
-									data-name="Rectangle 2714"
-									width="114"
-									height="45"
-									rx="12"
-									transform="translate(24 21)"
-									fill="#00b074"
-								/>
-							</g>
-							<g
-								id="Group_73719"
-								data-name="Group 73719"
-								transform="translate(41.282 10.812)"
-							>
-								<text
-									id="Edit"
-									transform="translate(14.867 16.218)"
-									fill="#fff"
-									font-size="15"
-									font-family="Avenir-Heavy, Avenir"
-									font-weight="800"
-									letter-spacing="0.002em"
-								>
-									<tspan x="-14" y="0">Edit</tspan>
-								</text>
-							</g>
-						</g>
-					</svg>
-				</span>
-
-				<span class="delete-btn">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="114"
-						height="45"
-						viewBox="0 0 114 45"
-					>
-						<g id="button" transform="translate(0.067 -0.03)">
-							<rect
-								id="Rectangle_2714"
-								data-name="Rectangle 2714"
-								width="114"
-								height="45"
-								rx="12"
-								transform="translate(-0.067 0.03)"
-								fill="#dbf4eb"
-							/>
-							<g
-								id="Group_73719"
-								data-name="Group 73719"
-								transform="translate(32.436 10.812)"
-							>
-								<text
-									id="Delete"
-									transform="translate(24.498 16.218)"
-									fill="#00b074"
-									font-size="15"
-									font-family="Avenir-Heavy, Avenir"
-									font-weight="800"
-									letter-spacing="0.002em"
-								>
-									<tspan x="-23" y="0">Delete</tspan>
-								</text>
-							</g>
-						</g>
-					</svg>
-				</span>
-			</div>
-		</div>
+		<input
+			multiple
+			(change)="readFiles($event)"
+			type="file"
+			id="banners"
+			accept="image/*"
+			style="display: none"
+		/>
 	</div>
-	<div class="col-md-6 right">
-		<div class="wrapper">
-			<div class="plus">+</div>
 
-			<div class="row">
-				<div class="col-md-8">
-					<div class="label">Services</div>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="Type New Medical Services"
-					/>
-				</div>
-				<div class="col-md-4 d-flex img-container-column">
-					<div class="img-container"></div>
+	<div class="form-group">
+		<label class="text-left w-100">New Medical Service Name</label>
+		<input type="text" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label class="text-left w-100">Description</label>
+		<textarea type="text" class="form-control" placeholder="Aa"></textarea>
+	</div>
+
+	<label class="text-left w-100">Doctors for this service</label>
+	<div class="doctor-inputs" [@listAnimation]="5">
+		<div class="doctor mr-3" *ngFor="let item of [1, 2, 3, 4, 5]">
+			<div class="d-flex aic p-2">
+				<img
+					class="doctor-img"
+					src="../../../../../assets/app/modals/doctor-profile/doctor.png"
+					alt=""
+				/>
+				<div class="text">Dr. Hanadi Yassin</div>
+				<div class="action ml-4">
+					<i-feather name="delete" class="feather doctor-remove"></i-feather>
 				</div>
 			</div>
-
-			<div class="label">Description</div>
-			<textarea
-				type="text"
-				class="form-control"
-				placeholder="Say something"
-			></textarea>
-
-			<div class="label">Doctor Available</div>
-			<select
-				type="text"
-				class="form-control"
-				placeholder="Dental Bridge"
-			>
-				<option>Select Doctors</option>
-			</select>
-
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-			<div class="doctors">Dr. Iram Sarfraz</div>
-
-			<div class="btn-container">
-				<span class="add">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						width="162"
-						height="93"
-						viewBox="0 0 162 93"
-					>
-						<defs>
-							<filter
-								id="Rectangle_2714"
-								x="0"
-								y="0"
-								width="162"
-								height="93"
-								filterUnits="userSpaceOnUse"
-							>
-								<feOffset dy="3" input="SourceAlpha" />
-								<feGaussianBlur
-									stdDeviation="8"
-									result="blur"
-								/>
-								<feFlood
-									flood-color="#00b074"
-									flood-opacity="0.251"
-								/>
-								<feComposite operator="in" in2="blur" />
-								<feComposite in="SourceGraphic" />
-							</filter>
-						</defs>
-						<g id="button" transform="translate(23.852 20.97)">
-							<g
-								transform="matrix(1, 0, 0, 1, -23.85, -20.97)"
-								filter="url(#Rectangle_2714)"
-							>
-								<rect
-									id="Rectangle_2714-2"
-									data-name="Rectangle 2714"
-									width="114"
-									height="45"
-									rx="12"
-									transform="translate(24 21)"
-									fill="#00b074"
-								/>
-							</g>
-							<g
-								id="Group_73719"
-								data-name="Group 73719"
-								transform="translate(41.282 10.812)"
-							>
-								<text
-									id="Add"
-									transform="translate(14.867 16.218)"
-									fill="#fff"
-									font-size="15"
-									font-family="Avenir-Heavy, Avenir"
-									font-weight="800"
-									letter-spacing="0.002em"
-								>
-									<tspan x="-14" y="0">Add</tspan>
-								</text>
-							</g>
-						</g>
-					</svg>
-				</span>
-			</div>
+		</div>
+		<div class="icon">
+			<i-feather name="chevron-down" class="feather"></i-feather>
 		</div>
 	</div>
 </div>
