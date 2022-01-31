@@ -1,18 +1,6 @@
-<app-main-modal
-	[header]="header"
-	[body]="body"
-	[footer]="footer"
-	[type]="type"
-	[firstLine]="firstLine"
-	[secondLine]="secondLine"
-	[onCLose]="onCLose"
-	[onSubmit]="onSubmit"
-	[class.hidden]="!showModal"
-	class="custom-modal-container"
-></app-main-modal>
 <home-navbar></home-navbar>
 
 <home-sidebar></home-sidebar>
-<div class="content">
+<div class="content" (click)="closeDropDown()">
 	<router-outlet></router-outlet>
 </div>

@@ -3,6 +3,7 @@ import { fadeIn } from './../../../animations/fade-in.animation'
 import { slideLeft } from 'src/app/animations/SlideLeftAnimation'
 import { Component, Input, OnInit } from '@angular/core'
 import { dropDownAnim } from 'src/app/animations/dropdown.animation'
+import { DropdownService } from 'src/app/services/utilities/dropdown.service'
 
 @Component({
 	selector: 'dropdown-lg',
@@ -11,7 +12,11 @@ import { dropDownAnim } from 'src/app/animations/dropdown.animation'
 	animations: [slideLeft, fadeIn, scaleX, dropDownAnim],
 })
 export class DropdownLgComponent implements OnInit {
-	constructor() {}
+	constructor(private service: DropdownService) {
+		this.service
+			.getShowValue()
+			.subscribe((value: boolean) => (this.isShowing = value))
+	}
 
 	ngOnInit(): void {}
 
