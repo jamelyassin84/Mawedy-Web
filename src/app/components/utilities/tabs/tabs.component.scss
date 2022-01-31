@@ -10,11 +10,17 @@
 		border-radius: 0;
 		border-top-right-radius: 4px;
 		border-top-left-radius: 4px;
+		&:hover {
+			background: var(--bg2);
+		}
 	}
 
 	.active {
 		background: var(--tabContainer) 0% 0% no-repeat padding-box;
 		color: var(--accent);
+		&:hover {
+			background: var(--tabContainer);
+		}
 	}
 	margin-top: 23px;
 }

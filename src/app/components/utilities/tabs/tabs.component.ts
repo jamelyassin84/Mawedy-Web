@@ -14,13 +14,12 @@ import { listAnimation } from 'src/app/animations/List.animation'
 	animations: [listAnimation],
 })
 export class TabsComponent implements OnInit {
-	constructor(private http: HttpClient, private alert: AlertService) {}
+	constructor() {}
 	ngOnInit(): void {}
 
 	@Input() tabs!: TabType[]
 	@Input() active!: number
 	@Output() OnSetActiveTab = new EventEmitter<number>()
-	@Output() onDelete = new EventEmitter<void>()
 
 	setActiveTab(id: any) {
 		this.OnSetActiveTab.emit(id)
@@ -28,26 +27,6 @@ export class TabsComponent implements OnInit {
 
 	trigger(id: string) {
 		document.getElementById(id)?.click
-	}
-
-	removeDepartment(id: any) {
-		Fire(
-			'Remove Department',
-			'Are you sure you want to remove the department?',
-			'question',
-			() => {
-				new BaseService(this.http, ROUTES.CLINIC_DEPARTMENT).destroy(id).subscribe({
-					next: () => {
-						this.alert.Fire({
-							title: 'Removed',
-							description: 'Department has been removed',
-							type: 'info',
-						})
-						this.onDelete.emit()
-					},
-				})
-			},
-		)
 	}
 }
 
