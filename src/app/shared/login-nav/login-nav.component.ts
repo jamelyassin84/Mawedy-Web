@@ -10,4 +10,8 @@ export class LoginNavComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	logout() {
+		localStorage.clear()
+	}
 }

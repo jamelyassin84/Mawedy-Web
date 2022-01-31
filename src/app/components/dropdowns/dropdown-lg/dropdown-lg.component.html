@@ -11,7 +11,12 @@
 			<h4 class="d-flex w-100">
 				{{ dropdownTitle }}
 
-				<span role="button" (click)="toggleShow()" class="ml-auto">
+				<span
+					role="button"
+					click-stop-propagation
+					(click)="toggleShow()"
+					class="ml-auto"
+				>
 					<i-feather name="x"></i-feather>
 				</span>
 			</h4>

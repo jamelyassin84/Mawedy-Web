@@ -10,4 +10,9 @@ export class ClinicService {
 		const clinic: any = localStorage.getItem('user')
 		return JSON.parse(clinic).id
 	}
+
+	getName() {
+		const clinic: any = localStorage.getItem('user')
+		return JSON.parse(clinic).name
+	}
 }
