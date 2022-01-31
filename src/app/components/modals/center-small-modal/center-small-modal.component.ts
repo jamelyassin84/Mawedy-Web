@@ -19,13 +19,5 @@ export class CenterSmallModalComponent implements OnInit {
 
 	@Input() body: any
 
-	hide() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: undefined,
-		})
-	}
+	hide() {}
 }

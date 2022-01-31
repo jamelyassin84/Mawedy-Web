@@ -19,14 +19,6 @@ export class ConfirmModalComponent implements OnInit {
 
 	close() {
 		this.onCLose()
-		this.service.showConfirm({
-			type: 'Confirm',
-			firstLine: '',
-			secondLine: '',
-			onCLose: () => void 0,
-			onSubmit: () => void 0,
-			value: false,
-		})
 	}
 
 	submit() {

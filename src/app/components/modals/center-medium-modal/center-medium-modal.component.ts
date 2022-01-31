@@ -16,13 +16,5 @@ export class CenterMediumModalComponent implements OnInit {
 	@Input() body: any
 	@Input() footer: any
 
-	hide() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'Center Medium',
-		})
-	}
+	hide() {}
 }

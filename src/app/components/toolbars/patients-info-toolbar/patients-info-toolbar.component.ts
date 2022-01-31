@@ -11,13 +11,5 @@ export class PatientsInfoToolbarComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	showModal(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Center Large',
-		})
-	}
+	showModal(header: any, body: any, footer: any) {}
 }

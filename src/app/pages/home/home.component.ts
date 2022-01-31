@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { DropdownService } from 'src/app/services/utilities/dropdown.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'app-home',
@@ -7,11 +8,21 @@ import { DropdownService } from 'src/app/services/utilities/dropdown.service'
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-	constructor(private service: DropdownService) {}
+	constructor(
+		private service: DropdownService,
+		private modalService: ModalService,
+	) {}
 
 	ngOnInit(): void {}
 
 	closeDropDown() {
 		this.service.setShowing(false)
+	}
+
+	@HostListener('document:keydown.escape', ['$event']) onKeydownHandler(
+		event: KeyboardEvent,
+	) {
+		this.closeDropDown()
+		this.modalService.showModal(false)
 	}
 }

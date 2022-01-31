@@ -11,15 +11,7 @@ export class NewAppointmentModalFooterComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cancelBtn() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'Right',
-		})
-	}
+	cancelBtn() {}
 
 	scheduleBtn() {}
 }

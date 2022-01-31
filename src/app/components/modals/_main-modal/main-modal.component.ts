@@ -9,33 +9,7 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	styleUrls: ['./main-modal.component.scss'],
 })
 export class MainModalComponent implements OnInit {
-	constructor(private modalService: ModalService) {
-		this.modalService
-			.getConfirmModalValue()
-			.subscribe((confirmData: ConfirmModal) => {
-				this.firstLine = confirmData.firstLine
-
-				this.secondLine = confirmData.secondLine
-
-				this.onCLose = confirmData.onCLose
-
-				this.onSubmit = confirmData.onSubmit
-
-				this.type = confirmData.type
-			})
-
-		this.modalService.getModalValue().subscribe((modalData: Modal | any) => {
-			this.header = modalData.header
-
-			this.body = modalData.body
-
-			this.footer = modalData.footer
-
-			this.type = modalData.type
-
-			this.animationState = modalData.value
-		})
-	}
+	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
 
@@ -56,14 +30,4 @@ export class MainModalComponent implements OnInit {
 	@Input() onCLose: Function | undefined
 
 	@Input() onSubmit: Function | undefined
-
-	hide(): void {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'none',
-		})
-	}
 }

@@ -13,23 +13,7 @@ export class DoctorsProfileComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	showModal(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Right',
-		})
-	}
+	showModal(header: any, body: any, footer: any) {}
 
-	viewAvailability(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Center Medium',
-		})
-	}
+	viewAvailability(header: any, body: any, footer: any) {}
 }

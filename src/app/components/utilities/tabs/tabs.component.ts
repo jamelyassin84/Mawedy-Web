@@ -25,15 +25,7 @@ export class TabsComponent implements OnInit {
 	@Input() active!: number
 	@Output() OnSetActiveTab = new EventEmitter<number>()
 
-	showModal(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Center Large',
-		})
-	}
+	showModal(header: any, body: any, footer: any) {}
 
 	setActiveTab(id: any) {
 		this.OnSetActiveTab.emit(id)

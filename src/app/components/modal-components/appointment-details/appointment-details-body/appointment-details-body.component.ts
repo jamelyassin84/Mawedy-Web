@@ -11,36 +11,9 @@ export class AppointmentDetailsBodyComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cancelSchedule(header: any, body: any) {
-		this.modalService.showConfirm({
-			type: 'Confirm',
-			firstLine: 'Are you sure you to cancel',
-			secondLine: 'this appointment?',
-			onCLose: () => {},
-			onSubmit: () => {
-				this.showConfirmation(header, body)
-			},
-			value: true,
-		})
-	}
+	cancelSchedule(header: any, body: any) {}
 
-	reSchedule(body: any) {
-		this.modalService.showModal({
-			value: true,
-			header: '',
-			body: body,
-			footer: '',
-			type: 'Right Blur',
-		})
-	}
+	reSchedule(body: any) {}
 
-	showConfirmation(header: any, body: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: '',
-			type: 'Center Small',
-		})
-	}
+	showConfirmation(header: any, body: any) {}
 }

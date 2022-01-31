@@ -11,13 +11,5 @@ export class AppointmentCancellationBodyComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	assignSlotToANewPatient(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Center Large',
-		})
-	}
+	assignSlotToANewPatient(header: any, body: any, footer: any) {}
 }

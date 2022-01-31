@@ -14,13 +14,5 @@ export class SelectTimeSlotComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	cancel() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: 'Right Blur',
-		})
-	}
+	cancel() {}
 }

@@ -12,13 +12,13 @@ export class ViewDoctorFooterComponent implements OnInit {
 	ngOnInit(): void {}
 
 	deleteDoctor() {
-		this.modalService.showConfirm({
-			type: 'Confirm',
-			firstLine: 'Are you sure you want to delete',
-			secondLine: 'Dr. Jamel Yassin?',
-			onCLose: () => {},
-			onSubmit: () => {},
-			value: true,
-		})
+		// this.modalService.showConfirm({
+		// 	type: 'Confirm',
+		// 	firstLine: 'Are you sure you want to delete',
+		// 	secondLine: 'Dr. Jamel Yassin?',
+		// 	onCLose: () => {},
+		// 	onSubmit: () => {},
+		// 	value: true,
+		// })
 	}
 }

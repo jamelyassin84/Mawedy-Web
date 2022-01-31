@@ -1,31 +1,18 @@
-import { AppState } from 'src/app/app.state'
-import { ConfirmModal, Modal } from '../../models/Modal.interface'
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs'
-import { Store } from '@ngrx/store'
-import { ModalChange } from 'src/app/actions/modal/modal.actions'
+import { Observable, Subject } from 'rxjs'
 @Injectable({
 	providedIn: 'root',
 })
 export class ModalService {
 	constructor() {}
 
-	private modal = new Subject<Modal | undefined>()
-	private confirmModal = new Subject<ConfirmModal>()
+	private modal = new Subject<boolean>()
 
-	showModal(modalData: Modal): void {
-		this.modal.next(modalData)
+	showModal(value: boolean): void {
+		this.modal.next(value)
 	}
 
-	getModalValue() {
+	getModalValue(): Observable<boolean> {
 		return this.modal.asObservable()
-	}
-
-	showConfirm(confirmData: ConfirmModal) {
-		this.confirmModal.next(confirmData)
-	}
-
-	getConfirmModalValue() {
-		return this.confirmModal.asObservable()
 	}
 }

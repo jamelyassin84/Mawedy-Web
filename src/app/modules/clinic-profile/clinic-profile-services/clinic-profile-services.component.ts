@@ -46,13 +46,5 @@ export class ClinicProfileServicesComponent implements OnInit {
 
 	getServices(id: number | string) {}
 
-	showModal(header: any, body: any, footer: any) {
-		this.modalService.showModal({
-			value: true,
-			header: header,
-			body: body,
-			footer: footer,
-			type: 'Center Small',
-		})
-	}
+	showModal(header: any, body: any, footer: any) {}
 }

@@ -4,6 +4,7 @@ import { scaleX } from 'src/app/animations/scaleX.animation'
 import { slideLeft } from 'src/app/animations/SlideLeftAnimation'
 import { Modal } from 'src/app/models/Modal.interface'
 import { ModalType } from 'src/app/models/types'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'modal',
@@ -12,7 +13,9 @@ import { ModalType } from 'src/app/models/types'
 	animations: [slideLeft, fadeIn, scaleX],
 })
 export class ModalV2Component implements OnInit {
-	constructor() {}
+	constructor(private service: ModalService) {
+		this.service.getModalValue().subscribe((value) => (this.isShowing = value))
+	}
 
 	@Input() button!: any
 	@Input() title!: any

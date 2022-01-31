@@ -20,13 +20,5 @@ export class RightLargeModalComponent implements OnInit {
 
 	@Input() footer: any
 
-	hide() {
-		this.modalService.showModal({
-			value: false,
-			header: '',
-			body: '',
-			footer: '',
-			type: undefined,
-		})
-	}
+	hide() {}
 }
