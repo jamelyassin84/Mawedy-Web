@@ -108,6 +108,7 @@ export interface Doctor extends DateInterface {
 	name: string
 	title: string
 	profession: string
+	avatar: string
 	specialties: string
 	yearsOfExperience: number
 	about: string

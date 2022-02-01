@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
+import { Doctor } from 'src/app/models/types'
+import { ROUTES } from 'src/app/routes/api.routes'
+import { BaseService } from 'src/app/services/api/base.api.service'
+import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
@@ -9,7 +14,20 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [listAnimation],
 })
 export class DoctorsProfileComponent implements OnInit {
-	constructor(private modalService: ModalService) {}
+	constructor(private http: HttpClient, private clinicService: ClinicService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.getDoctors()
+	}
+
+	doctors!: Doctor[]
+
+	getDoctors() {
+		new BaseService(this.http, ROUTES.DOCTOR).index().subscribe({
+			next: (data: Doctor[]) => {
+				this.doctors = data
+			},
+			error: (error) => console.log(error),
+		})
+	}
 }

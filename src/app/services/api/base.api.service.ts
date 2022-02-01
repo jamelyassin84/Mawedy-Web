@@ -31,7 +31,7 @@ export class BaseService {
 	}
 
 	index(overload: String = '') {
-		const url = `${environment.api}${this.url}?${this.params}${overload}`
+		const url = `${environment.api}${this.url}`
 		return this.http.get<any>(url, this.headers())
 	}
 

@@ -8,8 +8,9 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th></th>
 					<th>Name</th>
-					<th>Department</th>
+					<th>Profession</th>
 					<th>Experience</th>
 					<th>Phone</th>
 					<th>Availability</th>
@@ -17,10 +18,15 @@
 				</tr>
 			</thead>
 			<tbody [@listAnimation]="20">
-				<tr *ngFor="let item of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; let i = index">
-					<td>Dr. Hanadi Yassin</td>
-					<td>Cardiology</td>
-					<td>25 Years</td>
+				<tr *ngFor="let doctor of doctors">
+					<td>
+						<div class="avatar">
+							<img [src]="doctor.avatar" alt="" />
+						</div>
+					</td>
+					<td>{{ doctor.name }}</td>
+					<td>{{ doctor.profession }}</td>
+					<td>{{ doctor.yearsOfExperience }} Years</td>
 					<td>+98-7862-43453</td>
 					<td class="underlined">View</td>
 					<td class="text-right">
