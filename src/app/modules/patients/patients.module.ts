@@ -9,7 +9,7 @@ import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patien
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { CheckboxComponent } from 'src/app/components/utilities/checkbox/checkbox.component'
-import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-components/patients-profile/patients-profile-modal-body/patients-profile-modal-body.component'
+import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-components/add/add-patient/patients-profile-modal-body.component'
 
 @NgModule({
 	declarations: [

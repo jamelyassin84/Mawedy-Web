@@ -4,9 +4,6 @@
 <ng-template #body>
 	<assign-appointment-to-modal-body></assign-appointment-to-modal-body>
 </ng-template>
-<ng-template #footer>
-	<assign-appointment-to-modal-footer></assign-appointment-to-modal-footer>
-</ng-template>
 
 <div class="modal-container">
 	<div class="d-flex aic jcc">
@@ -234,24 +231,10 @@
 						stroke-width="1"
 					>
 						<rect width="440" height="130" rx="8" stroke="none" />
-						<rect
-							x="0.5"
-							y="0.5"
-							width="439"
-							height="129"
-							rx="7.5"
-							fill="none"
-						/>
+						<rect x="0.5" y="0.5" width="439" height="129" rx="7.5" fill="none" />
 					</g>
-					<g
-						id="Mask_Group_9"
-						data-name="Mask Group 9"
-						clip-path="url(#clip-path)"
-					>
-						<g
-							transform="matrix(1, 0, 0, 1, 1410, 430)"
-							filter="url(#Ellipse_280)"
-						>
+					<g id="Mask_Group_9" data-name="Mask Group 9" clip-path="url(#clip-path)">
+						<g transform="matrix(1, 0, 0, 1, 1410, 430)" filter="url(#Ellipse_280)">
 							<circle
 								id="Ellipse_280-2"
 								data-name="Ellipse 280"
@@ -262,10 +245,7 @@
 								fill="#fff"
 							/>
 						</g>
-						<g
-							transform="matrix(1, 0, 0, 1, 1410, 430)"
-							filter="url(#Ellipse_281)"
-						>
+						<g transform="matrix(1, 0, 0, 1, 1410, 430)" filter="url(#Ellipse_281)">
 							<circle
 								id="Ellipse_281-2"
 								data-name="Ellipse 281"
@@ -285,10 +265,7 @@
 			<div class="button-text">
 				Would you like to assign this slot to a new patient?
 			</div>
-			<div
-				(click)="assignSlotToANewPatient(header, body, footer)"
-				class="button"
-			>
+			<div class="button">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -307,10 +284,7 @@
 						>
 							<feOffset dy="3" input="SourceAlpha" />
 							<feGaussianBlur stdDeviation="8" result="blur" />
-							<feFlood
-								flood-color="var(--bg2)"
-								flood-opacity="0.251"
-							/>
+							<feFlood flood-color="var(--bg2)" flood-opacity="0.251" />
 							<feComposite operator="in" in2="blur" />
 							<feComposite in="SourceGraphic" />
 						</filter>
@@ -330,11 +304,7 @@
 								fill="#00b074"
 							/>
 						</g>
-						<g
-							id="Group_73719"
-							data-name="Group 73719"
-							transform="translate(33 12)"
-						>
+						<g id="Group_73719" data-name="Group 73719" transform="translate(33 12)">
 							<text
 								id="Yes"
 								transform="translate(25 16)"

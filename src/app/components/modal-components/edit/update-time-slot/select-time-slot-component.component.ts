@@ -1,4 +1,4 @@
-import { ModalService } from '../../../services/utilities/modal.service'
+import { ModalService } from '../../../../services/utilities/modal.service'
 import { Component, OnInit } from '@angular/core'
 import { timeSlots } from 'src/app/constants/App.constants'
 

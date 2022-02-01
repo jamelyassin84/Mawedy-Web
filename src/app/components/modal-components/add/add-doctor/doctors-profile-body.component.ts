@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router'
-import { Doctor } from './../../../../models/types'
+import { Doctor } from '../../../../models/types'
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'

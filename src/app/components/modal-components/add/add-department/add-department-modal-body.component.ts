@@ -1,4 +1,4 @@
-import { AlertService } from './../../../../services/utilities/alert.service'
+import { AlertService } from '../../../../services/utilities/alert.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { ROUTES } from 'src/app/routes/api.routes'

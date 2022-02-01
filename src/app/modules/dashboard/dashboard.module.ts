@@ -1,4 +1,4 @@
-import { SelectTimeSlotComponent } from '../../components/modal-components/select-time-slot-component/select-time-slot-component.component'
+import { SelectTimeSlotComponent } from '../../components/modal-components/edit/update-time-slot/select-time-slot-component.component'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AppointmentsComponent } from './appointments/appointments.component'
@@ -9,10 +9,10 @@ import { AppointmentsToolbarComponent } from 'src/app/components/toolbars/appoin
 import { DashboardToolbarComponent } from 'src/app/components/toolbars/dashboard-toolbar/dashboard-toolbar.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { StatusComponent } from 'src/app/components/utilities/status/status.component'
-import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-components/appointment-details/appointment-details-body/appointment-details-body.component'
-import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-components/appointment-cancellation/appointment-cancelation-body/appointment-cancellation-body.component'
-import { AssignAppointmentToModalBodyComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-body/assign-appointment-to-modal-body.component'
-import { AssignAppointmentToModalFooterComponent } from 'src/app/components/modal-components/assign-appointment-to/assign-appointment-to-modal-footer/assign-appointment-to-modal-footer.component'
+import { AppointmentDetailsBodyComponent } from 'src/app/components/modal-components/view/appointment-details/appointment-details-body.component'
+import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-components/edit/update-appointment/appointment-cancellation-body.component'
+import { AssignAppointmentToModalBodyComponent } from 'src/app/components/modal-components/edit/update-appointment-to/assign-appointment-to-modal-body.component'
+
 import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
 
 @NgModule({
@@ -25,7 +25,6 @@ import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/app
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
-		AssignAppointmentToModalFooterComponent,
 		SelectTimeSlotComponent,
 		AppointmentToolbarTabComponent,
 		PatientOutreachComponent,
@@ -39,7 +38,6 @@ import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/app
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
-		AssignAppointmentToModalFooterComponent,
 		SelectTimeSlotComponent,
 		AppointmentToolbarTabComponent,
 		PatientOutreachComponent,

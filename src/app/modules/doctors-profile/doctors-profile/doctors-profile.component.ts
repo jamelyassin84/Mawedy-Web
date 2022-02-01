@@ -12,8 +12,4 @@ export class DoctorsProfileComponent implements OnInit {
 	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
-
-	showModal(header: any, body: any, footer: any) {}
-
-	viewAvailability(header: any, body: any, footer: any) {}
 }

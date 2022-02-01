@@ -1,4 +1,4 @@
-import { listAnimation } from './../../../../animations/List.animation'
+import { listAnimation } from '../../../../animations/List.animation'
 import { Component, Input, OnInit } from '@angular/core'
 import { Department } from 'src/app/models/types'
 

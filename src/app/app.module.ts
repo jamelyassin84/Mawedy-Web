@@ -40,9 +40,7 @@ import { ConfirmModalComponent } from './components/modals/confirm-modal/confirm
 import { RightLargeModalComponent } from './components/modals/right-large-modal/right-large-modal.component'
 import { CenterLargeModalComponent } from './components/modals/center-large-modal/center-large-modal.component'
 import { CenterMediumModalComponent } from './components/modals/center-medium-modal/center-medium-modal.component'
-import { NewAppointmentModalBodyComponent } from './components/modal-components/new-appoitment-modal/new-appoitment-modal-body/new-appointment-modal-body.component'
-import { NewAppointmentModalFooterComponent } from './components/modal-components/new-appoitment-modal/new-appoitnment-modal-footer/new-appointment-modal-footer.component'
-import { NewAppointmentModalHeaderComponent } from './components/modal-components/new-appoitment-modal/new-appointment-modal-header/new-appointment-modal-header.component'
+import { NewAppointmentModalBodyComponent } from './components/modal-components/add/add-appointment/new-appointment-modal-body.component'
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
 import { MainInterceptor } from './interceptors/main'
@@ -76,8 +74,6 @@ import { WhosAccountComponent } from './components/modals/whos-account/whos-acco
 		LoaderModalComponent,
 		MainModalComponent,
 		NewAppointmentModalBodyComponent,
-		NewAppointmentModalFooterComponent,
-		NewAppointmentModalHeaderComponent,
 		CenterSmallModalComponent,
 		AlertComponent,
 		LoginSection1Component,
