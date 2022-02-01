@@ -1,3 +1,4 @@
+import { AlertService } from 'src/app/services/utilities/alert.service'
 import { ClinicDoctorWorkingSchedule, Doctor } from '../../../../models/types'
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
@@ -13,7 +14,11 @@ import { weekDaysShort } from 'src/app/constants/App.constants'
 	styleUrls: ['./doctors-profile-body.component.scss'],
 })
 export class DoctorsProfileBodyComponent implements OnInit {
-	constructor(private clinicService: ClinicService, private http: HttpClient) {}
+	constructor(
+		private clinicService: ClinicService,
+		private http: HttpClient,
+		private alert: AlertService,
+	) {}
 
 	workingSchedules: ClinicDoctorWorkingSchedule[] = []
 
@@ -125,7 +130,11 @@ export class DoctorsProfileBodyComponent implements OnInit {
 
 				this.setWorkingSchedule('None')
 
-				this.avatar = undefined
+				this.alert.Fire({
+					title: 'Doctor Added',
+					description: `${data.name} has been added to doctors list.`,
+					type: 'success',
+				})
 			},
 
 			error: () => {

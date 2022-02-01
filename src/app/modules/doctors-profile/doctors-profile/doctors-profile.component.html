@@ -8,7 +8,9 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th></th>
+					<th class="text-center">
+						<i-feather name="user" class="feather"></i-feather>
+					</th>
 					<th>Name</th>
 					<th>Profession</th>
 					<th>Experience</th>
@@ -17,9 +19,9 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody [@listAnimation]="20">
+			<tbody [@listAnimation]="doctors.length">
 				<tr *ngFor="let doctor of doctors">
-					<td>
+					<td class="text-center">
 						<div class="avatar">
 							<img [src]="doctor.avatar" alt="" />
 						</div>
@@ -27,8 +29,20 @@
 					<td>{{ doctor.name }}</td>
 					<td>{{ doctor.profession }}</td>
 					<td>{{ doctor.yearsOfExperience }} Years</td>
-					<td>+98-7862-43453</td>
-					<td class="underlined">View</td>
+					<td>{{ doctor.phones[0].phone }}</td>
+					<td>
+						<modal
+							[button]="viewBtn"
+							[component]="availabilityBody"
+							title="Availability"
+							type="Center Small"
+						>
+						</modal>
+
+						<ng-template #viewBtn>
+							<span class="underlined">View</span>
+						</ng-template>
+					</td>
 					<td class="text-right">
 						<button class="btn btn-manage">Manage</button>
 					</td>
@@ -43,7 +57,7 @@
 </ng-template>
 
 <ng-template #availabilityBody>
-	<doctor-availability-modal-body></doctor-availability-modal-body>
+	<DoctorAvailabilityDetails></DoctorAvailabilityDetails>
 </ng-template>
 
 <ng-template #header>

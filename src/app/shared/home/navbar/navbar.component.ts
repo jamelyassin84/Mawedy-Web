@@ -24,17 +24,7 @@ export class NavbarComponent implements OnInit {
 		private router: Router,
 	) {}
 
-	ngOnInit(): void {
-		this.checkIfHasUserAccount()
-	}
-
-	shouldChooseAccount: boolean = true
-
-	checkIfHasUserAccount() {
-		if (localStorage.getItem('account') !== null) {
-			this.shouldChooseAccount = false
-		}
-	}
+	ngOnInit(): void {}
 
 	logout() {
 		Fire(

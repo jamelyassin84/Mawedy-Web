@@ -1,5 +1,8 @@
+<app-whos-account
+	style="position: absolute"
+	*ngIf="shouldChooseAccount === true"
+></app-whos-account>
 <home-navbar></home-navbar>
-
 <home-sidebar></home-sidebar>
 <div class="content" (click)="closeDropDown()">
 	<router-outlet></router-outlet>

@@ -13,7 +13,17 @@ export class HomeComponent implements OnInit {
 		private modalService: ModalService,
 	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.checkIfHasUserAccount()
+	}
+
+	shouldChooseAccount: boolean = true
+
+	checkIfHasUserAccount() {
+		if (localStorage.getItem('account') !== null) {
+			this.shouldChooseAccount = false
+		}
+	}
 
 	closeDropDown() {
 		this.service.setShowing(false)

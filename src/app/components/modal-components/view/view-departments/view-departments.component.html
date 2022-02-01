@@ -14,26 +14,29 @@
 			</div>
 			<div class="icon" style="flex: 1">{{ department.name }}</div>
 			<div class="d-flex">
-				<div class="btn btn-success mr-2">
-					<ng-template #addBody>
-						<add-medical-services-modal-body
-							[department]="department"
-						></add-medical-services-modal-body>
-					</ng-template>
-					<modal
-						[button]="addBtn"
-						[component]="addBody"
-						[footer]="footer"
-						[title]="department.name"
-						type="Right"
-					></modal>
-					<ng-template #footer>
-						<div class="p-3">
-							<button class="btn btn-lg btn-success mr-2">Save</button>
-							<button class="btn btn-lg btn-light mr-2">Cancel</button>
-						</div>
-					</ng-template>
-				</div>
+				<ng-template #addBtn>
+					<div class="btn btn-success mr-2">
+						<i-feather name="plus" class="feather"></i-feather>
+					</div>
+				</ng-template>
+				<ng-template #addBody>
+					<add-medical-services-modal-body
+						[department]="department"
+					></add-medical-services-modal-body>
+				</ng-template>
+				<modal
+					[button]="addBtn"
+					[component]="addBody"
+					[footer]="footer"
+					[title]="department.name"
+					type="Right"
+				></modal>
+				<ng-template #footer>
+					<div class="p-3">
+						<button class="btn btn-lg btn-success mr-2">Save</button>
+						<button class="btn btn-lg btn-light mr-2">Cancel</button>
+					</div>
+				</ng-template>
 				<div class="btn btn-light mr-2">Edit</div>
 				<div (click)="removeDepartment(department.id)" class="btn btn-danger mr-2">
 					Remove
@@ -42,7 +45,3 @@
 		</div>
 	</div>
 </div>
-
-<ng-template #addBtn>
-	<i-feather name="plus" class="feather"></i-feather>
-</ng-template>

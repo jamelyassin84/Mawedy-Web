@@ -4,30 +4,8 @@
 
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
-	<div class="page-content container" *ngIf="clinic">
+	<div class="page-content" *ngIf="clinic">
 		<div class="row">
-			<div
-				role="button"
-				class="mb-3 col-md-4 w-100 d-flex aic jcc"
-				style="flex-direction: column"
-			>
-				<label for="">Clinic Logo</label>
-				<div
-					(click)="trigger('logo')"
-					class="clinic-logo-placeholder d-flex aic jcc"
-				>
-					<img
-						role="button"
-						*ngIf="logoSrc"
-						class="clinic-image"
-						style="border-radius: 50%"
-						[src]="logoSrc"
-						alt=""
-						(click)="trigger('file')"
-					/>
-					<i-feather *ngIf="!file" class="image-icon" name="image"></i-feather>
-				</div>
-			</div>
 			<div class="col-md-8" *ngIf="clinic?.photos.length !== 0">
 				<label for="">Clinic Banners</label>
 				<carousel
@@ -62,6 +40,29 @@
 						class="image-icon"
 						name="image"
 					></i-feather>
+				</div>
+			</div>
+
+			<div
+				role="button"
+				class="mb-3 col-md-4 w-100 d-flex aic jcc"
+				style="flex-direction: column"
+			>
+				<label for="">Clinic Logo</label>
+				<div
+					(click)="trigger('logo')"
+					class="clinic-logo-placeholder d-flex aic jcc"
+				>
+					<img
+						role="button"
+						*ngIf="logoSrc"
+						class="clinic-image"
+						style="border-radius: 50%"
+						[src]="logoSrc"
+						alt=""
+						(click)="trigger('file')"
+					/>
+					<i-feather *ngIf="!file" class="image-icon" name="image"></i-feather>
 				</div>
 			</div>
 		</div>
@@ -115,7 +116,7 @@
 			</div>
 
 			<div class="form-group col-md-12 row p-0 m-0">
-				<div class="col-md-6 p-0 pl-4 pr-3">
+				<div class="col-md-3 p-0 pl-4 pr-3">
 					<div class="d-flex mb-3">
 						<label><span>Timings</span></label>
 						<label class="ml-auto mr-2">Open - Close</label>
@@ -167,7 +168,7 @@
 					<input [(ngModel)]="phone1" type="text" class="form-control" />
 					<input [(ngModel)]="phone2" type="text" class="form-control" />
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 pl-4">
 					<label>Facebook</label>
 					<input
 						[(ngModel)]="clinic.facebook"

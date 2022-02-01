@@ -10,7 +10,7 @@
 	padding-bottom: -0px;
 	box-shadow: var(--toolbarShadow);
 	position: relative;
-	z-index: 999999;
-	margin-top: 90px;
+	z-index: 9;
+	margin-top: calc(90px - 5px);
 	position: fixed;
 }
