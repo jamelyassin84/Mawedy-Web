@@ -26,7 +26,31 @@ export class DoctorsProfileBodyComponent implements OnInit {
 		}
 	}
 
+	isProcessing: boolean | 'complete' = false
+
 	setWorkingScheduleMode: 'Custom' | 'All' | 'None' = 'Custom'
+
+	doctorForm = new FormGroup({
+		name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
+		profession: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
+		title: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
+		specialties: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
+		yearsOfExperience: new FormControl('', [Validators.required]),
+
+		about: new FormControl('', [Validators.required, Validators.minLength(13)]),
+
+		phone: new FormControl('', [Validators.required]),
+
+		email: new FormControl('', [Validators.required, Validators.email]),
+	})
+
+	doctor!: Doctor
+	avatar!: File | any
+	avatarSrc!: any
 
 	setModeAsCustom() {
 		this.setWorkingScheduleMode = 'Custom'
@@ -54,23 +78,6 @@ export class DoctorsProfileBodyComponent implements OnInit {
 		document.getElementById(id)?.click()
 	}
 
-	doctorForm = new FormGroup({
-		name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-
-		title: new FormControl('', [Validators.required, Validators.email]),
-
-		profession: new FormControl('', [Validators.required]),
-
-		specialties: new FormControl('', [Validators.required]),
-
-		yearsOfExperience: new FormControl('', [Validators.required]),
-
-		about: new FormControl('', [Validators.required]),
-	})
-
-	doctor!: Doctor
-	avatar!: File
-	avatarSrc!: any
 	readFile(event: any): void {
 		this.avatar = event.target.files[0] as File
 
@@ -84,13 +91,46 @@ export class DoctorsProfileBodyComponent implements OnInit {
 	}
 
 	save() {
+		this.isProcessing = true
+
 		const data = Object.assign(
 			{ clinicID: this.clinicService.getID() },
-			this.doctorForm,
+			this.doctorForm.value,
+			{ workingSchedules: this.workingSchedules },
 		)
 
 		new BaseService(this.http, ROUTES.DOCTOR).create(data).subscribe({
-			next: () => {},
+			next: (data: Doctor) => {
+				this.saveAvatar(data)
+			},
+
+			error: () => {
+				this.isProcessing = false
+			},
+		})
+	}
+
+	saveAvatar(data: Doctor) {
+		const form = new FormData()
+
+		form.append('avatar', this.avatar, this.avatar.name)
+
+		form.append('id', data.id + '')
+
+		new BaseService(this.http, `${ROUTES.DOCTOR}/upload`).create(form).subscribe({
+			complete: () => {
+				this.isProcessing = 'complete'
+
+				this.doctorForm.reset()
+
+				this.setWorkingSchedule('None')
+
+				this.avatar = undefined
+			},
+
+			error: () => {
+				this.isProcessing = false
+			},
 		})
 	}
 }

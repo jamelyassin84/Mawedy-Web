@@ -1,120 +1,229 @@
-<div class="row p-5">
-	<div class="col-md-4">
-		<div class="upload-photo d-flex aic mr-5" style="flex-direction: column">
-			<div
-				role="button"
-				class="mb-3 col-md-4 w-100 d-flex aic jcc"
-				style="flex-direction: column"
-			>
+<form [formGroup]="doctorForm" (ngSubmit)="save()">
+	<div class="row p-5">
+		<div class="col-md-4">
+			<div class="upload-photo d-flex aic mr-5" style="flex-direction: column">
 				<div
-					(click)="trigger('logo')"
-					class="clinic-logo-placeholder d-flex aic jcc"
+					role="button"
+					class="mb-3 col-md-4 w-100 d-flex aic jcc"
+					style="flex-direction: column"
 				>
-					<img
-						role="button"
-						*ngIf="avatarSrc"
-						class="clinic-image"
-						style="border-radius: 50%"
-						[src]="avatarSrc"
-						alt=""
-						(click)="trigger('file')"
-					/>
-					<i-feather *ngIf="!avatar" class="image-icon" name="image"></i-feather>
+					<div
+						(click)="trigger('logo')"
+						class="clinic-logo-placeholder d-flex aic jcc"
+					>
+						<img
+							role="button"
+							*ngIf="avatarSrc"
+							class="clinic-image"
+							style="border-radius: 50%"
+							[src]="avatarSrc"
+							alt=""
+							(click)="trigger('file')"
+						/>
+						<i-feather *ngIf="!avatar" class="image-icon" name="image"></i-feather>
+					</div>
+				</div>
+
+				<span class="upload-photo-btn" role="button">Upload Photo</span>
+				<input
+					(change)="readFile($event)"
+					type="file"
+					accept="image/*"
+					id="logo"
+					style="display: none"
+				/>
+			</div>
+		</div>
+		<div class="col-md-4 mt-4">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input
+					type="text"
+					id="name"
+					formControlName="name"
+					[class.is-invalid]="
+						doctorForm.get('name')?.invalid && doctorForm.get('name')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Doctor's name is required.</div>
+					<div class="text=danger">Must have at least 3 characters.</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="profession">Profession</label>
+				<input
+					type="text"
+					id="profession"
+					formControlName="profession"
+					[class.is-invalid]="
+						doctorForm.get('profession')?.invalid &&
+						doctorForm.get('profession')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Doctor's profession is required.</div>
+					<div class="text=danger">Must have at least 3 characters.</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 mt-4">
+			<div class="form-group">
+				<label for="Specialties">Specialties</label>
+				<input
+					type="text"
+					id="specialties"
+					formControlName="specialties"
+					[class.is-invalid]="
+						doctorForm.get('specialties')?.invalid &&
+						doctorForm.get('specialties')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Doctor's specialties is required.</div>
+					<div class="text=danger">Must have at least 3 characters.</div>
 				</div>
 			</div>
 
-			<span class="upload-photo-btn" role="button">Upload Photo</span>
+			<div class="form-group">
+				<label for="Years of Experience">Years of Experience</label>
+				<input
+					type="number"
+					id="yearsOfExperience"
+					formControlName="yearsOfExperience"
+					[class.is-invalid]="
+						doctorForm.get('yearsOfExperience')?.invalid &&
+						doctorForm.get('yearsOfExperience')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Doctor's yearsOfExperience is required.</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<hr />
+		</div>
+
+		<div class="col-md-12">
+			<label for="">About</label>
+			<textarea
+				placeholder="Aa"
+				id="about"
+				formControlName="about"
+				[class.is-invalid]="
+					doctorForm.get('about')?.invalid && doctorForm.get('about')?.touched
+				"
+				class="form-control"
+			></textarea>
+			<div class="invalid-feedback">
+				<div class="text=danger">Please say Something about this doctor.</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<label for="phone">Phone</label>
 			<input
-				(change)="readFile($event)"
-				type="file"
-				accept="image/*"
-				id="logo"
-				style="display: none"
+				type="text"
+				id="phone"
+				formControlName="phone"
+				[class.is-invalid]="
+					doctorForm.get('phone')?.invalid && doctorForm.get('phone')?.touched
+				"
+				class="form-control custom-form"
 			/>
-		</div>
-	</div>
-	<div class="col-md-4 mt-4">
-		<div class="form-group">
-			<label for="Name">Name</label>
-			<input type="text" id="Name" class="form-control" />
-		</div>
-		<div class="form-group">
-			<label for="Profession">Profession</label>
-			<input type="text" id="Profession" class="form-control" />
-		</div>
-	</div>
-	<div class="col-md-4 mt-4">
-		<div class="form-group">
-			<label for="Specialties">Specialties</label>
-			<input type="text" id="Specialties" class="form-control" />
+			<div class="invalid-feedback">
+				<div class="text=danger">Doctor's phone is required</div>
+			</div>
 		</div>
 
-		<div class="form-group">
-			<label for="Years of Experience">Years of Experience</label>
-			<input type="text" id="Years of Experience" class="form-control" />
+		<div class="col-md-3">
+			<label for="">Email</label>
+			<input
+				type="text"
+				id="email"
+				formControlName="email"
+				[class.is-invalid]="
+					doctorForm.get('email')?.invalid && doctorForm.get('email')?.touched
+				"
+				class="form-control custom-form"
+			/>
+			<div class="invalid-feedback">
+				<div class="text=danger">Doctor's email is required</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<label for="">Working Schedule</label>
+
+			<DoctorWorkingSchedule
+				(onToggle)="setModeAsCustom()"
+				(onChange)="setWorkingSchedules($event)"
+				[workingSchedules]="workingSchedules"
+			></DoctorWorkingSchedule>
+
+			<div class="d-flex aic mt-4 mb-5">
+				<span>
+					<span
+						[class.active]="setWorkingScheduleMode === 'Custom'"
+						class="circle"
+						(click)="setModeAsCustom()"
+					></span>
+					<span class="text-available">Custom</span>
+				</span>
+
+				<span>
+					<span
+						[class.active]="setWorkingScheduleMode === 'All'"
+						class="circle"
+						(click)="setWorkingSchedule('All')"
+					></span>
+					<span class="text-available mr-2">Always Available</span>
+				</span>
+
+				<span>
+					<span
+						[class.active]="setWorkingScheduleMode === 'None'"
+						class="circle"
+						(click)="setWorkingSchedule('None')"
+					></span>
+					<span class="text-available">Unavailable</span>
+				</span>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<!-- button  -->
+			<div
+				[class.isProcessing]="isProcessing === true"
+				[class.isComplete]="isProcessing === 'complete'"
+				[class.btn-disabled]="!doctorForm.valid == undefined"
+				class="d-flex mt-3"
+			>
+				<button
+					class="btn btn-add btn-lg"
+					[disabled]="!doctorForm.valid == undefined"
+				>
+					<span *ngIf="isProcessing === 'complete'">
+						<i-feather name="check"></i-feather>
+					</span>
+					<span *ngIf="!isProcessing">Add</span>
+
+					<div
+						style="color: var(--accent) !important"
+						*ngIf="isProcessing === true"
+						class="spinner-border text-success"
+						role="status"
+					></div>
+				</button>
+			</div>
+			<!-- button  -->
 		</div>
 	</div>
-
-	<div class="col-md-12">
-		<hr />
-	</div>
-
-	<div class="col-md-12">
-		<label for="">About</label>
-		<textarea placeholder="Aa" type="text" class="form-control"></textarea>
-	</div>
-
-	<div class="col-md-3">
-		<label for="">Phone</label>
-		<input type="text" class="form-control custom-form" />
-	</div>
-
-	<div class="col-md-3">
-		<label for="">Email</label>
-		<input type="text" class="form-control custom-form" />
-	</div>
-
-	<div class="col-md-12">
-		<label for="">Working Schedule</label>
-
-		<DoctorWorkingSchedule
-			(onToggle)="setModeAsCustom()"
-			(onChange)="setWorkingSchedules($event)"
-			[workingSchedules]="workingSchedules"
-		></DoctorWorkingSchedule>
-
-		<div class="d-flex aic mt-4 mb-5">
-			<span>
-				<span
-					[class.active]="setWorkingScheduleMode === 'Custom'"
-					class="circle"
-					(click)="setModeAsCustom()"
-				></span>
-				<span class="text-available">Custom</span>
-			</span>
-
-			<span>
-				<span
-					[class.active]="setWorkingScheduleMode === 'All'"
-					class="circle"
-					(click)="setWorkingSchedule('All')"
-				></span>
-				<span class="text-available mr-2">Always Available</span>
-			</span>
-
-			<span>
-				<span
-					[class.active]="setWorkingScheduleMode === 'None'"
-					class="circle"
-					(click)="setWorkingSchedule('None')"
-				></span>
-				<span class="text-available">Unavailable</span>
-			</span>
-		</div>
-	</div>
-	<div class="col-md-12">
-		<button class="btn btn-add btn-success">Add</button>
-	</div>
-</div>
+</form>
 
 .

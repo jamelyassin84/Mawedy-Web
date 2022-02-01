@@ -14,6 +14,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/right-blurr-background-modal/right-blur-background-modal.component'
 import { DoctorAvailabilityModalBodyComponent } from 'src/app/components/modal-components/view/doctor-availability/doctor-availability-modal-body.component'
 import { AppointmentsModule } from '../appointments/appointments.module'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,8 @@ import { AppointmentsModule } from '../appointments/appointments.module'
 		RouterModule,
 		IconsModule,
 		AppointmentsModule,
+		ReactiveFormsModule,
+		FormsModule,
 	],
 	exports: [
 		DoctorsProfileToolbarComponent,
