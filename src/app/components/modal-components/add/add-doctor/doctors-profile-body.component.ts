@@ -1,11 +1,11 @@
-import { Routes } from '@angular/router'
-import { Doctor } from '../../../../models/types'
+import { ClinicDoctorWorkingSchedule, Doctor } from '../../../../models/types'
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { HttpClient } from '@angular/common/http'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ROUTES } from 'src/app/routes/api.routes'
+import { weekDaysShort } from 'src/app/constants/App.constants'
 
 @Component({
 	selector: 'app-doctors-profile-body',
@@ -15,7 +15,40 @@ import { ROUTES } from 'src/app/routes/api.routes'
 export class DoctorsProfileBodyComponent implements OnInit {
 	constructor(private clinicService: ClinicService, private http: HttpClient) {}
 
-	ngOnInit(): void {}
+	workingSchedules: ClinicDoctorWorkingSchedule[] = []
+
+	ngOnInit(): void {
+		for (let day of weekDaysShort) {
+			this.workingSchedules.push({
+				day: day,
+				isActive: false,
+			})
+		}
+	}
+
+	setWorkingScheduleMode: 'Custom' | 'All' | 'None' = 'Custom'
+
+	setModeAsCustom() {
+		this.setWorkingScheduleMode = 'Custom'
+	}
+
+	setWorkingSchedules(workingSchedules: ClinicDoctorWorkingSchedule[]) {
+		this.workingSchedules = workingSchedules
+	}
+
+	setWorkingSchedule(mode: 'All' | 'None') {
+		this.setWorkingScheduleMode = mode
+
+		if (mode === 'All') {
+			for (let day of this.workingSchedules) {
+				day.isActive = true
+			}
+			return
+		}
+		for (let day of this.workingSchedules) {
+			day.isActive = false
+		}
+	}
 
 	trigger(id: string): void {
 		document.getElementById(id)?.click()

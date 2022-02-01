@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row p-5">
 	<div class="col-md-4">
 		<div class="upload-photo d-flex aic mr-5" style="flex-direction: column">
 			<div
@@ -50,8 +50,8 @@
 		</div>
 
 		<div class="form-group">
-			<label for="Years Of Experience">Years Of Experience</label>
-			<input type="text" id="Years Of Experience" class="form-control" />
+			<label for="Years of Experience">Years of Experience</label>
+			<input type="text" id="Years of Experience" class="form-control" />
 		</div>
 	</div>
 
@@ -76,19 +76,44 @@
 
 	<div class="col-md-12">
 		<label for="">Working Schedule</label>
-		<app-working-schedule></app-working-schedule>
+
+		<DoctorWorkingSchedule
+			(onToggle)="setModeAsCustom()"
+			(onChange)="setWorkingSchedules($event)"
+			[workingSchedules]="workingSchedules"
+		></DoctorWorkingSchedule>
 
 		<div class="d-flex aic mt-4 mb-5">
 			<span>
-				<span class="circle active"></span>
-				<span class="text-available mr-2">Available</span>
+				<span
+					[class.active]="setWorkingScheduleMode === 'Custom'"
+					class="circle"
+					(click)="setModeAsCustom()"
+				></span>
+				<span class="text-available">Custom</span>
 			</span>
 
 			<span>
-				<span class="circle"></span>
-				<span class="text-available">Not Available</span>
+				<span
+					[class.active]="setWorkingScheduleMode === 'All'"
+					class="circle"
+					(click)="setWorkingSchedule('All')"
+				></span>
+				<span class="text-available mr-2">Always Available</span>
+			</span>
+
+			<span>
+				<span
+					[class.active]="setWorkingScheduleMode === 'None'"
+					class="circle"
+					(click)="setWorkingSchedule('None')"
+				></span>
+				<span class="text-available">Unavailable</span>
 			</span>
 		</div>
+	</div>
+	<div class="col-md-12">
+		<button class="btn btn-add btn-success">Add</button>
 	</div>
 </div>
 

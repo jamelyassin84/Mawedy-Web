@@ -41,8 +41,8 @@ export interface Clinic extends DateInterface {
 }
 
 export interface DateInterface {
-	createdAt: any
-	updatedAT: any
+	createdAt?: any
+	updatedAT?: any
 }
 
 export interface FileInterface {
@@ -115,3 +115,13 @@ export interface Doctor extends DateInterface {
 	isActive: boolean
 	clinicId: number
 }
+
+export interface ClinicDoctorWorkingSchedule extends DateInterface {
+	day: Day
+	time?: string
+	isActive: boolean
+	clinic?: Clinic
+	doctor?: Doctor
+}
+
+export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
