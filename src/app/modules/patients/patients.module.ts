@@ -1,3 +1,4 @@
+import { AppointmentsModule } from './../appointments/appointments.module'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
@@ -10,6 +11,7 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { CheckboxComponent } from 'src/app/components/utilities/checkbox/checkbox.component'
 import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-components/add/add-patient/patients-profile-modal-body.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -20,7 +22,15 @@ import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-comp
 		CheckboxComponent,
 		PatientsProfileModalBodyComponent,
 	],
-	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
+	imports: [
+		CommonModule,
+		DashboardModule,
+		AppRoutingModule,
+		RouterModule,
+		AppointmentsModule,
+		FormsModule,
+		ReactiveFormsModule,
+	],
 	exports: [
 		PatientsToolbarComponent,
 		PatientsInfoToolbarComponent,

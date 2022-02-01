@@ -2,11 +2,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="upload-photo d-flex jcc aic">
-				<img
-					role="button"
-					src="../../../assets/app/patients/male.jpg"
-					alt=""
-				/>
+				<img role="button" src="../../../assets/app/patients/male.jpg" alt="" />
 				<span class="upload-photo-btn" role="button">Upload Photo</span>
 			</div>
 		</div>
@@ -15,21 +11,24 @@
 	</div>
 
 	<div class="row">
-		<div class="patients-information col-md-12 mb-2">
-			Patient Information
-		</div>
-		<div class="col-md-4">
+		<div class="patients-information col-md-12 mb-2">Patient Information</div>
+		<div class="col-md-3">
 			<label for="">Given Name</label>
 			<input type="text" class="form-control" />
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<label for="">Middle Name</label>
 			<input type="text" class="form-control" />
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<label for="">Last Name</label>
+			<input type="text" class="form-control" />
+		</div>
+
+		<div class="col-md-3">
+			<label for="">Name Extension</label>
 			<input type="text" class="form-control" />
 		</div>
 	</div>
@@ -46,10 +45,23 @@
 		</div>
 		<div class="col-md-2">
 			<label for="">Sex</label>
-			<div class="d-flex">
-				<div class="btn-active d-flex aic jcc">F</div>
-				<div class="margin"></div>
-				<div class="btn-ghost d-flex aic jcc">M</div>
+			<div class="d-flex aic">
+				<div
+					(click)="setSex('F')"
+					[class.btn-active]="sex === 'F'"
+					[class.btn-ghost]="sex === 'M'"
+					class="d-flex aic btn jcc m-0"
+				>
+					F
+				</div>
+				<div
+					(click)="setSex('M')"
+					[class.btn-active]="sex === 'M'"
+					[class.btn-ghost]="sex === 'F'"
+					class="d-flex aic btn jcc ml-3"
+				>
+					M
+				</div>
 			</div>
 		</div>
 

@@ -25,15 +25,24 @@
 .patients-container {
 	padding: 20px 70px;
 }
+.patients-information {
+	text-align: left;
+	letter-spacing: 0.03px;
+	color: var(--accent);
+	text-transform: capitalize;
+	font-size: 1.3rem;
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+}
 
 .btn-active {
 	width: 50px;
 	height: 40px;
-	background: #00b074 0% 0% no-repeat padding-box;
+	background: var(--accent) 0% 0% no-repeat padding-box;
 	border-radius: 5px;
 	text-align: center;
 	color: white;
-	font-family: heavy;
+	font-family: bold;
 	border-radius: 5px;
 }
 
@@ -42,10 +51,9 @@
 	height: 40px;
 	text-align: center;
 	letter-spacing: 0.19px;
-	color: #6f7d8f;
+	color: var(--color2);
 	text-transform: capitalize;
-	font-family: bold;
-	border: 0.5px solid #707070;
+	border: 0.5px solid var(--border1);
 	border-radius: 5px;
 	margin-left: 15px;
 	cursor: pointer;

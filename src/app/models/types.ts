@@ -126,4 +126,19 @@ export interface ClinicDoctorWorkingSchedule extends DateInterface {
 	doctor?: Doctor
 }
 
+export interface Patient extends DateInterface {
+	id?: number
+	type: 'Walk-in' | 'App Patient'
+	first: string
+	middle: string
+	last: string
+	ext: string
+	address: string
+	sex: string
+	religion: string
+	dob: string
+	city: string
+	country: string
+}
+
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
