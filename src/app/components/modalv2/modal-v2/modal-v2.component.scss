@@ -115,6 +115,12 @@
 }
 
 .cl {
+	.modal-header {
+		border-radius: 16px;
+		position: sticky !important;
+		top: 0;
+		z-index: 99;
+	}
 	.modal-container {
 		width: 1206px;
 		background: var(--bg3) 0% 0% no-repeat padding-box;

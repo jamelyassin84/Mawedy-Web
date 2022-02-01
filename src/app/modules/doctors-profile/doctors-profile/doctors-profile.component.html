@@ -39,6 +39,12 @@
 						>
 						</modal>
 
+						<ng-template #availabilityBody>
+							<DoctorAvailabilityDetails
+								[doctor]="doctor"
+							></DoctorAvailabilityDetails>
+						</ng-template>
+
 						<ng-template #viewBtn>
 							<span class="underlined">View</span>
 						</ng-template>
@@ -54,10 +60,6 @@
 
 <ng-template #availabilityHeader>
 	<div>Availability</div>
-</ng-template>
-
-<ng-template #availabilityBody>
-	<DoctorAvailabilityDetails></DoctorAvailabilityDetails>
 </ng-template>
 
 <ng-template #header>

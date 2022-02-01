@@ -1,34 +1,37 @@
 <div class="row p-4">
 	<div class="col-md-6">
 		<div class="label">Name</div>
-		<div class="description">Dr. Hanadi Yassin</div>
+		<div class="description">Dr. {{ doctor.name }}</div>
+		<div class="col-md-12" style="margin-bottom: -1rem"></div>
 	</div>
 	<div class="col-md-6">
-		<div class="label">Department</div>
-		<div class="description">Cardiology</div>
+		<div class="label">Profession</div>
+		<div class="description">{{ doctor.profession }}</div>
+		<div class="col-md-12" style="margin-bottom: -1rem"></div>
 	</div>
 	<div class="col-md-12">
-		<div class="label working-schedule">Working Schedule</div>
+		<div class="label working-schedule mb-2">Working Schedule</div>
 		<passive-working-schedule
-			[Mon]="false"
-			[Tue]="true"
-			[Wed]="false"
-			[Thu]="true"
-			[Fri]="false"
-			[Sat]="true"
-			[Sun]="true"
+			[Mon]="doctor.clinicDoctorWorkingSchedules[0].isActive"
+			[Tue]="doctor.clinicDoctorWorkingSchedules[1].isActive"
+			[Wed]="doctor.clinicDoctorWorkingSchedules[2].isActive"
+			[Thu]="doctor.clinicDoctorWorkingSchedules[3].isActive"
+			[Fri]="doctor.clinicDoctorWorkingSchedules[4].isActive"
+			[Sat]="doctor.clinicDoctorWorkingSchedules[5].isActive"
+			[Sun]="doctor.clinicDoctorWorkingSchedules[6].isActive"
 		></passive-working-schedule>
 
 		<div class="d-flex aic mt-4 mb-5">
-			<span>
-				<span class="circle active"></span>
-				<span class="text-available mr-2">Available</span>
-			</span>
+			<span *ngIf="isAvailable" class="text-available mr-2 text-success">
+				<i-feather name="check-circle" class="mr-2"></i-feather>
+				Available Today</span
+			>
 
-			<span>
-				<span class="circle"></span>
-				<span class="text-available">Not Available</span>
-			</span>
+			<span *ngIf="!isAvailable" class="text-available">
+				<i-feather name="clock" class="mr-2"></i-feather>
+
+				Not Available Today</span
+			>
 		</div>
 	</div>
 </div>

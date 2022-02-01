@@ -37,6 +37,8 @@ import {
 	Delete,
 	FastForward,
 	GitPullRequest,
+	CheckCircle,
+	Clock,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -75,6 +77,8 @@ const icons = {
 	Delete,
 	FastForward,
 	GitPullRequest,
+	CheckCircle,
+	Clock,
 }
 
 @NgModule({

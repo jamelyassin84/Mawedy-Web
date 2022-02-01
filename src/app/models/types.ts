@@ -96,7 +96,6 @@ export interface ClinicAccount extends DateInterface {
 	isLoggedIn?: boolean
 	clinic: Clinic
 }
-
 export interface Department extends DateInterface {
 	id?: number
 	name: string
@@ -116,8 +115,8 @@ export interface Doctor extends DateInterface {
 	isActive: boolean
 	clinicId: number
 	phones: any
+	clinicDoctorWorkingSchedules: ClinicDoctorWorkingSchedule[]
 }
-
 export interface ClinicDoctorWorkingSchedule extends DateInterface {
 	day: Day
 	time?: string
