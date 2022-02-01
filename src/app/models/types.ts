@@ -115,6 +115,7 @@ export interface Doctor extends DateInterface {
 	isActive: boolean
 	clinicId: number
 	phones: any
+	emails: any
 	clinicDoctorWorkingSchedules: ClinicDoctorWorkingSchedule[]
 }
 export interface ClinicDoctorWorkingSchedule extends DateInterface {

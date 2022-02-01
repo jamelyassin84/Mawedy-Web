@@ -1,58 +1,51 @@
-<div class="body">
+<div class="body" *ngIf="doctor">
 	<div class="doctor-container">
-		<img
-			src="../../../../../assets/app/modals/doctor-profile/doctor.png"
-			alt=""
-		/>
-		<div class="doctor-name">Dr. Hanadi Yassin</div>
-		<div class="doctor-title">
-			MBBS, MD - General Medicine, DM - Cardiology
-		</div>
-		<div class="position">Interventional Cardiologist</div>
-		<div class="years-of-experience">25 Years Experience</div>
+		<img [src]="doctor.avatar" alt="" />
+		<div class="doctor-name">Dr. {{ doctor.name }}</div>
+		<div class="doctor-title" *ngIf="doctor.title !== ''">{{ doctor.title }}</div>
+		<div class="mt-3">{{ doctor.profession }}</div>
+		<div>{{ doctor.yearsOfExperience }} Years Experience</div>
 
 		<div class="separator"></div>
 
 		<div class="label">About</div>
 		<div class="about">
-			An expert in CHIP (Complex High-risk Indicated Procedures), Dr.
-			Hanadi Hassan has achieved a documented 91% success rate in Chronic
-			Total Occlusion (CTO) Angioplasty, which is unheralded in the region
-			and is on par with the best in the field.
+			{{ doctor.about }}
 		</div>
 
 		<div class="row">
 			<div class="col-md-6">
 				<div class="label">Phone</div>
-				<div class="description">+98-7862-43453</div>
+				<div class="description">{{ doctor.phones[0].phone }}</div>
 			</div>
 			<div class="col-md-6">
 				<div class="label">E-mail</div>
-				<div class="description">hanadi@gmail.com</div>
+				<div class="description">{{ doctor.emails[0].email }}</div>
 			</div>
 		</div>
 
 		<div class="label working-schedule">Working Schedule</div>
 		<passive-working-schedule
-			[Mon]="false"
-			[Tue]="true"
-			[Wed]="false"
-			[Thu]="true"
-			[Fri]="false"
-			[Sat]="true"
-			[Sun]="true"
+			[Mon]="doctor.clinicDoctorWorkingSchedules[0].isActive"
+			[Tue]="doctor.clinicDoctorWorkingSchedules[1].isActive"
+			[Wed]="doctor.clinicDoctorWorkingSchedules[2].isActive"
+			[Thu]="doctor.clinicDoctorWorkingSchedules[3].isActive"
+			[Fri]="doctor.clinicDoctorWorkingSchedules[4].isActive"
+			[Sat]="doctor.clinicDoctorWorkingSchedules[5].isActive"
+			[Sun]="doctor.clinicDoctorWorkingSchedules[6].isActive"
 		></passive-working-schedule>
 
-		<div class="d-flex aic mt-4 mb-5">
-			<span>
-				<span class="circle active"></span>
-				<span class="text-available mr-2">Available</span>
-			</span>
+		<div class="d-flex aic mt-4">
+			<span *ngIf="isAvailable" class="text-available mr-2 d-flex aic">
+				<i-feather name="check-circle" class="mr-2 text-success"></i-feather>
+				Available Today</span
+			>
 
-			<span>
-				<span class="circle"></span>
-				<span class="text-available">Not Available</span>
-			</span>
+			<span *ngIf="!isAvailable" class="text-available">
+				<i-feather name="clock" class="mr-2"></i-feather>
+
+				Not Available Today</span
+			>
 		</div>
 	</div>
 </div>

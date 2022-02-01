@@ -24,7 +24,7 @@
 					</div>
 				</div>
 
-				<span class="upload-photo-btn" role="button">Upload Photo</span>
+				<span class="upload-photo-btn" role="button"> Photo</span>
 				<input
 					(change)="readFile($event)"
 					type="file"
@@ -101,8 +101,24 @@
 					class="form-control"
 				/>
 				<div class="invalid-feedback">
-					<div class="text=danger">Doctor's yearsOfExperience is required.</div>
+					<div class="text=danger">Doctor's years of experience is required.</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<label for="Years of Experience">Title</label>
+			<input
+				type="text"
+				id="title"
+				formControlName="title"
+				[class.is-invalid]="
+					doctorForm.get('title')?.invalid && doctorForm.get('title')?.touched
+				"
+				class="form-control"
+			/>
+			<div class="invalid-feedback">
+				<div class="text=danger">Doctor's title is required.</div>
 			</div>
 		</div>
 
@@ -122,7 +138,7 @@
 				class="form-control"
 			></textarea>
 			<div class="invalid-feedback">
-				<div class="text=danger">Please say Something about this doctor.</div>
+				<div class="text=danger">Please say something about this doctor.</div>
 			</div>
 		</div>
 

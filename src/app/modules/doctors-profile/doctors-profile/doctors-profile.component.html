@@ -50,22 +50,22 @@
 						</ng-template>
 					</td>
 					<td class="text-right">
-						<button class="btn btn-manage">Manage</button>
+						<modal
+							[button]="manageBtn"
+							[component]="doctorDetails"
+							[title]="'Dr. ' + doctor.name"
+							type="Right"
+						>
+						</modal>
+						<ng-template #doctorDetails>
+							<DoctorDetails [doctor]="doctor"></DoctorDetails>
+						</ng-template>
+						<ng-template #manageBtn>
+							<button class="btn btn-manage">Manage</button>
+						</ng-template>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
-
-<ng-template #availabilityHeader>
-	<div>Availability</div>
-</ng-template>
-
-<ng-template #header>
-	<div class="doctors-profile">Dr. Hanadi Yassin</div>
-</ng-template>
-
-<ng-template #body>
-	<view-doctor-body></view-doctor-body>
-</ng-template>
