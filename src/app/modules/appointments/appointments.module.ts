@@ -14,6 +14,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 import { ModalV2Component } from 'src/app/components/modalv2/modal-v2/modal-v2.component'
 import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
 import { IconsModule } from '../icon/icon.module'
+import { DropdownDoctorComponent } from 'src/app/components/dropdowns/dropdown-doctor/dropdown-doctor.component'
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { IconsModule } from '../icon/icon.module'
 		CalendarStrikeThroughComponent,
 		ModalV2Component,
 		ClickStopPropagation,
+		DropdownDoctorComponent,
 	],
 	imports: [
 		CommonModule,
@@ -45,6 +47,7 @@ import { IconsModule } from '../icon/icon.module'
 		CalendarStrikeThroughComponent,
 		ModalV2Component,
 		ClickStopPropagation,
+		DropdownDoctorComponent,
 	],
 })
 export class AppointmentsModule {}

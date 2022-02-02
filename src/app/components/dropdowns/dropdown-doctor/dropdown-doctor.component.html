@@ -1,1 +1,18 @@
-
+<div class="dropdown-container" *ngIf="doctors && doctors.length !== 0">
+	<div
+		*ngFor="let doctor of doctors"
+		class="doctors d-flex"
+		(click)="onSelectedDoctor(doctor)"
+	>
+		<div class="avatar">
+			<img [src]="doctor.avatar" alt="" />
+		</div>
+		<div class="text">
+			<span class="doctor">Dr. {{ doctor.name }}</span>
+			<span class="position"
+				>{{ doctor.profession }} .{{ doctor.yearsOfExperience }} Yrs</span
+			>
+		</div>
+		<i-feather name="plus-circle" class="feather"></i-feather>
+	</div>
+</div>

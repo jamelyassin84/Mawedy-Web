@@ -1,3 +1,4 @@
+import { DropdownDoctorComponent } from './../../components/dropdowns/dropdown-doctor/dropdown-doctor.component'
 import { IconsModule } from './../icon/icon.module'
 import { PassiveWorkingScheduleComponent } from '../../components/utilities/doctor-profile/passive-working-schedule/passive-working-schedule.component'
 import { ViewDoctorBodyComponent } from '../../components/modal-components/view/view-doctor/view-doctor-body.component'
@@ -15,7 +16,6 @@ import { RightBlurBackgroundModalComponent } from 'src/app/components/modals/rig
 import { DoctorAvailabilityModalBodyComponent } from 'src/app/components/modal-components/view/doctor-availability/doctor-availability-modal-body.component'
 import { AppointmentsModule } from '../appointments/appointments.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { ModalV2Component } from 'src/app/components/modalv2/modal-v2/modal-v2.component'
 
 @NgModule({
 	declarations: [

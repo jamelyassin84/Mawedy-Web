@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { Doctor } from 'src/app/models/types'
 
 @Component({
-  selector: 'app-dropdown-doctor',
-  templateUrl: './dropdown-doctor.component.html',
-  styleUrls: ['./dropdown-doctor.component.scss']
+	selector: 'dropdown-doctor',
+	templateUrl: './dropdown-doctor.component.html',
+	styleUrls: ['./dropdown-doctor.component.scss'],
 })
 export class DropdownDoctorComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
+	@Input() width!: string | number
 
-  ngOnInit(): void {
-  }
+	@Input() doctors: Doctor[] = []
+	@Input() selectedDoctor: Doctor[] = []
 
+	@Output() onSelectDoctor = new EventEmitter<Doctor>()
+
+	ngOnInit(): void {
+		this.filterDoctor()
+	}
+
+	filterDoctor() {}
+
+	onSelectedDoctor(doctor: Doctor) {
+		console.log(doctor)
+		this.selectedDoctor.push(doctor)
+		this.onSelectDoctor.emit(doctor)
+	}
 }

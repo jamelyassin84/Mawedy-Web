@@ -54,8 +54,6 @@ import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/u
 import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
 import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
-import { DropdownDoctorComponent } from './components/dropdowns/dropdown-doctor/dropdown-doctor.component'
-import { DropdownSearchComponent } from './components/dropdowns/dropdown-search/dropdown-search.component'
 import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doctor-badges/doctor-badges.component'
 import { AlertComponent } from './components/utilities/common/alert/alert.component'
 
@@ -89,8 +87,6 @@ import { AlertComponent } from './components/utilities/common/alert/alert.compon
 		InternalServerErrorComponent,
 		NoInternetComponent,
 		WhosAccountComponent,
-		DropdownDoctorComponent,
-		DropdownSearchComponent,
 		DoctorBadgesComponent,
 	],
 	imports: [
