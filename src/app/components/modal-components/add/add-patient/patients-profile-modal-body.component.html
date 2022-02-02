@@ -116,15 +116,12 @@
 			<div class="col-md-2">
 				<label for="age">Age</label>
 				<input
+					placeholder="Auto-computed"
 					type="number"
+					disabled
 					id="age"
-					formControlName="age"
-					[class.is-invalid]="form.get('age')?.invalid && form.get('age')?.touched"
 					class="form-control"
 				/>
-				<div class="invalid-feedback">
-					<div class="text=danger">Patient's age is required.</div>
-				</div>
 			</div>
 			<div class="col-md-4">
 				<label for="">Sex</label>

@@ -17,16 +17,23 @@
 		/>
 	</div>
 
-	<button class="add-patient d-flex aic jcc btn">
-		<img src="../../../assets/app/toolbars/patients/plus.png" alt="" />
-		<span>Add Patient</span>
-	</button>
+	<modal
+		[component]="body"
+		[button]="btnAddPatient"
+		title="Patient Profile"
+		type="Center Large"
+	>
+	</modal>
 </div>
-
-<ng-template #header>
-	<div class="patients-profile">Patient Profile</div>
-</ng-template>
 
 <ng-template #body>
 	<AddPatientModal></AddPatientModal>
+</ng-template>
+
+<ng-template #btnAddPatient>
+	<button class="add-doctor d-flex aic jcc btn">
+		<i-feather class="image-icon mr-2" name="plus"></i-feather>
+
+		<span>Add Patient</span>
+	</button>
 </ng-template>

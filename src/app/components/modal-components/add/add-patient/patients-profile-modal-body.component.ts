@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { resolveName } from 'src/app/constants/App.functions'
+import { resolveAge, resolveName } from 'src/app/constants/App.functions'
 import { Patient } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
@@ -42,8 +42,6 @@ export class PatientsProfileModalBodyComponent implements OnInit {
 		religion: new FormControl(''),
 
 		dob: new FormControl('', [Validators.required]),
-
-		age: new FormControl('', [Validators.required]),
 
 		city: new FormControl('', [Validators.required, Validators.minLength(5)]),
 
