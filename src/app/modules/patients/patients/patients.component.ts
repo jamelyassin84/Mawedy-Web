@@ -17,12 +17,12 @@ export class PatientsComponent implements OnInit {
 	constructor(private http: HttpClient, private clinicService: ClinicService) {}
 
 	ngOnInit(): void {
-		this.getDoctors()
+		this.getPatients()
 	}
 
 	patients!: Patient[]
 
-	getDoctors() {
+	getPatients() {
 		new BaseService(this.http, ROUTES.PATIENTS).index().subscribe({
 			next: (patients: Patient[]) => {
 				this.patients = patients

@@ -21,11 +21,18 @@ export function resolveName(
 	type: 'reverse' | 'normal' = 'normal',
 ): string {
 	if (type === 'reverse') {
-		return `${patient.last}, ${patient.first} ${patient.middle}`
+		return `${patient.last}, ${patient.first} ${patient.middle} ${patient.ext}`
 	}
 	return ` ${patient.first} ${patient.middle} ${patient.last}`
 }
 
 export function resolveAddress(patient: Patient): string {
-	return ` ${patient.country} ${patient.city} ${patient.address}`
+	return ` ${patient.country} ${patient.city} ${patient.address} ${patient.ext}`
+}
+
+export function resolveAge(dateString: string): number {
+	const birthDate = new Date(dateString)
+	const difference = Date.now() - birthDate.getTime()
+	const ageDate = new Date(difference)
+	return Math.abs(ageDate.getUTCFullYear() - 1970)
 }

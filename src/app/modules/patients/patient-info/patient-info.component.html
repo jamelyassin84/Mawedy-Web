@@ -12,7 +12,7 @@
 				src="../../../assets/app/toolbars/patients/back.png"
 				alt=""
 			/>
-			<span style="color: var(--color)">Patient Information</span>
+			<span style="color: var(--accent)">Patient Information</span>
 		</div>
 
 		<div class="patients-info">
@@ -21,60 +21,62 @@
 					<div class="row section">
 						<div class="col-md-8">
 							<div class="label">Name</div>
-							<span class="description"
-								>Clarrise Ahmed Umair
-							</span>
+							<span class="description">{{ resolveName(patient) }} </span>
 						</div>
 						<div class="col-md-3">
 							<div class="label">Type</div>
-							<span class="description">Patient</span>
+							<span class="description">{{ patient.type }}</span>
 						</div>
 					</div>
 
 					<div class="row section">
 						<div class="col-md-3">
 							<div class="label">Birthday</div>
-							<span class="description"> 02/14/1993 </span>
+							<span class="description">
+								{{ patient.dob | date: 'MMMM dd, yyyy' }}
+							</span>
 						</div>
 						<div class="col-md-5">
 							<div class="label">Address</div>
 							<span class="description">
-								Flat 1167 Majid Building Business Bay
+								{{ patient.address }}
 							</span>
 						</div>
 						<div class="col-md-2">
 							<div class="label">City</div>
-							<span class="description"> Dubai </span>
+							<span class="description"> {{ patient.city }} </span>
 						</div>
 						<div class="col-md-2">
 							<div class="label">Country</div>
-							<span class="description"> UAE </span>
+							<span class="description"> {{ patient.country }} </span>
 						</div>
 					</div>
 
 					<div class="row section">
 						<div class="col-md-3">
 							<div class="label">Age</div>
-							<span class="description"> 28 Yrs</span>
+							<span class="description"> {{ resolveAge(patient.dob) }} Yrs</span>
 						</div>
 						<div class="col-md-4">
-							<div class="label">Age</div>
+							<div class="label">Email</div>
 							<span class="description"> info@gmail.com </span>
 						</div>
 						<div class="col-md-5">
-							<div class="label">Age</div>
+							<div class="label">Contact</div>
 							<span class="description"> +971 00 000 0000 </span>
 						</div>
 					</div>
 
 					<div class="row section">
 						<div class="col-md-3">
-							<div class="label">Gender</div>
-							<span class="description">Female</span>
+							<div class="label">Sex</div>
+							<span class="description">{{
+								patient.sex === 'M' ? 'Male' : 'Female'
+							}}</span>
 						</div>
 						<div class="col-md-4">
 							<div class="label">Religion</div>
-							<span class="description">Roman Catholic</span>
+							<span class="description">{{ patient.religion || 'N/A' }}</span>
 						</div>
 					</div>
 				</div>
@@ -82,10 +84,16 @@
 				<div class="col-md-4 upload-photo d-flex jcc aic">
 					<img
 						role="button"
-						src="../../../assets/app/patients/male.jpg"
+						[src]="
+							patient.avatars.length !== 0
+								? patient.avatars[0]?.url
+								: patient.sex === 'M'
+								? '../../../assets/app/patients/male.jpg'
+								: '../../../assets/app/patients/female.jpg'
+						"
 						alt=""
 					/>
-					<span role="button">Upload Photo</span>
+					<span role="button">Edit Photo</span>
 				</div>
 			</div>
 

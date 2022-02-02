@@ -20,7 +20,7 @@
 					<th>Profile</th>
 				</tr>
 			</thead>
-			<tbody [@listAnimation]="20">
+			<tbody [@listAnimation]="patients.length">
 				<tr *ngFor="let patient of patients; let i = index">
 					<td class="text-center">
 						<div class="avatar">
