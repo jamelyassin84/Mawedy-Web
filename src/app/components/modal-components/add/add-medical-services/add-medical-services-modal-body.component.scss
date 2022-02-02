@@ -7,19 +7,20 @@ textarea {
 	min-height: 60px !important;
 	width: 100%;
 	margin-bottom: 20px;
-	padding-left: 12px;
-	padding: 10px;
 	background-color: var(--bg);
-	border: 2px solid var(--border1);
 	position: relative;
 	.icon {
 		position: absolute;
-		right: 0.51rem;
-		top: 0.5rem;
+		right: 1rem;
+		top: 1rem;
 		z-index: 999999999;
 		color: var(--color2);
 	}
 }
+.hasBorder {
+	border: 2px solid var(--border1);
+}
+
 .doctor-img {
 	margin-right: 0.5rem;
 	border-radius: 50% !important;
@@ -34,6 +35,8 @@ textarea {
 	display: inline-block;
 	background: var(--bg2);
 	padding-right: 1rem;
+	margin: 0.5rem;
+	padding-bottom: 0;
 	.text {
 		color: var(--color1);
 	}
@@ -64,16 +67,6 @@ textarea {
 		height: 5rem;
 	}
 }
-.custom-form {
-	border: none;
-	background: transparent;
-	max-width: 50%;
-	margin: 0 !important;
-	padding: 0.5rem;
-	&:focus {
-		box-shadow: 0 0 0 0.2rem #00b0759c, rgba(93, 185, 105, 0.563) 0px 3px 15px 0px;
-		border: none !important;
-		outline: 0;
-	}
-	width: 100%;
+.form-control {
+	margin: 0;
 }

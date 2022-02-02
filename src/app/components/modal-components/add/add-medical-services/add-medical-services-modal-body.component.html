@@ -34,7 +34,11 @@
 	</div>
 
 	<label for="search-doctor" class="text-left w-100">Doctors for this service</label>
-	<div class="doctor-inputs" [@listAnimation]="5">
+	<div
+		[class.hasBorder]="selectedDoctor.length !== 0"
+		class="doctor-inputs"
+		[@listAnimation]="5"
+	>
 		<div class="doctor mr-3" *ngFor="let doctor of selectedDoctor">
 			<div class="d-flex aic p-2">
 				<img class="doctor-img" [src]="doctor.avatar" alt="" />
