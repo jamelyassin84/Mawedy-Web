@@ -31,6 +31,10 @@
 	.icon {
 		width: 5rem;
 	}
+	&:hover {
+		background: var(--bg2);
+		border-radius: 10px;
+	}
 }
 .rounded {
 	background: var(--accent);

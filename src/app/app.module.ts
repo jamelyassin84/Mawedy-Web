@@ -55,6 +55,8 @@ import { UnderMaintenanceComponent } from './pages/redirects/under-maintenance/u
 import { InternalServerErrorComponent } from './pages/redirects/internal-server-error/internal-server-error.component'
 import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.component'
 import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
+import { DropdownDoctorComponent } from './components/dropdowns/dropdown-doctor/dropdown-doctor.component'
+import { DropdownSearchComponent } from './components/dropdowns/dropdown-search/dropdown-search.component'
 
 @NgModule({
 	declarations: [
@@ -86,6 +88,8 @@ import { WhosAccountComponent } from './components/modals/whos-account/whos-acco
 		InternalServerErrorComponent,
 		NoInternetComponent,
 		WhosAccountComponent,
+		DropdownDoctorComponent,
+		DropdownSearchComponent,
 	],
 	imports: [
 		//Angular Modules
