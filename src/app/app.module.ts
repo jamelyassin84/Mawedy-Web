@@ -44,7 +44,6 @@ import { NewAppointmentModalBodyComponent } from './components/modal-components/
 import { CenterSmallModalComponent } from './components/modals/center-small-modal/center-small-modal.component'
 import { MainModalComponent } from './components/modals/_main-modal/main-modal.component'
 import { MainInterceptor } from './interceptors/main'
-import { AlertComponent } from './components/utilities/alert/alert.component'
 import { LoginSection1Component } from './pages/login/login-section1/login-section1.component'
 import { LoginSection2Component } from './pages/login/login-section2/login-section2.component'
 import { LoginSection3Component } from './pages/login/login-section3/login-section3.component'
@@ -57,10 +56,13 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
 import { DropdownDoctorComponent } from './components/dropdowns/dropdown-doctor/dropdown-doctor.component'
 import { DropdownSearchComponent } from './components/dropdowns/dropdown-search/dropdown-search.component'
+import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doctor-badges/doctor-badges.component'
+import { AlertComponent } from './components/utilities/common/alert/alert.component'
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		AlertComponent,
 		LoginComponent,
 		RegisterComponent,
 		HomeComponent,
@@ -77,7 +79,6 @@ import { DropdownSearchComponent } from './components/dropdowns/dropdown-search/
 		MainModalComponent,
 		NewAppointmentModalBodyComponent,
 		CenterSmallModalComponent,
-		AlertComponent,
 		LoginSection1Component,
 		LoginSection2Component,
 		LoginSection3Component,
@@ -90,6 +91,7 @@ import { DropdownSearchComponent } from './components/dropdowns/dropdown-search/
 		WhosAccountComponent,
 		DropdownDoctorComponent,
 		DropdownSearchComponent,
+		DoctorBadgesComponent,
 	],
 	imports: [
 		//Angular Modules

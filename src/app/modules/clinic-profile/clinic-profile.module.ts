@@ -9,12 +9,11 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ClinicProfileComponent } from './clinic-profile/clinic-profile.component'
 import { ClinicProfileServicesComponent } from './clinic-profile-services/clinic-profile-services.component'
-import { ClinicServiceCardComponent } from '../../components/utilities/clinic-service-card/clinic-service-card.component'
 import { RouterModule } from '@angular/router'
 import { ClinicProfileToolbarComponent } from 'src/app/components/toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { DashboardModule } from '../dashboard/dashboard.module'
-import { TabsComponent } from 'src/app/components/utilities/tabs/tabs.component'
+import { TabsComponent } from 'src/app/components/utilities/clinic-profile/tabs/tabs.component'
 import { FormsModule } from '@angular/forms'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -22,6 +21,7 @@ import { DropdownSmComponent } from 'src/app/components/dropdowns/dropdown-sm/dr
 import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dropdown-lg.component'
 import { ViewDepartmentsComponent } from 'src/app/components/modal-components/view/view-departments/view-departments.component'
 import { AppointmentsModule } from '../appointments/appointments.module'
+import { ClinicServiceCardComponent } from 'src/app/components/utilities/clinic-profile/clinic-service-card/clinic-service-card.component'
 
 @NgModule({
 	declarations: [

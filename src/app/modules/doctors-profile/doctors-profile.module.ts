@@ -1,7 +1,7 @@
 import { IconsModule } from './../icon/icon.module'
-import { PassiveWorkingScheduleComponent } from './../../components/utilities/passive-working-schedule/passive-working-schedule.component'
+import { PassiveWorkingScheduleComponent } from '../../components/utilities/doctor-profile/passive-working-schedule/passive-working-schedule.component'
 import { ViewDoctorBodyComponent } from '../../components/modal-components/view/view-doctor/view-doctor-body.component'
-import { WorkingScheduleComponent } from './../../components/utilities/working-schedule/working-schedule.component'
+import { WorkingScheduleComponent } from '../../components/utilities/doctor-profile/working-schedule/working-schedule.component'
 import { DoctorsProfileBodyComponent } from '../../components/modal-components/add/add-doctor/doctors-profile-body.component'
 
 import { NgModule } from '@angular/core'

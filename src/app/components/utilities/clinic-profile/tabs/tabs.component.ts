@@ -1,6 +1,6 @@
-import { AlertService } from './../../../services/utilities/alert.service'
+import { AlertService } from '../../../../services/utilities/alert.service'
 import { HttpClient } from '@angular/common/http'
-import { ModalService } from './../../../services/utilities/modal.service'
+import { ModalService } from '../../../../services/utilities/modal.service'
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Fire } from 'src/app/constants/Alert'
 import { BaseService } from 'src/app/services/api/base.api.service'

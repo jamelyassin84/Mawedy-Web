@@ -1,7 +1,7 @@
-import { alertAnimation } from './../../../animations/alert.animation'
-import { AlertService } from './../../../services/utilities/alert.service'
-import { Alert, AlertType } from './../../../models/Alert.type'
+import { Alert } from './../../../../models/types'
 import { Component, Input, OnInit } from '@angular/core'
+import { alertAnimation } from 'src/app/animations/alert.animation'
+import { AlertService } from 'src/app/services/utilities/alert.service'
 
 @Component({
 	selector: 'app-alert',

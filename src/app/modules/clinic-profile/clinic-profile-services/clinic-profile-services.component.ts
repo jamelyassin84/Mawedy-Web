@@ -2,7 +2,7 @@ import { DepartmentService } from './../../../services/components/department.ser
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
-import { TabType } from 'src/app/components/utilities/tabs/tabs.component'
+import { TabType } from 'src/app/components/utilities/clinic-profile/tabs/tabs.component'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'

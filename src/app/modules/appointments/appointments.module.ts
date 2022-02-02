@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { CalendarStrikeThroughComponent } from './../../components/utilities/calendar-strike-through/calendar-strike-through.component'
+import { CalendarStrikeThroughComponent } from '../../components/utilities/appointments/calendar-strike-through/calendar-strike-through.component'
 import { CalendarBadgeDayComponent } from './../../components/utilities/calendar-badges/calendar-badge-day/calendar-badge-day.component'
 import { CalendarBadgeWeekComponent } from './../../components/utilities/calendar-badges/calendar-badge-week/calendar-badge-week.component'
 import { CalendarBadgeMonthComponent } from './../../components/utilities/calendar-badges/calendar-badge-month/calendar-badge-month.component'
@@ -36,6 +36,9 @@ import { IconsModule } from '../icon/icon.module'
 		IconsModule,
 	],
 	exports: [
+		AppointmentsMonthComponent,
+		AppointmentsWeekComponent,
+		AppointmentsDayComponent,
 		CalendarBadgeMonthComponent,
 		CalendarBadgeWeekComponent,
 		CalendarBadgeDayComponent,
