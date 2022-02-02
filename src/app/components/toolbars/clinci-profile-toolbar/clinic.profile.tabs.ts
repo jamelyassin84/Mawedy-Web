@@ -1,16 +1,17 @@
 export const clinicTabs: ClinicTabType[] = [
 	{
-		id: 2,
+		id: 1,
 		name: 'Services',
 		route: '/home/clinic-profile/services',
 		icon: 'activity',
 	},
 	{
-		id: 1,
+		id: 2,
 		name: 'Information',
-		route: '/home/clinic-profile/',
+		route: '/home/clinic-profile/information',
 		icon: 'info',
 	},
+
 	{
 		id: 3,
 		name: 'Summary',
