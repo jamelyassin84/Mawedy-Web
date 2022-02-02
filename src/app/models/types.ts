@@ -118,6 +118,9 @@ export interface Patient extends DateInterface {
 	city: string
 	country: string
 	age: string
+	phones: { phone: string }[]
+	emails: { email: string }[]
+	avatars: { url: string }[]
 }
 
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'

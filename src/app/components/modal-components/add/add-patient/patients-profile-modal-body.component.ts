@@ -6,6 +6,7 @@ import { Patient } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
+import { ClinicService } from 'src/app/services/utilities/clnic.service'
 
 @Component({
 	selector: 'AddPatientModal',
@@ -13,7 +14,11 @@ import { AlertService } from 'src/app/services/utilities/alert.service'
 	styleUrls: ['./patients-profile-modal-body.component.scss'],
 })
 export class PatientsProfileModalBodyComponent implements OnInit {
-	constructor(private http: HttpClient, private alert: AlertService) {}
+	constructor(
+		private http: HttpClient,
+		private alert: AlertService,
+		private clinicService: ClinicService,
+	) {}
 
 	ngOnInit(): void {}
 
@@ -83,7 +88,7 @@ export class PatientsProfileModalBodyComponent implements OnInit {
 		}
 
 		const patient = Object.assign(
-			{ type: this.type, sex: this.sex },
+			{ type: this.type, sex: this.sex, clinic: this.clinicService.getID() },
 			this.form.value,
 		)
 
@@ -106,25 +111,27 @@ export class PatientsProfileModalBodyComponent implements OnInit {
 
 		form.append('id', patient.id + '')
 
-		new BaseService(this.http, `${ROUTES.DOCTOR}/upload`).create(form).subscribe({
-			complete: () => {
-				this.isProcessing = 'complete'
+		new BaseService(this.http, `${ROUTES.PATIENT_AVATARS}/upload`)
+			.create(form)
+			.subscribe({
+				complete: () => {
+					this.isProcessing = 'complete'
 
-				this.form.reset()
+					this.form.reset()
 
-				this.alert.Fire({
-					title: 'Patient Added.',
-					description: `${resolveName(
-						patient,
-						'normal',
-					)} has been added to patient's list.`,
-					type: 'success',
-				})
-			},
+					this.alert.Fire({
+						title: 'Patient Added.',
+						description: `${resolveName(
+							patient,
+							'normal',
+						)} has been added to patient's list.`,
+						type: 'success',
+					})
+				},
 
-			error: () => {
-				this.isProcessing = false
-			},
-		})
+				error: () => {
+					this.isProcessing = false
+				},
+			})
 	}
 }

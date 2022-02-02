@@ -8,25 +8,35 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Type</th>
+					<th class="text-center">
+						<i-feather name="user" class="feather"></i-feather>
+					</th>
 					<th>Name</th>
 					<th>Age</th>
 					<th>Email</th>
 					<th>Phone</th>
 					<th>Address</th>
+					<th>Type</th>
 					<th>Profile</th>
 				</tr>
 			</thead>
 			<tbody [@listAnimation]="20">
-				<tr *ngFor="let item of [1, 1, 1]; let i = index">
-					<td>AA</td>
-					<td>Clarrise Umair</td>
-					<td>28 Yrs.</td>
-					<td>28 Yrs.</td>
-					<td>+98-7862-43453</td>
-					<td>Flat 1167 Majid Building Business Bay Dubai UAE</td>
+				<tr *ngFor="let patient of patients; let i = index">
+					<td class="text-center">
+						<div class="avatar">
+							<img [src]="patient.avatars[0].url" alt="" />
+						</div>
+					</td>
+					<td>{{ resolveName(patient) }}</td>
+					<td>{{ patient.dob }} Yrs.</td>
+					<td>{{ patient.emails[0].email }} Yrs.</td>
+					<td>{{ patient.phones[0].phone }}</td>
+					<td>{{ resolveAddress(patient) }}</td>
+					<td>{{ patient.type }}</td>
 					<td>
-						<button routerLink="/home/patients/information/1">View</button>
+						<button [routerLink]="'/home/patients/information/' + patient.id">
+							View
+						</button>
 					</td>
 				</tr>
 			</tbody>

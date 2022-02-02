@@ -25,3 +25,7 @@ export function resolveName(
 	}
 	return ` ${patient.first} ${patient.middle} ${patient.last}`
 }
+
+export function resolveAddress(patient: Patient): string {
+	return ` ${patient.country} ${patient.city} ${patient.address}`
+}
