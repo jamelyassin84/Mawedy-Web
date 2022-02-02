@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
 import { listAnimation } from 'src/app/animations/List.animation'
+import { DoctorService } from 'src/app/services/utilities/doctor.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
@@ -9,7 +11,9 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [listAnimation],
 })
 export class DoctorsProfileToolbarComponent implements OnInit {
-	constructor() {}
+	constructor(private doctorService: DoctorService) {}
+
+	doctorCount: Observable<number> = this.doctorService.getDoctorCount()
 
 	ngOnInit(): void {}
 }

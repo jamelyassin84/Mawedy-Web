@@ -1,5 +1,5 @@
 <div class="d-flex" style="width: calc(100vw - 50%)">
-	<h1 class="doctors-count bold">Doctors (32)</h1>
+	<h1 class="doctors-count bold">Doctors ({{ doctorCount | async }})</h1>
 	<div class="input-container ml-auto">
 		<input type="search" placeholder="Search" />
 		<img

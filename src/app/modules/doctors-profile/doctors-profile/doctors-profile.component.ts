@@ -1,3 +1,4 @@
+import { DoctorService } from './../../../services/utilities/doctor.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
@@ -14,7 +15,11 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [listAnimation],
 })
 export class DoctorsProfileComponent implements OnInit {
-	constructor(private http: HttpClient, private clinicService: ClinicService) {}
+	constructor(
+		private http: HttpClient,
+		private clinicService: ClinicService,
+		private doctorService: DoctorService,
+	) {}
 
 	ngOnInit(): void {
 		this.getDoctors()
@@ -26,6 +31,7 @@ export class DoctorsProfileComponent implements OnInit {
 		new BaseService(this.http, ROUTES.DOCTOR).index().subscribe({
 			next: (data: Doctor[]) => {
 				this.doctors = data
+				this.doctorService.setDoctorCount(data.length)
 			},
 			error: (error) => console.log(error),
 		})
