@@ -1,102 +1,280 @@
-<div class="patients-container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="upload-photo d-flex jcc aic">
-				<img role="button" src="../../../assets/app/patients/male.jpg" alt="" />
-				<span class="upload-photo-btn" role="button">Upload Photo</span>
+<form [formGroup]="form" (ngSubmit)="save()">
+	<div class="patients-container">
+		<div class="row">
+			<div class="col-md-12 w-100 d-flex aic jcc" style="flex-direction: column">
+				<div
+					role="button"
+					(click)="trigger('logo')"
+					class="clinic-logo-placeholder d-flex aic jcc"
+				>
+					<img
+						role="button"
+						*ngIf="avatarSrc"
+						class="clinic-image"
+						style="border-radius: 50%"
+						[src]="avatarSrc"
+						alt=""
+						(click)="trigger('file')"
+					/>
+					<i-feather *ngIf="!avatar" class="image-icon" name="image"></i-feather>
+				</div>
+			</div>
+
+			<span class="upload-photo-btn text-center col-md-12 mt-3" role="button">
+				Photo</span
+			>
+			<input
+				(change)="readFile($event)"
+				type="file"
+				accept="image/*"
+				id="logo"
+				style="display: none"
+			/>
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="patients-information col-md-12 mb-2">Patient's Information</div>
+
+			<div class="col-md-4">
+				<label for="last">Last </label>
+				<input
+					type="text"
+					id="last"
+					formControlName="last"
+					[class.is-invalid]="form.get('last')?.invalid && form.get('last')?.touched"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's last name is required.</div>
+					<div class="text=danger">Must have at least 3 characters.</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<label for="first">Given </label>
+				<input
+					type="text"
+					id="first"
+					formControlName="first"
+					[class.is-invalid]="
+						form.get('first')?.invalid && form.get('first')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's first name is required.</div>
+					<div class="text=danger">Must have at least 3 characters.</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<label class="d-flex" for="middle"
+					>Middle <span class="ml-auto text-info">(Optional)</span>
+				</label>
+				<input
+					type="text"
+					id="middle"
+					formControlName="middle"
+					[class.is-invalid]="
+						form.get('middle')?.invalid && form.get('middle')?.touched
+					"
+					class="form-control"
+				/>
+			</div>
+
+			<div class="col-md-2">
+				<label class="d-flex" for="middle"
+					>Extension <span class="ml-auto text-info">(Optional)</span>
+				</label>
+				<input
+					type="text"
+					id="ext"
+					formControlName="ext"
+					[class.is-invalid]="form.get('ext')?.invalid && form.get('ext')?.touched"
+					class="form-control"
+				/>
 			</div>
 		</div>
 
-		<div class="col-md-12 separator"></div>
-	</div>
-
-	<div class="row">
-		<div class="patients-information col-md-12 mb-2">Patient Information</div>
-		<div class="col-md-3">
-			<label for="">Given Name</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-3">
-			<label for="">Middle Name</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-3">
-			<label for="">Last Name</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-3">
-			<label for="">Name Extension</label>
-			<input type="text" class="form-control" />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4">
-			<label for="">Date of Birth</label>
-			<input type="date" class="form-control" />
-		</div>
-
-		<div class="col-md-2">
-			<label for="">Age</label>
-			<input type="number" class="form-control" />
-		</div>
-		<div class="col-md-2">
-			<label for="">Sex</label>
-			<div class="d-flex aic">
-				<div
-					(click)="setSex('F')"
-					[class.btn-active]="sex === 'F'"
-					[class.btn-ghost]="sex === 'M'"
-					class="d-flex aic btn jcc m-0"
-				>
-					F
+		<div class="row">
+			<div class="col-md-4">
+				<label for="dob">Date of Birth</label>
+				<input
+					type="date"
+					id="dob"
+					formControlName="dob"
+					[class.is-invalid]="form.get('dob')?.invalid && form.get('dob')?.touched"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's date of birth is required.</div>
 				</div>
-				<div
-					(click)="setSex('M')"
-					[class.btn-active]="sex === 'M'"
-					[class.btn-ghost]="sex === 'F'"
-					class="d-flex aic btn jcc ml-3"
-				>
-					M
+			</div>
+
+			<div class="col-md-2">
+				<label for="age">Age</label>
+				<input
+					type="number"
+					id="age"
+					formControlName="age"
+					[class.is-invalid]="form.get('age')?.invalid && form.get('age')?.touched"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's age is required.</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label for="">Sex</label>
+				<div class="d-flex aic">
+					<div
+						(click)="setSex('M')"
+						[class.btn-active]="sex === 'M'"
+						[class.btn-ghost]="sex === 'F'"
+						class="d-flex aic btn jcc m-0"
+					>
+						M
+					</div>
+
+					<div
+						(click)="setSex('F')"
+						[class.btn-active]="sex === 'F'"
+						[class.btn-ghost]="sex === 'M'"
+						class="d-flex aic btn jcc ml-3"
+					>
+						F
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<label class="d-flex" for="middle"
+					>Religion <span class="ml-auto text-info">(Optional)</span>
+				</label>
+				<input
+					type="text"
+					id="religion"
+					formControlName="religion"
+					[class.is-invalid]="
+						form.get('religion')?.invalid && form.get('religion')?.touched
+					"
+					class="form-control"
+				/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<label for="address">Address</label>
+				<input
+					type="text"
+					id="address"
+					formControlName="address"
+					[class.is-invalid]="
+						form.get('address')?.invalid && form.get('address')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's address is required.</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<label for="country">Country</label>
+				<input
+					type="text"
+					id="country"
+					formControlName="country"
+					[class.is-invalid]="
+						form.get('country')?.invalid && form.get('country')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's country is required.</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<label for="city">City</label>
+				<input
+					type="text"
+					id="city"
+					formControlName="city"
+					[class.is-invalid]="form.get('city')?.invalid && form.get('city')?.touched"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's city is required.</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-4">
-			<label for="">Religion</label>
-			<input type="text" class="form-control" />
+		<div class="row">
+			<div class="col-md-4">
+				<label for="phone">Phone</label>
+				<input
+					type="text"
+					id="phone"
+					formControlName="phone"
+					[class.is-invalid]="
+						form.get('phone')?.invalid && form.get('phone')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's phone is required.</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<label for="email">Email</label>
+				<input
+					type="text"
+					id="email"
+					formControlName="email"
+					[class.is-invalid]="
+						form.get('email')?.invalid && form.get('email')?.touched
+					"
+					class="form-control"
+				/>
+				<div class="invalid-feedback">
+					<div class="text=danger">Patient's email is required.</div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+				<hr />
+				<!-- button  -->
+				<div
+					[class.isProcessing]="isProcessing === true"
+					[class.isComplete]="isProcessing === 'complete'"
+					class="d-flex mt-3"
+				>
+					<button
+						class="btn btn-add btn-lg ml-auto mt-3"
+						[class.btn-disabled]="!form.valid"
+						[disabled]="!form.valid"
+						type="submit"
+					>
+						<span *ngIf="isProcessing === 'complete'">
+							<i-feather name="check"></i-feather>
+						</span>
+						<span *ngIf="!isProcessing">Add</span>
+
+						<div
+							style="color: var(--accent) !important"
+							*ngIf="isProcessing === true"
+							class="spinner-border text-success"
+							role="status"
+						></div>
+					</button>
+				</div>
+				<!-- button  -->
+			</div>
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col-md-6">
-			<label for="">Address</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-3">
-			<label for="">City</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-3">
-			<label for="">Country</label>
-			<input type="text" class="form-control" />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4">
-			<label for="">Phone</label>
-			<input type="text" class="form-control" />
-		</div>
-
-		<div class="col-md-4">
-			<label for="">Email</label>
-			<input type="text" class="form-control" />
-		</div>
-	</div>
-</div>
+</form>

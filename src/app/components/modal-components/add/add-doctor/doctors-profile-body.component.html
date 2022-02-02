@@ -217,12 +217,13 @@
 			<div
 				[class.isProcessing]="isProcessing === true"
 				[class.isComplete]="isProcessing === 'complete'"
-				[class.btn-disabled]="!doctorForm.valid == undefined"
 				class="d-flex mt-3"
 			>
 				<button
 					class="btn btn-add btn-lg"
-					[disabled]="!doctorForm.valid == undefined"
+					[class.btn-disabled]="!doctorForm.valid"
+					[disabled]="!doctorForm.valid"
+					type="submit"
 				>
 					<span *ngIf="isProcessing === 'complete'">
 						<i-feather name="check"></i-feather>

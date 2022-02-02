@@ -1,3 +1,5 @@
+import { Patient } from '../models/types'
+
 export function resolveBooking(appointment: any) {
 	let color = '#E5EFF7'
 	if (appointment.type === 'Mobile') {
@@ -12,4 +14,14 @@ export function resolveBooking(appointment: any) {
 		color: color,
 		isCanceled: '',
 	}
+}
+
+export function resolveName(
+	patient: Patient,
+	type: 'reverse' | 'normal' = 'normal',
+): string {
+	if (type === 'reverse') {
+		return `${patient.last}, ${patient.first} ${patient.middle}`
+	}
+	return ` ${patient.first} ${patient.middle} ${patient.last}`
 }

@@ -14,6 +14,7 @@ import { AppointmentCancellationBodyComponent } from 'src/app/components/modal-c
 import { AssignAppointmentToModalBodyComponent } from 'src/app/components/modal-components/edit/update-appointment-to/assign-appointment-to-modal-body.component'
 
 import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/appointment-toolbar-tab/appointment-toolbar-tab.component'
+import { IconsModule } from '../icon/icon.module'
 
 @NgModule({
 	declarations: [
@@ -29,7 +30,7 @@ import { AppointmentToolbarTabComponent } from 'src/app/components/utilities/app
 		AppointmentToolbarTabComponent,
 		PatientOutreachComponent,
 	],
-	imports: [CommonModule, AppRoutingModule, RouterModule],
+	imports: [CommonModule, AppRoutingModule, RouterModule, IconsModule],
 	exports: [
 		ToolbarComponent,
 		AppointmentsToolbarComponent,

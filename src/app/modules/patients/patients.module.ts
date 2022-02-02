@@ -12,6 +12,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module'
 import { CheckboxComponent } from 'src/app/components/utilities/checkbox/checkbox.component'
 import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-components/add/add-patient/patients-profile-modal-body.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { IconsModule } from '../icon/icon.module'
 
 @NgModule({
 	declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 		AppointmentsModule,
 		FormsModule,
 		ReactiveFormsModule,
+		IconsModule,
 	],
 	exports: [
 		PatientsToolbarComponent,

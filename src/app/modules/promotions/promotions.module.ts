@@ -5,10 +5,17 @@ import { RouterModule } from '@angular/router'
 import { PromotionsToolbarComponent } from 'src/app/components/toolbars/promotions-toolbar/promotions-toolbar.component'
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
+import { IconsModule } from '../icon/icon.module'
 
 @NgModule({
 	declarations: [PromotionsComponent, PromotionsToolbarComponent],
-	imports: [CommonModule, DashboardModule, AppRoutingModule, RouterModule],
+	imports: [
+		CommonModule,
+		DashboardModule,
+		AppRoutingModule,
+		RouterModule,
+		IconsModule,
+	],
 	exports: [PromotionsToolbarComponent],
 })
 export class PromotionsModule {}

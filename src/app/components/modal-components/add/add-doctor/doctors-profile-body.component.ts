@@ -54,7 +54,9 @@ export class DoctorsProfileBodyComponent implements OnInit {
 	})
 
 	doctor!: Doctor
+
 	avatar!: File | any
+
 	avatarSrc!: any
 
 	setModeAsCustom() {
@@ -96,6 +98,14 @@ export class DoctorsProfileBodyComponent implements OnInit {
 	}
 
 	save() {
+		if (this.avatar === undefined) {
+			return this.alert.Fire({
+				title: 'Additional data needed',
+				description: `Please add the Doctor's photo.`,
+				type: 'warning',
+			})
+		}
+
 		this.isProcessing = true
 
 		const data = Object.assign(
@@ -131,7 +141,7 @@ export class DoctorsProfileBodyComponent implements OnInit {
 				this.setWorkingSchedule('None')
 
 				this.alert.Fire({
-					title: 'Doctor Added',
+					title: 'Doctor Added.',
 					description: `${data.name} has been added to doctors list.`,
 					type: 'success',
 				})

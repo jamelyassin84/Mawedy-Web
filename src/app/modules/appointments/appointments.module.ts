@@ -13,6 +13,7 @@ import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { ModalV2Component } from 'src/app/components/modalv2/modal-v2/modal-v2.component'
 import { ClickStopPropagation } from 'src/app/directives/stop-propagation.directive'
+import { IconsModule } from '../icon/icon.module'
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { ClickStopPropagation } from 'src/app/directives/stop-propagation.direct
 		AppRoutingModule,
 		RouterModule,
 		BrowserAnimationsModule,
+		IconsModule,
 	],
 	exports: [
 		CalendarBadgeMonthComponent,

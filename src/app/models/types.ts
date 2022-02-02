@@ -5,7 +5,6 @@ export interface Alert {
 	type?: AlertType
 	isShowing: boolean
 }
-
 export interface Clinic extends DateInterface {
 	id: number
 	name?: string
@@ -38,19 +37,18 @@ export interface Clinic extends DateInterface {
 	devices: any
 	clinicTimings: any
 	avatar: any
+	doctors: Doctor
+	patients: Patient
 }
-
 export interface DateInterface {
 	createdAt?: any
 	updatedAT?: any
 }
-
 export interface FileInterface {
 	base64: FileReader | FileReader[]
 	files?: File[]
 	file?: File
 }
-
 export interface Modal {
 	type: ModalType
 	header: any
@@ -58,7 +56,6 @@ export interface Modal {
 	footer: any
 	value: boolean
 }
-
 export interface ConfirmModal {
 	type: ModalType | undefined
 	firstLine: string
@@ -67,28 +64,11 @@ export interface ConfirmModal {
 	onSubmit: Function
 	value: boolean
 }
-
 export interface marker {
 	lat: number
 	lng: number
 	label?: string
 }
-
-export type AlertType = 'success' | 'info' | 'warning' | 'error'
-
-export type SubscriptionType = 'trial' | 'solution' | 'app' | 'premium'
-
-export type ModalType =
-	| 'Center Large'
-	| 'Center Medium'
-	| 'Center Small'
-	| 'Right'
-	| 'Right Blur'
-	| 'Confirm'
-	| 'Loader'
-	| 'File-Upload'
-	| 'none'
-
 export interface ClinicAccount extends DateInterface {
 	id?: number | any
 	name: string
@@ -101,7 +81,6 @@ export interface Department extends DateInterface {
 	name: string
 	isActive: boolean
 }
-
 export interface Doctor extends DateInterface {
 	id?: number
 	name: string
@@ -125,7 +104,6 @@ export interface ClinicDoctorWorkingSchedule extends DateInterface {
 	clinic?: Clinic
 	doctor?: Doctor
 }
-
 export interface Patient extends DateInterface {
 	id?: number
 	type: 'Walk-in' | 'App Patient'
@@ -139,6 +117,22 @@ export interface Patient extends DateInterface {
 	dob: string
 	city: string
 	country: string
+	age: string
 }
 
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
+
+export type AlertType = 'success' | 'info' | 'warning' | 'error'
+
+export type SubscriptionType = 'trial' | 'solution' | 'app' | 'premium'
+
+export type ModalType =
+	| 'Center Large'
+	| 'Center Medium'
+	| 'Center Small'
+	| 'Right'
+	| 'Right Blur'
+	| 'Confirm'
+	| 'Loader'
+	| 'File-Upload'
+	| 'none'
