@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core'
+import {
+	Component,
+	OnInit,
+	Input,
+	ChangeDetectorRef,
+	SimpleChanges,
+} from '@angular/core'
+import { Observable } from 'rxjs'
 import { fadeIn } from 'src/app/animations/fade-in.animation'
 import { scaleX } from 'src/app/animations/scaleX.animation'
 import { slideTop } from 'src/app/animations/SlideInTop'
@@ -31,7 +38,12 @@ export class ModalV2Component implements OnInit {
 	@Input() component!: any
 	@Input() footer!: any
 
-	isShowing = false
+	isShowing: boolean = false
+	ngOnChanges(changes: any) {
+		if (this.isShowing === false) {
+			this.ready = false
+		}
+	}
 
 	ngOnInit(): void {}
 
