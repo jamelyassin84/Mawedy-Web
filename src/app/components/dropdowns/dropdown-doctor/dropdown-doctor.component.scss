@@ -25,11 +25,12 @@
 }
 
 .dropdown-container {
-	margin-top: -1rem;
+	margin-top: -1.5rem;
 	width: 100%;
 	border: 1px solid var(--border1);
 	max-height: 40vh;
 	overflow-y: auto;
+	box-shadow: var(--dropShadow);
 }
 
 .doctors {

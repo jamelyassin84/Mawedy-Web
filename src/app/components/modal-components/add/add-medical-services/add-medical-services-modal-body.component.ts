@@ -6,6 +6,7 @@ import { BaseService } from 'src/app/services/api/base.api.service'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { HttpClient } from '@angular/common/http'
 import { scaleX } from 'src/app/animations/scaleX.animation'
+import { AlertService } from 'src/app/services/utilities/alert.service'
 
 @Component({
 	selector: 'add-medical-services-modal-body',
@@ -14,7 +15,7 @@ import { scaleX } from 'src/app/animations/scaleX.animation'
 	animations: [listAnimation],
 })
 export class AddMedicalServicesModalBodyComponent implements OnInit {
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private alert: AlertService) {}
 
 	ngOnInit(): void {}
 
@@ -42,8 +43,20 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 	}
 
 	onSelectDoctor(doctor: Doctor) {
+		if (
+			this.selectedDoctor.some(
+				(selectedDoctor: Doctor) => doctor.id === selectedDoctor.id,
+			)
+		) {
+			return this.alert.Fire({
+				title: `Unable to add doctor.`,
+				description: `You already added ${doctor.name}.`,
+				type: 'error',
+			})
+		}
+
 		this.selectedDoctor.push(doctor)
-		this.keyword === ''
+		this.keyword = ''
 	}
 
 	trigger(id: string): void {
