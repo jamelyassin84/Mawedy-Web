@@ -29,7 +29,13 @@
 	border-bottom: 1px solid var(--border1);
 	border-left: 4px solid transparent;
 	width: 100%;
-
+	.icon-side {
+		border-radius: 50%;
+		width: 40px !important;
+		height: 40px !important;
+		background: var(--bg2);
+		margin-right: 2rem;
+	}
 	.icon {
 		width: 5rem;
 	}
@@ -38,6 +44,11 @@
 		border-left: 4px solid var(--accent);
 		.deptname {
 			color: var(--accent);
+			font-family: bold;
+		}
+		.icon-side {
+			color: var(--accent);
+			background: var(--bg1);
 		}
 	}
 }
@@ -86,7 +97,6 @@
 	border: 1px solid var(--border1);
 	&:hover {
 		transform: scale(1.1) !important;
-
 		background-color: var(--bg1);
 	}
 }

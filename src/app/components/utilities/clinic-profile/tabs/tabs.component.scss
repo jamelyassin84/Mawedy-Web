@@ -23,6 +23,11 @@
 		}
 	}
 	margin-top: 23px;
+	margin-bottom: -0.3rem;
+}
+
+.tab-more {
+	background: var(--bg1) !important;
 }
 .item {
 	width: 100%;
@@ -52,4 +57,19 @@
 
 .feather:active {
 	opacity: 0.5;
+}
+
+.more {
+	color: white;
+	background-color: var(--accent);
+	padding: 0.3rem 2rem;
+	.feather {
+		transition: 0.3s ease;
+	}
+	&:hover {
+		.feather {
+			transform: translate(0.4rem, -0.1rem);
+			opacity: 0.8;
+		}
+	}
 }
