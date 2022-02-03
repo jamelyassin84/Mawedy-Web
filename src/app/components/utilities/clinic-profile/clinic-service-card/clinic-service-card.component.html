@@ -1,7 +1,10 @@
 <div class="wrapper d-flex aic">
-	<img [src]="image" alt="" />
-	<div class="text-content ml-3">
+	<div class="text-content mr-3">
 		<div class="title">{{ title }}</div>
+		<span [class.badge-dark]="!available" class="badge badge-success">{{
+			available === true ? 'available' : 'unavailable'
+		}}</span>
 		<div class="description">{{ description }}</div>
 	</div>
+	<img [src]="image" alt="" class="ml-auto" />
 </div>

@@ -17,7 +17,7 @@
 
 	.active {
 		background: var(--tabContainer) 0% 0% no-repeat padding-box;
-		color: var(--accent);
+		color: var(--color1);
 		&:hover {
 			background: var(--tabContainer);
 		}

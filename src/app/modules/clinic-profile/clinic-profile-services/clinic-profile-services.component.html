@@ -21,23 +21,13 @@
 		></app-tabs>
 
 		<div class="tab-container">
-			<div class="row" [@listAnimation]="5">
-				<div
-					class="col-md-4"
-					*ngFor="
-						let item of [
-							'Dental Implant',
-							'Dental Bridge',
-							'Dental Veneers',
-							'Dentures',
-							'Root Canal'
-						]
-					"
-				>
+			<div class="row" [@listAnimation]="services.length">
+				<div class="col-md-4" *ngFor="let service of services">
 					<app-service-card
-						[title]="item"
-						description="Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat. Ut Wisi Enim Ad Minim Veniam.."
-						image="../../../../assets/app/clinic-profile/veneers.png"
+						[title]="service.name"
+						[available]="service.isActive"
+						[description]="service.description"
+						[image]="service.images[0].url"
 					></app-service-card>
 				</div>
 			</div>

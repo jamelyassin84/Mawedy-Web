@@ -9,6 +9,7 @@ export class ClinicServiceCardComponent implements OnInit {
 	@Input() title!: string
 	@Input() description!: string
 	@Input() image!: String
+	@Input() available!: boolean
 
 	constructor() {}
 

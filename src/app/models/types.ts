@@ -130,6 +130,7 @@ export interface ClinicMedicalService extends DateInterface {
 	description: string
 	department: Department
 	clinicDepartmentId?: Clinic
+	images: any
 }
 
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'

@@ -7,6 +7,7 @@ import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
+import { ClinicMedicalService } from 'src/app/models/types'
 
 @Component({
 	selector: 'clinic-profile-services',
@@ -28,6 +29,8 @@ export class ClinicProfileServicesComponent implements OnInit {
 		})
 	}
 
+	services: ClinicMedicalService[] = []
+
 	ngOnInit(): void {
 		this.getDepartments()
 	}
@@ -39,7 +42,7 @@ export class ClinicProfileServicesComponent implements OnInit {
 				next: (data) => {
 					this.tabs = data
 					if (data.length !== 0) {
-						this.activeTab = data[0].id
+						this.setActiveTab(data[0].id)
 					}
 				},
 			})
@@ -52,5 +55,9 @@ export class ClinicProfileServicesComponent implements OnInit {
 		this.getServices(id)
 	}
 
-	getServices(id: number | string) {}
+	getServices(id: number | string) {
+		new BaseService(this.http, `${ROUTES.CLINIC_MEDICAL_SERVICES}/department`)
+			.show(id)
+			.subscribe((data) => (this.services = data))
+	}
 }
