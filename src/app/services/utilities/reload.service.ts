@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs'
+import { BehaviorSubject, Subject } from 'rxjs'
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ReloadService {
-	private reload = new Subject<boolean>()
-	private load = new Subject<boolean>()
+	private reload = new BehaviorSubject<boolean>(false)
+	private load = new BehaviorSubject<boolean>(false)
 
 	willLoad(mode: boolean) {
 		this.load.next(mode)

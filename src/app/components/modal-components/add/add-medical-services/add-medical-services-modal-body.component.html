@@ -1,20 +1,12 @@
 <div class="p-4 pt-0">
 	<div
+		*ngIf="photos.length === 0"
 		role="button"
 		class="mb-3 w-100 d-flex aic jcc"
 		style="flex-direction: column; width: 100"
 	>
 		<label class="text-left w-100">New Medical Service Banners</label>
 		<div (click)="trigger('logo')" class="service-image d-flex aic jcc">
-			<!-- <img
-						role="button"
-						*ngIf="logoSrc"
-						class="clinic-image"
-						style="border-radius: 50%"
-						[src]="logoSrc"
-						alt=""
-						(click)="trigger('file')"
-					/> -->
 			<i-feather class="image-icon" name="image"></i-feather>
 		</div>
 
@@ -22,15 +14,43 @@
 			multiple
 			(change)="readFiles($event)"
 			type="file"
-			id="banners"
-			accept="image/*"
 			style="display: none"
+			accept="image/*"
+			id="logo"
 		/>
 	</div>
 
+	<div *ngIf="photos.length !== 0">
+		<label class="d-flex aic"
+			>New Medical Service Banners
+			<span role="button" (click)="trigger('logo')" class="ml-auto text-primary"
+				>Edit Banners</span
+			></label
+		>
+		<carousel
+			[height]="500"
+			[cellsToShow]="1"
+			[dots]="true"
+			[borderRadius]="5"
+			[margin]="0"
+			[autoplay]="true"
+			[autoplayInterval]="2500"
+			[loop]="true"
+			class="carousel"
+		>
+			<div
+				*ngFor="let image of photos; let i = index"
+				class="carousel-cell"
+				style="background: var(--bg)"
+			>
+				<img style="object-fit: cover" [src]="image" />
+			</div>
+		</carousel>
+	</div>
+
 	<div class="form-group">
-		<label class="text-left w-100">New Medical Service Name</label>
-		<input type="text" class="form-control" />
+		<label for="name" class="text-left w-100">New Medical Service Name</label>
+		<input id="name" [(ngModel)]="name" type="text" class="form-control" />
 	</div>
 
 	<label for="search-doctor" class="text-left w-100">Doctors for this service</label>
@@ -63,7 +83,37 @@
 	></dropdown-doctor>
 
 	<div class="form-group mt-3">
-		<label class="text-left w-100">Description</label>
-		<textarea type="text" class="form-control" placeholder="Aa"></textarea>
+		<label for="desc" class="text-left w-100">Description</label>
+		<textarea
+			id="desc"
+			[(ngModel)]="description"
+			type="text"
+			class="form-control"
+			placeholder="Aa"
+		></textarea>
 	</div>
+
+	<hr />
+
+	<!-- button  -->
+	<div
+		[class.isProcessing]="isProcessing === true"
+		[class.isComplete]="isProcessing === 'complete'"
+		class="d-flex mt-3 w-100"
+	>
+		<button (click)="save()" class="btn btn-add btn-lg w-100">
+			<span *ngIf="isProcessing === 'complete'">
+				<i-feather name="check"></i-feather>
+			</span>
+			<span *ngIf="!isProcessing">Add Medical Service</span>
+
+			<div
+				style="color: var(--accent) !important"
+				*ngIf="isProcessing === true"
+				class="spinner-border text-success"
+				role="status"
+			></div>
+		</button>
+	</div>
+	<!-- button  -->
 </div>

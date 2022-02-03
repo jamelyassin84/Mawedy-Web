@@ -123,6 +123,15 @@ export interface Patient extends DateInterface {
 	avatars: { url: string }[]
 }
 
+export interface ClinicMedicalService extends DateInterface {
+	id?: number
+	name: string
+	isActive: boolean
+	description: string
+	department: Department
+	clinicDepartmentId?: Clinic
+}
+
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
 
 export type AlertType = 'success' | 'info' | 'warning' | 'error'

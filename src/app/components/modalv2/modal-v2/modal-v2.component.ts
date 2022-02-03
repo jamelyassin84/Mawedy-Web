@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core'
 import { fadeIn } from 'src/app/animations/fade-in.animation'
 import { scaleX } from 'src/app/animations/scaleX.animation'
 import { slideTop } from 'src/app/animations/SlideInTop'
@@ -14,11 +14,12 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 	animations: [slideLeft, fadeIn, scaleX, slideTop],
 })
 export class ModalV2Component implements OnInit {
-	constructor(private service: ModalService) {
+	constructor(private service: ModalService, private cdref: ChangeDetectorRef) {
 		this.service.getModalValue().subscribe((value) => (this.isShowing = value))
 	}
 
-	ngAfterViewInit(): void {
+	ngAfterContentChecked() {
+		this.cdref.detectChanges()
 		this.ready = true
 	}
 
@@ -37,7 +38,6 @@ export class ModalV2Component implements OnInit {
 	close(e: any) {
 		e.stopPropagation()
 		this.isShowing = false
-		// do other stuff...
 	}
 
 	click() {

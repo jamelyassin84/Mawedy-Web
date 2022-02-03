@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core'
-import { Observable, Subject } from 'rxjs'
+import { BehaviorSubject, Observable, Subject } from 'rxjs'
 @Injectable({
 	providedIn: 'root',
 })
 export class ModalService {
 	constructor() {}
 
-	private modal = new Subject<boolean>()
+	private modal = new BehaviorSubject<boolean>(false)
 
 	showModal(value: boolean): void {
 		this.modal.next(value)
