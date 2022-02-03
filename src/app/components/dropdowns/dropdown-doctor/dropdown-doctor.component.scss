@@ -33,6 +33,15 @@
 	box-shadow: var(--dropShadow);
 }
 
+.selected {
+	background: var(--page1);
+	border-left: 4px solid var(--accent);
+	.doctor,
+	.feather {
+		color: var(--accent);
+	}
+}
+
 .doctors {
 	display: flex;
 	width: 100%;

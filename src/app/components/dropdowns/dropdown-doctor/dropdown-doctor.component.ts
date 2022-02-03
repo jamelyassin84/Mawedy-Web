@@ -14,7 +14,7 @@ export class DropdownDoctorComponent implements OnInit {
 	@Input() width!: string | number
 
 	@Input() doctors: Doctor[] = []
-	@Input() selectedDoctor: Doctor[] = []
+	@Input() selectedDoctor: Doctor[] | any = []
 
 	@Output() onSelectDoctor = new EventEmitter<Doctor>()
 
@@ -25,7 +25,6 @@ export class DropdownDoctorComponent implements OnInit {
 	filterDoctor() {}
 
 	onSelectedDoctor(doctor: Doctor) {
-		console.log(doctor)
 		this.selectedDoctor.push(doctor)
 		this.onSelectDoctor.emit(doctor)
 	}

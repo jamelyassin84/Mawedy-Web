@@ -4,7 +4,11 @@
 	*ngIf="doctors && doctors.length !== 0"
 >
 	<div *ngFor="let doctor of doctors">
-		<div class="doctors d-flex" (click)="onSelectedDoctor(doctor)">
+		<div
+			[class.selected]="selectedDoctor.includes(doctor.id)"
+			class="doctors d-flex"
+			(click)="onSelectedDoctor(doctor)"
+		>
 			<div class="avatar">
 				<img [src]="doctor.avatar" alt="" />
 			</div>
