@@ -188,4 +188,8 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 				},
 			})
 	}
+
+	closeModal() {
+		this.modalService.showModal(false)
+	}
 }

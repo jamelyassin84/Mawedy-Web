@@ -75,8 +75,10 @@
 			type="text"
 			class="form-control custom"
 			placeholder="Search.."
+			autocomplete="off"
 		/>
 	</div>
+
 	<dropdown-doctor
 		(onSelectDoctor)="onSelectDoctor($event)"
 		[doctors]="doctors"
@@ -95,25 +97,37 @@
 
 	<hr />
 
-	<!-- button  -->
-	<div
-		[class.isProcessing]="isProcessing === true"
-		[class.isComplete]="isProcessing === 'complete'"
-		class="d-flex mt-3 w-100"
-	>
-		<button (click)="save()" class="btn btn-add btn-lg w-100">
-			<span *ngIf="isProcessing === 'complete'">
-				<i-feather name="check"></i-feather>
-			</span>
-			<span *ngIf="!isProcessing">Add Medical Service</span>
+	<div class="d-flex mb-3">
+		<!-- button  -->
+		<div
+			[class.isProcessing]="isProcessing === true"
+			[class.isComplete]="isProcessing === 'complete'"
+			class="d-flex mt-3 w-100"
+		>
+			<button (click)="closeModal()" class="btn btn-cancel mr-2 ml-auto">
+				Cancel
+			</button>
+			<button
+				[disabled]="name === '' || description === '' || selectedDoctor.length === 0"
+				[class.btn-disabled]="
+					name === '' || description === '' || selectedDoctor.length === 0
+				"
+				(click)="save()"
+				class="btn btn-add btn-lg"
+			>
+				<span *ngIf="isProcessing === 'complete'">
+					<i-feather name="check"></i-feather>
+				</span>
+				<span *ngIf="!isProcessing">Add Medical Service</span>
 
-			<div
-				style="color: var(--accent) !important"
-				*ngIf="isProcessing === true"
-				class="spinner-border text-success"
-				role="status"
-			></div>
-		</button>
+				<div
+					style="color: var(--accent) !important"
+					*ngIf="isProcessing === true"
+					class="spinner-border text-success"
+					role="status"
+				></div>
+			</button>
+		</div>
+		<!-- button  -->
 	</div>
-	<!-- button  -->
 </div>

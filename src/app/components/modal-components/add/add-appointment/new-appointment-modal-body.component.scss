@@ -14,9 +14,3 @@
 textarea {
 	height: 190px !important;
 }
-
-@for $i from 1 through 10 {
-	.col-md-12:nth-child(#{$i}n) {
-		animation-delay: #{$i * 0.5}s;
-	}
-}

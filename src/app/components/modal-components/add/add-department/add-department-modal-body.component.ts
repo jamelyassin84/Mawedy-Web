@@ -6,6 +6,7 @@ import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { Department } from 'src/app/models/types'
 import { DepartmentService } from 'src/app/services/components/department.service'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'add-department-modal-body',
@@ -18,6 +19,7 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 		private clinic: ClinicService,
 		private alert: AlertService,
 		private departmentService: DepartmentService,
+		private modalService: ModalService,
 	) {}
 
 	ngOnInit(): void {}
@@ -71,5 +73,9 @@ export class AddDepartmentModalBodyComponent implements OnInit {
 					this.departmentService.setDepartment(data)
 				},
 			})
+	}
+
+	closeModal() {
+		this.modalService.showModal(false)
 	}
 }

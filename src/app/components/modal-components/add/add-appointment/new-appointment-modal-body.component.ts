@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'app-new-appointment-modal-body',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./new-appointment-modal-body.component.scss'],
 })
 export class NewAppointmentModalBodyComponent implements OnInit {
-	constructor() {}
+	constructor(private modalService: ModalService) {}
 
 	ngOnInit(): void {}
+
+	closeModal() {
+		this.modalService.showModal(false)
+	}
 }

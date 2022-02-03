@@ -1,6 +1,7 @@
 <div
 	[@listAnimation]="doctors.length"
 	class="dropdown-container"
+	[class.margin]="selectedDoctor.length === 0"
 	*ngIf="doctors && doctors.length !== 0"
 >
 	<div *ngFor="let doctor of doctors">

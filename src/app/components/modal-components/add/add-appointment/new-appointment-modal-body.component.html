@@ -60,7 +60,18 @@
 
 	<div class="col-md-12 patient-details">Others</div>
 	<div class="col-md-12">
-		<label for="">Notes</label>
+		<label for="">Add Note</label>
 		<textarea placeholder="Aa" class="form-control"></textarea>
+	</div>
+
+	<div class="col-md-12">
+		<hr />
+	</div>
+
+	<div class="col-md-12 d-flex mb-4">
+		<button (click)="closeModal()" class="btn btn-lg btn-cancel mr-2 ml-auto">
+			Cancel
+		</button>
+		<button class="btn btn-lg btn-add">Schedule</button>
 	</div>
 </div>
