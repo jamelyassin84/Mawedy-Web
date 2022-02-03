@@ -1,4 +1,8 @@
-<div class="dropdown-container" *ngIf="doctors && doctors.length !== 0">
+<div
+	[@listAnimation]="doctors.length"
+	class="dropdown-container"
+	*ngIf="doctors && doctors.length !== 0"
+>
 	<div
 		*ngFor="let doctor of doctors"
 		class="doctors d-flex"

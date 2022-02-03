@@ -5,6 +5,7 @@ import { Department } from 'src/app/models/types'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { HttpClient } from '@angular/common/http'
+import { scaleX } from 'src/app/animations/scaleX.animation'
 
 @Component({
 	selector: 'add-medical-services-modal-body',
@@ -36,8 +37,13 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 			})
 	}
 
+	removeDoctor(index: number) {
+		this.selectedDoctor.splice(index, 1)
+	}
+
 	onSelectDoctor(doctor: Doctor) {
 		this.selectedDoctor.push(doctor)
+		this.keyword === ''
 	}
 
 	trigger(id: string): void {

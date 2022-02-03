@@ -37,13 +37,13 @@
 	<div
 		[class.hasBorder]="selectedDoctor.length !== 0"
 		class="doctor-inputs"
-		[@listAnimation]="5"
+		[@listAnimation]="selectedDoctor.length"
 	>
-		<div class="doctor mr-3" *ngFor="let doctor of selectedDoctor">
+		<div class="doctor" *ngFor="let doctor of selectedDoctor; let i = index">
 			<div class="d-flex aic p-2">
 				<img class="doctor-img" [src]="doctor.avatar" alt="" />
 				<div class="text">Dr. {{ doctor.name }}</div>
-				<div class="action ml-4">
+				<div (click)="removeDoctor(i)" class="action ml-4">
 					<i-feather name="delete" class="feather doctor-remove"></i-feather>
 				</div>
 			</div>
@@ -53,11 +53,9 @@
 			[(ngModel)]="keyword"
 			id="search-doctor"
 			type="text"
-			class="form-control"
+			class="form-control custom"
+			placeholder="Search.."
 		/>
-		<div class="icon">
-			<i-feather name="chevron-down" class="feather"></i-feather>
-		</div>
 	</div>
 	<dropdown-doctor
 		(onSelectDoctor)="onSelectDoctor($event)"

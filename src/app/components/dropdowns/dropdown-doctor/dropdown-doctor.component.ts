@@ -1,3 +1,4 @@
+import { listAnimation } from 'src/app/animations/List.animation'
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Doctor } from 'src/app/models/types'
 
@@ -5,6 +6,7 @@ import { Doctor } from 'src/app/models/types'
 	selector: 'dropdown-doctor',
 	templateUrl: './dropdown-doctor.component.html',
 	styleUrls: ['./dropdown-doctor.component.scss'],
+	animations: [listAnimation],
 })
 export class DropdownDoctorComponent implements OnInit {
 	constructor() {}
