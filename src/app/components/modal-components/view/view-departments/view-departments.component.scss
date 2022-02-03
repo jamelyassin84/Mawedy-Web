@@ -27,13 +27,18 @@
 .list-item {
 	padding: 1rem 1rem;
 	border-bottom: 1px solid var(--border1);
+	border-left: 4px solid transparent;
 	width: 100%;
+
 	.icon {
 		width: 5rem;
 	}
 	&:hover {
-		background: var(--bg2);
-		border-radius: 10px;
+		background: var(--page1);
+		border-left: 4px solid var(--accent);
+		.deptname {
+			color: var(--accent);
+		}
 	}
 }
 .rounded {
@@ -51,4 +56,37 @@
 .btn-success {
 	background: var(--accent);
 	color: white;
+	border-radius: 50%;
+	height: 2rem;
+	width: 2rem;
+	padding: 0.2rem;
+	transition: 0.2s linear;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.btn-danger1 {
+	border-radius: 10px;
+	border: 2px solid var(--accent);
+	background-color: var(--bg1);
+	color: var(--accent);
+}
+
+.btn-light1 {
+	border-radius: 50%;
+	height: 2rem;
+	width: 2rem;
+	.feather {
+		transform: scale(2.7) !important;
+	}
+	display: flex;
+	align-items: center;
+	transition: 0.2s linear;
+	border: 1px solid var(--border1);
+	&:hover {
+		transform: scale(1.1) !important;
+
+		background-color: var(--bg1);
+	}
 }

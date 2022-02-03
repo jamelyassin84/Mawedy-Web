@@ -8,6 +8,7 @@ import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
 import { ClinicMedicalService } from 'src/app/models/types'
+import { CurrentDepartmentService } from 'src/app/services/utilities/department.service'
 
 @Component({
 	selector: 'clinic-profile-services',
@@ -20,6 +21,7 @@ export class ClinicProfileServicesComponent implements OnInit {
 		private http: HttpClient,
 		private clinic: ClinicService,
 		private departmentService: DepartmentService,
+		private currentDepartment: CurrentDepartmentService,
 	) {
 		this.departmentService.getDepartments().subscribe((data) => {
 			this.tabs = data
@@ -27,6 +29,10 @@ export class ClinicProfileServicesComponent implements OnInit {
 				this.activeTab = data[0].id
 			}
 		})
+
+		this.currentDepartment
+			.getDepartment()
+			.subscribe((id: number) => this.setActiveTab(id))
 	}
 
 	services: ClinicMedicalService[] = []

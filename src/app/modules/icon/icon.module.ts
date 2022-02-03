@@ -39,6 +39,7 @@ import {
 	GitPullRequest,
 	CheckCircle,
 	Clock,
+	Edit3,
 } from 'angular-feather/icons'
 
 const icons = {
@@ -79,6 +80,7 @@ const icons = {
 	GitPullRequest,
 	CheckCircle,
 	Clock,
+	Edit3,
 }
 
 @NgModule({

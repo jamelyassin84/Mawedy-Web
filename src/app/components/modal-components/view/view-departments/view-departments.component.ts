@@ -1,3 +1,4 @@
+import { ModalService } from 'src/app/services/utilities/modal.service'
 import { DepartmentService } from '../../../../services/components/department.service'
 import { Fire } from 'src/app/constants/Alert'
 import { HttpClient } from '@angular/common/http'
@@ -7,6 +8,7 @@ import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
+import { CurrentDepartmentService } from 'src/app/services/utilities/department.service'
 
 @Component({
 	selector: 'view-departments',
@@ -18,7 +20,9 @@ export class ViewDepartmentsComponent implements OnInit {
 		private clinic: ClinicService,
 		private http: HttpClient,
 		private departmentService: DepartmentService,
+		private currentDepartment: CurrentDepartmentService,
 		private alert: AlertService,
+		private modalService: ModalService,
 	) {
 		this.departmentService.getDepartments().subscribe((data) => {
 			this.departments = data
@@ -39,6 +43,11 @@ export class ViewDepartmentsComponent implements OnInit {
 					this.departmentService.setDepartment(data)
 				},
 			})
+	}
+
+	showDepartment(department: Department) {
+		this.currentDepartment.setDepartment(department.id as number)
+		this.modalService.showModal(false)
 	}
 
 	removeDepartment(id: any) {

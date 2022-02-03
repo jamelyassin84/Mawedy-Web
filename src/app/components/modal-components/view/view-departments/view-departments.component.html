@@ -11,13 +11,14 @@
 		<div
 			role="button"
 			class="d-flex list-item aic"
+			(click)="showDepartment(department)"
 			*ngFor="let department of departments"
 		>
 			<div class="icon">
 				<i-feather name="git-pull-request" class="feather"></i-feather>
 			</div>
-			<div class="icon" style="flex: 1">{{ department.name }}</div>
-			<div class="d-flex">
+			<div class="icon deptname" style="flex: 1">{{ department.name }}</div>
+			<div class="d-flex" click-stop-propagation>
 				<ng-template #addBtn>
 					<div class="btn btn-success mr-2">
 						<i-feather name="plus" class="feather"></i-feather>
@@ -41,9 +42,15 @@
 						<button class="btn btn-lg btn-light mr-2">Cancel</button>
 					</div>
 				</ng-template>
-				<div class="btn btn-light mr-2">Edit</div>
-				<div (click)="removeDepartment(department.id)" class="btn btn-danger mr-2">
-					Remove
+
+				<div class="btn btn-light1 mr-2">
+					<i-feather name="edit-3" class="feather"></i-feather>
+				</div>
+				<div
+					(click)="removeDepartment(department.id)"
+					class="btn btn-danger1 mr-2 d-flex aic"
+				>
+					Delete
 				</div>
 			</div>
 		</div>
