@@ -1,46 +1,56 @@
 <div class="row">
 	<div class="col-md-12">
-		<label for="">Select Patient</label>
+		<label for="">Select a patient</label>
 		<input type="search" class="form-control" placeholder="" />
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select Department</label>
+		<label for="">Select a department</label>
 		<select class="form-control"></select>
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select Medical Service</label>
+		<label for="">Select a medical service</label>
 		<input type="search" class="form-control" placeholder="" />
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select doctor</label>
+		<label for="">Select a doctor</label>
 		<div
 			[class.hasBorder]="selectedDoctor.length !== 0"
 			class="doctor-inputs"
 			[@listAnimation]="selectedDoctor.length"
 		>
 			<div class="doctor" *ngFor="let doctor of selectedDoctor; let i = index">
-				<div class="d-flex aic p-2">
+				<div class="d-flex aic p-2 w-100">
 					<img class="doctor-img" [src]="doctor.avatar" alt="" />
-					<div class="text">Dr. {{ doctor.name }}</div>
-					<div (click)="removeDoctor(i)" class="action ml-4">
+					<div class="text w-100 ml-3">
+						<div class="doctor-name">Dr. {{ doctor.name }}</div>
+						<span class="ml-auto badge badge-success mb-2">Available today</span>
+						<div class="doctor-title">{{ doctor.title }}</div>
+						<div class="profession">{{ doctor.profession }}</div>
+						<div class="profession">
+							{{ doctor.yearsOfExperience }} Years Experience
+						</div>
+					</div>
+					<div (click)="removeDoctor(i)" class="action ml-auto">
 						<i-feather name="delete" class="feather doctor-remove"></i-feather>
 					</div>
 				</div>
 			</div>
 			<input
+				*ngIf="selectedDoctor.length === 0"
 				(input)="selectDoctor()"
 				[(ngModel)]="doctorKeyword"
 				id="search-doctor"
 				type="text"
 				class="form-control custom"
-				placeholder="Search Doctor"
+				placeholder="Search a doctor.."
 				autocomplete="off"
 			/>
 		</div>
 		<dropdown-doctor
+			*ngIf="selectedDoctor.length === 0"
 			(onSelectDoctor)="onSelectDoctor($event)"
 			[doctors]="doctors"
 		></dropdown-doctor>

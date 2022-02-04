@@ -4,6 +4,7 @@
 html,
 body {
 	overflow-x: hidden;
+	background: var(--bg2) !important;
 }
 
 .page {
@@ -132,6 +133,7 @@ SELECT {
 .form-control:focus {
 	box-shadow: 0 0 0 0.2rem #00b0759c, rgba(93, 185, 105, 0.563) 0px 3px 15px 0px;
 	border: none !important;
+	background: var(--bg1);
 }
 
 .modal-header {

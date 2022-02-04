@@ -16,12 +16,11 @@ textarea {
 }
 
 .doctor-inputs {
-	min-height: 60px !important;
 	width: 100%;
-	margin-bottom: 20px;
-	background-color: var(--bg);
+	margin-bottom: 3rem;
+	background: var(--bg1);
 	position: relative;
-	padding-right: 0px;
+	border-radius: 5px;
 	.icon {
 		position: absolute;
 		right: 1rem;
@@ -32,19 +31,16 @@ textarea {
 }
 .hasBorder {
 	border: 2px solid var(--border1);
-	padding: 1rem;
-	.custom {
-		background-color: var(--bg2) !important;
-		border-radius: 10px;
-		margin-bottom: 0;
-	}
+	padding: 0.5rem;
 }
 .doctor-img {
 	margin-right: 0.5rem;
 	border-radius: 50% !important;
 	vertical-align: middle;
-	height: 2rem;
-	width: 2rem;
+	height: 4rem;
+	width: 4rem;
+	box-shadow: var(--dropShadow);
+	border: 2px solid var(--bg1);
 }
 .custom {
 	padding: 0.5rem;
@@ -54,22 +50,18 @@ textarea {
 }
 
 .doctor {
-	margin-bottom: 1rem;
-	border-radius: 10px;
-	display: inline-block;
-	background: var(--bg2);
 	padding-bottom: 0;
-	margin-right: 1.2rem;
-	border: 1px solid var(--border1);
+	width: 100%;
 	.text {
 		color: var(--color1);
-		width: 103px;
 		font-size: 0.8rem;
 		line-height: 0.8rem;
+		width: 70%;
 	}
 
 	.doctor-remove {
 		color: var(--color1);
+		cursor: pointer;
 		&:hover {
 			color: #e66f7a;
 		}
@@ -78,4 +70,21 @@ textarea {
 			transform: scale(0.9);
 		}
 	}
+}
+
+.doctor-name {
+	font-size: 1.1rem;
+	font-family: bold;
+	margin-bottom: 0.3rem;
+	color: var(--color1);
+}
+
+.doctor-title,
+.profession {
+	margin-top: 0.3rem;
+	color: var(--color2);
+	margin-bottom: 0.3rem;
+}
+.profession {
+	margin-bottom: 0rem;
 }

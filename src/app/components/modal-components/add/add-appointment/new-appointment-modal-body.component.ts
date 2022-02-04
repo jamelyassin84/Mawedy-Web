@@ -57,6 +57,7 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 			})
 		}
 
+		this.selectedDoctor = []
 		this.selectedDoctor.push(doctor)
 		this.doctorKeyword = ''
 	}

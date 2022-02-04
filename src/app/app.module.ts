@@ -56,6 +56,8 @@ import { NoInternetComponent } from './pages/redirects/no-internet/no-internet.c
 import { WhosAccountComponent } from './components/modals/whos-account/whos-account.component'
 import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doctor-badges/doctor-badges.component'
 import { AlertComponent } from './components/utilities/common/alert/alert.component'
+import { ServiceWorkerModule } from '@angular/service-worker'
+import { environment } from '../environments/environment'
 
 @NgModule({
 	declarations: [
@@ -102,7 +104,7 @@ import { AlertComponent } from './components/utilities/common/alert/alert.compon
 		//Third Modules
 		IvyCarouselModule,
 		IconsModule,
-		StoreModule.forRoot(modalReducer),
+
 		//Shared Modules
 		AppointmentsModule,
 		ClinicProfileModule,
@@ -110,7 +112,13 @@ import { AlertComponent } from './components/utilities/common/alert/alert.compon
 		DoctorsProfileModule,
 		PatientsModule,
 		PromotionsModule,
-		StoreModule.forRoot({}, {}),
+
+		// Modules with config
+		StoreModule.forRoot(modalReducer),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production,
+			registrationStrategy: 'registerWhenStable:30000',
+		}),
 	],
 	providers: [
 		{
