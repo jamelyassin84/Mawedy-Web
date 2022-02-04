@@ -16,7 +16,34 @@
 
 	<div class="col-md-12">
 		<label for="">Select doctor</label>
-		<select class="form-control"></select>
+		<div
+			[class.hasBorder]="selectedDoctor.length !== 0"
+			class="doctor-inputs"
+			[@listAnimation]="selectedDoctor.length"
+		>
+			<div class="doctor" *ngFor="let doctor of selectedDoctor; let i = index">
+				<div class="d-flex aic p-2">
+					<img class="doctor-img" [src]="doctor.avatar" alt="" />
+					<div class="text">Dr. {{ doctor.name }}</div>
+					<div (click)="removeDoctor(i)" class="action ml-4">
+						<i-feather name="delete" class="feather doctor-remove"></i-feather>
+					</div>
+				</div>
+			</div>
+			<input
+				(input)="selectDoctor()"
+				[(ngModel)]="doctorKeyword"
+				id="search-doctor"
+				type="text"
+				class="form-control custom"
+				placeholder="Search Doctor"
+				autocomplete="off"
+			/>
+		</div>
+		<dropdown-doctor
+			(onSelectDoctor)="onSelectDoctor($event)"
+			[doctors]="doctors"
+		></dropdown-doctor>
 	</div>
 
 	<div class="col-md-6">
@@ -24,7 +51,7 @@
 		<input type="date" class="form-control" />
 	</div>
 
-	<div class="col-md-12">
+	<div class="col-md-6">
 		<label for="">Select time slot</label>
 		<input type="date" class="form-control" />
 	</div>

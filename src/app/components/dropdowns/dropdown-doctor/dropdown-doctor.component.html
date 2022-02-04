@@ -3,6 +3,7 @@
 	class="dropdown-container"
 	[class.margin]="selectedDoctor.length === 0"
 	*ngIf="doctors && doctors.length !== 0"
+	role="button"
 >
 	<div *ngFor="let doctor of doctors">
 		<div

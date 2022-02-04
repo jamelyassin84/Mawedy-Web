@@ -5,9 +5,11 @@
 		*ngFor="let tab of tabs"
 		class="tab"
 	>
-		<span class="tab-text mr-2" [class.bold]="activeTab === tab.id">{{
-			tab.name
-		}}</span>
+		<span class="tab-text mr-2" [class.bold]="activeTab === tab.id">
+			<i-feather [name]="tab.icon" class="feather mr-3"></i-feather>
+
+			{{ tab.name }}
+		</span>
 		<span class="badge badge-dark">20</span>
 		<div class="border-div"></div>
 	</div>
