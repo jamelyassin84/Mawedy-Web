@@ -71,8 +71,8 @@
 		</div>
 		<div class="col-md-4 mt-4">
 			<div class="form-group">
-				<label for="Specialties">Specialties</label>
-				<input
+				<label for="Specialties">Department</label>
+				<select
 					type="text"
 					id="specialties"
 					formControlName="specialties"
@@ -81,10 +81,14 @@
 						doctorForm.get('specialties')?.touched
 					"
 					class="form-control"
-				/>
+				>
+					<option selected disabled></option>
+					<option *ngFor="let department of departments">
+						{{ department.name }}
+					</option>
+				</select>
 				<div class="invalid-feedback">
-					<div class="text=danger">Doctor's specialties is required.</div>
-					<div class="text=danger">Must have at least 3 characters.</div>
+					<div class="text=danger">Doctor's department is required.</div>
 				</div>
 			</div>
 

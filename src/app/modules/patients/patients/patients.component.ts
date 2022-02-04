@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
-import { resolveAddress, resolveName } from 'src/app/constants/App.functions'
+import {
+	resolveAddress,
+	resolveAge,
+	resolveName,
+} from 'src/app/constants/App.functions'
 import { Patient } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
@@ -37,5 +41,9 @@ export class PatientsComponent implements OnInit {
 
 	resolveAddress(patient: Patient) {
 		return resolveAddress(patient)
+	}
+
+	resolveAge(patient: Patient) {
+		return resolveAge(patient.dob)
 	}
 }

@@ -83,19 +83,6 @@
 					class="form-control"
 				/>
 			</div>
-
-			<div class="col-md-2">
-				<label class="d-flex" for="middle"
-					>Extension <span class="ml-auto text-info">(Optional)</span>
-				</label>
-				<input
-					type="text"
-					id="ext"
-					formControlName="ext"
-					[class.is-invalid]="form.get('ext')?.invalid && form.get('ext')?.touched"
-					class="form-control"
-				/>
-			</div>
 		</div>
 
 		<div class="row">
@@ -113,16 +100,6 @@
 				</div>
 			</div>
 
-			<div class="col-md-2">
-				<label for="age">Age</label>
-				<input
-					placeholder="Auto-computed"
-					type="number"
-					disabled
-					id="age"
-					class="form-control"
-				/>
-			</div>
 			<div class="col-md-4">
 				<label for="">Sex</label>
 				<div class="d-flex aic">

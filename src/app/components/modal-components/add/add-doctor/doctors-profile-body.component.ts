@@ -1,3 +1,4 @@
+import { Department } from './../../../../models/types'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { ClinicDoctorWorkingSchedule, Doctor } from '../../../../models/types'
 import { Component, OnInit } from '@angular/core'
@@ -18,6 +19,7 @@ export class DoctorsProfileBodyComponent implements OnInit {
 		private clinicService: ClinicService,
 		private http: HttpClient,
 		private alert: AlertService,
+		private clinic: ClinicService,
 	) {}
 
 	workingSchedules: ClinicDoctorWorkingSchedule[] = []
@@ -29,6 +31,19 @@ export class DoctorsProfileBodyComponent implements OnInit {
 				isActive: false,
 			})
 		}
+		this.getDepartments()
+	}
+
+	departments: Department[] = []
+
+	getDepartments() {
+		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
+			.show(this.clinic.getID())
+			.subscribe({
+				next: (data: Department[]) => {
+					this.departments = data
+				},
+			})
 	}
 
 	isProcessing: boolean | 'complete' = false

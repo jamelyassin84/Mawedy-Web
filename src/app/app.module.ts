@@ -57,7 +57,9 @@ import { WhosAccountComponent } from './components/modals/whos-account/whos-acco
 import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doctor-badges/doctor-badges.component'
 import { AlertComponent } from './components/utilities/common/alert/alert.component'
 import { ServiceWorkerModule } from '@angular/service-worker'
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { DropdownPatientsComponent } from './components/dropdowns/dropdown-patients/dropdown-patients.component';
+import { DropdownMedicalServicesComponent } from './components/dropdowns/dropdown-medical-services/dropdown-medical-services.component'
 
 @NgModule({
 	declarations: [
@@ -90,6 +92,8 @@ import { environment } from '../environments/environment'
 		NoInternetComponent,
 		WhosAccountComponent,
 		DoctorBadgesComponent,
+  DropdownPatientsComponent,
+  DropdownMedicalServicesComponent,
 	],
 	imports: [
 		//Angular Modules

@@ -28,8 +28,8 @@
 						</div>
 					</td>
 					<td>{{ resolveName(patient) }}</td>
-					<td>{{ patient.dob }} Yrs.</td>
-					<td>{{ patient.emails[0].email }} Yrs.</td>
+					<td>{{ resolveAge(patient) }} Yrs.</td>
+					<td>{{ patient.emails[0].email }}</td>
 					<td>{{ patient.phones[0].phone }}</td>
 					<td>{{ resolveAddress(patient) }}</td>
 					<td>{{ patient.type }}</td>
