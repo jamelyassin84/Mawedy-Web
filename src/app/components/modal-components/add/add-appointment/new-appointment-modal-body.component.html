@@ -27,8 +27,7 @@
 				<div class="d-flex aic p-2 w-100">
 					<img class="doctor-img" [src]="doctor.avatar" alt="" />
 					<div class="text w-100 ml-3">
-						<div class="doctor-name">Dr. {{ doctor.name }}</div>
-						<span class="ml-auto badge badge-success mb-2">Available today</span>
+						<div class="doctor-name mb-1">Dr. {{ doctor.name }}</div>
 						<div class="doctor-title">{{ doctor.title }}</div>
 						<div class="profession">{{ doctor.profession }}</div>
 						<div class="profession">
@@ -65,7 +64,7 @@
 
 	<div class="col-md-6">
 		<label for="">Select time slot</label>
-		<input type="date" class="form-control" />
+		<input type="time" class="form-control" />
 	</div>
 
 	<div class="col-md-12">
