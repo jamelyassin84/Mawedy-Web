@@ -148,7 +148,11 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	save() {
 		const doctor: Doctor = this.selectedDoctor[0]
+
 		const patient: Patient = this.selectedPatient[0]
+
+		const service: ClinicMedicalService = this.selectedMedicalServices[0]
+
 		this.isProcessing = true
 
 		new BaseService(this.http, ROUTES.CLINIC_APPOINTMENTS)
@@ -160,10 +164,33 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 				clinic: this.clinic.getID(),
 				patient: patient,
 				doctor: doctor,
+				service: service,
 				clinicPromotion: null,
 			})
 			.subscribe({
 				next: () => {
+					this.appointMentDate = ''
+
+					this.appointMentTime = ''
+
+					this.selectedDoctor = []
+
+					this.selectedPatient = []
+
+					this.selectMedicalService = {} as any
+
+					this.doctorKeyword = ''
+
+					this.medicalServiceKeyword = ''
+
+					this.patientKeyword = ''
+
+					this.selectDoctor()
+
+					this.selectPatient()
+
+					this.selectMedicalService()
+
 					this.alert.Fire({
 						title: `New Appointment Added!`,
 						description: `You have successfully scheduled ${this.resolveName(
@@ -173,7 +200,10 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 						}.`,
 						type: 'success',
 					})
+
 					this.isProcessing = 'complete'
+
+					this.isProcessing = true
 				},
 				error: () => {
 					this.isProcessing = false
