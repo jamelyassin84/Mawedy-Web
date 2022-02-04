@@ -40,8 +40,8 @@
 
 	<div class="col-md-12">
 		<label for="">Department</label>
-		<select [(ngModel)]="selectedDepartment" class="form-control">
-			<option *ngFor="let department of departments" [value]="department">
+		<select (change)="selectDepartment($event)" class="form-control">
+			<option *ngFor="let department of departments" [value]="department.id">
 				{{ department.name }}
 			</option>
 		</select>
@@ -128,17 +128,24 @@
 
 	<div class="col-md-6">
 		<label for="">Select Date</label>
-		<input type="date" class="form-control" />
+		<input [(ngModel)]="appointMentDate" type="date" class="form-control" />
 	</div>
 
 	<div class="col-md-6">
 		<label for="">Select time slot</label>
-		<input type="time" class="form-control" />
+		<input [(ngModel)]="appointMentTime" type="time" class="form-control" />
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Add Note</label>
-		<textarea placeholder="Aa" class="form-control"></textarea>
+		<label for="note" class="d-flex aic"
+			>Add Note <span class="ml-auto text-info small mr-2">(Optional)</span></label
+		>
+		<textarea
+			[(ngModel)]="notes"
+			id="note"
+			placeholder="Aa"
+			class="form-control"
+		></textarea>
 	</div>
 
 	<div class="col-md-12">
@@ -149,6 +156,43 @@
 		<button (click)="closeModal()" class="btn btn-lg btn-cancel mr-2 ml-auto">
 			Cancel
 		</button>
-		<button class="btn btn-lg btn-add">Schedule</button>
+		<div
+			(click)="save()"
+			[class.isProcessing]="isProcessing === true"
+			[class.isComplete]="isProcessing === 'complete'"
+			class="d-flex"
+		>
+			<button
+				[disabled]="
+					selectedDoctor.length === 0 ||
+					selectedDoctor.length === 0 ||
+					selectedMedicalServices.length === 0 ||
+					selectedDepartment === undefined ||
+					appointMentDate === undefined ||
+					appointMentTime === undefined
+				"
+				[class.btn-disabled]="
+					selectedDoctor.length === 0 ||
+					selectedDoctor.length === 0 ||
+					selectedMedicalServices.length === 0 ||
+					selectedDepartment === undefined ||
+					appointMentDate === undefined ||
+					appointMentTime === undefined
+				"
+				class="btn btn-add btn-lg w-100"
+			>
+				<span *ngIf="isProcessing === 'complete'">
+					<i-feather name="check"></i-feather>
+				</span>
+				<span *ngIf="!isProcessing"> Schedule </span>
+
+				<div
+					style="color: var(--accent) !important"
+					*ngIf="isProcessing === true"
+					class="spinner-border text-success"
+					role="status"
+				></div>
+			</button>
+		</div>
 	</div>
 </div>

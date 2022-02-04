@@ -1,10 +1,10 @@
+import { ROUTES } from './../../../../routes/api.routes'
 import { listAnimation } from './../../../../animations/List.animation'
 import { ClinicMedicalService, Patient } from './../../../../models/types'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { Department, Doctor } from 'src/app/models/types'
-import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
@@ -30,19 +30,25 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	doctors: Doctor[] = []
 
-	selectedDoctor: Doctor[] = []
-
 	patients: Patient[] = []
-
-	selectedPatient: Patient[] = []
 
 	medicalServices: ClinicMedicalService[] = []
 
-	selectedMedicalServices: ClinicMedicalService[] = []
-
 	departments: Department[] = []
 
-	selectedDepartment!: Department
+	selectedPatient: Patient[] = []
+
+	selectedDepartment!: number
+
+	selectedDoctor: Doctor[] = []
+
+	selectedMedicalServices: ClinicMedicalService[] = []
+
+	appointMentDate!: string | any
+
+	appointMentTime!: string | any
+
+	notes: string | null = null
 
 	isProcessing: boolean | 'complete' = false
 
@@ -58,9 +64,13 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 			.subscribe({
 				next: (data: Department[]) => {
 					this.departments = data
-					this.selectedDepartment = data[0]
+					this.selectedDepartment = data[0].id as number
 				},
 			})
+	}
+
+	selectDepartment(event: any) {
+		this.selectedDepartment = event.target.value as number
 	}
 
 	selectPatient() {
@@ -95,7 +105,7 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 		new BaseService(this.http, `${ROUTES.CLINIC_MEDICAL_SERVICES}/search`)
 			.create({
 				keyword: this.medicalServiceKeyword,
-				department: this.selectedDepartment.id,
+				department: this.selectedDepartment,
 			})
 			.subscribe({
 				next: (medicalServices: ClinicMedicalService[]) => {
@@ -118,7 +128,6 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 		new BaseService(this.http, `${ROUTES.DOCTOR}/search`)
 			.create({
 				keyword: this.doctorKeyword,
-				service: this.selectedMedicalServices[0].id,
 			})
 			.subscribe({
 				next: (doctors: Doctor[]) => {
@@ -138,8 +147,38 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 	}
 
 	save() {
-		const doctor = this.selectedDoctor[0]
-		const patient = this.selectedPatient[0]
+		const doctor: Doctor = this.selectedDoctor[0]
+		const patient: Patient = this.selectedPatient[0]
+		this.isProcessing = true
+
+		new BaseService(this.http, ROUTES.CLINIC_APPOINTMENTS)
+			.create({
+				appointment_type: 'walk-in',
+				bookedThrough: 'walk-in',
+				date: this.appointMentDate,
+				time: this.appointMentTime,
+				clinic: this.clinic.getID(),
+				patient: patient,
+				doctor: doctor,
+				clinicPromotion: null,
+			})
+			.subscribe({
+				next: () => {
+					this.alert.Fire({
+						title: `New Appointment Added!`,
+						description: `You have successfully scheduled ${this.resolveName(
+							patient,
+						)} to Dr. ${doctor.name} on ${this.appointMentDate} - ${
+							this.appointMentTime
+						}.`,
+						type: 'success',
+					})
+					this.isProcessing = 'complete'
+				},
+				error: () => {
+					this.isProcessing = false
+				},
+			})
 	}
 
 	closeModal() {
