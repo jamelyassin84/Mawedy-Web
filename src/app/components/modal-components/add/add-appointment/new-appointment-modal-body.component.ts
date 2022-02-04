@@ -1,7 +1,7 @@
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { Doctor } from 'src/app/models/types'
+import { Department, Doctor } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
@@ -17,18 +17,32 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 		private http: HttpClient,
 		private alert: AlertService,
 		private modalService: ModalService,
-		private clinicService: ClinicService,
+		private clinic: ClinicService,
 	) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.getDepartments()
+	}
 
 	doctors: Doctor[] = []
+
+	departments: Department[] = []
 
 	selectedDoctor: Doctor[] = []
 
 	isProcessing: boolean | 'complete' = false
 
 	doctorKeyword: string = ''
+
+	getDepartments() {
+		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
+			.show(this.clinic.getID())
+			.subscribe({
+				next: (data: Department[]) => {
+					this.departments = data
+				},
+			})
+	}
 
 	selectDoctor() {
 		new BaseService(this.http, `${ROUTES.DOCTOR}/search`)
@@ -60,6 +74,10 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 		this.selectedDoctor = []
 		this.selectedDoctor.push(doctor)
 		this.doctorKeyword = ''
+	}
+
+	save() {
+		const doctor = this.selectedDoctor[0]
 	}
 
 	closeModal() {

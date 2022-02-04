@@ -6,7 +6,9 @@
 
 	<div class="col-md-12">
 		<label for="">Select a department</label>
-		<select class="form-control"></select>
+		<select class="form-control">
+			<option *ngFor="let department of departments">{{ department.name }}</option>
+		</select>
 	</div>
 
 	<div class="col-md-12">
