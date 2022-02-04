@@ -133,6 +133,52 @@ export interface ClinicMedicalService extends DateInterface {
 	images: any
 }
 
+export interface Appointment extends DateInterface {
+	id?: number
+	bookedThrough: 'app' | 'walk-in'
+	appointment_type: 'app' | 'walk-in'
+	date: string
+	time: string
+	comments: string | null
+	status: 'pending' | 'canceled' | 'attended' | null
+	booking_reference: string
+	clinic: Clinic
+	patient: Patient
+	doctor: Doctor
+	clinicPromotion: ClinicPromotion
+	clinicMedicalService: ClinicMedicalService
+	followUp: PatientBookingFollowUp
+	patientBookingList: PatientBookingList
+}
+
+export interface ClinicPromotion extends DateInterface {
+	id: number
+	valid_until: Date
+	highlights: string
+	termsAndConditions: string
+	startAt: string
+	discount: number
+	isActive: boolean
+	clinic: Clinic
+}
+
+export interface PatientBookingFollowUp extends DateInterface {
+	id: number
+	should_follow_up: boolean
+	patientBookingList: PatientBookingList
+	clinicAppointment: Appointment
+}
+
+export interface PatientBookingList extends DateInterface {
+	id: number
+	hasCanceled: boolean
+	hasResult: boolean
+	referenceNumber: number
+	doctor: Doctor
+	clinic: Clinic
+	clinicAppointment: Appointment
+}
+
 export type Day = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
 
 export type AlertType = 'success' | 'info' | 'warning' | 'error'

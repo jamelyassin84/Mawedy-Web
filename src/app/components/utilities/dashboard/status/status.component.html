@@ -1,3 +1,7 @@
-<div class="outer mr-2" [class.active]="active">
+<div
+	class="outer mr-2"
+	[class.active]="active === 'attended'"
+	[class.pending]="active === 'pending'"
+>
 	<div class="inner"></div>
 </div>

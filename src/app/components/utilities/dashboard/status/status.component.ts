@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core'
 export class StatusComponent implements OnInit {
 	constructor() {}
 
-	@Input() active: boolean = false
+	@Input() active: boolean | 'pending' | 'canceled' | 'attended' | null = false
 
 	ngOnInit(): void {}
 }

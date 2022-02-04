@@ -19,22 +19,20 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody [@listAnimation]="5">
-				<tr *ngFor="let item of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; let i = index">
-					<td>10 December</td>
-					<td>10:30 AM - 11:00 AM</td>
-					<td>Riyad Abdallah</td>
-					<td>Dr. Hanadi Yassin</td>
-					<td>Returning Patient</td>
+			<tbody [@listAnimation]="appointments.length">
+				<tr *ngFor="let appointment of appointments; let i = index">
+					<td>{{ appointment.date | date: 'dd, MMMM' }}</td>
+					<td>{{ appointment.time }}</td>
+					<td>{{ resolveName(appointment.patient) }}</td>
+					<td>{{ appointment.doctor.name }}</td>
+					<td>{{ appointment.appointment_type }}t</td>
 					<td class="d-flex aic">
-						<app-status [active]="i == 0 ? true : false"></app-status>
-						Cancelled
+						<app-status [active]="appointment.status"></app-status>
+						{{ appointment.status | titlecase }}
 					</td>
-					<td>AA586468870</td>
+					<td>{{ appointment.booking_reference | uppercase }}</td>
 					<td>
-						<span (click)="showModal(header, body, footer)" class="underlined"
-							>Details</span
-						>
+						<span class="underlined">Details</span>
 					</td>
 				</tr>
 			</tbody>
