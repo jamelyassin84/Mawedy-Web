@@ -49,9 +49,9 @@ textarea {
 
 .doctor {
 	padding: 0.8rem;
-	padding-bottom: 0;
 	width: 100%;
 	box-shadow: var(--dropShadow1);
+	border: 1px solid var(--border1);
 	.text {
 		color: var(--color1);
 		font-size: 0.8rem;

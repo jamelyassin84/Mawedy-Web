@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<label for="">Patient</label>
 		<div [class.hasBorder]="selectedPatient.length !== 0" class="doctor-inputs">
-			<div [@listAnimation]="selectedDoctor.length">
+			<div [@listAnimation]="selectedPatient.length">
 				<div class="doctor" *ngFor="let patient of selectedPatient; let i = index">
 					<div class="d-flex aic p-2 w-100">
 						<img class="doctor-img" [src]="patient.avatars[0].url" alt="" />
@@ -40,14 +40,51 @@
 
 	<div class="col-md-12">
 		<label for="">Department</label>
-		<select class="form-control">
-			<option *ngFor="let department of departments">{{ department.name }}</option>
+		<select [(ngModel)]="selectedDepartment" class="form-control">
+			<option *ngFor="let department of departments" [value]="department">
+				{{ department.name }}
+			</option>
 		</select>
 	</div>
 
 	<div class="col-md-12">
 		<label for="">Medical Service</label>
-		<input type="search" class="form-control" placeholder="" />
+		<div
+			[class.hasBorder]="selectedMedicalServices.length !== 0"
+			class="doctor-inputs"
+		>
+			<div [@listAnimation]="selectedMedicalServices.length">
+				<div
+					class="doctor"
+					*ngFor="let service of selectedMedicalServices; let i = index"
+				>
+					<div class="d-flex aic p-2 w-100">
+						<img class="doctor-img" [src]="service.images[0].url" alt="" />
+						<div class="text w-100 ml-3">
+							<div class="doctor-name mb-2">{{ service.name }}</div>
+						</div>
+						<div (click)="removeMedicalService(i)" class="action ml-auto">
+							<i-feather name="delete" class="feather doctor-remove"></i-feather>
+						</div>
+					</div>
+				</div>
+				<input
+					*ngIf="selectedMedicalServices.length === 0"
+					(input)="selectMedicalService()"
+					[(ngModel)]="medicalServiceKeyword"
+					id="search-doctor"
+					type="text"
+					class="form-control custom"
+					placeholder="Search a medical service.."
+					autocomplete="off"
+				/>
+			</div>
+		</div>
+		<dropdown-medical-services
+			*ngIf="selectedMedicalServices.length === 0"
+			(onSelectMedicalService)="onSelectMedicalService($event)"
+			[medicalServices]="medicalServices"
+		></dropdown-medical-services>
 	</div>
 
 	<div class="col-md-12">

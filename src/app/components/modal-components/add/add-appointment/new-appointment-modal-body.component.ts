@@ -1,5 +1,5 @@
 import { listAnimation } from './../../../../animations/List.animation'
-import { Patient } from './../../../../models/types'
+import { ClinicMedicalService, Patient } from './../../../../models/types'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
@@ -36,7 +36,13 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	selectedPatient: Patient[] = []
 
+	medicalServices: ClinicMedicalService[] = []
+
+	selectedMedicalServices: ClinicMedicalService[] = []
+
 	departments: Department[] = []
+
+	selectedDepartment!: Department
 
 	isProcessing: boolean | 'complete' = false
 
@@ -44,34 +50,17 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	patientKeyword: string = ''
 
+	medicalServiceKeyword: string = ''
+
 	getDepartments() {
 		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
 			.show(this.clinic.getID())
 			.subscribe({
 				next: (data: Department[]) => {
 					this.departments = data
+					this.selectedDepartment = data[0]
 				},
 			})
-	}
-
-	selectDoctor() {
-		new BaseService(this.http, `${ROUTES.DOCTOR}/search`)
-			.create({ keyword: this.doctorKeyword })
-			.subscribe({
-				next: (doctors: Doctor[]) => {
-					this.doctors = doctors
-				},
-			})
-	}
-
-	removeDoctor(index: number) {
-		this.selectedDoctor.splice(index, 1)
-	}
-
-	onSelectDoctor(doctor: Doctor) {
-		this.selectedDoctor = []
-		this.selectedDoctor.push(doctor)
-		this.doctorKeyword = ''
 	}
 
 	selectPatient() {
@@ -100,6 +89,52 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	resolveAge(patient: Patient): number {
 		return resolveAge(patient.dob)
+	}
+
+	selectMedicalService() {
+		new BaseService(this.http, `${ROUTES.CLINIC_MEDICAL_SERVICES}/search`)
+			.create({
+				keyword: this.medicalServiceKeyword,
+				department: this.selectedDepartment.id,
+			})
+			.subscribe({
+				next: (medicalServices: ClinicMedicalService[]) => {
+					this.medicalServices = medicalServices
+				},
+			})
+	}
+
+	removeMedicalService(index: number) {
+		this.selectedMedicalServices.splice(index, 1)
+	}
+
+	onSelectMedicalService(medicalService: ClinicMedicalService) {
+		this.selectedMedicalServices = []
+		this.selectedMedicalServices.push(medicalService)
+		this.medicalServiceKeyword = ''
+	}
+
+	selectDoctor() {
+		new BaseService(this.http, `${ROUTES.DOCTOR}/search`)
+			.create({
+				keyword: this.doctorKeyword,
+				service: this.selectedMedicalServices[0].id,
+			})
+			.subscribe({
+				next: (doctors: Doctor[]) => {
+					this.doctors = doctors
+				},
+			})
+	}
+
+	removeDoctor(index: number) {
+		this.selectedDoctor.splice(index, 1)
+	}
+
+	onSelectDoctor(doctor: Doctor) {
+		this.selectedDoctor = []
+		this.selectedDoctor.push(doctor)
+		this.doctorKeyword = ''
 	}
 
 	save() {

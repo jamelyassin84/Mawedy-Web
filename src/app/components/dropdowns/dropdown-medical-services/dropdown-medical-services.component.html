@@ -1,1 +1,23 @@
-<p>dropdown-medical-services works!</p>
+<div
+	[@listAnimation]="medicalServices.length"
+	class="dropdown-container"
+	[class.margin]="selectedMedicalService.length === 0"
+	*ngIf="medicalServices && medicalServices.length !== 0"
+	role="button"
+>
+	<div *ngFor="let service of medicalServices">
+		<div
+			[class.selected]="selectedMedicalService.includes(service.id)"
+			class="doctors d-flex"
+			(click)="onSelectedMedicalService(service)"
+		>
+			<div class="avatar">
+				<img [src]="service.images[0].url" alt="" />
+			</div>
+			<div class="text">
+				<span class="patient">{{ service.name }}</span>
+			</div>
+			<i-feather name="plus-circle" class="feather"></i-feather>
+		</div>
+	</div>
+</div>

@@ -13,7 +13,8 @@
 						<i-feather name="user" class="feather"></i-feather>
 					</th>
 					<th>Name</th>
-					<th>Age</th>
+					<th class="text-center">Age</th>
+					<th class="text-center">Sex</th>
 					<th>Email</th>
 					<th>Phone</th>
 					<th>Address</th>
@@ -29,9 +30,10 @@
 						</div>
 					</td>
 					<td>{{ resolveName(patient) }}</td>
-					<td>
+					<td class="text-center">
 						{{ resolveAge(patient) }} yr{{ resolveAge(patient) === 1 ? '' : 's' }}
 					</td>
+					<td class="text-center">{{ patient.sex }}</td>
 					<td>{{ patient.emails[0].email }}</td>
 					<td>{{ patient.phones[0].phone || 'N/A' }}</td>
 					<td>{{ resolveAddress(patient) }}</td>
