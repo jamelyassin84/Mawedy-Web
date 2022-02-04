@@ -20,7 +20,7 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody [@listAnimation]="doctors.length">
+			<tbody [@listAnimation]="doctors.length" *ngIf="doctors">
 				<tr *ngFor="let doctor of doctors">
 					<td class="text-center">
 						<div class="avatar">

@@ -1,1 +1,28 @@
-<p>dropdown-patients works!</p>
+<div
+	[@listAnimation]="patients.length"
+	class="dropdown-container"
+	[class.margin]="selectedPatient.length === 0"
+	*ngIf="patients && patients.length !== 0"
+	role="button"
+>
+	<div *ngFor="let patient of patients">
+		<div
+			[class.selected]="selectedPatient.includes(patient.id)"
+			class="doctors d-flex"
+			(click)="onSelectedPatient(patient)"
+		>
+			<div class="avatar">
+				<img [src]="patient.avatars[0].url" alt="" />
+			</div>
+			<div class="text">
+				<span class="patient">{{ resolveName(patient) }}</span>
+				<span class="position">
+					{{ resolveAge(patient) }} yr{{
+						resolveAge(patient) === 1 ? '' : 's'
+					}}</span
+				>
+			</div>
+			<i-feather name="plus-circle" class="feather"></i-feather>
+		</div>
+	</div>
+</div>

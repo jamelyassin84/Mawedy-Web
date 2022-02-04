@@ -55,7 +55,11 @@
 					<div class="row section">
 						<div class="col-md-3">
 							<div class="label">Age</div>
-							<span class="description"> {{ resolveAge(patient.dob) }} Yr(s)</span>
+							<span class="description">
+								{{ resolveAge(patient.dob) }} yr{{
+									resolveAge(patient.dob) === 1 ? '' : 's'
+								}}</span
+							>
 						</div>
 						<div class="col-md-4">
 							<div class="label">Email</div>

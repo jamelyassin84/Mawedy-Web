@@ -1,3 +1,5 @@
+import { listAnimation } from './../../../../animations/List.animation'
+import { Patient } from './../../../../models/types'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
@@ -6,11 +8,13 @@ import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
+import { resolveAge, resolveName } from 'src/app/constants/App.functions'
 
 @Component({
 	selector: 'app-new-appointment-modal-body',
 	templateUrl: './new-appointment-modal-body.component.html',
 	styleUrls: ['./new-appointment-modal-body.component.scss'],
+	animations: [listAnimation],
 })
 export class NewAppointmentModalBodyComponent implements OnInit {
 	constructor(
@@ -26,13 +30,19 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 
 	doctors: Doctor[] = []
 
-	departments: Department[] = []
-
 	selectedDoctor: Doctor[] = []
+
+	patients: Patient[] = []
+
+	selectedPatient: Patient[] = []
+
+	departments: Department[] = []
 
 	isProcessing: boolean | 'complete' = false
 
 	doctorKeyword: string = ''
+
+	patientKeyword: string = ''
 
 	getDepartments() {
 		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
@@ -59,25 +69,42 @@ export class NewAppointmentModalBodyComponent implements OnInit {
 	}
 
 	onSelectDoctor(doctor: Doctor) {
-		if (
-			this.selectedDoctor.some(
-				(selectedDoctor: Doctor) => doctor.id === selectedDoctor.id,
-			)
-		) {
-			return this.alert.Fire({
-				title: `Unable to add doctor.`,
-				description: `You already added ${doctor.name}.`,
-				type: 'error',
-			})
-		}
-
 		this.selectedDoctor = []
 		this.selectedDoctor.push(doctor)
 		this.doctorKeyword = ''
 	}
 
+	selectPatient() {
+		new BaseService(this.http, `${ROUTES.PATIENTS}/search`)
+			.create({ keyword: this.patientKeyword })
+			.subscribe({
+				next: (patients: Patient[]) => {
+					this.patients = patients
+				},
+			})
+	}
+
+	removePatient(index: number) {
+		this.selectedPatient.splice(index, 1)
+	}
+
+	onSelectPatient(patient: Patient) {
+		this.selectedDoctor = []
+		this.selectedPatient.push(patient)
+		this.doctorKeyword = ''
+	}
+
+	resolveName(patient: Patient): string {
+		return resolveName(patient, 'normal')
+	}
+
+	resolveAge(patient: Patient): number {
+		return resolveAge(patient.dob)
+	}
+
 	save() {
 		const doctor = this.selectedDoctor[0]
+		const patient = this.selectedPatient[0]
 	}
 
 	closeModal() {

@@ -1,41 +1,73 @@
 <div class="row">
 	<div class="col-md-12">
-		<label for="">Select a patient</label>
-		<input type="search" class="form-control" placeholder="" />
+		<label for="">Patient</label>
+		<div [class.hasBorder]="selectedPatient.length !== 0" class="doctor-inputs">
+			<div [@listAnimation]="selectedDoctor.length">
+				<div class="doctor" *ngFor="let patient of selectedPatient; let i = index">
+					<div class="d-flex aic p-2 w-100">
+						<img class="doctor-img" [src]="patient.avatars[0].url" alt="" />
+						<div class="text w-100 ml-3">
+							<div class="doctor-name mb-2">{{ resolveName(patient) }}</div>
+							<div class="doctor-title">
+								{{ resolveAge(patient) }} yr{{
+									resolveAge(patient) === 1 ? '' : 's'
+								}}
+							</div>
+						</div>
+						<div (click)="removePatient(i)" class="action ml-auto">
+							<i-feather name="delete" class="feather doctor-remove"></i-feather>
+						</div>
+					</div>
+				</div>
+				<input
+					*ngIf="selectedPatient.length === 0"
+					(input)="selectPatient()"
+					[(ngModel)]="patientKeyword"
+					id="search-doctor"
+					type="text"
+					class="form-control custom"
+					placeholder="Search a patient.."
+					autocomplete="off"
+				/>
+			</div>
+		</div>
+		<dropdown-patients
+			*ngIf="selectedPatient.length === 0"
+			(onSelectPatient)="onSelectPatient($event)"
+			[patients]="patients"
+		></dropdown-patients>
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select a department</label>
+		<label for="">Department</label>
 		<select class="form-control">
 			<option *ngFor="let department of departments">{{ department.name }}</option>
 		</select>
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select a medical service</label>
+		<label for="">Medical Service</label>
 		<input type="search" class="form-control" placeholder="" />
 	</div>
 
 	<div class="col-md-12">
-		<label for="">Select a doctor</label>
-		<div
-			[class.hasBorder]="selectedDoctor.length !== 0"
-			class="doctor-inputs"
-			[@listAnimation]="selectedDoctor.length"
-		>
-			<div class="doctor" *ngFor="let doctor of selectedDoctor; let i = index">
-				<div class="d-flex aic p-2 w-100">
-					<img class="doctor-img" [src]="doctor.avatar" alt="" />
-					<div class="text w-100 ml-3">
-						<div class="doctor-name mb-1">Dr. {{ doctor.name }}</div>
-						<div class="doctor-title">{{ doctor.title }}</div>
-						<div class="profession">{{ doctor.profession }}</div>
-						<div class="profession">
-							{{ doctor.yearsOfExperience }} Years Experience
+		<label for="">Doctor</label>
+		<div [class.hasBorder]="selectedDoctor.length !== 0" class="doctor-inputs">
+			<div [@listAnimation]="selectedDoctor.length">
+				<div class="doctor" *ngFor="let doctor of selectedDoctor; let i = index">
+					<div class="d-flex aic p-2 w-100">
+						<img class="doctor-img" [src]="doctor.avatar" alt="" />
+						<div class="text w-100 ml-3">
+							<div class="doctor-name mb-1">Dr. {{ doctor.name }}</div>
+							<div class="doctor-title">{{ doctor.title }}</div>
+							<div class="profession">{{ doctor.profession }}</div>
+							<div class="profession">
+								{{ doctor.yearsOfExperience }} Years Experience
+							</div>
 						</div>
-					</div>
-					<div (click)="removeDoctor(i)" class="action ml-auto">
-						<i-feather name="delete" class="feather doctor-remove"></i-feather>
+						<div (click)="removeDoctor(i)" class="action ml-auto">
+							<i-feather name="delete" class="feather doctor-remove"></i-feather>
+						</div>
 					</div>
 				</div>
 			</div>

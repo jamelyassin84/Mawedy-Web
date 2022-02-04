@@ -5,9 +5,10 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<table class="table table-striped">
+		<table class="table table-striped" *ngIf="patients">
 			<thead>
 				<tr>
+					<th>Type</th>
 					<th class="text-center">
 						<i-feather name="user" class="feather"></i-feather>
 					</th>
@@ -16,23 +17,24 @@
 					<th>Email</th>
 					<th>Phone</th>
 					<th>Address</th>
-					<th>Type</th>
 					<th>Profile</th>
 				</tr>
 			</thead>
 			<tbody [@listAnimation]="patients.length">
 				<tr *ngFor="let patient of patients; let i = index">
+					<td>{{ patient.type }}</td>
 					<td class="text-center">
 						<div class="avatar">
 							<img [src]="patient.avatars[0].url" alt="" />
 						</div>
 					</td>
 					<td>{{ resolveName(patient) }}</td>
-					<td>{{ resolveAge(patient) }} Yrs.</td>
+					<td>
+						{{ resolveAge(patient) }} yr{{ resolveAge(patient) === 1 ? '' : 's' }}
+					</td>
 					<td>{{ patient.emails[0].email }}</td>
-					<td>{{ patient.phones[0].phone }}</td>
+					<td>{{ patient.phones[0].phone || 'N/A' }}</td>
 					<td>{{ resolveAddress(patient) }}</td>
-					<td>{{ patient.type }}</td>
 					<td>
 						<button [routerLink]="'/home/patients/information/' + patient.id">
 							View
