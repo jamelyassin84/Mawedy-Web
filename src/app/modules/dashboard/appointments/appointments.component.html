@@ -23,16 +23,46 @@
 				<tr *ngFor="let appointment of appointments; let i = index">
 					<td>{{ appointment.date | date: 'dd, MMMM' }}</td>
 					<td>{{ appointment.time }}</td>
-					<td>{{ resolveName(appointment.patient) }}</td>
-					<td>{{ appointment.doctor.name }}</td>
-					<td>{{ appointment.appointment_type }}t</td>
+					<td>
+						<a
+							class="underlined"
+							[routerLink]="'/home/patients/information/' + appointment.patient.id"
+						>
+							{{ resolveName(appointment.patient) }}
+						</a>
+					</td>
+					<td class="underlined">
+						<modal
+							[button]="manageBtn"
+							[component]="doctorDetails"
+							[title]="'Dr. ' + appointment.doctor.name"
+							type="Right"
+						>
+						</modal>
+						<ng-template #doctorDetails>
+							<DoctorDetails [doctor]="appointment.doctor"></DoctorDetails>
+						</ng-template>
+						<ng-template #manageBtn>
+							<a>Dr. {{ appointment.doctor.name }} </a>
+						</ng-template>
+					</td>
+					<td>{{ appointment.appointment_type | titlecase }}</td>
 					<td class="d-flex aic">
 						<app-status [active]="appointment.status"></app-status>
 						{{ appointment.status | titlecase }}
 					</td>
 					<td>{{ appointment.booking_reference | uppercase }}</td>
 					<td>
-						<span class="underlined">Details</span>
+						<modal
+							[button]="button"
+							title="Appointment Details"
+							[component]="body"
+							type="Right"
+						></modal>
+
+						<ng-template #body>
+							<AppointmentDetails [appointment]="appointment"></AppointmentDetails>
+						</ng-template>
 					</td>
 				</tr>
 			</tbody>
@@ -40,14 +70,6 @@
 	</div>
 </div>
 
-<ng-template #header>
-	<div style="font-family: bold; font-size: 16px; color: var(--color1)">
-		Appointment Details
-	</div>
+<ng-template #button>
+	<span class="underlined">Details</span>
 </ng-template>
-
-<ng-template #body>
-	<appointment-details-body></appointment-details-body>
-</ng-template>
-
-<ng-template #footer> </ng-template>

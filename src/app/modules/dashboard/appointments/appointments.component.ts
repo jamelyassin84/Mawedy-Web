@@ -35,7 +35,7 @@ export class AppointmentsComponent implements OnInit {
 			})
 	}
 
-	resolveName(patient: Patient) {
-		resolveName(patient, 'normal')
+	resolveName(patient: Patient): string {
+		return resolveName(patient, 'normal')
 	}
 }

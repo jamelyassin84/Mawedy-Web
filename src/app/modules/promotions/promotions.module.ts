@@ -6,15 +6,16 @@ import { PromotionsToolbarComponent } from 'src/app/components/toolbars/promotio
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { IconsModule } from '../icon/icon.module'
+import { AppointmentsModule } from '../appointments/appointments.module'
 
 @NgModule({
 	declarations: [PromotionsComponent, PromotionsToolbarComponent],
 	imports: [
 		CommonModule,
-		DashboardModule,
 		AppRoutingModule,
 		RouterModule,
 		IconsModule,
+		AppointmentsModule,
 	],
 	exports: [PromotionsToolbarComponent],
 })

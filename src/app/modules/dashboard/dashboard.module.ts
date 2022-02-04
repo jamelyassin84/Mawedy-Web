@@ -1,3 +1,4 @@
+import { AppointmentsModule } from './../appointments/appointments.module'
 import { SelectTimeSlotComponent } from '../../components/modal-components/edit/update-time-slot/select-time-slot-component.component'
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
@@ -19,28 +20,29 @@ import { IconsModule } from '../icon/icon.module'
 @NgModule({
 	declarations: [
 		AppointmentsComponent,
-		ToolbarComponent,
-		AppointmentsToolbarComponent,
 		StatusComponent,
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
 		SelectTimeSlotComponent,
-		AppointmentToolbarTabComponent,
 		PatientOutreachComponent,
 	],
-	imports: [CommonModule, AppRoutingModule, RouterModule, IconsModule],
+	imports: [
+		CommonModule,
+		AppRoutingModule,
+		RouterModule,
+		IconsModule,
+		AppointmentsModule,
+	],
 	exports: [
-		ToolbarComponent,
-		AppointmentsToolbarComponent,
 		StatusComponent,
 		DashboardToolbarComponent,
 		AppointmentDetailsBodyComponent,
 		AppointmentCancellationBodyComponent,
 		AssignAppointmentToModalBodyComponent,
 		SelectTimeSlotComponent,
-		AppointmentToolbarTabComponent,
+
 		PatientOutreachComponent,
 	],
 })

@@ -30,9 +30,7 @@
 					*ngFor="let day of days"
 				>
 					<div class="d-flex">
-						<div *ngIf="today === day" class="badge badge-success">
-							Today
-						</div>
+						<div *ngIf="today === day" class="badge badge-success">Today</div>
 						<div class="day-number">
 							{{ day }}
 						</div>

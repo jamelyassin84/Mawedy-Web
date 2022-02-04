@@ -16,16 +16,16 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="label">Phone</div>
-				<div class="description">{{ doctor.phones[0].phone || 'N/A' }}</div>
+				<!-- <div class="description">{{ doctor.phones[0].phone || 'N/A' }}</div> -->
 			</div>
 			<div class="col-md-6">
 				<div class="label">E-mail</div>
-				<div class="description">{{ doctor.emails[0].email }}</div>
+				<!-- <div class="description">{{ doctor.emails[0].email }}</div> -->
 			</div>
 		</div>
 
 		<div class="label working-schedule">Working Schedule</div>
-		<passive-working-schedule
+		<!-- <passive-working-schedule
 			[Mon]="doctor.clinicDoctorWorkingSchedules[0].isActive"
 			[Tue]="doctor.clinicDoctorWorkingSchedules[1].isActive"
 			[Wed]="doctor.clinicDoctorWorkingSchedules[2].isActive"
@@ -33,7 +33,7 @@
 			[Fri]="doctor.clinicDoctorWorkingSchedules[4].isActive"
 			[Sat]="doctor.clinicDoctorWorkingSchedules[5].isActive"
 			[Sun]="doctor.clinicDoctorWorkingSchedules[6].isActive"
-		></passive-working-schedule>
+		></passive-working-schedule> -->
 
 		<div class="d-flex aic mt-4">
 			<span *ngIf="isAvailable" class="text-available mr-2 d-flex aic">

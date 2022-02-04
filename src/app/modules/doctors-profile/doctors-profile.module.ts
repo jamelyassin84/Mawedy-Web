@@ -18,17 +18,7 @@ import { AppointmentsModule } from '../appointments/appointments.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
-	declarations: [
-		DoctorsProfileComponent,
-		DoctorsProfileComponent,
-		DoctorsProfileToolbarComponent,
-		DoctorsProfileBodyComponent,
-		WorkingScheduleComponent,
-		ViewDoctorBodyComponent,
-		PassiveWorkingScheduleComponent,
-		DoctorAvailabilityModalBodyComponent,
-		RightBlurBackgroundModalComponent,
-	],
+	declarations: [],
 	imports: [
 		CommonModule,
 		DashboardModule,
@@ -39,14 +29,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 		ReactiveFormsModule,
 		FormsModule,
 	],
-	exports: [
-		DoctorsProfileToolbarComponent,
-		DoctorsProfileBodyComponent,
-		WorkingScheduleComponent,
-		ViewDoctorBodyComponent,
-		PassiveWorkingScheduleComponent,
-		RightBlurBackgroundModalComponent,
-		DoctorAvailabilityModalBodyComponent,
-	],
+	exports: [],
 })
 export class DoctorsProfileModule {}
