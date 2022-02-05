@@ -5,7 +5,8 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<table class="table table-striped">
+		<doctors-placeholders *ngIf="doctors.length === 0"></doctors-placeholders>
+		<table class="table table-striped" *ngIf="doctors.length !== 0">
 			<thead>
 				<tr>
 					<th class="text-center">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ClinicAccountService } from 'src/app/services/utilities/clinic-account.service'
 
 @Component({
 	selector: 'doctors-placeholders',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./doctors-placeholders.component.scss'],
 })
 export class DoctorsPlaceholdersComponent implements OnInit {
-	constructor() {}
+	constructor(private account: ClinicAccountService) {}
 
 	ngOnInit(): void {}
+
+	name = this.account.getName()
 }

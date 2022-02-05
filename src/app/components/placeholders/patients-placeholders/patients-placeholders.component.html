@@ -1,1 +1,36 @@
-<p>patients-placeholders works!</p>
+<div class="row w-100 mt-5 pt-5">
+	<div
+		class="col-md-6 d-flex aic jcc"
+		style="height: inherit; flex-direction: column"
+	>
+		<h1 class="placeholder-title text-center mt-5">
+			Hi {{ name || '' }}! we haven't <br />
+			had any patients yet. <br />
+		</h1>
+		<modal
+			[component]="body"
+			[button]="btnAddPatient"
+			title="Patient Profile"
+			type="Center Large"
+		>
+		</modal>
+	</div>
+	<div class="col-md-6">
+		<img
+			class="mt-4"
+			style="height: 35vh"
+			src=".../../../../../../assets/app/placeholders/patient.svg"
+			alt=""
+		/>
+	</div>
+</div>
+
+<ng-template #body>
+	<AddPatientModal></AddPatientModal>
+</ng-template>
+
+<ng-template #btnAddPatient>
+	<button class="btn-add btn btn-lg mt-5">
+		<span>Add a patient</span>
+	</button>
+</ng-template>
