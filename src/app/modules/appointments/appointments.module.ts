@@ -1,3 +1,4 @@
+import { MedicalServicesComponent } from './../../components/placeholders/medical-services/medical-services.component'
 import { AppointmentPlaceholdersComponent } from './../../components/placeholders/appointment-placeholders/appointment-placeholders.component'
 import { RightBlurBackgroundModalComponent } from './../../components/modals/right-blurr-background-modal/right-blur-background-modal.component'
 import { DoctorAvailabilityModalBodyComponent } from './../../components/modal-components/view/doctor-availability/doctor-availability-modal-body.component'
@@ -40,6 +41,8 @@ import { PatientsToolbarComponent } from 'src/app/components/toolbars/patients/p
 import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patients-info-toolbar/patients-info-toolbar.component'
 import { DepartmentsPlaceholdersComponent } from 'src/app/components/placeholders/departments-placeholders/departments-placeholders.component'
 import { AddDepartmentModalBodyComponent } from 'src/app/components/modal-components/add/add-department/add-department-modal-body.component'
+import { AddMedicalServicesModalBodyComponent } from 'src/app/components/modal-components/add/add-medical-services/add-medical-services-modal-body.component'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 
 @NgModule({
 	declarations: [
@@ -81,6 +84,8 @@ import { AddDepartmentModalBodyComponent } from 'src/app/components/modal-compon
 		PatientsInfoToolbarComponent,
 		DepartmentsPlaceholdersComponent,
 		AddDepartmentModalBodyComponent,
+		MedicalServicesComponent,
+		AddMedicalServicesModalBodyComponent,
 	],
 	imports: [
 		CommonModule,
@@ -90,6 +95,7 @@ import { AddDepartmentModalBodyComponent } from 'src/app/components/modal-compon
 		IconsModule,
 		FormsModule,
 		ReactiveFormsModule,
+		IvyCarouselModule,
 	],
 	exports: [
 		AppointmentsMonthComponent,
@@ -129,6 +135,8 @@ import { AddDepartmentModalBodyComponent } from 'src/app/components/modal-compon
 		PatientsInfoToolbarComponent,
 		DepartmentsPlaceholdersComponent,
 		AddDepartmentModalBodyComponent,
+		MedicalServicesComponent,
+		AddMedicalServicesModalBodyComponent,
 	],
 })
 export class AppointmentsModule {}

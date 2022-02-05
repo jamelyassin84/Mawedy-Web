@@ -1,0 +1,45 @@
+<div class="row w-100 mt-5 pt-5" *ngIf="department">
+	<div
+		class="col-md-6 d-flex aic jcc"
+		style="height: inherit; flex-direction: column"
+	>
+		<h1 class="placeholder-title text-center mt-5">
+			we are excited for you <br />
+			to have your first medical service <br />
+			for {{ department.name | lowercase }}. <br />
+		</h1>
+
+		<ng-template #addBtn>
+			<button class="btn-add btn btn-lg mt-5">
+				<span>Add a medical service </span>
+			</button>
+		</ng-template>
+
+		<ng-template #addBody>
+			<add-medical-services-modal-body
+				[department]="department"
+			></add-medical-services-modal-body>
+		</ng-template>
+
+		<modal
+			[button]="addBtn"
+			[component]="addBody"
+			[title]="department.name"
+			type="Right"
+		></modal>
+
+		<ng-template #addBody>
+			<add-medical-services-modal-body
+				[department]="department"
+			></add-medical-services-modal-body>
+		</ng-template>
+	</div>
+	<div class="col-md-6">
+		<img
+			class="mt-4"
+			style="height: 35vh"
+			src=".../../../../../../assets/app/placeholders/service.svg"
+			alt=""
+		/>
+	</div>
+</div>

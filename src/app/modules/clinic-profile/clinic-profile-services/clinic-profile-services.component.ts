@@ -7,7 +7,7 @@ import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
 import { ModalService } from 'src/app/services/utilities/modal.service'
-import { ClinicMedicalService } from 'src/app/models/types'
+import { ClinicMedicalService, Department } from 'src/app/models/types'
 import { CurrentDepartmentService } from 'src/app/services/utilities/department.service'
 
 @Component({
@@ -27,6 +27,8 @@ export class ClinicProfileServicesComponent implements OnInit {
 			this.tabs = data
 			if (data.length !== 0) {
 				this.activeTab = data[0].id
+				this.currentDepartmentData = data[0]
+				alert('ari')
 			}
 		})
 
@@ -41,6 +43,7 @@ export class ClinicProfileServicesComponent implements OnInit {
 		this.getDepartments()
 	}
 
+	currentDepartmentData!: Department
 	getDepartments() {
 		new BaseService(this.http, `${ROUTES.CLINIC_DEPARTMENT}/clinic`)
 			.show(this.clinic.getID())
@@ -49,6 +52,7 @@ export class ClinicProfileServicesComponent implements OnInit {
 					this.tabs = data
 					if (data.length !== 0) {
 						this.setActiveTab(data[0].id)
+						this.currentDepartmentData = data[0]
 					}
 				},
 			})
@@ -59,6 +63,15 @@ export class ClinicProfileServicesComponent implements OnInit {
 	setActiveTab(id: number | string) {
 		this.activeTab = id
 		this.getServices(id)
+		this.getDepartment(id)
+	}
+
+	getDepartment(id: number | string) {
+		new BaseService(this.http, ROUTES.CLINIC_DEPARTMENT)
+			.show(id)
+			.subscribe((department: Department) => {
+				this.currentDepartmentData = department
+			})
 	}
 
 	getServices(id: number | string) {

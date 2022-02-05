@@ -22,6 +22,10 @@
 			(OnSetActiveTab)="setActiveTab($event)"
 		></app-tabs>
 
+		<medical-services
+			[department]="currentDepartmentData"
+			*ngIf="services.length === 0"
+		></medical-services>
 		<div class="tab-container" *ngIf="services.length !== 0">
 			<div class="row" [@listAnimation]="services.length">
 				<div class="col-md-4" *ngFor="let service of services">

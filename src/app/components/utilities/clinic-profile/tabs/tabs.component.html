@@ -3,13 +3,14 @@
 		<div
 			class="tabs d-flex"
 			*ngFor="let tab of tabs | slice: 0:5; let i = index"
-			[class.active]="tab.id === active"
+			[class.active]="tab.id === active && tabs.length > 1"
 			[class.bold]="tab.id === active"
 			(click)="setActiveTab(tab.id)"
 		>
 			{{ tab.name }}
 		</div>
 		<modal
+			*ngIf="tabs.length > 5"
 			class="ml-auto"
 			[button]="moreModalBtn"
 			[component]="departmentLists"

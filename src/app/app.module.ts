@@ -58,6 +58,7 @@ import { AlertComponent } from './components/utilities/common/alert/alert.compon
 import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
 import { DepartmentsPlaceholdersComponent } from './components/placeholders/departments-placeholders/departments-placeholders.component'
+import { MedicalServicesComponent } from './components/placeholders/medical-services/medical-services.component'
 @NgModule({
 	declarations: [
 		AppComponent,
