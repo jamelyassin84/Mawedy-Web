@@ -20,11 +20,11 @@ export class SidebarComponent implements OnInit {
 		private http: HttpClient,
 		private clinicService: ClinicService,
 	) {
-		router.events
-			.pipe(filter((event) => event instanceof NavigationEnd))
-			.subscribe((event: any) => {
-				this.handleChangeTab(event?.url)
-			})
+		// router.events
+		// 	.pipe(filter((event) => event instanceof NavigationEnd))
+		// 	.subscribe((event: any) => {
+		// 		this.handleChangeTab(event?.url)
+		// 	})
 	}
 
 	activeIcon!: string
@@ -54,6 +54,8 @@ export class SidebarComponent implements OnInit {
 		this.getClinic()
 		this.router.url === '/home/clinic-profile'
 			? this.setActiveIcon('Clinic Profile')
-			: this.setActiveIcon('Clinic Profile')
+			: this.setActiveIcon('Dashboard')
+
+		// TODO : if tanan
 	}
 }

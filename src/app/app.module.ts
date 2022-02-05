@@ -57,9 +57,15 @@ import { WhosAccountComponent } from './components/modals/whos-account/whos-acco
 import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doctor-badges/doctor-badges.component'
 import { AlertComponent } from './components/utilities/common/alert/alert.component'
 import { ServiceWorkerModule } from '@angular/service-worker'
-import { environment } from '../environments/environment';
-import { DropdownPatientsComponent } from './components/dropdowns/dropdown-patients/dropdown-patients.component';
+import { environment } from '../environments/environment'
+import { DropdownPatientsComponent } from './components/dropdowns/dropdown-patients/dropdown-patients.component'
 import { DropdownMedicalServicesComponent } from './components/dropdowns/dropdown-medical-services/dropdown-medical-services.component'
+import { AppointmentPlaceholdersComponent } from './components/placeholders/appointment-placeholders/appointment-placeholders.component'
+import { OutreachPlaceholdersComponent } from './components/placeholders/outreach-placeholders/outreach-placeholders.component'
+import { DoctorsPlaceholdersComponent } from './components/placeholders/doctors-placeholders/doctors-placeholders.component'
+import { PatientsPlaceholdersComponent } from './components/placeholders/patients-placeholders/patients-placeholders.component'
+import { ClinicPlaceholdersComponent } from './components/placeholders/clinic-placeholders/clinic-placeholders.component'
+import { PromotionPlaceholdersComponent } from './components/placeholders/promotion-placeholders/promotion-placeholders.component'
 
 @NgModule({
 	declarations: [
@@ -79,7 +85,6 @@ import { DropdownMedicalServicesComponent } from './components/dropdowns/dropdow
 		FileUploadModalComponent,
 		LoaderModalComponent,
 		MainModalComponent,
-		NewAppointmentModalBodyComponent,
 		CenterSmallModalComponent,
 		LoginSection1Component,
 		LoginSection2Component,
@@ -92,8 +97,6 @@ import { DropdownMedicalServicesComponent } from './components/dropdowns/dropdow
 		NoInternetComponent,
 		WhosAccountComponent,
 		DoctorBadgesComponent,
-  DropdownPatientsComponent,
-  DropdownMedicalServicesComponent,
 	],
 	imports: [
 		//Angular Modules

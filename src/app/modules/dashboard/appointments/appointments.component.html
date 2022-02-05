@@ -5,8 +5,9 @@
 <home-toolbar [component]="component"></home-toolbar>
 
 <div class="page">
-	<div class="page-content">
-		<table class="table table-striped">
+	<div class="page-content" *ngIf="appointments.length === 0">
+		<appointment-placeholders></appointment-placeholders>
+		<table class="table table-striped" *ngIf="appointments.length !== 0">
 			<thead>
 				<tr>
 					<th>Date</th>

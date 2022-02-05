@@ -1,3 +1,4 @@
+import { AppointmentPlaceholdersComponent } from './../../components/placeholders/appointment-placeholders/appointment-placeholders.component'
 import { RightBlurBackgroundModalComponent } from './../../components/modals/right-blurr-background-modal/right-blur-background-modal.component'
 import { DoctorAvailabilityModalBodyComponent } from './../../components/modal-components/view/doctor-availability/doctor-availability-modal-body.component'
 import { PassiveWorkingScheduleComponent } from './../../components/utilities/doctor-profile/passive-working-schedule/passive-working-schedule.component'
@@ -26,6 +27,14 @@ import { IconsModule } from '../icon/icon.module'
 import { DropdownDoctorComponent } from 'src/app/components/dropdowns/dropdown-doctor/dropdown-doctor.component'
 import { ViewDoctorBodyComponent } from 'src/app/components/modal-components/view/view-doctor/view-doctor-body.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { DropdownPatientsComponent } from 'src/app/components/dropdowns/dropdown-patients/dropdown-patients.component'
+import { DropdownMedicalServicesComponent } from 'src/app/components/dropdowns/dropdown-medical-services/dropdown-medical-services.component'
+import { OutreachPlaceholdersComponent } from 'src/app/components/placeholders/outreach-placeholders/outreach-placeholders.component'
+import { DoctorsPlaceholdersComponent } from 'src/app/components/placeholders/doctors-placeholders/doctors-placeholders.component'
+import { PatientsPlaceholdersComponent } from 'src/app/components/placeholders/patients-placeholders/patients-placeholders.component'
+import { ClinicPlaceholdersComponent } from 'src/app/components/placeholders/clinic-placeholders/clinic-placeholders.component'
+import { PromotionPlaceholdersComponent } from 'src/app/components/placeholders/promotion-placeholders/promotion-placeholders.component'
+import { NewAppointmentModalBodyComponent } from 'src/app/components/modal-components/add/add-appointment/new-appointment-modal-body.component'
 
 @NgModule({
 	declarations: [
@@ -52,6 +61,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 		PassiveWorkingScheduleComponent,
 		DoctorAvailabilityModalBodyComponent,
 		RightBlurBackgroundModalComponent,
+
+		DropdownPatientsComponent,
+		DropdownMedicalServicesComponent,
+		AppointmentPlaceholdersComponent,
+		OutreachPlaceholdersComponent,
+		DoctorsPlaceholdersComponent,
+		PatientsPlaceholdersComponent,
+		ClinicPlaceholdersComponent,
+		PromotionPlaceholdersComponent,
+		NewAppointmentModalBodyComponent,
 	],
 	imports: [
 		CommonModule,
@@ -86,6 +105,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 		PassiveWorkingScheduleComponent,
 		DoctorAvailabilityModalBodyComponent,
 		RightBlurBackgroundModalComponent,
+
+		DropdownPatientsComponent,
+		DropdownMedicalServicesComponent,
+		AppointmentPlaceholdersComponent,
+		OutreachPlaceholdersComponent,
+		DoctorsPlaceholdersComponent,
+		PatientsPlaceholdersComponent,
+		ClinicPlaceholdersComponent,
+		PromotionPlaceholdersComponent,
+		NewAppointmentModalBodyComponent,
 	],
 })
 export class AppointmentsModule {}
