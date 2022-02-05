@@ -1,0 +1,35 @@
+<div class="row w-100 mt-5 pt-5">
+	<div
+		class="col-md-6 d-flex aic jcc"
+		style="height: inherit; flex-direction: column"
+	>
+		<h1 class="placeholder-title text-center mt-5">
+			Hi {{ name || '' }}! Let us start <br />
+			adding our departments. <br />
+		</h1>
+		<modal
+			[button]="button"
+			[component]="body"
+			title="Add Department"
+			type="Center Small"
+		></modal>
+	</div>
+	<div class="col-md-6">
+		<img
+			class="mt-4"
+			style="height: 35vh"
+			src=".../../../../../../assets/app/placeholders/department.svg"
+			alt=""
+		/>
+	</div>
+</div>
+
+<ng-template #button>
+	<button class="btn-add btn btn-lg mt-5">
+		<span>Add a department</span>
+	</button>
+</ng-template>
+
+<ng-template #body>
+	<add-department-modal-body></add-department-modal-body>
+</ng-template>

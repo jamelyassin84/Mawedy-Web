@@ -31,7 +31,6 @@ import { ClinicServiceCardComponent } from 'src/app/components/utilities/clinic-
 		TabsComponent,
 		ClinicServiceCardComponent,
 		AddMedicalServicesModalBodyComponent,
-		AddDepartmentModalBodyComponent,
 		DropdownSmComponent,
 		DropdownLgComponent,
 		ViewDepartmentsComponent,

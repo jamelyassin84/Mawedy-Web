@@ -57,6 +57,7 @@ import { DoctorBadgesComponent } from './components/utilities/doctor-profile/doc
 import { AlertComponent } from './components/utilities/common/alert/alert.component'
 import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
+import { DepartmentsPlaceholdersComponent } from './components/placeholders/departments-placeholders/departments-placeholders.component'
 @NgModule({
 	declarations: [
 		AppComponent,

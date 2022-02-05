@@ -38,6 +38,8 @@ import { NewAppointmentModalBodyComponent } from 'src/app/components/modal-compo
 import { PatientsProfileModalBodyComponent } from 'src/app/components/modal-components/add/add-patient/patients-profile-modal-body.component'
 import { PatientsToolbarComponent } from 'src/app/components/toolbars/patients/patients.component'
 import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patients-info-toolbar/patients-info-toolbar.component'
+import { DepartmentsPlaceholdersComponent } from 'src/app/components/placeholders/departments-placeholders/departments-placeholders.component'
+import { AddDepartmentModalBodyComponent } from 'src/app/components/modal-components/add/add-department/add-department-modal-body.component'
 
 @NgModule({
 	declarations: [
@@ -77,6 +79,8 @@ import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patien
 		PatientsProfileModalBodyComponent,
 		PatientsToolbarComponent,
 		PatientsInfoToolbarComponent,
+		DepartmentsPlaceholdersComponent,
+		AddDepartmentModalBodyComponent,
 	],
 	imports: [
 		CommonModule,
@@ -123,6 +127,8 @@ import { PatientsInfoToolbarComponent } from 'src/app/components/toolbars/patien
 		NewAppointmentModalBodyComponent,
 		PatientsToolbarComponent,
 		PatientsInfoToolbarComponent,
+		DepartmentsPlaceholdersComponent,
+		AddDepartmentModalBodyComponent,
 	],
 })
 export class AppointmentsModule {}
