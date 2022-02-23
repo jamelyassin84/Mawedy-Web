@@ -30,8 +30,6 @@ export class UpdateServiceComponent implements OnInit {
 
 	file!: File | any
 
-	src: any = undefined
-
 	doctors: Doctor[] = []
 
 	selectedDoctor: Doctor[] = []
@@ -48,7 +46,7 @@ export class UpdateServiceComponent implements OnInit {
 		reader.readAsDataURL(this.file)
 
 		reader.onload = (e: any) => {
-			this.src = reader.result
+			this.service.images[0].url = reader.result
 		}
 	}
 
@@ -100,6 +98,7 @@ export class UpdateServiceComponent implements OnInit {
 	}
 
 	save() {
+		this.service.images[0].url = ''
 		new BaseService(this.http, ROUTES.CLINIC_MEDICAL_SERVICES)
 			.update(this.service.id, {
 				...this.service,
@@ -108,16 +107,49 @@ export class UpdateServiceComponent implements OnInit {
 				department: this.department.id,
 			})
 			.subscribe({
-				next: () => {
+				next: (data: ClinicMedicalService) => {
 					this.ngOnInit()
+
 					this.alert.Fire({
 						title: `Medical Service Updated`,
 						description: `Doctor has been successfully added`,
 						type: 'success',
 					})
+
+					this.saveFiles()
 				},
 				error: () => {
 					this.isProcessing = false
+				},
+			})
+	}
+
+	saveFiles() {
+		if (this.file === undefined) {
+			return
+		}
+
+		let form = new FormData()
+
+		form.append('photos', this.file, this.file.name)
+
+		form.append('clinicMedicalServiceId', this.service.id + '')
+
+		new BaseService(
+			this.http,
+			`${ROUTES.CLINIC_MEDICAL_SERVICES_IMAGES}/upload`,
+		)
+			.create(form)
+			.subscribe({
+				complete: () => {
+					this.ngOnInit()
+					this.alert.Fire({
+						title: `Banners Uploaded`,
+						description: `Banners has been updated`,
+						type: 'success',
+					})
+
+					this.file = undefined
 				},
 			})
 	}
