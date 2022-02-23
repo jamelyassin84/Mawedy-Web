@@ -19,6 +19,7 @@
 		</div>
 		<app-tabs
 			[tabs]="tabs"
+			[currentDepartmentData]="currentDepartmentData"
 			*ngIf="tabs.length !== 0"
 			[active]="activeTab"
 			(OnSetActiveTab)="setActiveTab($event)"
@@ -28,9 +29,10 @@
 			[department]="currentDepartmentData"
 			*ngIf="services.length === 0"
 		></medical-services>
+
 		<div class="tab-container" *ngIf="services.length !== 0">
 			<div class="row" [@listAnimation]="services.length">
-				<div class="col-md-4" *ngFor="let service of services">
+				<div class="col-md-4 pt-5" *ngFor="let service of services">
 					<app-service-card
 						[title]="service.name"
 						[available]="service.isActive"

@@ -1,3 +1,5 @@
+import { AlertService } from 'src/app/services/utilities/alert.service'
+import { Fire } from 'src/app/constants/Alert'
 import { DepartmentService } from './../../../services/components/department.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
@@ -21,6 +23,7 @@ export class ClinicProfileServicesComponent implements OnInit {
 		private clinic: ClinicService,
 		private departmentService: DepartmentService,
 		private currentDepartment: CurrentDepartmentService,
+		private alert: AlertService,
 	) {
 		this.departmentService.getDepartments().subscribe((data) => {
 			this.tabs = data

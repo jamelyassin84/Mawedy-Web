@@ -1,5 +1,5 @@
 <div class="tab-container d-flex aic">
-	<div class="d-flex aic">
+	<div class="d-flex aic w-100">
 		<div
 			class="tabs d-flex"
 			*ngFor="let tab of tabs | slice: 0:5; let i = index"
@@ -11,24 +11,53 @@
 		</div>
 		<modal
 			*ngIf="tabs.length > 5"
-			class="ml-auto"
 			[button]="moreModalBtn"
 			[component]="departmentLists"
 			[title]="'Departments (' + tabs.length + ')'"
 			type="Right"
 		></modal>
-	</div>
 
-	<ng-template #departmentLists>
-		<view-departments></view-departments>
-	</ng-template>
+		<div class="d-flex ml-auto">
+			<modal
+				class="ml-auto"
+				[button]="addService"
+				[component]="addBody"
+				[title]="currentDepartmentData.name"
+				type="Right"
+			></modal>
 
-	<ng-template #moreModalBtn>
-		<div class="tabs tab-more d-flex">
-			<span class="more"
-				>More
-				<i-feather name="chevron-right" class="feather"></i-feather>
-			</span>
+			<button
+				(click)="removeDepartment(this.currentDepartmentData.id)"
+				class="btn btn-cancel mr-2"
+			>
+				Delete {{ currentDepartmentData.name }}
+			</button>
 		</div>
-	</ng-template>
+
+		<ng-template #departmentLists>
+			<view-departments></view-departments>
+		</ng-template>
+
+		<ng-template #moreModalBtn>
+			<div class="tabs tab-more d-flex">
+				<span class="more"
+					>More
+					<i-feather name="chevron-right" class="feather"></i-feather>
+				</span>
+			</div>
+		</ng-template>
+
+		<ng-template #addService>
+			<button class="btn add-medical-services ml-auto d-flex aic mr-3">
+				<i-feather name="plus-circle" class="mr-3"></i-feather>
+				<span>Add Services</span>
+			</button>
+		</ng-template>
+
+		<ng-template #addBody>
+			<add-medical-services-modal-body
+				[department]="currentDepartmentData"
+			></add-medical-services-modal-body>
+		</ng-template>
+	</div>
 </div>
