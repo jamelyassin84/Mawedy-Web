@@ -6,10 +6,12 @@ import { PromotionsToolbarComponent } from 'src/app/components/toolbars/promotio
 import { DashboardModule } from '../dashboard/dashboard.module'
 import { AppRoutingModule } from 'src/app/app-routing.module'
 import { IconsModule } from '../icon/icon.module'
-import { AppointmentsModule } from '../appointments/appointments.module'
+import { AppointmentsModule } from '../appointments/appointments.module';
+import { PromotionsEditComponent } from './promotions-edit/promotions-edit.component';
+import { PromotionsAddComponent } from './promotions-add/promotions-add.component'
 
 @NgModule({
-	declarations: [PromotionsComponent, PromotionsToolbarComponent],
+	declarations: [PromotionsComponent, PromotionsToolbarComponent, PromotionsEditComponent, PromotionsAddComponent],
 	imports: [
 		CommonModule,
 		AppRoutingModule,

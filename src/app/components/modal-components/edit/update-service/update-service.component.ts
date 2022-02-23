@@ -98,7 +98,9 @@ export class UpdateServiceComponent implements OnInit {
 	}
 
 	save() {
-		this.service.images[0].url = ''
+		if (this.file !== undefined) {
+			this.service.images[0].url = ''
+		}
 		new BaseService(this.http, ROUTES.CLINIC_MEDICAL_SERVICES)
 			.update(this.service.id, {
 				...this.service,
