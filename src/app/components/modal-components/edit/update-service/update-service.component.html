@@ -1,10 +1,113 @@
 <div class="w-100">
-	<div class="d-flex aic-centered">
-		<button
-			(click)="removeService()"
-			class="btn btn-secondary mr-2 ml-auto"
-		>
-			Delete
-		</button>
+	<div class="bg-class">
+		<div class="d-flex aic fdc w-100">
+			<div class="d-flex w-100">
+				<div class="form-group w-75">
+					<label for="name" class="text-left"> Service </label>
+					<input
+						id="name"
+						[(ngModel)]="service.name"
+						type="text"
+						class="form-control"
+					/>
+				</div>
+
+				<input
+					(change)="readFileURL($event)"
+					type="file"
+					accept="image/*"
+					style="display: none"
+					id="image1"
+					#fileUpload
+				/>
+
+				<img
+					[src]="service.images[0].url"
+					(click)="fileUpload.click()"
+					class="service-image d-flex aic jcc ml-auto"
+					style="object-fit: fill"
+					role="button"
+					alt=""
+				/>
+			</div>
+
+			<div class="form-group w-100">
+				<label for="desc" class="text-left w-100">Description</label>
+				<textarea
+					id="desc"
+					[(ngModel)]="service.description"
+					type="text"
+					class="form-control"
+					placeholder="Aa"
+				></textarea>
+			</div>
+
+			<label for="search-doctor" class="text-left w-100"
+				>Doctors for this service</label
+			>
+			<div
+				[class.hasBorder]="selectedDoctor.length !== 0"
+				class="doctor-inputs"
+			>
+				<div
+					class="doctor"
+					*ngFor="let doctor of selectedDoctor; let i = index"
+				>
+					<div class="d-flex aic p-2">
+						<img class="doctor-img" [src]="doctor.avatar" alt="" />
+						<div class="text">Dr. {{ doctor.name }}</div>
+						<div (click)="removeDoctor(i)" class="action ml-4">
+							<i-feather
+								name="delete"
+								class="feather doctor-remove"
+							></i-feather>
+						</div>
+					</div>
+				</div>
+				<input
+					(input)="selectDoctor()"
+					[(ngModel)]="keyword"
+					id="search-doctor"
+					type="text"
+					class="form-control custom"
+					placeholder="Search.."
+					autocomplete="off"
+				/>
+			</div>
+
+			<dropdown-doctor
+				class="w-100"
+				(onSelectDoctor)="onSelectDoctor($event)"
+				[doctors]="doctors"
+			></dropdown-doctor>
+
+			<div class="d-flex mb-3 w-100">
+				<div
+					[class.isProcessing]="isProcessing === true"
+					[class.isComplete]="isProcessing === 'complete'"
+					class="d-flex mt-3 w-100"
+				>
+					<button
+						(click)="removeService()"
+						class="btn btn-delete mr-2 ml-auto"
+					>
+						Delete
+					</button>
+					<button (click)="save()" class="btn btn-add btn-lg">
+						<span *ngIf="isProcessing === 'complete'">
+							<i-feather name="check"></i-feather>
+						</span>
+						<span *ngIf="!isProcessing">Save</span>
+
+						<div
+							style="color: var(--accent) !important"
+							*ngIf="isProcessing === true"
+							class="spinner-border text-success"
+							role="status"
+						></div>
+					</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

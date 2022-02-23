@@ -1,18 +1,21 @@
 <div
-	*ngIf="ready"
+	*ngIf="ready && isShowing"
 	class="back-drop custom-modal-container"
 	[class.hidden]="!isShowing"
 	(click)="close($event)"
 >
 	<div click-stop-propagation>
-		<div
-			[@slideLeft]="type === 'Right' ? (!isShowing ? 'out' : 'in') : ''"
+		<!-- [@slideLeft]="type === 'Right' ? (!isShowing ? 'out' : 'in') : ''"
 			[@scaleX]="
 				type === 'Center Small' ? (!isShowing ? 'out' : 'in') : ''
 			"
 			[@slideTop]="
 				type === 'Center Large' ? (!isShowing ? 'out' : 'in') : ''
 			"
+			[@slideTop]="
+				type === 'Center Custom' ? (!isShowing ? 'out' : 'in') : ''
+			" -->
+		<div
 			[class.cl]="type === 'Center Large'"
 			[class.cm]="type === 'Center Medium'"
 			[class.cs]="type === 'Center Small'"

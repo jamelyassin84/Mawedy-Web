@@ -25,7 +25,6 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	files: File[] = []
 	photos: any = []
 
 	keyword: string = ''
@@ -41,6 +40,31 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 	selectedDoctor: Doctor[] = []
 
 	isProcessing: boolean | 'complete' = false
+
+	trigger(id: string): void {
+		let element: HTMLElement = document.querySelector(
+			'input[type="file"]',
+		) as HTMLElement
+		element.click()
+	}
+
+	file!: File | any
+
+	src: any = undefined
+
+	readFileURL(event: any): void {
+		this.file = event.target.files[0] as File
+
+		alert(this.file)
+
+		const reader = new FileReader()
+
+		reader.readAsDataURL(this.file)
+
+		reader.onload = (e: any) => {
+			this.src = reader.result
+		}
+	}
 
 	selectDoctor() {
 		new BaseService(this.http, `${ROUTES.DOCTOR}/search`)
@@ -73,30 +97,12 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 		this.keyword = ''
 	}
 
-	trigger(id: string): void {
-		document.getElementById(id)?.click()
-	}
-
-	readFiles(event: any) {
-		this.photos = []
-		let files = event.target.files
-		if (files) {
-			for (let file of files) {
-				let reader = new FileReader()
-				reader.onload = (e: any) => {
-					this.photos.push(e.target.result)
-				}
-				reader.readAsDataURL(file)
-			}
-		}
-		this.files = event.target.files as File[]
-	}
-
 	save() {
-		if (this.files === undefined) {
+		alert(this.file)
+		if (this.file === undefined) {
 			return this.alert.Fire({
-				title: `No  Medical Service Banners.`,
-				description: `Please add medical service banners.`,
+				title: `No  Medical Service Photo.`,
+				description: `Please add medical service photo.`,
 				type: 'error',
 			})
 		}
@@ -149,8 +155,6 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 
 					this.photos = []
 
-					this.files = []
-
 					this.alert.Fire({
 						title: `Medical Service Added`,
 						description: `Doctor has been successfully added`,
@@ -164,19 +168,20 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 	}
 
 	saveFiles(medicalService: ClinicMedicalService) {
-		if (this.files.length === 0) {
+		if (this.file === undefined) {
 			return
 		}
 
 		let form = new FormData()
 
-		for (let file of this.files) {
-			form.append('photos', file, file.name)
-		}
+		form.append('photos', this.file, this.file.name)
 
 		form.append('clinicMedicalServiceId', medicalService.id + '')
 
-		new BaseService(this.http, `${ROUTES.CLINIC_MEDICAL_SERVICES_IMAGES}/upload`)
+		new BaseService(
+			this.http,
+			`${ROUTES.CLINIC_MEDICAL_SERVICES_IMAGES}/upload`,
+		)
 			.create(form)
 			.subscribe({
 				complete: () => {
@@ -185,6 +190,8 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 						description: `Banners has been updated`,
 						type: 'success',
 					})
+
+					this.file = undefined
 				},
 			})
 	}

@@ -98,6 +98,7 @@ const components = [
 		ReactiveFormsModule,
 		IvyCarouselModule,
 	],
-	exports: [...components],
+
+	exports: [...components, BrowserAnimationsModule],
 })
 export class AppointmentsModule {}

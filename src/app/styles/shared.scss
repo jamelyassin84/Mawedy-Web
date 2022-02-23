@@ -38,6 +38,10 @@ body {
 	align-items: center;
 }
 
+.fdc {
+	flex-direction: column;
+}
+
 .jcc {
 	justify-content: center;
 }
@@ -210,15 +214,14 @@ textarea {
 	}
 }
 
-.btn-secondary {
+.btn-delete {
 	border-radius: 10px;
-	background-color: #dbf4eb;
-	color: var(--accent);
+	border: none !important;
+	background-color: #dbf4eb !important;
+	color: var(--accent) !important;
 	padding: 0.5rem 2rem;
-
 	&:hover {
-		color: var(--accent) !important;
-		border: 2px solid var(--accent) !important;
+		opacity: 0.5;
 	}
 }
 

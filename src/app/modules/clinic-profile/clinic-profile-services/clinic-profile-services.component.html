@@ -33,7 +33,7 @@
 
 		<div class="tab-container" *ngIf="services.length !== 0">
 			<div class="row" [@listAnimation]="services.length">
-				<div class="col-md-4 pt-5" *ngFor="let service of services">
+				<div class="col-md-4" *ngFor="let service of services">
 					<MedicalServiceCard
 						[service]="service"
 						[title]="service.name"

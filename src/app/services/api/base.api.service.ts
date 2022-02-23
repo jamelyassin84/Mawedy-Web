@@ -35,7 +35,7 @@ export class BaseService {
 		return this.http.get<any>(url, this.headers())
 	}
 
-	show(id: Number | string) {
+	show(id: Number | any) {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.get<any>(url, this.headers())
 	}
@@ -45,7 +45,7 @@ export class BaseService {
 		return this.http.post<any>(url, data, this.headers())
 	}
 
-	update(id: Number, data: Object) {
+	update(id: Number | any, data: Object) {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.patch<any>(url, data, this.headers())
 	}

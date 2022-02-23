@@ -1,13 +1,4 @@
 <div class="p-4 pt-0">
-	<input
-		multiple
-		(change)="readFiles($event)"
-		type="file"
-		style="display: none"
-		accept="image/*"
-		id="logo"
-	/>
-
 	<div class="bg-class">
 		<div class="d-flex">
 			<div class="form-group w-75">
@@ -19,8 +10,29 @@
 					class="form-control"
 				/>
 			</div>
+
+			<input
+				(change)="readFileURL($event)"
+				type="file"
+				accept="image/*"
+				style="display: none"
+				id="image1"
+				#fileUpload
+			/>
+
+			<img
+				*ngIf="src !== undefined"
+				[src]="src"
+				(click)="fileUpload.click()"
+				class="service-image d-flex aic jcc ml-auto"
+				style="object-fit: fill"
+				role="button"
+				alt=""
+			/>
+
 			<div
-				(click)="trigger('logo')"
+				*ngIf="src === undefined"
+				(click)="fileUpload.click()"
 				class="service-image d-flex aic jcc ml-auto"
 				role="button"
 			>
@@ -79,7 +91,6 @@
 		></dropdown-doctor>
 
 		<div class="d-flex mb-3">
-			<!-- button  -->
 			<div
 				[class.isProcessing]="isProcessing === true"
 				[class.isComplete]="isProcessing === 'complete'"
@@ -118,7 +129,6 @@
 					></div>
 				</button>
 			</div>
-			<!-- button  -->
 		</div>
 	</div>
 </div>

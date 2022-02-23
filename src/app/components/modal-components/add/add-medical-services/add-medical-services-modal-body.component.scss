@@ -79,6 +79,9 @@ textarea {
 	border-radius: 20px;
 	background: var(--bg1);
 	box-shadow: var(--dropShadow1);
+	object-fit: cover;
+	border: 3px solid var(--bg1);
+
 	img {
 		height: 100%;
 		width: 100%;
