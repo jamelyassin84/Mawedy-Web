@@ -11,12 +11,12 @@ export const clinicTabs: ClinicTabType[] = [
 		route: '/home/clinic-profile/services',
 		icon: 'activity',
 	},
-	{
-		id: 3,
-		name: 'Summary',
-		route: '/home/clinic-profile/services',
-		icon: 'clipboard',
-	},
+	// {
+	// 	id: 3,
+	// 	name: 'Summary',
+	// 	route: '/home/clinic-profile/services',
+	// 	icon: 'clipboard',
+	// },
 ]
 
 export type ClinicTabType = {

@@ -5,7 +5,9 @@
 <home-toolbar [component]="component"></home-toolbar>
 <div class="page">
 	<div class="page-content">
-		<departments-placeholders *ngIf="tabs.length === 0"></departments-placeholders>
+		<departments-placeholders
+			*ngIf="tabs.length === 0"
+		></departments-placeholders>
 		<div class="d-flex" *ngIf="tabs.length !== 0">
 			<modal
 				class="ml-auto"

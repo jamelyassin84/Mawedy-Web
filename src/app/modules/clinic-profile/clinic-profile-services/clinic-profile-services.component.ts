@@ -6,7 +6,6 @@ import { TabType } from 'src/app/components/utilities/clinic-profile/tabs/tabs.c
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
-import { ModalService } from 'src/app/services/utilities/modal.service'
 import { ClinicMedicalService, Department } from 'src/app/models/types'
 import { CurrentDepartmentService } from 'src/app/services/utilities/department.service'
 
@@ -74,7 +73,10 @@ export class ClinicProfileServicesComponent implements OnInit {
 	}
 
 	getServices(id: number | string) {
-		new BaseService(this.http, `${ROUTES.CLINIC_MEDICAL_SERVICES}/department`)
+		new BaseService(
+			this.http,
+			`${ROUTES.CLINIC_MEDICAL_SERVICES}/department`,
+		)
 			.show(id)
 			.subscribe((data) => (this.services = data))
 	}
