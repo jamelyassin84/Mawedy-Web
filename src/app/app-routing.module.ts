@@ -87,7 +87,7 @@ const routes: Routes = [
 					{
 						path: '',
 						pathMatch: 'full',
-						redirectTo: 'services',
+						redirectTo: 'information',
 					},
 					{ path: 'information', component: ClinicProfileComponent },
 					{

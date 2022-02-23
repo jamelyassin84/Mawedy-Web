@@ -28,7 +28,6 @@ export class ClinicProfileServicesComponent implements OnInit {
 			if (data.length !== 0) {
 				this.activeTab = data[0].id
 				this.currentDepartmentData = data[0]
-				alert('ari')
 			}
 		})
 

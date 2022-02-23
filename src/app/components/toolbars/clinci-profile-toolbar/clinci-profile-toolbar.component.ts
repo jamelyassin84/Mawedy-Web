@@ -24,10 +24,10 @@ export class ClinicProfileToolbarComponent implements OnInit {
 
 	changeTab() {
 		if (this.router.url.includes('information')) {
-			this.activeTab = 2
+			this.activeTab = 1
 		}
 		if (this.router.url.includes('services')) {
-			this.activeTab = 1
+			this.activeTab = 2
 		}
 	}
 
