@@ -55,8 +55,6 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 	readFileURL(event: any): void {
 		this.file = event.target.files[0] as File
 
-		alert(this.file)
-
 		const reader = new FileReader()
 
 		reader.readAsDataURL(this.file)
@@ -98,7 +96,6 @@ export class AddMedicalServicesModalBodyComponent implements OnInit {
 	}
 
 	save() {
-		alert(this.file)
 		if (this.file === undefined) {
 			return this.alert.Fire({
 				title: `No  Medical Service Photo.`,

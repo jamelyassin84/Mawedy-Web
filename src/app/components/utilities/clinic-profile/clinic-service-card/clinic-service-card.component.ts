@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { ClinicMedicalService } from 'src/app/models/types'
+import { ClinicMedicalService, Department } from 'src/app/models/types'
 
 @Component({
 	selector: 'MedicalServiceCard',
@@ -13,6 +13,7 @@ export class ClinicServiceCardComponent implements OnInit {
 	@Input() available!: boolean
 
 	@Input() service!: ClinicMedicalService
+	@Input() department!: Department
 
 	constructor() {}
 

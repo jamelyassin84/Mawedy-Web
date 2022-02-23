@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, Input, OnInit } from '@angular/core'
 import { Fire } from 'src/app/constants/Alert'
-import { ClinicMedicalService, Doctor } from 'src/app/models/types'
+import { ClinicMedicalService, Department, Doctor } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
+import { ClinicAccountService } from 'src/app/services/utilities/clinic-account.service'
+import { ClinicService } from 'src/app/services/utilities/clnic.service'
 
 @Component({
 	selector: 'UpdateService',
@@ -12,13 +14,19 @@ import { AlertService } from 'src/app/services/utilities/alert.service'
 	styleUrls: ['./update-service.component.scss'],
 })
 export class UpdateServiceComponent implements OnInit {
-	constructor(private alert: AlertService, private http: HttpClient) {}
+	constructor(
+		private alert: AlertService,
+		private http: HttpClient,
+		private clinicService: ClinicService,
+	) {}
 
 	ngOnInit(): void {
 		this.getDoctors()
 	}
 
 	@Input() service!: ClinicMedicalService
+
+	@Input() department!: Department
 
 	file!: File | any
 
@@ -34,8 +42,6 @@ export class UpdateServiceComponent implements OnInit {
 
 	readFileURL(event: any): void {
 		this.file = event.target.files[0] as File
-
-		alert(this.file)
 
 		const reader = new FileReader()
 
@@ -98,9 +104,12 @@ export class UpdateServiceComponent implements OnInit {
 			.update(this.service.id, {
 				...this.service,
 				selectedDoctor: this.selectedDoctor,
+				clinic: this.clinicService.getID(),
+				department: this.department.id,
 			})
 			.subscribe({
 				next: () => {
+					this.ngOnInit()
 					this.alert.Fire({
 						title: `Medical Service Updated`,
 						description: `Doctor has been successfully added`,
