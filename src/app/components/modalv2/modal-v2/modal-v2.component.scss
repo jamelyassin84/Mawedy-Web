@@ -138,6 +138,29 @@
 	}
 }
 
+.cn {
+	.modal-header {
+		position: sticky !important;
+		top: 0;
+		z-index: 99;
+	}
+	.modal-container {
+		width: 641px;
+		background: var(--bg3) 0% 0% no-repeat padding-box;
+		height: auto;
+		z-index: 11;
+		margin: auto;
+		max-height: 80vh;
+		overflow-y: auto;
+		margin-top: 10vh;
+	}
+
+	.modal-body {
+		overflow-y: auto;
+		height: auto;
+	}
+}
+
 .modal-container {
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;

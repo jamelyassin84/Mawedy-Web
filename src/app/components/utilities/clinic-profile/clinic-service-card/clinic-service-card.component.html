@@ -1,10 +1,24 @@
-<div class="wrapper d-flex aic">
-	<div class="text-content mr-3">
-		<div class="title">{{ title }}</div>
-		<span [class.badge-dark]="!available" class="badge badge-success">{{
-			available === true ? 'available' : 'unavailable'
-		}}</span>
-		<div class="description">{{ description }}</div>
+<modal
+	class="ml-auto"
+	[button]="button"
+	[component]="body"
+	[title]="service.name"
+	type="Center Custom"
+></modal>
+
+<ng-template #button>
+	<div class="wrapper d-flex aic">
+		<div class="text-content mr-3">
+			<div class="title">{{ title }}</div>
+			<span [class.badge-dark]="!available" class="badge badge-success">{{
+				available === true ? 'available' : 'unavailable'
+			}}</span>
+			<div class="description">{{ description }}</div>
+		</div>
+		<img [src]="image" alt="" class="ml-auto" />
 	</div>
-	<img [src]="image" alt="" class="ml-auto" />
-</div>
+</ng-template>
+
+<ng-template #body>
+	<UpdateService [service]="service"></UpdateService>
+</ng-template>

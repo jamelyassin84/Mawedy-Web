@@ -59,6 +59,7 @@ import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
 import { DepartmentsPlaceholdersComponent } from './components/placeholders/departments-placeholders/departments-placeholders.component'
 import { MedicalServicesComponent } from './components/placeholders/medical-services/medical-services.component'
+import { UpdateServiceComponent } from './components/modal-components/edit/update-service/update-service.component'
 @NgModule({
 	declarations: [
 		AppComponent,

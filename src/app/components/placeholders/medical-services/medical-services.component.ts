@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core'
 import { ClinicAccountService } from 'src/app/services/utilities/clinic-account.service'
 
 @Component({
-	selector: 'medical-services',
+	selector: 'MedicalServicesPlaceholder',
 	templateUrl: './medical-services.component.html',
 	styleUrls: ['./medical-services.component.scss'],
 })

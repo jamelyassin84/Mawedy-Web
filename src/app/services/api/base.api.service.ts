@@ -50,7 +50,7 @@ export class BaseService {
 		return this.http.patch<any>(url, data, this.headers())
 	}
 
-	destroy(id: Number) {
+	destroy(id: Number | any) {
 		const url = `${environment.api}${this.url}/${id}`
 		return this.http.delete<any>(url, this.headers())
 	}

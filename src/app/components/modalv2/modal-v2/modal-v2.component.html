@@ -7,8 +7,12 @@
 	<div click-stop-propagation>
 		<div
 			[@slideLeft]="type === 'Right' ? (!isShowing ? 'out' : 'in') : ''"
-			[@scaleX]="type === 'Center Small' ? (!isShowing ? 'out' : 'in') : ''"
-			[@slideTop]="type === 'Center Large' ? (!isShowing ? 'out' : 'in') : ''"
+			[@scaleX]="
+				type === 'Center Small' ? (!isShowing ? 'out' : 'in') : ''
+			"
+			[@slideTop]="
+				type === 'Center Large' ? (!isShowing ? 'out' : 'in') : ''
+			"
 			[class.cl]="type === 'Center Large'"
 			[class.cm]="type === 'Center Medium'"
 			[class.cs]="type === 'Center Small'"
@@ -17,6 +21,7 @@
 			[class.c]="type === 'Confirm'"
 			[class.l]="type === 'Loader'"
 			[class.f]="type === 'File-Upload'"
+			[class.cn]="type === 'Center Custom'"
 			[class.n]="type === 'none'"
 			click-stop-propagation
 		>
@@ -24,7 +29,9 @@
 				<div class="modal-header d-flex aic jcc">
 					<span class="modal-title">{{ title }}</span>
 					<span class="ml-auto aic jcc">
-						<span (click)="isShowing = false" class="close-btn">Close </span>
+						<span (click)="isShowing = false" class="close-btn"
+							>Close
+						</span>
 						<span (click)="isShowing = false" class="close-button">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +39,10 @@
 								height="40"
 								viewBox="0 0 40 40"
 							>
-								<g id="close-icon" transform="translate(-1695 -105)">
+								<g
+									id="close-icon"
+									transform="translate(-1695 -105)"
+								>
 									<g
 										id="Rectangle_3224"
 										data-name="Rectangle 3224"
@@ -41,7 +51,12 @@
 										stroke="var(--border)"
 										stroke-width="1.5"
 									>
-										<rect width="40" height="40" rx="6" stroke="none" />
+										<rect
+											width="40"
+											height="40"
+											rx="6"
+											stroke="none"
+										/>
 										<rect
 											x="0.75"
 											y="0.75"
@@ -51,7 +66,10 @@
 											fill="none"
 										/>
 									</g>
-									<g id="close-fill" transform="translate(1703 113)">
+									<g
+										id="close-fill"
+										transform="translate(1703 113)"
+									>
 										<path
 											id="Path_6230"
 											data-name="Path 6230"

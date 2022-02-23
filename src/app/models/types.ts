@@ -194,4 +194,5 @@ export type ModalType =
 	| 'Confirm'
 	| 'Loader'
 	| 'File-Upload'
+	| 'Center Custom'
 	| 'none'

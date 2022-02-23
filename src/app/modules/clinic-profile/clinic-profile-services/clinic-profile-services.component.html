@@ -17,6 +17,7 @@
 				type="Center Small"
 			></modal>
 		</div>
+
 		<app-tabs
 			[tabs]="tabs"
 			[currentDepartmentData]="currentDepartmentData"
@@ -25,20 +26,21 @@
 			(OnSetActiveTab)="setActiveTab($event)"
 		></app-tabs>
 
-		<medical-services
+		<MedicalServicesPlaceholder
 			[department]="currentDepartmentData"
 			*ngIf="services.length === 0"
-		></medical-services>
+		></MedicalServicesPlaceholder>
 
 		<div class="tab-container" *ngIf="services.length !== 0">
 			<div class="row" [@listAnimation]="services.length">
 				<div class="col-md-4 pt-5" *ngFor="let service of services">
-					<app-service-card
+					<MedicalServiceCard
+						[service]="service"
 						[title]="service.name"
 						[available]="service.isActive"
 						[description]="service.description"
 						[image]="service.images[0].url"
-					></app-service-card>
+					></MedicalServiceCard>
 				</div>
 			</div>
 		</div>

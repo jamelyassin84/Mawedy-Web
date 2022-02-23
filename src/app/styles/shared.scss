@@ -131,7 +131,8 @@ SELECT {
 }
 
 .form-control:focus {
-	box-shadow: 0 0 0 0.2rem #00b0759c, rgba(93, 185, 105, 0.563) 0px 3px 15px 0px;
+	box-shadow: 0 0 0 0.2rem #00b0759c,
+		rgba(93, 185, 105, 0.563) 0px 3px 15px 0px;
 	border: none !important;
 	background: var(--bg1);
 }
@@ -199,7 +200,20 @@ textarea {
 	border-radius: 10px;
 	border: 2px solid var(--disabled);
 	background-color: var(--bg1);
-	color: var(--disabled);
+	color: var(--disabled) !important;
+	display: flex;
+	align-items: center;
+	padding: 0.5 2rem;
+	&:hover {
+		color: var(--accent) !important;
+		border: 2px solid var(--accent) !important;
+	}
+}
+
+.btn-secondary {
+	border-radius: 10px;
+	background-color: #dbf4eb;
+	color: var(--accent);
 	padding: 0.5rem 2rem;
 
 	&:hover {
