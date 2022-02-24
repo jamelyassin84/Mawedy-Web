@@ -10,6 +10,6 @@ import { AppointmentsWeekComponent } from './appointments-week/appointments-week
 		AppointmentsWeekComponent,
 		AppointmentsMonthComponent,
 	],
-	imports: [CommonModule, SharedModule],
+	imports: [SharedModule, CommonModule],
 })
 export class AppointmentsModule {}

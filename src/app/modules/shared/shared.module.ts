@@ -1,3 +1,5 @@
+import { RouterTestingModule } from '@angular/router/testing'
+import { AppRoutingModule } from 'src/app/app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { PromotionPlaceholdersComponent } from 'src/app/modules/shared/placeholders/promotion-placeholders/promotion-placeholders.component'
 import { NgModule } from '@angular/core'
@@ -5,8 +7,6 @@ import { CommonModule } from '@angular/common'
 import { AlertComponent } from './alert/alert.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { IconsModule } from '../icon/icon.module'
-import { RouterModule } from '@angular/router'
-import { AppRoutingModule } from 'src/app/app-routing.module'
 
 import { CalendarBadgeMonthComponent } from './components/appointments/calendar-badge-month/calendar-badge-month.component'
 import { CalendarBadgeWeekComponent } from './components/appointments/calendar-badge-week/calendar-badge-week.component'
@@ -57,6 +57,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component'
 import { PromotionsToolbarComponent } from './toolbars/promotions-toolbar/promotions-toolbar.component'
 import { ClinicProfileToolbarComponent } from './toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
 import { PatientsToolbarComponent } from './toolbars/patients/patients.component'
+import { RouterModule } from '@angular/router'
 
 const components = [
 	PromotionsToolbarComponent,
@@ -114,14 +115,15 @@ const directives = [ClickStopPropagation]
 
 const modules = [
 	CommonModule,
-	AppRoutingModule,
-	RouterModule,
 	IconsModule,
+	RouterModule,
 	ReactiveFormsModule,
 	FormsModule,
 	BrowserAnimationsModule,
 	IvyCarouselModule,
 	HttpClientModule,
+	AppRoutingModule,
+	RouterTestingModule,
 ]
 
 @NgModule({
