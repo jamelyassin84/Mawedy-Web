@@ -1,4 +1,4 @@
-import { DepartmentService } from './../../../services/components/department.service'
+import { DepartmentService } from '../../../../services/components/department.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'

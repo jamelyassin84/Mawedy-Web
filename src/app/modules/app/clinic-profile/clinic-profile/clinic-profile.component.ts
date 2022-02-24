@@ -1,5 +1,5 @@
-import { Clinic, marker } from './../../../models/types'
-import { AlertService } from './../../../services/utilities/alert.service'
+import { Clinic, marker } from '../../../../models/types'
+import { AlertService } from '../../../../services/utilities/alert.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { timings } from 'src/app/core/constants/App.constants'

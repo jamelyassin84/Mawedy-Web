@@ -9,10 +9,16 @@
 			<div class="col-md-2z col">
 				<!-- Time -->
 				<div class="times">
-					<div *ngFor="let time of weeklyTimesAM" class="time">
+					<div
+						*ngFor="let time of weeklyTimesAM"
+						class="time"
+					>
 						{{ time }}:00
 					</div>
-					<div *ngFor="let time of weeklyTimesPM" class="time">
+					<div
+						*ngFor="let time of weeklyTimesPM"
+						class="time"
+					>
 						{{ time }}:00
 					</div>
 				</div>
@@ -23,19 +29,26 @@
 					<!-- Weekdays and date -->
 					<div class="weekdays">
 						<div
-							*ngFor="let day of weekdays; let i = index"
+							*ngFor="
+								let day of weekdays;
+								let i = index
+							"
 							class="day-of-the-week-wrapper"
 						>
 							<div
 								class="day-of-the-week"
-								[class.today]="days[i] === today"
+								[class.today]="
+									days[i] === today
+								"
 							>
 								{{ day }}
 							</div>
 
 							<div
 								class="day-of-the-week-date"
-								[class.today]="days[i] === today"
+								[class.today]="
+									days[i] === today
+								"
 							>
 								{{ days[i] }}
 							</div>
@@ -45,15 +58,24 @@
 					<!-- AM -->
 					<div
 						class="days"
-						*ngFor="let time of weeklyTimesAM; let i = index"
+						*ngFor="
+							let time of weeklyTimesAM;
+							let i = index
+						"
 					>
 						<div
 							routerLink="/home/appointments/day"
 							class="day"
-							*ngFor="let day of days; let j = index"
+							*ngFor="
+								let day of days;
+								let j = index
+							"
 						>
 							<div
-								*ngIf="days[j] === today && now === time"
+								*ngIf="
+									days[j] === today &&
+									now === time
+								"
 								class="badge badge-danger"
 							>
 								Now treating...
@@ -76,15 +98,24 @@
 					<!-- PM -->
 					<div
 						class="days"
-						*ngFor="let time of weeklyTimesPM; let i = index"
+						*ngFor="
+							let time of weeklyTimesPM;
+							let i = index
+						"
 					>
 						<div
 							routerLink="/home/appointments/day"
 							class="day"
-							*ngFor="let day of days; let j = index"
+							*ngFor="
+								let day of days;
+								let j = index
+							"
 						>
 							<div
-								*ngIf="days[j] === today && now === time"
+								*ngIf="
+									days[j] === today &&
+									now === time
+								"
 								class="badge badge-danger"
 							>
 								treating...

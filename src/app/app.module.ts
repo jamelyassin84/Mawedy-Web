@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core'
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 
 //Shared Modules
-import { ClinicProfileModule } from './modules/clinic-profile/clinic-profile.module'
-import { DoctorsProfileModule } from './modules/doctors-profile/doctors-profile.module'
-import { PatientsModule } from './modules/patients/patients.module'
-import { PromotionsModule } from './modules/promotions/promotions.module'
-import { DashboardModule } from './modules/dashboard/dashboard.module'
-import { AppointmentsModule } from './modules/appointments/appointments.module'
+import { ClinicProfileModule } from './modules/app/clinic-profile/clinic-profile.module'
+import { DoctorsProfileModule } from './modules/app/doctors-profile/doctors-profile.module'
+import { PatientsModule } from './modules/app/patients/patients.module'
+import { PromotionsModule } from './modules/app/promotions/promotions.module'
+import { DashboardModule } from './modules/app/dashboard/dashboard.module'
+import { AppointmentsModule } from './modules/app/appointments/appointments.module'
 import { SharedModule } from './modules/shared/shared.module'
 
 //App Components

@@ -1,4 +1,4 @@
-import { DoctorService } from './../../../services/utilities/doctor.service'
+import { DoctorService } from '../../../../services/utilities/doctor.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { listAnimation } from 'src/app/animations/List.animation'
