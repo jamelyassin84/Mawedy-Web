@@ -153,10 +153,11 @@ export interface Appointment extends DateInterface {
 
 export interface ClinicPromotion extends DateInterface {
 	id: number
+	name: number
+	startAt: string
 	valid_until: Date
 	highlights: string
 	termsAndConditions: string
-	startAt: string
 	discount: number
 	isActive: boolean
 	clinic: Clinic

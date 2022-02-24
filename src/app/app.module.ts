@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing.module'
+import { RouterModule } from '@angular/router'
 import { NgModule } from '@angular/core'
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 
@@ -60,6 +62,7 @@ import { DoctorBadgesComponent } from './modules/shared/doctor-profile/doctor-ba
 		PatientsModule,
 		PromotionsModule,
 		SharedModule,
+		AppRoutingModule,
 	],
 	providers: [
 		{

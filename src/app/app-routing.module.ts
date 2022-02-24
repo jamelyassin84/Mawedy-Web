@@ -1,3 +1,4 @@
+import { PromotionsEditComponent } from './modules/app/promotions/promotions-edit/promotions-edit.component'
 import { ClinicProfileServicesComponent } from './modules/app/clinic-profile/clinic-profile-services/clinic-profile-services.component'
 import { AppointmentsDayComponent } from './modules/app/appointments/appointments-day/appointments-day.component'
 import { AppointmentsWeekComponent } from './modules/app/appointments/appointments-week/appointments-week.component'
@@ -13,6 +14,7 @@ import { PatientsComponent } from './modules/app/patients/patients/patients.comp
 import { PatientInfoComponent } from './modules/app/patients/patient-info/patient-info.component'
 import { ClinicProfileComponent } from './modules/app/clinic-profile/clinic-profile/clinic-profile.component'
 import { PromotionsComponent } from './modules/app/promotions/promotions/promotions.component'
+import { PromotionsAddComponent } from './modules/app/promotions/promotions-add/promotions-add.component'
 
 const routes: Routes = [
 	{
@@ -112,7 +114,25 @@ const routes: Routes = [
 			},
 			{
 				path: 'promotions',
-				component: PromotionsComponent,
+				children: [
+					{
+						path: '',
+						pathMatch: 'full',
+						redirectTo: 'list',
+					},
+					{
+						path: 'list',
+						component: PromotionsComponent,
+					},
+					{
+						path: 'add',
+						component: PromotionsAddComponent,
+					},
+					{
+						path: ':id',
+						component: PromotionsEditComponent,
+					},
+				],
 			},
 		],
 	},

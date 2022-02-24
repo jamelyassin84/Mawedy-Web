@@ -1,5 +1,4 @@
 import { RouterTestingModule } from '@angular/router/testing'
-import { AppRoutingModule } from 'src/app/app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { PromotionPlaceholdersComponent } from 'src/app/modules/shared/placeholders/promotion-placeholders/promotion-placeholders.component'
 import { NgModule } from '@angular/core'
@@ -7,7 +6,6 @@ import { CommonModule } from '@angular/common'
 import { AlertComponent } from './alert/alert.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { IconsModule } from '../icon/icon.module'
-
 import { CalendarBadgeMonthComponent } from './components/appointments/calendar-badge-month/calendar-badge-month.component'
 import { CalendarBadgeWeekComponent } from './components/appointments/calendar-badge-week/calendar-badge-week.component'
 import { CalendarBadgeDayComponent } from './components/appointments/calendar-badge-day/calendar-badge-day.component'
@@ -122,7 +120,6 @@ const modules = [
 	BrowserAnimationsModule,
 	IvyCarouselModule,
 	HttpClientModule,
-	AppRoutingModule,
 	RouterTestingModule,
 ]
 

@@ -198,6 +198,10 @@ textarea {
 	color: white !important;
 	padding: 0.5rem 2rem;
 	border: none;
+	&:active {
+		box-shadow: none !important;
+		outline: 0 !important;
+	}
 }
 
 .btn-cancel {
