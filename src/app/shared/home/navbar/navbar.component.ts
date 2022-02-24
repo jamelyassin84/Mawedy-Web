@@ -1,14 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { Fire } from 'src/app/constants/Alert'
-import { ClinicDto } from 'src/app/models/clinic.type'
+import { Fire } from 'src/app/core/constants/Alert'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { ClinicAccountService } from 'src/app/services/utilities/clinic-account.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
-import { ModalService } from 'src/app/services/utilities/modal.service'
 
 @Component({
 	selector: 'home-navbar',
@@ -33,13 +31,17 @@ export class NavbarComponent implements OnInit {
 			'question',
 			() => {
 				new BaseService(this.http, `${ROUTES.AUTH}/logout`)
-					.create({ clinicAccount: this.clinicAccountService.getID() })
+					.create({
+						clinicAccount:
+							this.clinicAccountService.getID(),
+					})
 					.subscribe({
 						next: () => {
 							localStorage.clear()
 							this.alert.Fire({
 								title: 'Thank you for using mawedy.',
-								description: 'Have a great time.',
+								description:
+									'Have a great time.',
 								type: 'success',
 							})
 							this.router.navigate(['/'])

@@ -1,61 +1,20 @@
-import { ModalV2Component } from './../../components/modalv2/modal-v2/modal-v2.component'
-import { AddDepartmentModalBodyComponent } from '../../components/modal-components/add/add-department/add-department-modal-body.component'
-import { environment } from 'src/environments/environment'
-import { AgmCoreModule } from '@agm/core'
-import { IconsModule } from './../icon/icon.module'
-import { AddMedicalServicesModalBodyComponent } from '../../components/modal-components/add/add-medical-services/add-medical-services-modal-body.component'
-import { PatientsModule } from './../patients/patients.module'
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { AgmCoreModule } from '@agm/core'
+import { SharedModule } from '../shared/shared.module'
 import { ClinicProfileComponent } from './clinic-profile/clinic-profile.component'
 import { ClinicProfileServicesComponent } from './clinic-profile-services/clinic-profile-services.component'
-import { RouterModule } from '@angular/router'
-import { ClinicProfileToolbarComponent } from 'src/app/components/toolbars/clinci-profile-toolbar/clinci-profile-toolbar.component'
-import { AppRoutingModule } from 'src/app/app-routing.module'
-import { DashboardModule } from '../dashboard/dashboard.module'
-import { TabsComponent } from 'src/app/components/utilities/clinic-profile/tabs/tabs.component'
-import { FormsModule } from '@angular/forms'
-import { IvyCarouselModule } from 'angular-responsive-carousel'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { DropdownSmComponent } from 'src/app/components/dropdowns/dropdown-sm/dropdown-sm.component'
-import { DropdownLgComponent } from 'src/app/components/dropdowns/dropdown-lg/dropdown-lg.component'
-import { ViewDepartmentsComponent } from 'src/app/components/modal-components/view/view-departments/view-departments.component'
-import { AppointmentsModule } from '../appointments/appointments.module'
-import { ClinicServiceCardComponent } from 'src/app/components/utilities/clinic-profile/clinic-service-card/clinic-service-card.component'
+import { environment } from 'src/environments/environment'
+import { CommonModule } from '@angular/common'
 
 @NgModule({
-	declarations: [
-		ClinicProfileComponent,
-		ClinicProfileServicesComponent,
-		ClinicProfileToolbarComponent,
-		TabsComponent,
-		ClinicServiceCardComponent,
-		DropdownSmComponent,
-		DropdownLgComponent,
-		ViewDepartmentsComponent,
-	],
+	declarations: [ClinicProfileComponent, ClinicProfileServicesComponent],
 	imports: [
 		CommonModule,
-		DashboardModule,
-		PatientsModule,
-		AppRoutingModule,
-		RouterModule,
-		IconsModule,
-		FormsModule,
-		IvyCarouselModule,
-		BrowserAnimationsModule,
-		AppointmentsModule,
+		SharedModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.GOOGLEMAPS,
 		}),
 	],
-	exports: [
-		ClinicProfileToolbarComponent,
-		TabsComponent,
-		ClinicServiceCardComponent,
-		DropdownSmComponent,
-		DropdownLgComponent,
-		ViewDepartmentsComponent,
-	],
+	exports: [],
 })
 export class ClinicProfileModule {}

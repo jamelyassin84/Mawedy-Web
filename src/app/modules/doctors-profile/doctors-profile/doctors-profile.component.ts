@@ -17,7 +17,6 @@ import { ModalService } from 'src/app/services/utilities/modal.service'
 export class DoctorsProfileComponent implements OnInit {
 	constructor(
 		private http: HttpClient,
-		private clinicService: ClinicService,
 		private doctorService: DoctorService,
 	) {}
 

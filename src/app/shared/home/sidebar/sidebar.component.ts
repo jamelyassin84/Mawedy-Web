@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
-import { filter } from 'rxjs'
-import { ClinicDto } from 'src/app/models/clinic.type'
+import { Router } from '@angular/router'
+import { Clinic } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
@@ -19,13 +18,7 @@ export class SidebarComponent implements OnInit {
 		private router: Router,
 		private http: HttpClient,
 		private clinicService: ClinicService,
-	) {
-		// router.events
-		// 	.pipe(filter((event) => event instanceof NavigationEnd))
-		// 	.subscribe((event: any) => {
-		// 		this.handleChangeTab(event?.url)
-		// 	})
-	}
+	) {}
 
 	activeIcon!: string
 
@@ -43,7 +36,7 @@ export class SidebarComponent implements OnInit {
 	getClinic() {
 		new BaseService(this.http, ROUTES.CLINICS)
 			.show(this.clinicService.getID())
-			.subscribe((data: ClinicDto) => {
+			.subscribe((data: Clinic) => {
 				if (data.photos.length !== 0) {
 					this.banner = data.photos[0].avatar
 				}
@@ -55,7 +48,5 @@ export class SidebarComponent implements OnInit {
 		this.router.url === '/home/clinic-profile'
 			? this.setActiveIcon('Clinic Profile')
 			: this.setActiveIcon('Dashboard')
-
-		// TODO : if tanan
 	}
 }

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http'
 import { AlertService } from 'src/app/services/utilities/alert.service'
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
-import { AlertMessage } from 'src/app/constants/Alert'
+import { AlertMessage } from 'src/app/core/constants/Alert'
 @Component({
 	selector: 'app-login-section2',
 	templateUrl: './login-section2.component.html',
@@ -43,9 +43,15 @@ export class LoginSection2Component implements OnInit {
 	emailAlreadyExist = false
 
 	informationForm = new FormGroup({
-		name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+		name: new FormControl('', [
+			Validators.required,
+			Validators.minLength(3),
+		]),
 
-		address: new FormControl('', [Validators.required, Validators.minLength(5)]),
+		address: new FormControl('', [
+			Validators.required,
+			Validators.minLength(5),
+		]),
 
 		email: new FormControl('', [Validators.required, Validators.email]),
 
@@ -57,7 +63,9 @@ export class LoginSection2Component implements OnInit {
 			.create({ email: event.target.value })
 			.subscribe({
 				next: (data: boolean) =>
-					!data ? (this.emailAlreadyExist = false) : (this.emailAlreadyExist = true),
+					!data
+						? (this.emailAlreadyExist = false)
+						: (this.emailAlreadyExist = true),
 			})
 	}
 
@@ -87,10 +95,14 @@ export class LoginSection2Component implements OnInit {
 	next() {
 		const tradeLicenseNumber = this.informationForm.value.tradeLicenseNumber
 
-		if (Number(tradeLicenseNumber) === NaN && tradeLicenseNumber.length !== 6) {
+		if (
+			Number(tradeLicenseNumber) === NaN &&
+			tradeLicenseNumber.length !== 6
+		) {
 			return this.alert.Fire({
 				title: 'Invalid Format.',
-				description: 'The format of the trade license is not we expect.',
+				description:
+					'The format of the trade license is not we expect.',
 				type: 'error',
 			})
 		}

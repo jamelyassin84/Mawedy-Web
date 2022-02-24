@@ -5,7 +5,7 @@ import {
 	resolveAddress,
 	resolveAge,
 	resolveName,
-} from 'src/app/constants/App.functions'
+} from 'src/app/core/constants/App.functions'
 import { Patient } from 'src/app/models/types'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
@@ -18,7 +18,7 @@ import { ClinicService } from 'src/app/services/utilities/clnic.service'
 	animations: [listAnimation],
 })
 export class PatientsComponent implements OnInit {
-	constructor(private http: HttpClient, private clinicService: ClinicService) {}
+	constructor(private http: HttpClient) {}
 
 	ngOnInit(): void {
 		this.getPatients()

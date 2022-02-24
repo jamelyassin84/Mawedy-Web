@@ -2,7 +2,7 @@ import {
 	weekDaysShort,
 	weeklyTimesAM,
 	weeklyTimesPM,
-} from 'src/app/constants/App.constants'
+} from 'src/app/core/constants/App.constants'
 import { Component, OnInit } from '@angular/core'
 import { AppointmentService } from 'src/app/services/toolbars/appointment.service'
 

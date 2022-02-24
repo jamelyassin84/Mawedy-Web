@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { weeklyTimesAM, weeklyTimesPM } from 'src/app/constants/App.constants'
+import {
+	weeklyTimesAM,
+	weeklyTimesPM,
+} from 'src/app/core/constants/App.constants'
 
 @Component({
 	selector: 'appointments-appointments-day',

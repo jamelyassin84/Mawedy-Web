@@ -1,9 +1,8 @@
-import { marker } from './../../../models/types'
+import { Clinic, marker } from './../../../models/types'
 import { AlertService } from './../../../services/utilities/alert.service'
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import { timings } from 'src/app/constants/App.constants'
-import { ClinicDto } from 'src/app/models/clinic.type'
+import { timings } from 'src/app/core/constants/App.constants'
 import { ROUTES } from 'src/app/routes/api.routes'
 import { BaseService } from 'src/app/services/api/base.api.service'
 import { ClinicService } from 'src/app/services/utilities/clnic.service'
@@ -34,7 +33,8 @@ export class ClinicProfileComponent implements OnInit {
 		this.getClinic(this.service.getID())
 
 		this.geoLocationService.getPosition().subscribe((pos: any) => {
-			;(this.lat = +pos.coords.latitude), (this.lng = +pos.coords.longitude)
+			;(this.lat = +pos.coords.latitude),
+				(this.lng = +pos.coords.longitude)
 		})
 	}
 
@@ -54,7 +54,7 @@ export class ClinicProfileComponent implements OnInit {
 
 	is24Hrs: boolean = false
 
-	clinic!: ClinicDto
+	clinic!: Clinic
 
 	isProcessing: boolean | 'complete' = false
 
@@ -67,7 +67,7 @@ export class ClinicProfileComponent implements OnInit {
 	getClinic(id: number): void {
 		new BaseService(this.http, ROUTES.CLINICS)
 			.show(id)
-			.subscribe((data: ClinicDto) => {
+			.subscribe((data: Clinic) => {
 				this.clinic = data
 
 				this.getPhone(data)
@@ -75,7 +75,9 @@ export class ClinicProfileComponent implements OnInit {
 				if (this.clinic.clinicTimings.length !== 0) {
 					this.clinicTimings = this.clinic.clinicTimings
 
-					this.is24Hrs = this.checkTimings(this.clinic.clinicTimings)
+					this.is24Hrs = this.checkTimings(
+						this.clinic.clinicTimings,
+					)
 				}
 				if (data.avatar !== null) {
 					this.logoSrc = data.avatar?.avatar
@@ -83,7 +85,7 @@ export class ClinicProfileComponent implements OnInit {
 			})
 	}
 
-	getPhone(clinic: ClinicDto) {
+	getPhone(clinic: Clinic) {
 		console.log(clinic.phones)
 		if (clinic.phones?.length !== 0) {
 			clinic.phones?.[0] === undefined
@@ -169,7 +171,10 @@ export class ClinicProfileComponent implements OnInit {
 
 						this.getClinic(this.clinic.id)
 
-						setTimeout(() => (this.isProcessing = false), 2700)
+						setTimeout(
+							() => (this.isProcessing = false),
+							2700,
+						)
 					}, 500)
 				},
 			})

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { ClinicDto } from 'src/app/models/clinic.type'
+import { Clinic } from 'src/app/models/types'
 
 @Injectable({
 	providedIn: 'root',
@@ -11,7 +11,7 @@ export class UserService {
 export const hasEdited = () => {
 	const user: any = localStorage.getItem('user')
 
-	const data: ClinicDto = JSON.parse(user)
+	const data: Clinic = JSON.parse(user)
 	if (data.description === '') {
 		return 'clinic-profile'
 	}

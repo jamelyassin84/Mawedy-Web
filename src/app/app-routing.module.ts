@@ -13,7 +13,6 @@ import { PatientsComponent } from './modules/patients/patients/patients.componen
 import { PatientInfoComponent } from './modules/patients/patient-info/patient-info.component'
 import { ClinicProfileComponent } from './modules/clinic-profile/clinic-profile/clinic-profile.component'
 import { PromotionsComponent } from './modules/promotions/promotions/promotions.component'
-import { hasEdited } from './services/utilities/user.service'
 
 const routes: Routes = [
 	{
@@ -42,7 +41,10 @@ const routes: Routes = [
 						pathMatch: 'full',
 						redirectTo: 'appointments',
 					},
-					{ path: 'appointments', component: AppointmentsComponent },
+					{
+						path: 'appointments',
+						component: AppointmentsComponent,
+					},
 					{
 						path: 'patient-outreach',
 						component: PatientOutreachComponent,
@@ -57,9 +59,18 @@ const routes: Routes = [
 						pathMatch: 'full',
 						redirectTo: 'month',
 					},
-					{ path: 'month', component: AppointmentsMonthComponent },
-					{ path: 'week', component: AppointmentsWeekComponent },
-					{ path: 'day', component: AppointmentsDayComponent },
+					{
+						path: 'month',
+						component: AppointmentsMonthComponent,
+					},
+					{
+						path: 'week',
+						component: AppointmentsWeekComponent,
+					},
+					{
+						path: 'day',
+						component: AppointmentsDayComponent,
+					},
 				],
 			},
 			{
@@ -89,7 +100,10 @@ const routes: Routes = [
 						pathMatch: 'full',
 						redirectTo: 'information',
 					},
-					{ path: 'information', component: ClinicProfileComponent },
+					{
+						path: 'information',
+						component: ClinicProfileComponent,
+					},
 					{
 						path: 'services',
 						component: ClinicProfileServicesComponent,

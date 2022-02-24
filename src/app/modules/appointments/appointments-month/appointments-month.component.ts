@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { weekDays, weekDaysShort } from 'src/app/constants/App.constants'
+import { weekDays, weekDaysShort } from 'src/app/core/constants/App.constants'
 import { AppointmentService } from 'src/app/services/toolbars/appointment.service'
 
 @Component({
